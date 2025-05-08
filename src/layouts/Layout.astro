@@ -1,14 +1,25 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+
+const { title } = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width"/>
+		<meta name="description" content="Agatha gatos persa"/>
+		<meta name="keywords" content="gatos, persa, agatha"/>
+		<meta name="author" content="Nicolás Bernal Bermúdez"/>
+		<title>{title}</title>
 	</head>
 	<body>
+		<Header/>
 		<slot />
+		<Footer />
 	</body>
 </html>
 

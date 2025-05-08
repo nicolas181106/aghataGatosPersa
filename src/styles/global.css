@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+.familia {
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway';
+    src: url('/public/fonts/Raleway-Black.ttf') format('truetype');
+    font-weight: l;
+    font-style: normal;
+    font-display: swap;
+}
+
+.hoverOpa:hover {
+    opacity: 80%;
+}
+
+/*ANIMACIONES*/
+
+.spinner-border {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border-width: 0.25em;
+    border-color: currentColor transparent transparent transparent;
+    border-radius: 50%;
+    animation: spinner-border 1s linear infinite;
+}
+
+@keyframes spinner-border {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.navScroll {
+    animation: navScroll linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 1000px;
+}
+
+@keyframes navScroll {
+    to {
+        background-color: #f8c4cb;
+    }
+    from {
+        background-color: transparent;
+    }
+}
+
+.showImg {
+    animation: showImg linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 50%;
+}
+
+@keyframes showImg {
+    to {
+        opacity: 1;
+        translate: 0 0;
+        scale: 1;
+    }
+    from {
+        opacity: 0;
+        translate: 0 100px;
+        scale: 0.8;
+    }
+}
