@@ -1,13 +1,5 @@
 @import "tailwindcss";
-
-.familia {
-    font-family: 'Raleway', sans-serif;
-    font-family: 'Raleway';
-    src: url('/public/fonts/Raleway-Black.ttf') format('truetype');
-    font-weight: l;
-    font-style: normal;
-    font-display: swap;
-}
+@import "@fontsource/balsamiq-sans";
 
 .hoverOpa:hover {
     opacity: 80%;
