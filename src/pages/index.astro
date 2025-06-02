@@ -1,6 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import logo from '../assets/img/logo.png';
 ---
 
-<Layout title="Ágatha Gatos Persa">
+<Layout title="Ágatha Gatos Persa - Criadero de Gatos Persa" description="Bienvenido a Ágatha Gatos Persa, tu criadero de confianza para encontrar adorables gatos persa. Descubre nuestras razas y encuentra a tu nuevo compañero peludo.">
+    <header class="h-full flex items-center justify-center" style="background: url('https://i.redd.it/8se3hpc3x0l81.gif') no-repeat center center; background-size: cover;">
+        <div class="bg-white/30 w-full p-10 flex items-center justify-center">
+            <img src={logo.src} alt="Logo de Ágatha Gatos Persa" class="h-32">
+		</div>
+    </header>
+    <main class="bg-[#f1eeee] text-[#2E2E2E]">
+        <section class="max-w-screen-xl mx-auto px-4 py-10">
+            <h2 class="text-3xl font-bold mb-6">Bienvenido a nuestro criadero</h2>
+            <p class="mb-4">En Ágatha Gatos Persa, nos dedicamos a criar gatos persa de alta calidad. Nuestros gatos son criados con amor y cuidado, asegurando que cada uno tenga una personalidad encantadora y un pelaje hermoso.</p>
+            <p class="mb-4">Explora nuestras razas y descubre el gato persa perfecto para ti. Desde el elegante Persa Europeo hasta el exótico Persa Chinchilla, cada uno de nuestros gatos es único y especial.</p>
+            <p class="mb-4">Visita nuestra sección de <a href="/gatosDisponibles" class="text-[#FF6B6B] hover:underline">Gatos Disponibles</a> para conocer a nuestros adorables felinos que están listos para encontrar un nuevo hogar.</p>
+            <p class="mb-4">Si tienes alguna pregunta o necesitas más información, no dudes en <a href="/contacto" class="text-[#FF6B6B] hover:underline">contactarnos</a>. Estamos aquí para ayudarte a encontrar el compañero peludo perfecto.</p>
+        </section>
+        <section class="max-w-screen-xl mx-auto px-4 py-10">
+            <h2 class="text-3xl font-bold mb-6">Contáctanos</h2>
+            <p>Si estás interesado en adoptar uno de nuestros gatos o tienes alguna pregunta, no dudes en <a href="/contacto" class="text-[#FF6B6B] hover:underline">contactarnos</a>. Estamos aquí para ayudarte a encontrar el gato persa perfecto para ti.</p>
+        </section>
+    </main>
 </Layout>

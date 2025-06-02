@@ -3,29 +3,40 @@ import Layout from '../layouts/Layout.astro';
 import img from '../assets/img/gato1.jpg';
 import img2 from '../assets/img/gato2.jpg';
 import img3 from '../assets/img/gato3.jpg';
-
 ---
 
-<Layout title="Gatos disponibles">
-	<section class="bg-orange-200 min-h-screen">
-		<div class="bg-orange-300 h-50 mt-30 flex items-center justify-center">
-			<h1 class="text-[30px] font-bold text-red-600">Gatos disponibles</h1>
-		</div>
-		<div class="flex flex-wrap justify-center gap-10 mt-10 max-w-screen-xl mx-auto px-4">
-			<article class="bg-white p-2 h-100 border-3 border-black rounded-lg flex items-center justify-start flex-col hover:transform hover:scale-105 transition-transform duration-300 hover:cursor-pointer">
-				<img src={img.src} alt="Gato Persa 1" class="h-70 w-70 object-cover rounded-lg">
-				<h1 class="text-2xl">Persa Chinchilla</h1>
-				<p>Hola mi nombre es Ceres</p>
-			</article>
-			<article class="bg-white p-2 h-100 border-3 border-black rounded-lg flex items-center justify-start flex-col hover:transform hover:scale-105 transition-transform duration-300 hover:cursor-pointer">
-				<img src={img2.src} alt="Gato Persa 2" class="h-70 w-70 object-cover rounded-lg">
-				<h1 class="text-2xl">Persa Europeo</h1>
-			</article>
-			<article class="bg-white p-2 h-100 border-3 border-black rounded-lg flex items-center justify-start flex-col hover:transform hover:scale-105 transition-transform duration-300 hover:cursor-pointer">
-				<img src={img3.src} alt="Gato Persa 3" class="h-70 w-70 object-cover rounded-lg">
-				<h1 class="text-2xl">Persa Himalayo</h1>
-			</article>
-
-		</div>
-	</section>
+<Layout title="Gatos disponibles - Ágatha gatos persa" description="Descubre nuestros adorables gatos persa disponibles. Cada uno con su propia personalidad y encanto.">
+	<main class="bg-[#f1eeee] text-[#2E2E2E] min-h-screen">
+		<section>
+			<div class="bg-[#FF6B6B] h-40 mt-30 flex items-center justify-center">
+				<h1 class="text-[30px] font-bold text-white">Gatos disponibles</h1>
+			</div>
+			<div class="flex flex-wrap justify-center gap-10 mt-10 max-w-screen-xl mx-auto px-4">
+				<a href="../persaEuropeo">
+					<article class="bg-[#FFFFFF] p-2 h-100 border-3 rounded-lg flex items-center justify-start flex-col hover:transform hover:scale-105 transition-transform duration-300 hover:cursor-pointer">
+						<img src={img2.src} alt="Gato Persa 2" class="h-80 w-80 object-cover rounded-lg">
+						<div class="bg-[#FF6B6B] w-full text-center p-2 rounded-lg mt-2">
+							<h1 class="text-2xl">Persa Europeo</h1>
+						</div>
+					</article>
+				</a>
+				<a href="../persaChinchilla">
+					<article class="bg-[#FFFFFF] p-2 h-100 border-3 rounded-lg flex items-center justify-start flex-col hover:transform hover:scale-105 transition-transform duration-300 hover:cursor-pointer">
+						<img src={img.src} alt="Gato Persa 1" class="h-80 w-80 object-cover rounded-lg">
+						<div class="bg-[#FF6B6B] w-full text-center p-2 rounded-lg mt-2">
+							<h1 class="text-2xl">Persa Chinchilla</h1>
+						</div>
+					</article>
+				</a>
+				<a href="../persaHimalayo">
+					<article class="bg-[#FFFFFF] p-2 h-100 border-3 rounded-lg flex items-center justify-start flex-col hover:transform hover:scale-105 transition-transform duration-300 hover:cursor-pointer">
+						<img src={img3.src} alt="Gato Persa 3" class="h-80 w-80 object-cover rounded-lg">
+						<div class="bg-[#FF6B6B] w-full text-center p-2 rounded-lg mt-2">
+							<h1 class="text-2xl">Persa Himalayo</h1>
+						</div>
+					</article>
+				</a>
+			</div>
+		</section>
+	</main>
 </Layout>

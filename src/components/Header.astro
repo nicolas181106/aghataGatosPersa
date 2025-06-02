@@ -1,8 +1,20 @@
-<nav class="float-left bg-white h-30 w-full justify-center flex items-center fixed top-0 z-10">
-    <ul class="flex items-center justify-center gap-20 text-[20px]">
-        <li class=""><a href="/">Inicio</a></li>
-        <li class=""><a href="/gatosDisponibles">Gatos disponibles</a></li>
-        <li class=""><a href="/about">Sobre nosotros</a></li>
-        <li class=""><a href="/contact">Contacto</a></li>
-    </ul>
+<nav class="float-left bg-[#FFE2E2] h-30 w-full justify-center flex items-center fixed top-0 z-10 shadow-md">
+  <ul class="flex items-center justify-center text-center gap-5 sm:gap-10 md:gap-20 py-4 text-[18px] md:text-[20px] text-[#2E2E2E] relative font-semibold not-sm:max-w-[300px]">
+    <li><a class="hover:text-[#FF4C4C]" href="/">Inicio</a></li>
+    <li class="group relative">
+      <a href="/gatosDisponibles" class="hover:text-[#FF6B6B] flex items-center gap-1">Gatos disponibles</a>
+      <div class="absolute left-1/2 -translate-x-1/2 top-full
+                bg-white shadow-lg rounded-md w-48 opacity-0 
+                  pointer-events-none group-hover:opacity-100 
+                  group-hover:pointer-events-auto transition-all duration-200 z-10">
+        <ul class="py-2">
+            <li><a href="/persaEuropeo" class="block px-4 py-2 hover:bg-[#FFE2E2]">Persa Europeo</a></li>
+            <li><a href="/persaHimalayo" class="block px-4 py-2 hover:bg-[#FFE2E2]">Persa Himalayo</a></li>
+            <li><a href="/persaChinchilla" class="block px-4 py-2 hover:bg-[#FFE2E2]">Persa Chinchilla</a></li>
+        </ul>
+      </div>
+    </li>
+    <li><a class="hover:text-[#FF4C4C]" href="/about">Sobre nosotros</a></li>
+    <li><a class="hover:text-[#FF4C4C]" href="/contact">Contacto</a></li>
+  </ul>
 </nav>
