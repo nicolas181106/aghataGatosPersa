@@ -55,3 +55,19 @@
         scale: 0.8;
     }
 }
+
+.pulsar{
+    animation: pulsar infinite 3s ease-in both;
+}
+
+@keyframes pulsar {
+    0% {
+        scale: 1;
+    }
+    50% {
+        scale: 0.95;
+    }
+    100% {
+        scale: 1;
+    }
+}

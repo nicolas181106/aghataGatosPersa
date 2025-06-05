@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import logo from "../assets/img/logoAnimated.png";
 import "../styles/global.css";
 
 const { title } = Astro.props;
@@ -10,7 +11,7 @@ const { description } = Astro.props;
 <!doctype html>
 <html lang="es-ES">
 	<head>
-		<link rel="icon" type="image/svg+xml" href="" />
+		<link rel="icon" type="image/svg+xml" href={logo.src} />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta

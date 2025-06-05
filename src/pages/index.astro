@@ -1,25 +1,89 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import logo from '../assets/img/logo.png';
+import Layout from "../layouts/Layout.astro";
+import logo2 from "../assets/img/logoAnimated.png";
 ---
 
-<Layout title="Ágatha Gatos Persa - Criadero de Gatos Persa" description="Bienvenido a Ágatha Gatos Persa, tu criadero de confianza para encontrar adorables gatos persa. Descubre nuestras razas y encuentra a tu nuevo compañero peludo.">
-    <header class="h-full flex items-center justify-center" style="background: url('https://i.redd.it/8se3hpc3x0l81.gif') no-repeat center center; background-size: cover;">
-        <div class="bg-white/30 w-full p-10 flex items-center justify-center">
-            <img src={logo.src} alt="Logo de Ágatha Gatos Persa" class="h-32">
-		</div>
+<Layout
+    title="Ágatha Gatos Persa - Criadero de Gatos Persa"
+    description="Bienvenido a Ágatha Gatos Persa, tu criadero de confianza para encontrar adorables gatos persa. Descubre nuestras razas y encuentra a tu nuevo compañero peludo."
+>
+    <header
+        class="relative h-[100vh] flex items-center justify-center text-white"
+    >
+        <img
+            src="https://i.redd.it/8se3hpc3x0l81.gif"
+            alt="Fondo gatos persas"
+            class="absolute inset-0 w-full h-full object-cover z-0"
+        />
+
+        <div class="relative z-20 text-center">
+            <img
+                src={logo2.src}
+                alt="Logo de Ágatha Gatos Persa"
+                class="h-60 sm:h-80 mx-auto bg-[#f1eeee] rounded-full shadow-lg mb-6"
+            />
+            <p class="text-lg sm:text-xl mb-6 max-w-xl mx-auto drop-shadow-md">
+                Criadero especializado en gatos persa. Amor, cuidado y elegancia
+                felina en cada camada.
+            </p>
+            <a
+                href="/gatosDisponibles"
+                class="inline-block bg-[#FF6B6B] hover:bg-[#e65c5c] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 shadow-lg"
+            >
+                Ver Gatos Disponibles
+            </a>
+        </div>
     </header>
-    <main class="bg-[#f1eeee] text-[#2E2E2E]">
+
+    <main class="bg-[#f1eeee] text-[#2E2E2E] pb-10 pt-10">
+        <section class="max-w-screen-xl mx-auto px-4 py-10 ">
+            <h2 class="text-3xl font-bold mb-6">
+                Bienvenido a nuestro criadero
+            </h2>
+            <p class="mb-4">
+                En Ágatha Gatos Persa, nos dedicamos a criar gatos persa de alta
+                calidad. Nuestros gatos son criados con amor y cuidado,
+                asegurando que cada uno tenga una personalidad encantadora y un
+                pelaje hermoso.
+            </p>
+            <p class="mb-4">
+                Explora nuestras razas y descubre el gato persa perfecto para
+                ti. Desde el elegante Persa Europeo hasta el exótico Persa
+                Chinchilla, cada uno de nuestros gatos es único y especial.
+            </p>
+            <p class="mb-4">
+                Visita nuestra sección de <a
+                    href="/gatosDisponibles"
+                    class="text-[#FF6B6B] hover:underline">Gatos Disponibles</a
+                > para conocer a nuestros adorables felinos que están listos para
+                encontrar un nuevo hogar.
+            </p>
+        </section>
         <section class="max-w-screen-xl mx-auto px-4 py-10">
-            <h2 class="text-3xl font-bold mb-6">Bienvenido a nuestro criadero</h2>
-            <p class="mb-4">En Ágatha Gatos Persa, nos dedicamos a criar gatos persa de alta calidad. Nuestros gatos son criados con amor y cuidado, asegurando que cada uno tenga una personalidad encantadora y un pelaje hermoso.</p>
-            <p class="mb-4">Explora nuestras razas y descubre el gato persa perfecto para ti. Desde el elegante Persa Europeo hasta el exótico Persa Chinchilla, cada uno de nuestros gatos es único y especial.</p>
-            <p class="mb-4">Visita nuestra sección de <a href="/gatosDisponibles" class="text-[#FF6B6B] hover:underline">Gatos Disponibles</a> para conocer a nuestros adorables felinos que están listos para encontrar un nuevo hogar.</p>
-            <p class="mb-4">Si tienes alguna pregunta o necesitas más información, no dudes en <a href="/contacto" class="text-[#FF6B6B] hover:underline">contactarnos</a>. Estamos aquí para ayudarte a encontrar el compañero peludo perfecto.</p>
+            <h2 class="text-3xl font-bold mb-6">Sobre nostros</h2>
+            <p class="mb-4">
+                Ágatha Gatos Persa es un criadero dedicado a la cría responsable
+                de gatos persa. Nuestro objetivo es proporcionar gatos sanos y
+                felices que se conviertan en miembros queridos de sus nuevas
+                familias.
+            </p>
+            <p class="mb-4">
+                Nos enorgullece ofrecer un ambiente amoroso y seguro para
+                nuestros gatos, asegurando que reciban la atención y el cuidado
+                que merecen. Cada gato es parte de nuestra familia y nos
+                esforzamos por encontrarles el hogar perfecto.
+            </p>
         </section>
         <section class="max-w-screen-xl mx-auto px-4 py-10">
             <h2 class="text-3xl font-bold mb-6">Contáctanos</h2>
-            <p>Si estás interesado en adoptar uno de nuestros gatos o tienes alguna pregunta, no dudes en <a href="/contacto" class="text-[#FF6B6B] hover:underline">contactarnos</a>. Estamos aquí para ayudarte a encontrar el gato persa perfecto para ti.</p>
+            <p>
+                Si estás interesado en uno de nuestros gatos o tienes
+                alguna pregunta, no dudes en <a
+                    href="/contacto"
+                    class="text-[#FF6B6B] hover:underline">contactarnos</a
+                >. Estamos aquí para ayudarte a encontrar el gato persa perfecto
+                para ti.
+            </p>
         </section>
     </main>
 </Layout>
