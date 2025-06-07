@@ -2,53 +2,104 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Contacto - Ágatha gatos persa" description="Contáctanos para más información sobre nuestros gatos persa, adopciones y cuidados. Estamos aquí para ayudarte.">
+<Layout
+	title="Contacto - Ágatha gatos persa"
+	description="Contáctanos para más información sobre nuestros gatos persa, adopciones y cuidados. Estamos aquí para ayudarte."
+>
 	<main class="bg-[#f1eeee] text-[#2E2E2E] min-h-screen pb-10">
 		<div class="bg-[#FF6B6B] h-40 mt-30 flex items-center justify-center">
 			<h1 class="text-[30px] font-bold text-white">Contacto</h1>
 		</div>
-		<section class="text-[#2E2E2E] mt-25 px-4 py-10 flex flex-col items-center">
-			<form action="https://formsubmit.co/nicolasbernalbermudez@gmail.com" method="POST" class="flex flex-col gap-4 w-[300px] sm:w-[600px] bg-gray-200 p-6 rounded-lg shadow-lg">
+		<section
+			class="text-[#2E2E2E] mt-25 px-4 py-10 flex flex-col items-center"
+		>
+			<form
+				action="https://formsubmit.co/nicolasbernalbermudez@gmail.com"
+				method="POST"
+				class="flex flex-col gap-4 w-[300px] sm:w-[600px] bg-gray-200 p-6 rounded-lg shadow-lg"
+			>
 				<label for="name">Nombre:</label>
-				<input type="text" id="name" name="name" required class="bg-white border border-gray-300 p-2 rounded-md" />
+				<input
+					type="text"
+					id="name"
+					name="name"
+					required
+					class="bg-white border border-gray-300 p-2 rounded-md"
+				/>
 
 				<label for="email">Correo electrónico:</label>
-				<input type="email" id="email" name="email" required class="bg-white border border-gray-300 p-2 rounded-md" />
+				<input
+					type="email"
+					id="email"
+					name="email"
+					required
+					class="bg-white border border-gray-300 p-2 rounded-md"
+				/>
 
 				<label for="message">Gato:</label>
-				<select name="gatos" required class="bg-white border border-gray-300 p-2 rounded-md">
+				<select
+					name="gatos"
+					required
+					class="bg-white border border-gray-300 p-2 rounded-md"
+				>
 					<option value="">-- Gatos Persa Europeos --</option>
-					<option value="sirius">Sirius</option>
 					<option value="orion">Orion</option>
+					<option value="sirius">Sirius</option>
+					<option value="romulus">Rómulo</option>
+					<option value="remo">Remo</option>
+					<option value="">-- Gatos Persa Chinchilla --</option>
+					<option value="">-- Gatos Persa Himalayo --</option>
 				</select>
 
 				<label for="message">Mensaje:</label>
-				<textarea id="message" name="message" required rows="4" class="bg-white border border-gray-300 p-2 rounded-md resize-none"></textarea>
+				<textarea
+					id="message"
+					name="message"
+					required
+					rows="4"
+					class="bg-white border border-gray-300 p-2 rounded-md resize-none"
+				></textarea>
 
-				<button type="submit" class="inline-block bg-[#FF6B6B] hover:bg-[#e65c5c] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 shadow-lg" id="submit-button">
+				<button
+					type="submit"
+					class="inline-block bg-[#FF6B6B] hover:bg-[#e65c5c] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 shadow-lg"
+					id="submit-button"
+				>
 					Enviar
 				</button>
 			</form>
 		</section>
-    </main>
+	</main>
 
 	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-		const submitButton = document.getElementById('submit-button');
-		if (submitButton) {
-			submitButton.addEventListener('click', function () {
-				const originalText = submitButton.textContent;
-				submitButton.textContent = 'Mensaje enviado';
-				submitButton.classList.remove('bg-[#FF6B6B]', 'hover:bg-[#e65c5c]');
-				submitButton.classList.add('bg-green-500', 'hover:bg-green-600');
+		document.addEventListener("DOMContentLoaded", function () {
+			const submitButton = document.getElementById("submit-button");
+			if (submitButton) {
+				submitButton.addEventListener("click", function () {
+					const originalText = submitButton.textContent;
+					submitButton.textContent = "Mensaje enviado";
+					submitButton.classList.remove(
+						"bg-[#FF6B6B]",
+						"hover:bg-[#e65c5c]",
+					);
+					submitButton.classList.add(
+						"bg-green-500",
+						"hover:bg-green-600",
+					);
 
-				setTimeout(() => {
-					submitButton.textContent = originalText;
-					submitButton.classList.remove('bg-green-500', 'hover:bg-green-600');
-					submitButton.classList.add('bg-[#FF6B6B]', 'hover:bg-[#e65c5c]');
-				}, 2000);
-			});
-		}
-	});
+					setTimeout(() => {
+						submitButton.textContent = originalText;
+						submitButton.classList.remove(
+							"bg-green-500",
+							"hover:bg-green-600",
+						);
+						submitButton.classList.add(
+							"bg-[#FF6B6B]",
+							"hover:bg-[#e65c5c]",
+						);
+					}, 2000);
+				});
+			}
+		});
 	</script>
 </Layout>
