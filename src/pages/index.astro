@@ -1,28 +1,24 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import logo2 from "../assets/img/logoAnimated.png";
+import banner from "../assets/img/banner.png";
 ---
 
 <Layout
     title="Ágatha Gatos Persa - Criadero de Gatos Persa"
     description="Bienvenido a Ágatha Gatos Persa, tu criadero de confianza para encontrar adorables gatos persa. Descubre nuestras razas y encuentra a tu nuevo compañero peludo."
+    keywords="gatos persa, criadero de gatos, gatos disponibles, gatos persa en adopción"
 >
     <header
         class="relative h-[100vh] flex items-center justify-center text-white"
     >
-        <img
-            src="https://i.redd.it/8se3hpc3x0l81.gif"
-            alt="Fondo gatos persas"
-            class="absolute inset-0 w-full h-full object-cover z-0"
-        />
-
         <div class="relative z-20 text-center">
             <img
                 src={logo2.src}
                 alt="Logo de Ágatha Gatos Persa"
-                class="h-60 sm:h-80 mx-auto bg-[#f1eeee] rounded-full shadow-lg mb-6"
+                class="h-60 sm:h-80 mx-auto rounded-full shadow-2xl mb-6 bg-[#2E2E2E] p-2 border-2 border-[#FF6B6B]"
             />
-            <p class="text-lg sm:text-xl mb-6 max-w-xl mx-auto drop-shadow-md">
+            <p class="text-lg max-w-[300px] sm:text-[23px] mb-6 sm:max-w-xl mx-auto p-2 text-[#2E2E2E]">
                 Criadero especializado en gatos persa. Amor, cuidado y elegancia
                 felina en cada camada.
             </p>
@@ -35,23 +31,23 @@ import logo2 from "../assets/img/logoAnimated.png";
         </div>
     </header>
 
-    <main class="bg-[#f1eeee] text-[#2E2E2E] pb-10 pt-10">
+    <main class="bg-white/90 text-[#2E2E2E] pb-10 pt-10">
         <section class="max-w-screen-xl mx-auto px-4 py-10 ">
-            <h2 class="text-3xl font-bold mb-6">
+            <h2 class="text-3xl font-bold mb-6 text-[#FF6B6B]">
                 Bienvenido a nuestro criadero
             </h2>
-            <p class="mb-4">
+            <p class="mb-4 text-[15px] sm:text-[20px]">
                 En Ágatha Gatos Persa, nos dedicamos a criar gatos persa de alta
                 calidad. Nuestros gatos son criados con amor y cuidado,
                 asegurando que cada uno tenga una personalidad encantadora y un
                 pelaje hermoso.
             </p>
-            <p class="mb-4">
+            <p class="mb-4 text-[15px] sm:text-[20px]">
                 Explora nuestras razas y descubre el gato persa perfecto para
                 ti. Desde el elegante Persa Europeo hasta el exótico Persa
                 Chinchilla, cada uno de nuestros gatos es único y especial.
             </p>
-            <p class="mb-4">
+            <p class="mb-4 text-[15px] sm:text-[20px]">
                 Visita nuestra sección de <a
                     href="/gatosDisponibles"
                     class="text-[#FF6B6B] hover:underline">Gatos Disponibles</a
@@ -60,14 +56,14 @@ import logo2 from "../assets/img/logoAnimated.png";
             </p>
         </section>
         <section class="max-w-screen-xl mx-auto px-4 py-10">
-            <h2 class="text-3xl font-bold mb-6">Sobre nostros</h2>
-            <p class="mb-4">
+            <h2 class="text-3xl font-bold mb-6 text-[#FF6B6B]">Sobre nostros</h2>
+            <p class="mb-4 text-[15px] sm:text-[20px]">
                 Ágatha Gatos Persa es un criadero dedicado a la cría responsable
                 de gatos persa. Nuestro objetivo es proporcionar gatos sanos y
                 felices que se conviertan en miembros queridos de sus nuevas
                 familias.
             </p>
-            <p class="mb-4">
+            <p class="mb-4 text-[15px] sm:text-[20px]">
                 Nos enorgullece ofrecer un ambiente amoroso y seguro para
                 nuestros gatos, asegurando que reciban la atención y el cuidado
                 que merecen. Cada gato es parte de nuestra familia y nos
@@ -75,8 +71,8 @@ import logo2 from "../assets/img/logoAnimated.png";
             </p>
         </section>
         <section class="max-w-screen-xl mx-auto px-4 py-10">
-            <h2 class="text-3xl font-bold mb-6">Contáctanos</h2>
-            <p>
+            <h2 class="text-3xl font-bold mb-6 text-[#FF6B6B]">Contáctanos</h2>
+            <p class="text-[15px] sm:text-[20px]">
                 Si estás interesado en uno de nuestros gatos o tienes
                 alguna pregunta, no dudes en <a
                     href="/contacto"

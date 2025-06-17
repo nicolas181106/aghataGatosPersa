@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout.astro";
 	title="Contacto - Ágatha gatos persa"
 	description="Contáctanos para más información sobre nuestros gatos persa, adopciones y cuidados. Estamos aquí para ayudarte."
 >
-	<main class="bg-[#f1eeee] text-[#2E2E2E] min-h-screen pb-10">
+	<main class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen pb-10">
 		<div class="bg-[#FF6B6B] h-40 mt-30 flex items-center justify-center">
 			<h1 class="text-[30px] font-bold text-white">Contacto</h1>
 		</div>
@@ -16,7 +16,7 @@ import Layout from "../layouts/Layout.astro";
 			<form
 				action="https://formsubmit.co/nicolasbernalbermudez@gmail.com"
 				method="POST"
-				class="flex flex-col gap-4 w-[300px] sm:w-[600px] bg-gray-200 p-6 rounded-lg shadow-lg"
+				class="flex flex-col gap-4 w-[300px] sm:w-[600px] p-6 rounded-lg shadow-lg border-2 border-[#FF6B6B] backdrop-blur-lg bg-white/90"
 			>
 				<label for="name">Nombre:</label>
 				<input
@@ -24,7 +24,7 @@ import Layout from "../layouts/Layout.astro";
 					id="name"
 					name="name"
 					required
-					class="bg-white border border-gray-300 p-2 rounded-md"
+					class="bg-white border border-[#FF6B6B] p-2 rounded-md"
 				/>
 
 				<label for="email">Correo electrónico:</label>
@@ -33,19 +33,20 @@ import Layout from "../layouts/Layout.astro";
 					id="email"
 					name="email"
 					required
-					class="bg-white border border-gray-300 p-2 rounded-md"
+					class="bg-white border border-[#FF6B6B] p-2 rounded-md"
 				/>
 
 				<label for="message">Gato:</label>
 				<select
 					name="gatos"
 					required
-					class="bg-white border border-gray-300 p-2 rounded-md"
+					class="bg-white border border-[#FF6B6B] p-2 rounded-md"
 				>
 					<option value="">-- Gatos Persa Europeos --</option>
 					<option value="orion">Orion</option>
 					<option value="sirius">Sirius</option>
-					<option value="romulus">Rómulo</option>
+					<option value="odín">Odín</option>
+					<option value="rómulo">Rómulo</option>
 					<option value="remo">Remo</option>
 					<option value="">-- Gatos Persa Chinchilla --</option>
 					<option value="">-- Gatos Persa Himalayo --</option>
@@ -57,7 +58,7 @@ import Layout from "../layouts/Layout.astro";
 					name="message"
 					required
 					rows="4"
-					class="bg-white border border-gray-300 p-2 rounded-md resize-none"
+					class="bg-white border border-[#FF6B6B] p-2 rounded-md resize-none"
 				></textarea>
 
 				<button
