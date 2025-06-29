@@ -1,5 +1,36 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import imgGatoPelaje from '../assets/img/gatoConPelajePregunta.jpg';
+import imgDurmiendo from '../assets/img/gatoDurmiendo.jpg';
+import imgGatoComiendo from '../assets/img/gatoComiendo.jpg';
+import imgGatoJugando from '../assets/img/gatoPersaJugando.jpg';
+
+const articles = [
+	{
+		img: imgGatoPelaje,
+		alt: "gato con pelaje",
+		h2: "¿Cómo cuidar el pelaje de un gato persa?",
+		p: "El pelaje largo del gato persa requiere cepillado diario para evitar enredos y bolas de pelo. También se recomienda un baño mensual y visitas regulares al veterinario."
+	},
+	{
+		img: imgDurmiendo,
+		alt: "gato persa durmiendo",
+		h2: "¿Con qué frecuencia debo llevar a mi gato persa al veterinario?",
+		p: "Los gatos persas deben ser llevados al veterinario al menos una vez al año para chequeos generales y vacunaciones. Si notas algún cambio en su comportamiento o salud, consulta a un veterinario de inmediato."
+	},
+	{
+		img: imgGatoComiendo,
+		alt: "gato persa comiendo",
+		h2: "¿Qué tipo de alimentación es mejor para un gato persa?",
+		p: "Una dieta equilibrada y rica en proteínas es esencial para los gatos persas. Se recomienda comida seca de alta calidad y, ocasionalmente, comida húmeda para mantenerlos hidratados."
+	},
+	{
+		img: imgGatoJugando,
+		alt: "gato persa jugando",
+		h2: "¿Cómo puedo mantener a mi gato persa activo y entretenido?",
+		p: "Proporciona juguetes interactivos, rascadores y tiempo de juego diario. Los gatos persas disfrutan de actividades suaves y juegos tranquilos."
+	}
+]
 ---
 
 <Layout
@@ -15,62 +46,17 @@ import Layout from "../layouts/Layout.astro";
 		</div>
 		<section
 			arial-label="Preguntas frecuentes"
-			class="max-w-[300px] sm:max-w-[500px] md:max-w-[700px] xl:max-w-[1000px] 2xl:max-w-screen-lg mx-auto p-6 sm:p-20 mt-10 bg-white/90 rounded-lg shadow-lg"
+			class="max-w-[325px] sm:max-w-[600px] md:max-w-[700px] xl:max-w-[1000px] 2xl:max-w-screen-2xl mx-auto p-6 sm:p-20 mt-10 bg-white/90 rounded-lg shadow-lg pop"
 		>
-			<h2 class="text-2xl sm:text-3xl font-bold mb-2 text-[#FF6B6B]">
-				¿Cómo cuidar el pelaje de un gato persa?
-			</h2>
-			<p class="mb-12 text-[15px] sm:text-[20px]">
-				El pelaje largo del gato persa requiere cepillado diario para
-				evitar enredos y bolas de pelo. También se recomienda un baño
-				mensual y visitas regulares al veterinario.
-			</p>
-
-			<h2 class="text-2xl sm:text-3xl font-bold mb-2 text-[#FF6B6B]">
-				¿Los gatos persas necesitan muchos cuidados?
-			</h2>
-			<p class="mb-12 text-[15px] sm:text-[20px]">
-				Sí, requieren atención diaria: limpieza de ojos, alimentación
-				específica, cuidado del pelaje y un entorno tranquilo. Son gatos
-				tranquilos pero algo delicados.
-			</p>
-
-			<h2 class="text-2xl sm:text-3xl font-bold mb-2 text-[#FF6B6B]">
-				¿Qué comida es mejor para un gato persa?
-			</h2>
-			<p class="mb-12 text-[15px] sm:text-[20px]">
-				La mejor dieta es alta en proteínas, con croquetas diseñadas
-				para razas de cara plana. El agua siempre debe estar fresca.
-				Consulta con tu veterinario para recomendaciones específicas.
-			</p>
-
-			<h2 class="text-2xl sm:text-3xl font-bold mb-2 text-[#FF6B6B]">
-				¿Son buenos los gatos persas para familias con niños?
-			</h2>
-			<p class="mb-12 text-[15px] sm:text-[20px]">
-				Los gatos persas son muy tranquilos y cariñosos. Son ideales
-				para hogares con niños si se les respeta su espacio y
-				tranquilidad.
-			</p>
-
-			<h2 class="text-2xl sm:text-3xl font-bold mb-2 text-[#FF6B6B]">
-				¿Cuánto vive un gato persa?
-			</h2>
-			<p class="mb-12 text-[15px] sm:text-[20px]">
-				Un gato persa bien cuidado puede vivir entre 12 y 17 años,
-				incluso más si tiene buenos cuidados veterinarios y alimentación
-				adecuada.
-			</p>
-
-			<h2 class="text-2xl sm:text-3xl font-bold mb-2 text-[#FF6B6B]">
-				¿Qué diferencia hay entre un gato persa europeo, himalayo y
-				chinchilla?
-			</h2>
-			<p class="mb-12 text-[15px] sm:text-[20px]">
-				El persa europeo es el clásico de pelaje denso y cara plana. El
-				himalayo tiene puntos de color como los siameses. El chinchilla
-				es más claro y elegante, con ojos grandes y pelaje brillante.
-			</p>
+			{articles.map((articles) => (
+				<article class="flex flex-col xl:flex-row gap-14 items-center mb-6 hover:transform hover:scale-105 p-2 transition-all duration-300 ease-in-out">
+					<img src={articles.img.src} alt={articles.alt} class="p-2 h-75 w-75 object-cover rounded-lg bg-[#FF6B6B]"/>
+					<div>
+						<h2 class="text-2xl sm:text-3xl font-bold mb-2 text-[#FF6B6B]">{articles.h2}</h2>
+						<p class="mb-12 text-[15px] sm:text-[20px]">{articles.p}</p>
+					</div>
+				</article>
+			))}
 		</section>
 	</main>
 </Layout>

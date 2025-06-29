@@ -40,7 +40,7 @@
 .showImg {
     animation: showImg linear both;
     animation-timeline: view();
-    animation-range: entry 20% cover 50%;
+    animation-range: entry 10% cover 30%;
 }
 
 @keyframes showImg {
@@ -53,6 +53,30 @@
         opacity: 0;
         translate: 0 100px;
         scale: 0.8;
+    }
+}
+
+.pop {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+    animation: pop 0.5s ease-out forwards;
+}
+
+@keyframes pop {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.fadeInPage {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
     }
 }
 

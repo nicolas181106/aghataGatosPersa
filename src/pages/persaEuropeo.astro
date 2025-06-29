@@ -52,17 +52,84 @@ const gatos = [
 	description="Conoce al encantador Gato Persa Europeo, una raza conocida por su belleza y carácter dulce. Descubre más sobre esta maravillosa raza en nuestro criadero."
 	keywords="gato persa europeo, criadero de gatos persa, gatos persa en adopción"
 >
-	<div id="oddieClick" class="top-20 bottom-0 right-0 left-0 z-20 h-screen w-full items-center justify-center fixed flex opacity-0 scale-90 pointer-events-none transition-all duration-300 ease-in-out">
-		<img src={oddie.src} alt="Gato persa europeo" loading="lazy" class="h-85 w-85 sm:h-125 sm:w-125 object-cover bg-[#FF6B6B] rounded-2xl p-2"/>
+
+
+	<div id="oddieClick" class="
+		bg-white/90
+		p-6 rounded-lg shadow-2xl
+		max-w-[325px] md:max-w-[600px]
+		mx-auto
+		top-35 sm:top-70 bottom-0 right-0 left-0 z-100
+		h-[480px] md:h-[400px] w-full items-center justify-center
+		fixed flex flex-col md:flex-row opacity-0 scale-90
+		pointer-events-none transition-all duration-300 ease-in-out
+		gap-5 md:gap-12
+	">
+
+		<button id="oddieCerrar" aria-label="Cerrar" class="
+			absolute top-4 right-4 z-50
+			w-10 h-10 flex items-center justify-center
+			bg-[#FF6B6B] hover:bg-red-500 transition
+			text-white text-xl font-bold
+			rounded-full shadow-lg
+			cursor-pointer
+		">
+			✕
+		</button>
+
+		<img src={oddie.src} alt="Gato persa europeo" loading="lazy" class="
+			h-70 w-70 sm:h-75 sm:w-75
+			object-cover bg-[#FF6B6B]
+			rounded-2xl p-2
+		"/>
+
+		<div class="flex flex-col text-left text-lg lg:text-xl">
+			<p><strong>Oddie</strong></p>
+			<p><strong>Edad:</strong> 9 años</p>
+		</div>
 	</div>
-	<div id="blubeClick" class="top-20 bottom-0 right-0 left-0 z-20 h-screen w-full items-center justify-center fixed flex opacity-0 scale-90 pointer-events-none transition-all duration-300 ease-in-out">
-		<img src={blube.src} alt="Gato persa europeo" loading="lazy" class="h-85 w-85 sm:h-125 sm:w-125 object-cover bg-[#FF6B6B] rounded-2xl p-2"/>
+
+	<div id="blubeClick" class="
+		bg-white/90
+		p-6 rounded-lg shadow-2xl
+		max-w-[325px] md:max-w-[600px]
+		mx-auto
+		top-35 sm:top-70 bottom-0 right-0 left-0 z-100
+		h-[480px] md:h-[400px] w-full items-center justify-center
+		fixed flex flex-col md:flex-row opacity-0 scale-90
+		pointer-events-none transition-all duration-300 ease-in-out
+		gap-5 md:gap-12
+	">
+
+		<button id="blubeCerrar" aria-label="Cerrar" class="
+			absolute top-4 right-4 z-50
+			w-10 h-10 flex items-center justify-center
+			bg-[#FF6B6B] hover:bg-red-500 transition
+			text-white text-xl font-bold
+			rounded-full shadow-lg
+			cursor-pointer
+		">
+			✕
+		</button>
+
+		<img src={blube.src} alt="Gato persa europeo" loading="lazy" class="
+			h-70 w-70 sm:h-75 sm:w-75
+			object-cover bg-[#FF6B6B]
+			rounded-2xl p-2
+		"/>
+
+		<div class="flex flex-col text-left text-lg lg:text-xl">
+			<p><strong>Blue</strong></p>
+			<p><strong>Edad:</strong> 1 año</p>
+		</div>
 	</div>
-	<main class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen pb-30 relative">
+
+
+	<main class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen pb-30">
 		<div class="bg-[#FF6B6B] h-40 mt-30 flex items-center justify-center">
 			<h1 class="text-[30px] font-bold text-white">Gato persa europeo</h1>
 		</div>
-		<section class="max-w-[800px] mx-auto px-4 py-10 mt-10 flex flex-col sm:flex-row gap-12 justify-center items-center">
+		<section class="max-w-[800px] mx-auto px-4 py-10 mt-10 flex flex-col sm:flex-row gap-12 justify-center items-center pop">
 			<figure class="text-center hover:transform hover:scale-105 transition-all duration-300 ease-in-out hover:cursor-pointer" id="oddieImg">
 				<h2 class="text-2xl sm:text-3xl font-bold mb-2">Padre</h2>
 				<img src={oddie.src} alt="Padre gato persa europeo" loading="lazy" class="p-2 h-75 w-75 object-cover rounded-lg bg-[#FF6B6B]"/>
@@ -74,7 +141,7 @@ const gatos = [
 		</section>
 
 		{gatos.map((gato) => (
-			<article class="mt-20 px-4 flex flex-col md:flex-row justify-center items-center gap-12 lg:gap-20 bg-white/90 p-6 rounded-lg shadow-2xl max-w-[350px] md:max-w-[800px] mx-auto hover:transform hover:scale-105 transition-transform duration-300">
+			<article class="showImg mt-20 px-4 flex flex-col md:flex-row justify-center items-center gap-12 lg:gap-20 bg-white/90 p-6 rounded-lg shadow-2xl max-w-[350px] md:max-w-[800px] mx-auto hover:transform hover:scale-105 transition-transform duration-300">
 				<img src={gato.imgSrc.src} alt={gato.alt} loading="lazy" class="p-2 h-75 w-75 object-cover rounded-lg bg-[#FF6B6B]" />
 				<div class="flex flex-col text-left text-lg lg:text-xl">
 					<p><strong>Nombre:</strong> {gato.nombre}</p>
@@ -94,18 +161,19 @@ const gatos = [
 
 		<script src="../scripts/edad.js"></script>
 		<script>
-			gatoZoom("oddieImg", "oddieClick");
-			gatoZoom("blubeImg", "blubeClick");
+			gatoZoom("oddieImg", "oddieClick", "oddieCerrar");
+			gatoZoom("blubeImg", "blubeClick", "blubeCerrar");
 
-			function gatoZoom(gato: string, gatoImg: string) {
+			function gatoZoom(gato: string, gatoImg: string, gatoCerrar: string) {
 				const gatoConst = document.getElementById(gato);
 				const gatoImgConst = document.getElementById(gatoImg);
+				const gatoCerrarConst = document.getElementById(gatoCerrar);
 
 				gatoConst?.addEventListener("click", () => {
 					gatoImgConst?.classList.remove("opacity-0", "scale-90", "pointer-events-none");
 				});
 
-				gatoImgConst?.addEventListener("click", () => {
+				gatoCerrarConst?.addEventListener("click", () => {
 					gatoImgConst?.classList.add("opacity-0", "scale-90", "pointer-events-none");
 				});
 			}

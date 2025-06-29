@@ -33,12 +33,12 @@ const razas = [
 		</div>
 		<section arial-label="Selecciona una raza de gato persa">
 			<div class="max-w-screen-xl mx-auto px-4 py-10">
-				<h2 class="text-3xl font-bold mb-6 text-[#2E2E2E] ">Seleccione una raza</h2>
+				<h2 class="text-3xl font-bold mb-6 text-[#2E2E2E]">Seleccione una raza</h2>
 			</div>
 			<div class="flex flex-wrap justify-center gap-10 mt-10 max-w-screen-xl max-h-screen-xl mx-auto px-4">
 				{razas.map((razas) => (
 					<a href={razas.a}>
-						<article class="bg-[#FFE2E2] shadow-2xl p-2 h-100 border-3 rounded-lg flex items-center justify-start flex-col hover:transform hover:scale-105 transition-transform duration-300 hover:cursor-pointer">
+						<article class="pop bg-[#FFE2E2] shadow-2xl p-2 h-100 border-3 hover:border-[#FF6B6B] rounded-lg flex items-center justify-start flex-col hover:transform hover:scale-105 transition-transform duration-300 hover:cursor-pointer">
 							<img src={razas.imgSrc.src} alt={razas.alt} class="h-80 w-80 object-cover rounded-lg"/>
 							<div class="bg-[#FF6B6B] w-full text-center p-2 rounded-lg mt-2 pulsar">
 								<h1 class="text-2xl text-white">{razas.h1}</h1>
