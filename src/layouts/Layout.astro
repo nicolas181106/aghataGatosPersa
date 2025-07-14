@@ -1,11 +1,11 @@
 ---
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
+import Footer from "../components/footer.astro";
+import Header from "../components/header.astro";
+import Cookies from "../components/cookies.astro"
 import logo from "../assets/img/logoAnimated.png";
 import "../styles/global.css";
 
-const { title } = Astro.props;
-const { description } = Astro.props;
+const { title , description } = Astro.props;
 ---
 
 <!doctype html>
@@ -37,6 +37,7 @@ const { description } = Astro.props;
 	</head>
 	<body>
 		<Header />
+		<Cookies/>
 		<slot />
 		<Footer />
 	</body>
@@ -52,5 +53,6 @@ const { description } = Astro.props;
 		background: url(../assets/img/banner.png) fixed no-repeat center center;
 		background-size: cover;
 		scrollbar-color: #FF6B6B #2E2E2E;
+		cursor: url('/src/assets/img/svg/cursor.svg') 12 12, auto;
 	}
 </style>

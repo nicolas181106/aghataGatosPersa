@@ -1,5 +1,6 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../layouts/layout.astro";
+import CardClick from "../components/cardClick.astro";
 import img from "../assets/img/unknown.jpg";
 import oddie from "../assets/img/oddie.jpg";
 import ceres from "../assets/img/ceres.jpg";
@@ -49,96 +50,42 @@ const gatos = [
 	keywords="gato persa europeo, criadero de gatos persa, gatos persa en adopción"
 >
 
+	<CardClick
+		idClick="oddieClick"
+		idCerrar="oddieCerrar"
+		src={oddie.src}
+		alt={"Gato persa europeo macho"}
+		nombre={"Oddie"}
+		edad={9}
+	/>
 
-	<div id="oddieClick" class="
-		bg-white/90
-		p-6 rounded-lg shadow-2xl
-		max-w-[325px] md:max-w-[600px]
-		mx-auto
-		top-35 sm:top-70 bottom-0 right-0 left-0 z-100
-		h-[480px] md:h-[400px] w-full items-center justify-center
-		fixed flex flex-col md:flex-row opacity-0 scale-90
-		pointer-events-none transition-all duration-300 ease-in-out
-		gap-5 md:gap-12
-	">
-
-		<button id="oddieCerrar" aria-label="Cerrar" class="
-			absolute top-4 right-4 z-50
-			w-10 h-10 flex items-center justify-center
-			bg-[#FF6B6B] hover:bg-red-500 transition
-			text-white text-xl font-bold
-			rounded-full shadow-lg
-			cursor-pointer
-		">
-			✕
-		</button>
-
-		<img src={oddie.src} alt="Gato persa europeo" loading="lazy" class="
-			h-70 w-70 sm:h-75 sm:w-75
-			object-cover bg-[#FF6B6B]
-			rounded-2xl p-2
-		"/>
-
-		<div class="flex flex-col text-left text-lg lg:text-xl">
-			<p><strong>Oddie</strong></p>
-			<p><strong>Edad:</strong> 9 años</p>
-		</div>
-	</div>
-
-	<div id="ceresClick" class="
-		bg-white/90
-		p-6 rounded-lg shadow-2xl
-		max-w-[325px] md:max-w-[600px]
-		mx-auto
-		top-35 sm:top-70 bottom-0 right-0 left-0 z-100
-		h-[480px] md:h-[400px] w-full items-center justify-center
-		fixed flex flex-col md:flex-row opacity-0 scale-90
-		pointer-events-none transition-all duration-300 ease-in-out
-		gap-5 md:gap-12
-	">
-
-		<button id="ceresCerrar" aria-label="Cerrar" class="
-			absolute top-4 right-4 z-50
-			w-10 h-10 flex items-center justify-center
-			bg-[#FF6B6B] hover:bg-red-500 transition
-			text-white text-xl font-bold
-			rounded-full shadow-lg
-			cursor-pointer
-		">
-			✕
-		</button>
-
-		<img src={ceres.src} alt="Gato persa europeo" loading="lazy" class="
-			h-70 w-70 sm:h-75 sm:w-75
-			object-cover bg-[#FF6B6B]
-			rounded-2xl p-2
-		"/>
-
-		<div class="flex flex-col text-left text-lg lg:text-xl">
-			<p><strong>Ceres</strong></p>
-			<p><strong>Edad:</strong> 1 año</p>
-		</div>
-	</div>
-
+	<CardClick
+		idClick="ceresClick"
+		idCerrar="ceresCerrar"
+		src={ceres.src}
+		alt={"Gato persa chinchilla hembra"}
+		nombre={"Ceres"}
+		edad={1}
+	/>
 
 	<main class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen pb-30">
-		<div class="bg-[#FF6B6B] h-40 mt-30 flex items-center justify-center">
-			<h1 class="text-[30px] font-bold text-white">Gato persa chinchilla</h1>
+		<div class="bg-[#FF6B6B] h-40 mt-20 flex items-center justify-center">
+			<h1 class="text-[30px] font-bold text-white">Gato persa europeo</h1>
 		</div>
 		<section class="max-w-[800px] mx-auto px-4 py-10 mt-10 flex flex-col sm:flex-row gap-12 justify-center items-center pop">
 			<figure class="text-center hover:transform hover:scale-105 transition-all duration-300 ease-in-out hover:cursor-pointer" id="oddieImg">
 				<h2 class="text-2xl sm:text-3xl font-bold mb-2">Padre</h2>
-				<img src={oddie.src} alt="Padre gato persa europeo" loading="lazy" class="p-2 h-75 w-75 object-cover rounded-lg bg-[#FF6B6B]"/>
+				<img src={oddie.src} alt="Padre gato persa europeo" loading="lazy" class="p-2 h-75 w-75 object-cover rounded-2xl bg-[#FF6B6B]"/>
 			</figure>
 			<figure class="text-center hover:transform hover:scale-105 transition-all duration-300 ease-in-out hover:cursor-pointer" id="ceresImg">
 				<h2 class="text-2xl sm:text-3xl font-bold mb-2">Madre</h2>
-				<img src={ceres.src} alt="Madre gato persa europeo" loading="lazy" class="p-2 h-75 w-75 object-cover rounded-lg bg-[#FF6B6B]"/>
+				<img src={ceres.src} alt="Madre gato persa chinchilla" loading="lazy" class="p-2 h-75 w-75 object-cover rounded-2xl bg-[#FF6B6B]"/>
 			</figure>
 		</section>
 
 		{gatos.map((gato) => (
 			<article class="showImg mt-20 px-4 flex flex-col md:flex-row justify-center items-center gap-12 lg:gap-20 bg-white/90 p-6 rounded-lg shadow-2xl max-w-[350px] md:max-w-[800px] mx-auto hover:transform hover:scale-105 transition-transform duration-300">
-				<img src={gato.imgSrc.src} alt={gato.alt} loading="lazy" class="p-2 h-75 w-75 object-cover rounded-lg bg-[#FF6B6B]" />
+				<img src={gato.imgSrc.src} alt={gato.alt} loading="lazy" class="p-2 h-75 w-75 object-cover rounded-2xl bg-[#FF6B6B] hover:scale-105 transition-all duration-300 ease-in-out"/>
 				<div class="flex flex-col text-left text-lg lg:text-xl">
 					<p><strong>Nombre:</strong> {gato.nombre}</p>
 					<p><strong>Género:</strong> {gato.genero}</p>

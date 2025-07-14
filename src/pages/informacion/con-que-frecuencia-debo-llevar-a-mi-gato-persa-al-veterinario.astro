@@ -1,0 +1,99 @@
+---
+import Layout from "../../layouts/layout.astro";
+import imgDurmiendo from "./../../assets/img/gatoDurmiendo.jpg";
+import imgChequeo from "./../../assets/img/gato-veterinario.jpg";
+---
+
+<Layout
+    title="¿Con qué frecuencia debo llevar a mi gato persa al veterinario? - Ágatha gatos persa"
+    description="Frecuencia recomendada para las visitas veterinarias en gatos persas."
+    keywords="frecuencia veterinario gato persa, salud gato persa, cuidados veterinarios"
+>
+    <main class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen pb-10">
+        <div class="bg-[#FF6B6B] h-40 mt-20 flex items-center justify-center">
+            <h1 class="text-[30px] font-bold text-white text-center">
+                Con qué frecuencia debo llevar a mi gato persa al veterinario
+            </h1>
+        </div>
+
+        <section
+            aria-label="Frecuencia de visitas veterinarias"
+            class="max-w-[325px] sm:max-w-[600px] md:max-w-[700px] xl:max-w-[1000px] mx-auto p-6 sm:p-20 mt-10 bg-white/90 rounded-lg shadow-lg pop"
+        >
+            <img
+                src={imgDurmiendo.src}
+                alt="Gato persa en el veterinario"
+                class="float-left mr-6 mb-2 h-75 w-75 object-cover rounded-lg bg-[#FF6B6B] p-2 hover:transform hover:scale-105 transition-transform duration-300 ease-in-out"
+            />
+
+            <h2
+                class="text-[22px] sm:text-[26px] font-bold text-[#FF6B6B] mt-2 mb-4"
+            >
+                Chequeos generales anuales
+            </h2>
+            <p class="text-[15px] sm:text-[20px]">
+                Los gatos persas deben visitar al veterinario al menos una vez
+                al año para realizar un chequeo general, aplicar vacunas y
+                asegurarse de que todo esté bien con su salud. Estos controles
+                preventivos permiten detectar a tiempo cualquier anomalía que no
+                sea visible a simple vista.
+            </p>
+
+            <h2
+                class="text-[22px] sm:text-[26px] font-bold text-[#FF6B6B] mt-10 mb-4"
+            >
+                Atención ante señales de alerta
+            </h2>
+            <p class="text-[15px] sm:text-[20px]">
+                Si tu gato muestra cambios de comportamiento, pérdida de
+                apetito, pelaje apagado, letargo o cualquier signo inusual, no
+                esperes al siguiente chequeo: llévalo al veterinario lo antes
+                posible. Los gatos tienden a ocultar el malestar, por lo que
+                cada señal debe tomarse en serio.
+            </p>
+
+            <div class="w-full flex justify-center">
+                <img
+                    src={imgChequeo.src}
+                    alt="Chequeo veterinario de un gato persa"
+                    class="mt-8 max-w-full object-cover rounded-lg bg-[#FF6B6B] p-2 h-75 w-75 hover:transform hover:scale-105 transition-transform duration-300 ease-in-out"
+                />
+            </div>
+
+            <h2
+                class="text-[22px] sm:text-[26px] font-bold text-[#FF6B6B] mt-10 mb-4"
+            >
+                Gatos mayores y condiciones especiales
+            </h2>
+            <p class="text-[15px] sm:text-[20px]">
+                Los gatos mayores o aquellos con enfermedades crónicas deben
+                visitar al veterinario con más frecuencia, idealmente cada 6
+                meses. El seguimiento continuo garantiza que cualquier
+                complicación se trate rápidamente y que el gato mantenga una
+                buena calidad de vida.
+            </p>
+
+            <h2
+                class="text-[22px] sm:text-[26px] font-bold text-[#FF6B6B] mt-10 mb-4"
+            >
+                La prevención es la clave
+            </h2>
+            <p class="text-[15px] sm:text-[20px]">
+                Las visitas veterinarias no solo sirven para reaccionar ante
+                enfermedades, también son esenciales para prevenirlas. Aplicar
+                vacunas, desparasitaciones y revisiones regulares puede alargar
+                la vida de tu gato persa y mantenerlo feliz y saludable durante
+                muchos años.
+            </p>
+
+            <div class="w-full flex justify-end mt-8 text-[#FF6B6B]">
+                <a
+                    href="/informacion"
+                    class="hover:underline mt-4 px-4 py-2 rounded bg-[#FF6B6B]/10 hover:bg-[#FF6B6B]/20 transition-colors"
+                >
+                    ← Volver
+                </a>
+            </div>
+        </section>
+    </main>
+</Layout>

@@ -1,0 +1,100 @@
+---
+import Layout from "../../layouts/layout.astro";
+import imgComida from "./../../assets/img/gatoComiendo.jpg";
+import imgBol from "./../../assets/img/gato-comiendo2.jpg";
+---
+
+<Layout
+    title="¿Qué tipo de alimentación es mejor para un gato persa? - Ágatha gatos persa"
+    description="Recomendaciones sobre la alimentación adecuada para gatos persas."
+    keywords="alimentación gato persa, dieta gato persa, comida gato persa"
+>
+    <main class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen pb-10">
+        <div class="bg-[#FF6B6B] h-40 mt-20 flex items-center justify-center">
+            <h1 class="text-[30px] font-bold text-white text-center">
+                Qué tipo de alimentación es mejor para un gato persa
+            </h1>
+        </div>
+
+        <section
+            class="max-w-[325px] sm:max-w-[600px] md:max-w-[700px] xl:max-w-[1000px] mx-auto p-6 sm:p-20 mt-10 bg-white/90 rounded-lg shadow-lg pop"
+        >
+            <img
+                src={imgComida.src}
+                alt="Gato persa comiendo"
+                class="float-left mr-6 mb-2 h-75 w-75 sm:w-[300px] object-cover rounded-lg bg-[#FF6B6B] p-2 hover:scale-105 transition-transform duration-300 ease-in-out"
+            />
+
+            <h2
+                class="text-[22px] sm:text-[26px] font-bold text-[#FF6B6B] mt-2 mb-4"
+            >
+                Dieta rica en proteínas
+            </h2>
+            <p class="text-[15px] sm:text-[20px]">
+                Una alimentación adecuada es fundamental para la salud del gato
+                persa. Su dieta debe ser rica en proteínas de alta calidad para
+                mantener su musculatura y energía diaria. Opta por alimentos
+                formulados específicamente para razas de pelo largo, ya que
+                contienen ingredientes que ayudan a reducir las bolas de pelo y
+                mantienen el pelaje brillante.
+            </p>
+            <p class="text-[15px] sm:text-[20px] mt-10">
+                Algunas marcas recomendadas por
+                veterinarios incluyen Royal Canin Persian, Hill's Science Plan y
+                Purina Pro Plan, que ofrecen fórmulas equilibradas adaptadas a
+                las necesidades nutricionales de los gatos persas.
+            </p>
+
+            <h2
+                class="text-[22px] sm:text-[26px] font-bold text-[#FF6B6B] mt-10 mb-4"
+            >
+                Comida seca y húmeda: el equilibrio perfecto
+            </h2>
+            <p class="text-[15px] sm:text-[20px]">
+                La comida seca es ideal para mantener una buena salud dental, ya
+                que ayuda a prevenir la acumulación de sarro. Sin embargo,
+                complementar la dieta con comida húmeda una o dos veces por
+                semana es una excelente forma de mantener una correcta
+                hidratación, especialmente si el gato no bebe mucha agua por sí
+                solo. Algunas opciones de calidad en comida húmeda incluyen
+                Applaws y Almo Nature, que ofrecen productos naturales y altos
+                en contenido proteico.
+            </p>
+
+            <div class="w-full flex justify-center">
+                <img
+                    src={imgBol.src}
+                    alt="Bol de comida para gato persa"
+                    class="mt-8 max-w-full object-cover rounded-lg bg-[#FF6B6B] p-2 h-75 w-75 hover:scale-105 transition-transform duration-300 ease-in-out"
+                />
+            </div>
+
+            <h2
+                class="text-[22px] sm:text-[26px] font-bold text-[#FF6B6B] mt-10 mb-4"
+            >
+                Suplementos y agua siempre fresca
+            </h2>
+            <p class="text-[15px] sm:text-[20px]">
+                En algunos casos, puede ser beneficioso añadir suplementos
+                alimenticios a la dieta. Ácidos grasos esenciales como el omega
+                3 y omega 6 promueven un pelaje más brillante y una piel más
+                sana. Suplementos como Dermocanis Omega o Viacutan Plus son
+                recomendados por veterinarios para gatos con necesidades
+                especiales en la piel o el pelaje.
+                <br /><br />
+                Además, el agua debe estar siempre disponible, limpia y fresca. Una
+                fuente para gatos puede motivarlos a beber más, ayudando a prevenir
+                problemas urinarios, comunes en gatos de pelo largo.
+            </p>
+
+            <div class="w-full flex justify-end mt-8 text-[#FF6B6B]">
+                <a
+                    href="/informacion"
+                    class="hover:underline mt-4 px-4 py-2 rounded bg-[#FF6B6B]/10 hover:bg-[#FF6B6B]/20 transition-colors"
+                >
+                    ← Volver
+                </a>
+            </div>
+        </section>
+    </main>
+</Layout>

@@ -17,6 +17,21 @@
     animation: spinner-border 1s linear infinite;
 }
 
+.scrollCompletarPagina {
+    animation: scrollCompletarPagina linear both;
+    animation-timeline: scroll(root);
+}
+
+@keyframes scrollCompletarPagina {
+    to {
+       width: 100%;
+    }
+    from {
+        width: 0%;
+    }
+    
+}
+
 @keyframes spinner-border {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
