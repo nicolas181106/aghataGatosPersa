@@ -38,7 +38,7 @@ const articles = [
 ---
 
 <Layout
-	title="Información - Ágatha gatos persa"
+	title="Información | Ágatha Gatos Persas"
 	description="Información y preguntas frecuentes sobre gatos persa"
 	keywords="gatos persa, preguntas frecuentes, cuidados de gatos persa, información sobre gatos persa, preguntas frecuentes gatos persa"
 >
@@ -50,11 +50,11 @@ const articles = [
 		</div>
 		<section
 			arial-label="Preguntas frecuentes"
-			class="max-w-[325px] sm:max-w-[600px] md:max-w-[700px] xl:max-w-[1000px] 2xl:max-w-[1100px] mx-auto p-6 sm:p-20 mt-10 bg-white/90 rounded-lg shadow-lg pop"
+			class="max-w-[350px] sm:max-w-[600px] md:max-w-[700px] xl:max-w-[1000px] 2xl:max-w-[1300px] mx-auto p-6 sm:p-20 mt-10 bg-white/90 rounded-lg shadow-lg pop"
 		>
 			{articles.map((articles) => (
 				<a href={`/informacion/${articles.a}`} class="no-underline text-inherit">
-					<article class="flex flex-col xl:flex-row gap-14 items-center mb-6 hover:transform hover:scale-105 p-2 transition-all duration-300 ease-in-out">
+					<article class="flex flex-col xl:flex-row gap-14 items-center mb-6 hover:transform hover:scale-105 transition-all duration-300 ease-in-out">
 						<img src={articles.img.src} alt={articles.alt} class="p-2 h-75 w-75 object-cover rounded-lg bg-[#FF6B6B]"/>
 						<div>
 							<h2 class="text-2xl sm:text-3xl font-bold mb-2 text-[#FF6B6B]">{articles.h2}</h2>

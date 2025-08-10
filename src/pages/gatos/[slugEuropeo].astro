@@ -1,0 +1,56 @@
+---
+import Layout from "../../layouts/layout.astro";
+import { gatosEuropeo } from "../../scripts/gatos-europeo.js";
+
+export function getStaticPaths() {
+  return gatosEuropeo.map((gato) => ({
+    params: { slugEuropeo: gato.slugEuropeo },
+    props: { gato },
+  }));
+}
+
+const { slugEuropeo } = Astro.params;
+const gato = gatosEuropeo.find((g) => g.slugEuropeo === slugEuropeo);
+
+if (!gato) {
+  throw new Error(`Gato no encontrado: ${slugEuropeo}`);
+}
+---
+
+<Layout
+  title={`${gato.nombre} | Ágatha Gatos Persa`}
+  description={`Conoce a ${gato.nombre}, un adorable gato persa.`}
+>
+  <main class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen pb-10">
+    <div class="bg-[#FF6B6B] h-40 mt-20 flex items-center justify-center">
+      <h1 class="text-[30px] font-bold text-white text-center">
+        {gato.nombre}
+      </h1>
+    </div>
+    <section
+      aria-label="Perfil de gato"
+      class="max-w-[350px] sm:max-w-3xl mx-auto p-6 sm:p-12 mt-16 bg-white/80 backdrop-blur rounded-3xl shadow-xl border border-[#ffeaea]"
+    >
+      <div class="flex flex-col sm:flex-row items-center gap-8">
+        <img src={gato.imgSrc.src} alt={gato.nombre} class="w-64 h-64 rounded-xl object-cover ring-4 ring-[#FF6B6B] shadow-md"/>
+        <div class="text-center sm:text-left">
+          <h2 class="text-3xl font-semibold text-[#FF6B6B] mb-4">{gato.nombre}</h2>
+          <p class="text-xl mb-2">
+            <strong>Edad:</strong>
+            <span class="edad-gatito" data-nacimiento={gato.edad.toISOString()}></span>
+          </p>
+          <p class="text-xl"><strong>Género:</strong> {gato.genero}</p>
+        </div>
+      </div>
+
+      <div class="mt-8">
+        <p class="text-lg text-gray-800 leading-relaxed text-center sm:text-justify">{gato.texto}</p>
+      </div>
+
+      <div class="w-full flex justify-end mt-8 text-[#FF6B6B]">
+        <a href={`/persa-${gato.raza}`} class="hover:underline mt-4 px-4 py-2 rounded bg-[#FF6B6B]/10 hover:bg-[#FF6B6B]/20 transition-colors">← Volver</a>
+      </div>
+    </section>
+    <script src="../../scripts/edad.js"></script>
+  </main>
+</Layout>

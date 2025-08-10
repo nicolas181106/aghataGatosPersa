@@ -1,12 +1,42 @@
 ---
 import Layout from "../layouts/layout.astro";
 import logo2 from "../assets/img/logoAnimated.png";
+import imgIndex from "../assets/img/indeximg.jpg";
+import imgIndex2 from "../assets/img/indeximg2.jpg";
+import imgIndex3 from "../assets/img/indeximg3.jpg";
+import imgIndex4 from "../assets/img/indeximg4.jpg";
+import imgIndex5 from "../assets/img/indeximg5.jpg";
+import imgIndex6 from "../assets/img/indeximg6.jpg";
+import imgIndex7 from "../assets/img/indeximg7.jpg";
+import imgIndex8 from "../assets/img/indeximg8.jpg";
+import imgIndex9 from "../assets/img/indeximg9.jpg";
+import imgIndex10 from "../assets/img/indeximg10.jpg";
+import imgIndex11 from "../assets/img/indeximg11.jpg";
+import img2 from "../assets/img/osiris.jpg";
+import img3 from "../assets/img/anubis.jpg";
+
+const gatos = [
+	{
+		imgSrc: img2,
+		alt: "Gatito Osiris",
+		nombre: "Osiris",
+		genero: "Femenino",
+		edad: new Date("2025-06-22")
+	},
+	{
+		imgSrc: img3,
+		alt: "Gatito Anubis",
+		nombre: "Anubis",
+		genero: "Femenino",
+		edad: new Date("2025-06-22")
+	},
+];
 ---
 
 <Layout
-    title="Criadero de Gatos Persa - Ágatha Gatos Persa"
-    description="Bienvenido a Ágatha Gatos Persa, tu criadero de confianza para encontrar adorables gatos persa. Descubre nuestras razas y encuentra a tu nuevo compañero peludo."
-    keywords="gatos persa, criadero de gatos, gatos disponibles, gatos persa en adopción"
+    title="Criadero de Gatos Persas Sevilla | Ágatha Gatos Persas"
+    description="Adopta gatos persas en Sevilla y en toda España. En Ágatha Gatos Persa criamos con amor, responsabilidad y pasión por la raza. Gatitos disponibles todo el año."
+    keywords="gatos persas en adopcion, gatos en adopcion, gatos pequeños, gato himalayo, persa, adopcion, adopción de gatos, criador gatos persas, criadero gatos persas Sevilla, gato persa en adopción, adoptar gato persa, criador de gatos en España, gato persa, criador de gatos, criador de gatos persas andalucia"
 >
     <header
         class="relative h-[100vh] flex items-center justify-center text-white"
@@ -17,9 +47,11 @@ import logo2 from "../assets/img/logoAnimated.png";
                 alt="Logo de Ágatha Gatos Persa"
                 class="h-60 sm:h-80 mx-auto rounded-full shadow-2xl mb-6 bg-[#2E2E2E] p-2 border-2 border-[#FF6B6B] fadeInPage"
             />
-            <p class="text-lg max-w-[300px] sm:text-[23px] mb-6 sm:max-w-xl mx-auto p-2 text-[#2E2E2E] pop">
-                Criadero especializado en gatos persa. Amor, cuidado y elegancia
-                felina en cada camada.
+            <p
+                class="text-lg max-w-[300px] sm:text-[23px] mb-6 sm:max-w-xl mx-auto p-2 text-[#2E2E2E] pop"
+            >
+                Criadero especializado en gatos persas ubicado en Sevilla. Amor, cuidado y
+                elegancia felina en cada camada.
             </p>
             <a
                 href="/gatos-disponibles"
@@ -31,53 +63,92 @@ import logo2 from "../assets/img/logoAnimated.png";
     </header>
 
     <main class="bg-white/90 text-[#2E2E2E] pb-10 pt-10">
-        <section class="max-w-screen-xl mx-auto px-4 py-10 ">
-            <h2 class="text-3xl font-bold mb-6 text-[#FF6B6B]">
-                Bienvenido a nuestro criadero
+        <section class="max-w-screen-xl mx-auto px-4 py-12 mt-12 text-gray-800">
+            <h1 class="text-3xl font-bold mb-6 text-[#FF6B6B]">
+                Criadero de Gatos Persas en Sevilla y Envíos a Toda España
+            </h1>
+            <p class="mb-4 text-[15px] sm:text-[20px]">
+                En <strong>Ágatha Gatos Persa</strong> nos dedicamos a la cría responsable y familiar de gatos persas. Nuestro criadero en Sevilla destaca por la belleza, el temperamento y la salud de nuestros gatitos.
+            </p>
+            <p class="mb-4 text-[15px] sm:text-[20px]">
+                Si buscas <strong>adoptar un gato persa en Sevilla</strong> o desde cualquier parte de España, estás en el lugar indicado. Nuestros gatos crecen en un entorno familiar y reciben atención veterinaria desde el nacimiento.
+            </p>
+            <p class="mb-10 text-[15px] sm:text-[20px]">
+                Visita nuestra sección de <a href="/gatos-disponibles" class="text-[#FF6B6B] underline" title="Ver gatos persas disponibles">gatos disponibles</a> y descubre el gato persa en adopción perfecto para ti. ¡Reserva ya tu gato persa con nosotros!
+            </p>
+            <h2 class="text-2xl font-semibold mb-4 text-[#FF6B6B]">
+                ¿Por Qué Elegir un Gato Persa?
             </h2>
             <p class="mb-4 text-[15px] sm:text-[20px]">
-                En Ágatha Gatos Persa, nos dedicamos a criar gatos persa de alta
-                calidad. Nuestros gatos son criados con amor y cuidado,
-                asegurando que cada uno tenga una personalidad encantadora y un
-                pelaje hermoso.
-            </p>
-            <p class="mb-4 text-[15px] sm:text-[20px]">
-                Explora nuestras razas y descubre el gato persa perfecto para
-                ti. Desde el elegante Persa Europeo hasta el exótico Persa
-                Chinchilla, cada uno de nuestros gatos es único y especial.
-            </p>
-            <p class="mb-4 text-[15px] sm:text-[20px]">
-                Visita nuestra sección de <a
-                    href="/gatos-disponibles"
-                    class="text-[#FF6B6B] hover:underline">Gatos Disponibles</a
-                > para conocer a nuestros adorables felinos que están listos para
-                encontrar un nuevo hogar.
+                Los <strong>gatos persas</strong> son tranquilos, cariñosos y elegantes. Son ideales para hogares que valoran la calma y el afecto. Su pelaje largo y su carácter dócil los hacen únicos. Te ayudamos a cuidarlo desde el primer día.
             </p>
         </section>
-        <section class="max-w-screen-xl mx-auto px-4 py-10">
-            <h2 class="text-3xl font-bold mb-6 text-[#FF6B6B]">Sobre nosotros</h2>
-            <p class="mb-4 text-[15px] sm:text-[20px]">
-                Ágatha Gatos Persa es un criadero dedicado a la cría responsable
-                de gatos persa. Nuestro objetivo es proporcionar gatos sanos y
-                felices que se conviertan en miembros queridos de sus nuevas
-                familias.
-            </p>
-            <p class="mb-4 text-[15px] sm:text-[20px]">
-                Nos enorgullece ofrecer un ambiente amoroso y seguro para
-                nuestros gatos, asegurando que reciban la atención y el cuidado
-                que merecen. Cada gato es parte de nuestra familia y nos
-                esforzamos por encontrarles el hogar perfecto.
-            </p>
+        <section
+            class="max-w-screen-xl mx-auto px-4 py-10 justify-between flex max-md:flex-col mt-10"
+        >
+            <div class="w-full flex flex-col md:w-[50%] pr-0 md:pr-4">
+                <h1 class="text-3xl font-bold mb-6 text-[#FF6B6B]">
+                    Sobre nosotros
+                </h1>
+                <p class="mb-4 text-[15px] sm:text-[20px]">
+                    Ágatha Gatos Persas es un criadero dedicado a la cría
+                    responsable de gatos persas ubicado en Sevilla. Nuestro objetivo es proporcionar
+                    gatos sanos y felices que se conviertan en miembros queridos
+                    de sus nuevas familias.
+                </p>
+                <p class="mb-4 text-[15px] sm:text-[20px]">
+                    Nos enorgullece ofrecer un ambiente amoroso y seguro para
+                    nuestros gatos, asegurando que reciban la atención y el
+                    cuidado que merecen. Cada gato es parte de nuestra familia y
+                    nos esforzamos por encontrarles el hogar perfecto.
+                </p>
+            </div>
+            <div class="w-full md:w-[50%] overflow-hidden px-1 relative">
+                <div class="flex gap-4 transition-transform duration-700 slider-track">
+                    <img src={imgIndex.src} alt="" class="bg-[#FF6B6B] p-2 h-80 w-80 object-cover rounded-2xl" />
+                    <img src={imgIndex2.src} alt="" class="bg-[#FF6B6B] p-2 h-80 w-80 object-cover rounded-2xl" />
+                    <img src={imgIndex3.src} alt="" class="bg-[#FF6B6B] p-2 h-80 w-80 object-cover rounded-2xl" />
+                    <img src={imgIndex4.src} alt="" class="bg-[#FF6B6B] p-2 h-80 w-80 object-cover rounded-2xl" />
+                    <img src={imgIndex5.src} alt="" class="bg-[#FF6B6B] p-2 h-80 w-80 object-cover rounded-2xl" />
+                    <img src={imgIndex6.src} alt="" class="bg-[#FF6B6B] p-2 h-80 w-80 object-cover rounded-2xl" />
+                    <img src={imgIndex7.src} alt="" class="bg-[#FF6B6B] p-2 h-80 w-80 object-cover rounded-2xl" />
+                    <img src={imgIndex8.src} alt="" class="bg-[#FF6B6B] p-2 h-80 w-80 object-cover rounded-2xl" />
+                    <img src={imgIndex9.src} alt="" class="bg-[#FF6B6B] p-2 h-80 w-80 object-cover rounded-2xl" />
+                    <img src={imgIndex10.src} alt="" class="bg-[#FF6B6B] p-2 h-80 w-80 object-cover rounded-2xl" />
+                    <img src={imgIndex11.src} alt="" class="bg-[#FF6B6B] p-2 h-80 w-80 object-cover rounded-2xl" />
+                </div>
+            </div>
         </section>
-        <section class="max-w-screen-xl mx-auto px-4 py-10">
+        <section class="max-w-screen-xl mx-auto px-4 py-10 mt-10">
+            <h1 class="text-3xl font-bold mb-6 text-[#FF6B6B]">Nuevos Gatitos</h1>
+            <div class="w-full h-full flex justify-center items-center flex-wrap gap-10">
+                {gatos.map((gato) => (
+                    <article class="px-4 flex flex-col justify-center items-center gap-12 bg-white/90 p-6 rounded-2xl shadow-2xl max-w-[350px] md:max-w-[800px] hover:border-[1.5px] hover:bg-amber-200/10 hover:transform hover:-translate-y-2 transition-transform duration-300 hover:border-amber-300">
+                        <img src={gato.imgSrc.src} alt={gato.alt} loading="lazy" class="p-2 h-75 w-75 object-cover rounded-2xl bg-[#FF6B6B] "/>
+                        <div class="flex flex-col text-center text-lg lg:text-xl">
+                            <p><strong>Nombre:</strong> {gato.nombre}</p>
+                            <p><strong>Género:</strong> {gato.genero}</p>
+                            <p><strong>Edad:</strong> <span class="edad-gatito" data-nacimiento={gato.edad.toISOString()}>Calculando...</span></p>
+                            <div class="flex gap-4 mt-6 justify-center items-center">
+                                <a href="/contacto" class="text-sm sm:text-base inline-block hover:bg-[#FF6B6B] border-2 border-[#FF6B6B] text-[#FF6B6B] hover:text-white font-semibold py-2 px-4 rounded-full transition duration-300 shadow">
+                                    Adoptar gatito
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                ))}
+                <article class="flex flex-col justify-center items-center gap-12 bg-white/90 p-6 rounded-2xl shadow-2xl max-w-[350px] md:max-w-[800px] hover:transform hover:-translate-y-2 transition-transform duration-300 hover:border-[1.5px] hover:border-amber-300 hover:bg-amber-100/10">    
+                    <a href="/persa-chinchilla">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 24 24"><path fill="currentColor" d="M10 17V7l5 5z"/></svg>
+                    </a>
+                </article>
+            </div>
+        </section>
+        <script src="../scripts/edad.js"></script>
+        <section class="max-w-screen-xl mx-auto px-4 py-10 mt-10 mb-10">
             <h2 class="text-3xl font-bold mb-6 text-[#FF6B6B]">Contáctanos</h2>
             <p class="text-[15px] sm:text-[20px]">
-                Si estás interesado en uno de nuestros gatos o tienes
-                alguna pregunta, no dudes en <a
-                    href="/contacto"
-                    class="text-[#FF6B6B] hover:underline">contactarnos</a
-                >. Estamos aquí para ayudarte a encontrar el gato persa perfecto
-                para ti.
+                Si quieres <strong>adoptar un gato persa</strong>, tienes dudas sobre razas, o deseas información sobre disponibilidad y envío en España, no dudes en <a href="/contacto" class="text-[#FF6B6B] underline">contactarnos</a>. Estamos deseando ayudarte.
             </p>
         </section>
     </main>

@@ -19,12 +19,13 @@ const { title , description } = Astro.props;
 			content="gatos, persa, ágatha, criadero, gatos persa, gatos en adopción, gatos en venta, gatos en familia"
 		/>
 		<meta name="author" content="Nicolás Adrián Bernal Bermúdez" />
+		<meta name="google-site-verification" content="s0VQNm2tjEeD8Go7xJi3d3VYa0AAYv1QnVlOMysa2iY" />
 		<meta name="description" content={description} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://www.agathagatospersa.com" />
-		<meta property="og:image" content="/assets/img/banner.png" />
+		<meta property="og:url" content="https://agathagatospersa.netlify.app/" />
+		<meta property="og:image" content="https://agathagatospersa.netlify.app/assets/img/banner.png" />
 		<meta property="og:image:alt" content="Banner de Ágatha Gatos Persa" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:site" content="@AgathaGatosPersa" />
@@ -32,10 +33,14 @@ const { title , description } = Astro.props;
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content="/assets/img/banner.png" />
-		<meta name="twitter:image:alt" content="Banner de Ágatha Gatos Persa" />	
+		<meta name="twitter:image:alt" content="Banner de Ágatha Gatos Persa" />
+		<meta name="google-adsense-account" content="ca-pub-1412633306454408">
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1412633306454408" crossorigin="anonymous"></script>	
+		<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 		<title>{title}</title>
 	</head>
 	<body>
+		<amp-auto-ads type="adsense" data-ad-client="ca-pub-1412633306454408"></amp-auto-ads>
 		<Header />
 		<Cookies/>
 		<slot />
