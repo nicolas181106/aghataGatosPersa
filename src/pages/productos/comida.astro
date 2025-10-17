@@ -1,0 +1,107 @@
+---
+import Layout from "../../layouts/layout.astro";
+import art1 from "./../../assets/img/comida/art1.jpg";
+import art2 from "./../../assets/img/comida/art2.jpg";
+import art3 from "./../../assets/img/comida/art3.jpg";
+import art4 from "./../../assets/img/comida/art4.jpg";
+import art5 from "./../../assets/img/comida/art5.jpg";
+import art6 from "./../../assets/img/comida/art6.jpg";
+
+const comida = [
+  {
+    a: "https://amzn.to/47iYthf",
+    img: art1.src,
+    alt: "Comida húmeda Ultima Fit & Delicious para gatos persas esterilizados con pescado del océano",
+    h2: "Ultima Fit & Delicious Comida Húmeda para Gatos Esterilizados",
+    p: "Receta de mousse especialmente formulada para gatos adultos esterilizados. Elaborada con pescado del océano, ayuda a controlar el peso y mantener su masa muscular. Sin colorantes ni conservantes añadidos.",
+    precio: "20,06 €"
+  },
+  {
+    a: "https://amzn.to/474I278",
+    img: art2.src,
+    alt: "Alimento seco completo para gatos adultos con pollo, pavo y verduras by Amazon",
+    h2: "by Amazon – Alimento Seco Completo para Gatos Adultos con Pollo, Pavo y Verduras (3 kg)",
+    p: "Comida seca completa y equilibrada con pollo, pavo y verduras. Rica en proteínas y prebióticos naturales para una digestión saludable. Sin colorantes ni conservantes artificiales.",
+    precio: "6,31 €"
+  },
+  {
+    a: "https://amzn.to/4h2rCk2",
+    img: art3.src,
+    alt: "Pienso Nature's Variety Healthy Grains para gatos esterilizados adultos con pollo deshuesado",
+    h2: "Nature's Variety Healthy Grains – Pienso para Gatos Esterilizados con Pollo Deshuesado (3 kg)",
+    p: "Pienso natural para gatos esterilizados con pollo deshuesado. Ayuda a mantener un peso saludable y una digestión óptima. Sin conservantes artificiales.",
+    precio: "25,64 €"
+  },
+  {
+    a: "https://amzn.to/4mY4ggY",
+    img: art4.src,
+    alt: "Pienso Ultima Esterilizado Adult Pollo para gatos adultos 10kg",
+    h2: "Ultima Esterilizado Adult Pollo – Comida Seca para Gatos (10 kg)",
+    p: "Pienso para gatos esterilizados con pollo, ideal para el control del peso y el cuidado urinario. Con vitaminas y minerales que fortalecen dientes y huesos.",
+    precio: "37,90 €"
+  },
+  {
+    a: "https://amzn.to/3W5cGbn",
+    img: art5.src,
+    alt: "Pienso Brekkies para gatos con salmón, atún y verduras",
+    h2: "Brekkies – Pienso para Gatos con Salmón, Atún y Verduras (3,5 kg)",
+    p: "Pienso completo y equilibrado para gatos adultos con salmón, atún y verduras. Favorece la vitalidad, una digestión saludable y un pelaje brillante.",
+    precio: "9,21 €"
+  },
+  {
+    a: "https://amzn.to/3JcTPIz",
+    img: art6.src,
+    alt: "Comida húmeda Purina Gourmet Gold Delicias Suculentas para gatos con pollo",
+    h2: "Purina Gourmet Gold Delicias Suculentas – Comida Húmeda para Gatos con Pollo (24×85g)",
+    p: "Alimento completo y equilibrado con refinados cortes de pollo jugosos. Elaborado con ingredientes de alta calidad para una experiencia culinaria óptima y una digestión saludable.",
+    precio: "13,96 €"
+  }
+];
+---
+
+<Layout
+  title="Comida para Gatos Persas | Mejores Piensos y Comida Húmeda 2025"
+  description="Descubre la mejor comida para gatos persas: piensos, mousse y comida húmeda con ingredientes naturales. Recomendaciones de comida para gatos adultos, esterilizados y saludables, disponibles en Amazon."
+  keywords="comida para gatos persas, comida gatos, comida gato amazon, comida para gatos persa amazon, pienso gatos persas, alimentación gatos, comederos para gatos, comidas gatos, comida para gatos esterilizados, comida húmeda gato persa, catálogo comida gatos"
+>
+
+  <main class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen pb-16">
+    <div class="bg-[#FF6B6B] h-40 flex items-center justify-center mt-20">
+      <h1 class="text-3xl font-extrabold text-white text-center">
+        Comida para Gatos Persas
+      </h1>
+    </div>
+
+    <section class="max-w-[1300px] mx-auto p-6 sm:p-10 mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {comida.map((producto) => (
+        <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col pop hover:-translate-y-2 hover:border-[1px] hover:border-[#FF6B6B] border-transparent">
+          <div class="relative">
+            <img src={producto.img} alt={producto.alt} class="w-full h-64 object-cover rounded-t-2xl"/>
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h2 class="text-lg font-bold mb-1 text-[#FF6B6B]">{producto.h2}</h2>
+            <span class="text-md font-semibold text-gray-900 mb-2">{producto.precio}</span>
+            <p class="text-sm text-gray-700 flex-1">{producto.p}</p>
+            <a 
+              href={producto.a} 
+              target="_blank" 
+              rel="nofollow noopener noreferrer"
+              class="mt-4 inline-block bg-[#FF6B6B] text-white font-semibold py-2 px-4 rounded hover:bg-[#e55a5a] text-center transition-colors"
+            >
+              Comprar en Amazon →
+            </a>
+          </div>
+        </div>
+      ))}
+    </section>
+    <div class="w-full h-full flex justify-center items-center mt-10">
+      <a 
+        href="/productos" 
+        rel="nofollow noopener noreferrer"
+        class="mt-4 inline-block bg-[#FF6B6B] text-white font-semibold py-2 px-4 rounded hover:bg-[#e55a5a] text-center transition-colors text-2xl"
+        >
+        Ver más productos →
+      </a>
+    </div>
+  </main>
+</Layout>

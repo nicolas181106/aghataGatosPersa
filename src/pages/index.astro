@@ -1,9 +1,9 @@
 ---
 import Layout from "../layouts/layout.astro";
 import logo2 from "../assets/img/logoAnimated.png";
-import imgIndex from "../assets/img/indeximg.jpg";
+import imgIndex from "../assets/img/odin.jpg";
 import imgIndex2 from "../assets/img/indeximg2.jpg";
-import imgIndex3 from "../assets/img/indeximg3.jpg";
+import imgIndex3 from "../assets/img/sirius.jpg";
 import imgIndex4 from "../assets/img/indeximg4.jpg";
 import imgIndex5 from "../assets/img/indeximg5.jpg";
 import imgIndex6 from "../assets/img/indeximg6.jpg";
@@ -14,18 +14,16 @@ import imgIndex10 from "../assets/img/indeximg10.jpg";
 import imgIndex11 from "../assets/img/indeximg11.jpg";
 import img2 from "../assets/img/osiris.jpg";
 import img3 from "../assets/img/anubis.jpg";
+import slider from "../assets/img/sirius.jpg";
+import slider2 from "../assets/img/osiris.jpg";
+import slider3 from "../assets/img/remo.jpg";
+import slider4 from "../assets/img/oddie.jpg";
+import slider5 from "../assets/img/slider/slider5.png";
 
 const gatos = [
 	{
-		imgSrc: img2,
-		alt: "Gatito Osiris",
-		nombre: "Osiris",
-		genero: "Femenino",
-		edad: new Date("2025-06-22")
-	},
-	{
 		imgSrc: img3,
-		alt: "Gatito Anubis",
+		alt: "Gato persa himalayo en adopción Sevilla - Anubis",
 		nombre: "Anubis",
 		genero: "Femenino",
 		edad: new Date("2025-06-22")
@@ -34,9 +32,9 @@ const gatos = [
 ---
 
 <Layout
-    title="Criadero de Gatos Persas Sevilla | Ágatha Gatos Persas"
-    description="Adopta gatos persas en Sevilla y en toda España. En Ágatha Gatos Persa criamos con amor, responsabilidad y pasión por la raza. Gatitos disponibles todo el año."
-    keywords="gatos persas en adopcion, gatos en adopcion, gatos pequeños, gato himalayo, persa, adopcion, adopción de gatos, criador gatos persas, criadero gatos persas Sevilla, gato persa en adopción, adoptar gato persa, criador de gatos en España, gato persa, criador de gatos, criador de gatos persas andalucia"
+    title="Gatos Persas en Sevilla y España | Criadero Ágatha Gatos Persas"
+    description="Criadero de gatos persas en Sevilla con envíos a toda España. Especialistas en gatos persas chinchilla e himalayos. Adopta o compra tu gato persa con garantías y amor."
+    keywords="gatos angora, gatos persas, gato persa, adoptar gato persa, comprar gato persa, criadero gatos persas Sevilla, gatos persas España, gato persa chinchilla, gato persa himalayo, criador gatos persas Andalucía, adopción gato persa Sevilla, gato persa en adopción, gatos persas en venta, criadero persa chinchilla, criadero persa himalayo, gatos persas bebes, gato persa bebe"
 >
     <header
         class="relative h-[100vh] flex items-center justify-center text-white"
@@ -44,18 +42,18 @@ const gatos = [
         <div class="relative z-20 text-center">
             <img
                 src={logo2.src}
-                alt="Logo de Ágatha Gatos Persa"
+                alt="Logotipo oficial de Ágatha Gatos Persas - Criadero en Sevilla"
                 class="h-60 sm:h-80 mx-auto rounded-full shadow-2xl mb-6 bg-[#2E2E2E] p-2 border-2 border-[#FF6B6B] fadeInPage"
             />
             <p
                 class="text-lg max-w-[300px] sm:text-[23px] mb-6 sm:max-w-xl mx-auto p-2 text-[#2E2E2E] pop"
             >
-                Criadero especializado en gatos persas ubicado en Sevilla. Amor, cuidado y
-                elegancia felina en cada camada.
+                Criadero especializado en gatos persas, persas chinchilla, persas himalayos y angoras ubicado en Sevilla.
             </p>
             <a
                 href="/gatos-disponibles"
-                class="inline-block bg-[#FF6B6B] hover:bg-[#e65c5c] text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 shadow-lg pop"
+                class="inline-block bg-[#FF6B6B] hover:bg-[#e65c5c] hover:-translate-y-1 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 shadow-lg pop"
+                title="Ver gatos persas disponibles para adopción o compra"
             >
                 Ver Gatos Disponibles
             </a>
@@ -63,93 +61,343 @@ const gatos = [
     </header>
 
     <main class="bg-white/90 text-[#2E2E2E] pb-10 pt-10">
-        <section class="max-w-screen-xl mx-auto px-4 py-12 mt-12 text-gray-800">
-            <h1 class="text-3xl font-bold mb-6 text-[#FF6B6B]">
-                Criadero de Gatos Persas en Sevilla y Envíos a Toda España
-            </h1>
-            <p class="mb-4 text-[15px] sm:text-[20px]">
-                En <strong>Ágatha Gatos Persa</strong> nos dedicamos a la cría responsable y familiar de gatos persas. Nuestro criadero en Sevilla destaca por la belleza, el temperamento y la salud de nuestros gatitos.
-            </p>
-            <p class="mb-4 text-[15px] sm:text-[20px]">
-                Si buscas <strong>adoptar un gato persa en Sevilla</strong> o desde cualquier parte de España, estás en el lugar indicado. Nuestros gatos crecen en un entorno familiar y reciben atención veterinaria desde el nacimiento.
-            </p>
-            <p class="mb-10 text-[15px] sm:text-[20px]">
-                Visita nuestra sección de <a href="/gatos-disponibles" class="text-[#FF6B6B] underline" title="Ver gatos persas disponibles">gatos disponibles</a> y descubre el gato persa en adopción perfecto para ti. ¡Reserva ya tu gato persa con nosotros!
-            </p>
-            <h2 class="text-2xl font-semibold mb-4 text-[#FF6B6B]">
-                ¿Por Qué Elegir un Gato Persa?
-            </h2>
-            <p class="mb-4 text-[15px] sm:text-[20px]">
-                Los <strong>gatos persas</strong> son tranquilos, cariñosos y elegantes. Son ideales para hogares que valoran la calma y el afecto. Su pelaje largo y su carácter dócil los hacen únicos. Te ayudamos a cuidarlo desde el primer día.
-            </p>
-        </section>
-        <section
-            class="max-w-screen-xl mx-auto px-4 py-10 justify-between flex max-md:flex-col mt-10"
-        >
-            <div class="w-full flex flex-col md:w-[50%] pr-0 md:pr-4">
-                <h1 class="text-3xl font-bold mb-6 text-[#FF6B6B]">
-                    Sobre nosotros
+        <section class="max-w-7xl mx-auto px-4 py-20">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 text-[#FF6B6B] opacity-0 animate-fadeInUp">
+                    Criadero de Gatos Persas en Sevilla con Envíos a Toda España
                 </h1>
-                <p class="mb-4 text-[15px] sm:text-[20px]">
-                    Ágatha Gatos Persas es un criadero dedicado a la cría
-                    responsable de gatos persas ubicado en Sevilla. Nuestro objetivo es proporcionar
-                    gatos sanos y felices que se conviertan en miembros queridos
-                    de sus nuevas familias.
-                </p>
-                <p class="mb-4 text-[15px] sm:text-[20px]">
-                    Nos enorgullece ofrecer un ambiente amoroso y seguro para
-                    nuestros gatos, asegurando que reciban la atención y el
-                    cuidado que merecen. Cada gato es parte de nuestra familia y
-                    nos esforzamos por encontrarles el hogar perfecto.
+                <div class="w-32 h-1 bg-gradient-to-r from-[#FF6B6B] to-pink-400 mx-auto mb-8"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 opacity-0 animate-fadeInUp">
+                    <div class="text-4xl mb-4">🏠</div>
+                    <h3 class="text-xl font-bold mb-4 text-[#FF6B6B]">Hogar Familiar</h3>
+                    <p class="text-gray-700">
+                        En <strong>Ágatha Gatos Persas</strong> nos especializamos en la cría responsable de <strong>gatos persas</strong> de diferentes variedades, como el <strong>persa chinchilla</strong> y el <strong>persa himalayo</strong> o el <strong>gato angora</strong>. Cada uno de nuestros gatitos crece en un hogar lleno de amor y cuidado, garantizando salud, belleza y un temperamento equilibrado.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 opacity-0 animate-fadeInUp">
+                    <div class="text-4xl mb-4">🚚</div>
+                    <h3 class="text-xl font-bold mb-4 text-[#FF6B6B]">Envíos a España</h3>
+                    <p class="text-gray-700">
+                        Si buscas <strong>adoptar un gato persa en Sevilla</strong> o en cualquier ciudad de España, estás en el lugar correcto. Realizamos envíos seguros y rápidos, con todas las garantías veterinarias y documentación en regla.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 opacity-0 animate-fadeInUp">
+                    <div class="text-4xl mb-4">❤️</div>
+                    <h3 class="text-xl font-bold mb-4 text-[#FF6B6B]">Cuidado Personal</h3>
+                    <p class="text-gray-700">
+                        Visita nuestra sección de <a href="/gatos-disponibles" class="text-[#FF6B6B] underline font-semibold" title="Ver todos los gatos persas disponibles">gatos persas disponibles</a> y encuentra el compañero felino perfecto. Desde <strong>gatitos persas pequeños</strong> hasta adultos, cada uno recibe atención personalizada.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center bg-gradient-to-r from-[#FF6B6B] to-pink-400 text-white p-12 rounded-3xl shadow-2xl">
+                <h2 class="text-3xl font-bold mb-4">¿Por Qué Elegir un Gato Persa Chinchilla o Himalayo?</h2>
+                <p class="text-xl max-w-4xl mx-auto">
+                    Los gatos persas chinchilla y himalayos son ideales para quienes buscan un compañero cariñoso y de carácter equilibrado. Su belleza y dulzura los hacen únicos.
                 </p>
             </div>
-            <div class="w-full md:w-[50%] overflow-hidden px-1 relative">
-                <div class="flex gap-4 transition-transform duration-700 slider-track">
-                    <img src={imgIndex.src} alt="" class="bg-[#FF6B6B] p-2 h-80 w-80 object-cover rounded-2xl" />
-                    <img src={imgIndex2.src} alt="" class="bg-[#FF6B6B] p-2 h-80 w-80 object-cover rounded-2xl" />
-                    <img src={imgIndex3.src} alt="" class="bg-[#FF6B6B] p-2 h-80 w-80 object-cover rounded-2xl" />
-                    <img src={imgIndex4.src} alt="" class="bg-[#FF6B6B] p-2 h-80 w-80 object-cover rounded-2xl" />
-                    <img src={imgIndex5.src} alt="" class="bg-[#FF6B6B] p-2 h-80 w-80 object-cover rounded-2xl" />
-                    <img src={imgIndex6.src} alt="" class="bg-[#FF6B6B] p-2 h-80 w-80 object-cover rounded-2xl" />
-                    <img src={imgIndex7.src} alt="" class="bg-[#FF6B6B] p-2 h-80 w-80 object-cover rounded-2xl" />
-                    <img src={imgIndex8.src} alt="" class="bg-[#FF6B6B] p-2 h-80 w-80 object-cover rounded-2xl" />
-                    <img src={imgIndex9.src} alt="" class="bg-[#FF6B6B] p-2 h-80 w-80 object-cover rounded-2xl" />
-                    <img src={imgIndex10.src} alt="" class="bg-[#FF6B6B] p-2 h-80 w-80 object-cover rounded-2xl" />
-                    <img src={imgIndex11.src} alt="" class="bg-[#FF6B6B] p-2 h-80 w-80 object-cover rounded-2xl" />
+        </section>
+
+        <section class="w-full overflow-hidden px-1 relative py-20 bg-gradient-to-r from-gray-50 to-gray-100">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-[#FF6B6B] mb-6">Galería de Nuestros Gatos Persas</h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-[#FF6B6B] to-pink-400 mx-auto"></div>
+            </div>
+            
+            <div class="flex gap-4 slider-track">
+                <div class="gallery-item item">
+                    <img src={imgIndex.src} alt="Gato persa chinchilla Odín en Sevilla" class="gallery-image w-full h-full object-cover" />
+                    <div class="gallery-overlay">
+                        <p class="gallery-text">Odín</p>
+                    </div>
+                </div>
+                <div class="gallery-item item">
+                    <img src={imgIndex2.src} alt="Gato persa chinchilla Ceres disponible en España" class="gallery-image w-full h-full object-cover" />
+                    <div class="gallery-overlay">
+                        <p class="gallery-text">Persa Chinchilla Ceres</p>
+                    </div>
+                </div>
+                <div class="gallery-item item">
+                    <img src={imgIndex3.src} alt="Gato persa blanco Sirius en adopción" class="gallery-image w-full h-full object-cover" />
+                    <div class="gallery-overlay">
+                        <p class="gallery-text">Sirius</p>
+                    </div>
+                </div>
+                <div class="gallery-item item">
+                    <img src={imgIndex4.src} alt="Gato persa gris Oddie en Sevilla" class="gallery-image w-full h-full object-cover" />
+                    <div class="gallery-overlay">
+                        <p class="gallery-text">Oddie</p>
+                    </div>
+                </div>
+                <div class="gallery-item item">
+                    <img src={imgIndex5.src} alt="Gatos persas pequeños Oddie y Agatha en venta" class="gallery-image w-full h-full object-cover" />
+                    <div class="gallery-overlay">
+                        <p class="gallery-text">Oddie y Agatha</p>
+                    </div>
+                </div>
+                <div class="gallery-item item">
+                    <img src={imgIndex6.src} alt="Gato persa Bluey en adopción España" class="gallery-image w-full h-full object-cover" />
+                    <div class="gallery-overlay">
+                        <p class="gallery-text">Bluey</p>
+                    </div>
+                </div>
+                <div class="gallery-item item">
+                    <img src={imgIndex7.src} alt="Gato persa chinchilla blanco Agatha" class="gallery-image w-full h-full object-cover" />
+                    <div class="gallery-overlay">
+                        <p class="gallery-text">Agatha</p>
+                    </div>
+                </div>
+                <div class="gallery-item item">
+                    <img src={imgIndex8.src} alt="Gato persa marrón Oddie en adopción" class="gallery-image w-full h-full object-cover" />
+                    <div class="gallery-overlay">
+                        <p class="gallery-text">Oddie</p>
+                    </div>
+                </div>
+                <div class="gallery-item item">
+                    <img src={imgIndex9.src} alt="Gato persa Ceres en criadero Sevilla" class="gallery-image w-full h-full object-cover" />
+                    <div class="gallery-overlay">
+                        <p class="gallery-text">Ceres</p>
+                    </div>
+                </div>
+                <div class="gallery-item item">
+                    <img src={imgIndex10.src} alt="Gato persa adulto madre de Bluey en adopción" class="gallery-image w-full h-full object-cover" />
+                    <div class="gallery-overlay">
+                        <p class="gallery-text">Madre de Bluey</p>
+                    </div>
+                </div>
+                <div class="gallery-item item">
+                    <img src={imgIndex11.src} alt="Gato persa Himalayo padre de Bluey en venta" class="gallery-image w-full h-full object-cover" />
+                    <div class="gallery-overlay">
+                        <p class="gallery-text">Padre de Bluey</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item item">
+                    <img src={imgIndex.src} alt="Gato persa chinchilla Odín en Sevilla" class="gallery-image w-full h-full object-cover" />
+                    <div class="gallery-overlay">
+                        <p class="gallery-text">Odín</p>
+                    </div>
+                </div>
+                <div class="gallery-item item">
+                    <img src={imgIndex2.src} alt="Gato persa chinchilla Ceres disponible en España" class="gallery-image w-full h-full object-cover" />
+                    <div class="gallery-overlay">
+                        <p class="gallery-text">Persa Chinchilla Ceres</p>
+                    </div>
+                </div>
+                <div class="gallery-item item">
+                    <img src={imgIndex3.src} alt="Gato persa blanco Sirius en adopción" class="gallery-image w-full h-full object-cover" />
+                    <div class="gallery-overlay">
+                        <p class="gallery-text">Sirius</p>
+                    </div>
+                </div>
+                <div class="gallery-item item">
+                    <img src={imgIndex4.src} alt="Gato persa gris Oddie en Sevilla" class="gallery-image w-full h-full object-cover" />
+                    <div class="gallery-overlay">
+                        <p class="gallery-text">Oddie</p>
+                    </div>
+                </div>
+                <div class="gallery-item item">
+                    <img src={imgIndex5.src} alt="Gatos persas pequeños Oddie y Agatha en venta" class="gallery-image w-full h-full object-cover" />
+                    <div class="gallery-overlay">
+                        <p class="gallery-text">Oddie y Agatha</p>
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="max-w-screen-xl mx-auto px-4 py-10 mt-10">
-            <h1 class="text-3xl font-bold mb-6 text-[#FF6B6B]">Nuevos Gatitos</h1>
-            <div class="w-full h-full flex justify-center items-center flex-wrap gap-10">
+
+        <section class="max-w-7xl mx-auto px-4 py-20">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-4xl font-bold mb-6 text-[#FF6B6B]">
+                            Sobre Nuestro Criadero de Gatos Persas
+                        </h2>
+                        <div class="w-32 h-1 bg-gradient-to-r from-[#FF6B6B] to-pink-400 mb-8"></div>
+                    </div>
+                    
+                    <div class="space-y-6 text-lg leading-relaxed text-gray-700">
+                        <p class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-[#FF6B6B]">
+                            Ágatha Gatos Persas es un criadero registrado y especializado en la cría de <strong>gatos persas</strong> en Sevilla. Criamos persas chinchilla, himalayos y otras variedades, siempre priorizando su bienestar.
+                        </p>
+                        
+                        <p class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-pink-400">
+                            Cada camada es criada en un ambiente familiar, con seguimiento veterinario, vacunas al día y socialización desde el nacimiento. Nuestro compromiso es encontrarles un hogar donde sean amados y cuidados.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="modern-carousel w-full h-[500px] shadow-2xl overflow-hidden">
+                    <div class="carousel-slide active flex justify-center items-center bg-white">
+                        <img src={slider.src} alt="Gato persa en adopción Sevilla" class="w-[400px] h-auto object-cover"/>
+                    </div>
+                    <div class="carousel-slide flex justify-center items-center bg-white">
+                        <img src={slider2.src} alt="Gato persa en adopción Sevilla" class="w-[400px] h-auto object-cover"/>
+                    </div>
+                    <div class="carousel-slide flex justify-center items-center bg-white">
+                        <img src={slider3.src} alt="Gato persa en adopción Sevilla" class="w-[400px] h-auto object-cover"/>
+                    </div>
+                    <div class="carousel-slide flex justify-center items-center bg-white">
+                        <img src={slider4.src} alt="Gato persa en adopción Sevilla" class="w-[400px] h-auto object-cover"/>
+                    </div>
+                    <div class="carousel-slide flex justify-center items-center bg-white">
+                        <img src={slider5.src} alt="Gato persa en adopción Sevilla" class="w-[400px] h-auto object-cover"/>
+                    </div>
+                
+                <div class="absolute left-4 top-1/2 -translate-y-1/2">
+                    <button class="carousel-btn" onclick="previousSlide()">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="absolute right-4 top-1/2 -translate-y-1/2">
+                    <button class="carousel-btn" onclick="nextSlide()">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-3">
+                    <button class="carousel-dot active" onclick="currentSlide(1)"></button>
+                    <button class="carousel-dot" onclick="currentSlide(2)"></button>
+                    <button class="carousel-dot" onclick="currentSlide(3)"></button>
+                    <button class="carousel-dot" onclick="currentSlide(4)"></button>
+                    <button class="carousel-dot" onclick="currentSlide(5)"></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-4 py-20 bg-gradient-to-r from-gray-50 to-gray-100 w-full">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6 text-[#FF6B6B]">Nuevos Gatitos Persas Disponibles</h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-[#FF6B6B] to-pink-400 mx-auto"></div>
+            </div>
+            <div class="w-full h-full flex justify-center items-center flex-wrap gap-10 hidden">
                 {gatos.map((gato) => (
                     <article class="px-4 flex flex-col justify-center items-center gap-12 bg-white/90 p-6 rounded-2xl shadow-2xl max-w-[350px] md:max-w-[800px] hover:border-[1.5px] hover:bg-amber-200/10 hover:transform hover:-translate-y-2 transition-transform duration-300 hover:border-amber-300">
-                        <img src={gato.imgSrc.src} alt={gato.alt} loading="lazy" class="p-2 h-75 w-75 object-cover rounded-2xl bg-[#FF6B6B] "/>
+                        <img src={gato.imgSrc.src} alt={gato.alt} loading="lazy" class="p-2 h-75 w-75 object-cover rounded-2xl bg-[#FF6B6B]" />
                         <div class="flex flex-col text-center text-lg lg:text-xl">
                             <p><strong>Nombre:</strong> {gato.nombre}</p>
                             <p><strong>Género:</strong> {gato.genero}</p>
                             <p><strong>Edad:</strong> <span class="edad-gatito" data-nacimiento={gato.edad.toISOString()}>Calculando...</span></p>
                             <div class="flex gap-4 mt-6 justify-center items-center">
                                 <a href="/contacto" class="text-sm sm:text-base inline-block hover:bg-[#FF6B6B] border-2 border-[#FF6B6B] text-[#FF6B6B] hover:text-white font-semibold py-2 px-4 rounded-full transition duration-300 shadow">
-                                    Adoptar gatito
+                                    Adoptar gatito persa
                                 </a>
                             </div>
                         </div>
                     </article>
                 ))}
-                <article class="flex flex-col justify-center items-center gap-12 bg-white/90 p-6 rounded-2xl shadow-2xl max-w-[350px] md:max-w-[800px] hover:transform hover:-translate-y-2 transition-transform duration-300 hover:border-[1.5px] hover:border-amber-300 hover:bg-amber-100/10">    
-                    <a href="/persa-chinchilla">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 24 24"><path fill="currentColor" d="M10 17V7l5 5z"/></svg>
+                <article class="border-[#FF6B6B] border-[1.5px] text-[#FF6B6B] flex flex-col justify-center items-center gap-12 bg-white/90 p-6 rounded-2xl shadow-2xl max-w-[350px] md:max-w-[800px] hover:transform hover:-translate-y-2 transition-transform duration-300 hover:border-[1.5px] hover:border-amber-300 hover:bg-amber-100/10">    
+                    <a href="/persa-chinchilla" class="text-2xl font-bold" title="Ver gatos persas chinchilla en adopción">
+                        Ver más
                     </a>
                 </article>
             </div>
+            <div class="h-full py-20 flex flex-col items-center justify-center text-center px-4 pop">
+                <h2 class="text-3xl font-semibold mb-4">¡Ups! No hay gatitos disponibles 😿</h2>
+                <p class="text-lg text-gray-700 mb-6 max-w-xl">
+                    Actualmente todos nuestros gatitos están adoptados, pero puedes explorar nuestras camadas anteriores o dejarnos tu correo para avisarte cuando tengamos nuevos gatitos.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6">
+                    <a href="/camadas-anteriores" 
+                    class="inline-block bg-[#FF6B6B] hover:bg-[#e65c5c] text-white font-semibold py-3 px-6 rounded-full shadow transition duration-300">
+                    Ver camadas anteriores
+                    </a>
+                    <a href="/contacto" 
+                    class="inline-block border-2 border-[#FF6B6B] text-[#FF6B6B] hover:bg-[#FF6B6B] hover:text-white font-semibold py-3 px-6 rounded-full shadow transition duration-300">
+                    Avisarme cuando haya gatitos
+                    </a>
+                </div>
+			</div>
         </section>
+
         <script src="../scripts/edad.js"></script>
-        <section class="max-w-screen-xl mx-auto px-4 py-10 mt-10 mb-10">
-            <h2 class="text-3xl font-bold mb-6 text-[#FF6B6B]">Contáctanos</h2>
-            <p class="text-[15px] sm:text-[20px]">
-                Si quieres <strong>adoptar un gato persa</strong>, tienes dudas sobre razas, o deseas información sobre disponibilidad y envío en España, no dudes en <a href="/contacto" class="text-[#FF6B6B] underline">contactarnos</a>. Estamos deseando ayudarte.
-            </p>
+
+        <section class="max-w-7xl mx-auto px-4 py-20">
+            <div class="text-center bg-gradient-to-r from-[#FF6B6B] to-pink-400 text-white p-12 rounded-3xl shadow-2xl">
+                <h2 class="text-3xl font-bold mb-4">Contáctanos para Adoptar un Gato Persa</h2>
+                <p class="text-xl max-w-4xl mx-auto">
+                    Si buscas <strong>adoptar un gato persa</strong>, ya sea <strong>chinchilla</strong> o <strong>himalayo</strong>, en <strong>Sevilla</strong> o cualquier parte de <strong>España</strong>, contáctanos. Te asesoramos sobre cuidados, transporte y reserva de tu gatito.
+                    <br />Visita la sección de <a href="/contacto" class="hover:text-gray-300 underline transition-all">contacto</a> para más información.
+                </p>
+            </div>
         </section>
     </main>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "PetStore",
+        "name": "Ágatha Gatos Persas",
+        "image": "https://agathagatospersa.netlify.app/assets/img/logoAnimated.png",
+        "description": "Criadero especializado en gatos persas chinchilla e himalayos en Sevilla con envíos a toda España.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Sevilla",
+            "addressCountry": "ES"
+        },
+        "url": "https://agathagatospersa.netlify.app/",
+        "telephone": "+34 600 000 000",
+        "priceRange": "€€",
+        "areaServed": "España"
+    }
+    </script>
+
+    <script is:inline>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+            showSlide(currentSlideIndex);
+        }
+
+        function previousSlide() {
+            currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlideIndex);
+        }
+
+        function currentSlide(index) {
+            currentSlideIndex = index - 1;
+            showSlide(currentSlideIndex);
+        }
+
+        setInterval(nextSlide, 5000);
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.animation = entry.target.dataset.animation || 'fadeInUp 0.8s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.animate-fadeInUp');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
 </Layout>

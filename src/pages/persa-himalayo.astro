@@ -1,19 +1,33 @@
 ---
 import Layout from "../layouts/layout.astro";
+import { gatosHimalayo } from "../scripts/gatos-himalayo.js";
 ---
 
 <Layout
 	title="Gato persa himalayo | Ágatha Gatos Persas"
 	description="Conoce al encantador Gato Persa Himalayo, una raza única con un pelaje impresionante y una personalidad cariñosa. Descubre más sobre esta maravillosa raza en nuestro criadero."
 >
-	<section class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen">
+	<main class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen pb-30">
 		<div class="bg-[#FF6B6B] h-40 mt-20 flex items-center justify-center">
-			<h1 class="text-[30px] font-bold text-white">
-				Gato persa himalayo
-			</h1>
+			<h1 class="text-[30px] font-bold text-white">Gato persa himalayo</h1>
 		</div>
-		<div class="h-full py-20 flex items-center justify-center">
-			<h1 class="text-3xl">No hay gatos disponibles</h1>
-		</div>
-	</section>
+		{gatosHimalayo.length === 0 && (
+			<section class="h-full py-20 flex flex-col items-center justify-center text-center px-4 pop">
+			<h2 class="text-3xl font-semibold mb-4">¡Ups! No hay gatitos disponibles 😿</h2>
+			<p class="text-lg text-gray-700 mb-6 max-w-xl">
+				Actualmente todos nuestros gatitos himalayos están adoptados, pero puedes explorar nuestras camadas anteriores o dejarnos tu correo para avisarte cuando tengamos nuevos gatitos.
+			</p>
+			<div class="flex flex-col sm:flex-row gap-6 mb-10">
+				<a href="/camadas-anteriores" 
+				class="inline-block bg-[#FF6B6B] hover:bg-[#e65c5c] text-white font-semibold py-3 px-6 rounded-full shadow transition duration-300">
+				Ver camadas anteriores
+				</a>
+				<a href="/contacto" 
+				class="inline-block border-2 border-[#FF6B6B] text-[#FF6B6B] hover:bg-[#FF6B6B] hover:text-white font-semibold py-3 px-6 rounded-full shadow transition duration-300">
+				Avisarme cuando haya gatitos
+				</a>
+			</div>
+			</section>
+		)}
+	</main>
 </Layout>

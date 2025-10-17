@@ -9,9 +9,14 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/node": "^9.5.0",
     "@fontsource/balsamiq-sans": "^5.2.5",
+    "@supabase/supabase-js": "^2.75.0",
     "@tailwindcss/vite": "^4.1.6",
     "astro": "^5.6.2",
     "tailwindcss": "^4.1.6"
+  },
+  "devDependencies": {
+    "daisyui": "^5.1.26"
   }
 }
