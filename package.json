@@ -17,6 +17,7 @@
     "tailwindcss": "^4.1.6"
   },
   "devDependencies": {
+    "@astrojs/netlify": "^6.5.13",
     "daisyui": "^5.1.26"
   }
 }
