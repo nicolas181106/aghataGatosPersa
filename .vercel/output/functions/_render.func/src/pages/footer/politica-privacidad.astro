@@ -1,0 +1,53 @@
+---
+import Layout from "../../layouts/layout.astro";
+
+const articles = [
+	{
+		h1: "¿Qué datos recopilamos?",
+		p: "Este sitio no recopila datos personales de forma automática. Solo se recopilan datos si el usuario contacta voluntariamente."
+	},
+	{
+		h1: "Finalidad del tratamiento",
+		p: "Responder consultas o comunicaciones enviadas de forma voluntaria por el usuario."
+	},
+	{
+		h1: "Legitimación",
+		p: "Consentimiento del usuario al contactarnos."
+	},
+	{
+		h1: "Conservación de datos",
+		p: "Los datos enviados por correo o formulario se conservarán solo el tiempo necesario para responder la solicitud, y luego serán eliminados."
+	},
+	{
+		h1: "Cesiones",
+		p: "No se ceden datos a terceros."
+	},
+	{
+		h1: "Derechos",
+		p: "Puedes solicitar en cualquier momento el acceso, rectificación o eliminación de tus datos escribiendo a nuestro email."
+	},
+]
+---
+
+<Layout
+	title="Política de pivacidad | Ágatha Gatos Persas"
+	description="Política de privacidad de Ágatha Gatos Persas"
+	keywords="gatos persas, política de privacidad, política, privacidad"
+>
+	<main class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen pb-10">
+		<div class="bg-[#FF6B6B] h-40 mt-20 flex items-center justify-center">
+			<h1 class="text-[30px] font-bold text-white text-center">
+				Política de privacidad
+			</h1>
+		</div>
+		<section
+			arial-label="Política de privacidad"
+			class="max-w-[325px] sm:max-w-[600px] md:max-w-[700px] xl:max-w-[1000px] 2xl:max-w-[1100px] mx-auto p-6 sm:p-20 mt-10 bg-white/90 rounded-lg shadow-lg pop"
+		>
+			{articles.map((articles) => (
+				<h1 class="text-3xl font-bold mb-4 text-[#FF6B6B]">{articles.h1}</h1>
+				<p class="mb-8 text-[15px] sm:text-[20px]">{articles.p}</p>
+			))}
+		</section>
+	</main>
+</Layout>

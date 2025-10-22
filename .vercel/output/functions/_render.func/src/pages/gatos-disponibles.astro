@@ -1,0 +1,70 @@
+---
+import Layout from "../layouts/layout.astro";
+import img from "../assets/img/gato2.jpg";
+import img2 from "../assets/img/gato1.jpg";
+import img3 from "../assets/img/gato3.jpg";
+
+const razas = [
+	{
+		a: "../persa-europeo",
+		imgSrc: img,
+		alt: "Gato Persa Europeo",
+		h1: "Persa Europeo",
+	},
+	{
+		a: "../persa-chinchilla",
+		imgSrc: img2,
+		alt: "Gato Persa Chinchilla",
+		h1: "Persa Chinchilla",
+	},
+	{
+		a: "../persa-himalayo",
+		imgSrc: img3,
+		alt: "Gato Persa Himalayo",
+		h1: "Persa Himalayo",
+	},
+];
+---
+
+<Layout
+	title="Gatos disponibles | Ágatha Gatos Persas"
+	description="Descubre nuestros adorables gatos persa disponibles. Cada uno con su propia personalidad y encanto."
+	keywords="gatos persa, gatos disponibles, criadero de gatos persa"
+>
+	<main class="text-[#2E2E2E] min-h-screen pb-10 backdrop-blur-[5px]">
+		<div class="bg-[#FF6B6B] h-40 mt-20 flex items-center justify-center">
+			<h1 class="text-[30px] font-bold text-white">Gatos disponibles</h1>
+		</div>
+		<section arial-label="Selecciona una raza de gato persa">
+			<div class="max-w-screen-xl mx-auto px-4 py-10">
+				<h2 class="text-3xl font-bold mb-6 text-[#2E2E2E] text-[25px]">
+					Seleccione una raza
+				</h2>
+			</div>
+			<div
+				class="flex flex-wrap justify-center gap-10 mt-10 max-w-screen-xl max-h-screen-xl mx-auto px-4"
+			>
+				{
+					razas.map((razas) => (
+						<a href={razas.a}>
+							<article class="group pop bg-[#FFE2E2] shadow-2xl p-2 h-100 border-2 border-[#fb9898] hover:border-[#ff5858] rounded-lg flex items-center justify-start flex-col hover:transform hover:scale-105 transition-transform duration-300 hover:cursor-pointer">
+								<div class="overflow-hidden rounded-2xl">
+									<img
+										src={razas.imgSrc.src}
+										alt={razas.alt}
+										class="h-80 w-80 object-cover rounded-2xl group-hover:scale-105 transition-all duration-300 ease-in-out"
+									/>
+								</div>
+								<div class="bg-[#FF6B6B] w-full text-center p-2 rounded-lg mt-2 pulsar">
+									<h1 class="text-2xl text-white">
+										{razas.h1}
+									</h1>
+								</div>
+							</article>
+						</a>
+					))
+				}
+			</div>
+		</section>
+	</main>
+</Layout>

@@ -1,0 +1,73 @@
+---
+import Layout from "../../layouts/layout.astro";
+import imgGatoPelaje from "./../../assets/img/gatoConPelajePregunta.jpg";
+import imgGatoPelaje2 from "./../../assets/img/gato-persa-pelaje2.jpeg";
+---
+
+<Layout
+    title="Cómo cuidar el pelaje de un gato persa: consejos y trucos de expertos"
+    description="Descubre cómo mantener el pelaje de tu gato persa suave, brillante y sin enredos, con consejos de cepillado, baños, alimentación y más."
+>
+	<main class="backdrop-blur-[5px] min-h-screen mt-35 pb-10 max-sm:p-4">
+        <article class="max-w-[800px] mx-auto bg-white shadow-md rounded-lg overflow-hidden mt-5 sm:mt-20 pop">
+            <img
+                src={imgGatoPelaje.src}
+                alt="Gato persa con pelaje brillante"
+                class="w-full h-[280px] object-cover"
+            />
+
+            <div class="p-6">
+
+                <h1 class="text-3xl sm:text-4xl font-bold mb-3 text-gray-800 leading-tight">
+                    Cómo cuidar el pelaje de un gato persa: consejos y trucos de expertos
+                </h1>
+
+                <p class="text-lg text-gray-700 font-medium mb-6">
+                    El pelaje del gato persa es su corona, pero mantenerlo sedoso y libre de enredos requiere dedicación. Te contamos las mejores prácticas para que luzca siempre impecable.
+                </p>
+
+                <div class="prose max-w-none prose text-gray-800 leading-relaxed">
+                    <p>
+                        Con su manto largo y suave, el <strong>gato persa</strong> es una de las razas más admiradas en el mundo felino. Sin embargo, esa belleza requiere <strong>cuidados constantes</strong> para prevenir enredos, suciedad y pérdida de brillo.
+                    </p>
+
+                    <h2>El cepillado diario: la base de un pelaje perfecto</h2>
+                    <p>
+                        Cepillar a tu gato persa una vez al día evita la formación de nudos y bolas de pelo. Usa un cepillo de púas metálicas suaves y realiza movimientos lentos para no irritar la piel. Este hábito no solo mejora el aspecto del pelo, sino que también fortalece el vínculo con tu mascota.
+                    </p>
+
+                    <h2>Baños regulares con productos adecuados</h2>
+                    <p>
+                        Aunque no necesitan baños frecuentes, un lavado mensual con champú especial para pelo largo ayuda a mantenerlo limpio y brillante. Es importante secarlo bien para evitar humedad en la piel, usando una toalla y, si es necesario, un secador en modo suave.
+                    </p>
+
+                    <img
+                        src={imgGatoPelaje2.src}
+                        alt="Pelaje brillante de un gato persa después del cepillado"
+                        class="rounded-lg shadow-md w-full object-cover my-6"
+                    />
+
+                    <h2>La alimentación también influye</h2>
+                    <p>
+                        Una dieta rica en <strong>omega 3 y omega 6</strong> mantiene la piel saludable y el pelo más sedoso. Opta por piensos premium formulados para razas de pelo largo y consulta con tu veterinario sobre posibles suplementos.
+                    </p>
+
+                    <h2>Chequeos veterinarios: prevención ante todo</h2>
+                    <p>
+                        Revisiones regulares permiten detectar problemas de piel, alergias o parásitos a tiempo. Un pelaje opaco puede ser síntoma de problemas internos que necesitan atención profesional.
+                    </p>
+                </div>
+            </div>
+
+            <div class="w-full flex justify-end mt-8 text-[#FF6B6B] p-6">
+                <a
+                    href="/informacion"
+                    class="hover:underline mt-4 px-4 py-2 rounded bg-[#FF6B6B]/10 hover:bg-[#FF6B6B]/20 transition-colors"
+                >
+                    ← Volver
+                </a>
+            </div>
+
+        </article>
+    </main>
+</Layout>

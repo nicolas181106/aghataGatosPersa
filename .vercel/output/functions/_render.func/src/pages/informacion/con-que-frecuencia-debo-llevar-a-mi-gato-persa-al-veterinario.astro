@@ -1,0 +1,71 @@
+---
+import Layout from "../../layouts/layout.astro";
+import imgDurmiendo from "./../../assets/img/gatoDurmiendo.jpg";
+import imgChequeo from "./../../assets/img/gato-veterinario.jpg";
+---
+
+<Layout
+    title="Con qué frecuencia debo llevar a mi gato persa al veterinario"
+    description="Frecuencia recomendada para las visitas veterinarias en gatos persas y consejos para mantener su salud óptima."
+    keywords="frecuencia veterinario gato persa, salud gato persa, cuidados veterinarios"
+>
+    <main class="backdrop-blur-[5px] min-h-screen mt-35 pb-10 max-sm:p-4">
+        <article class="max-w-[800px] mx-auto bg-white shadow-md rounded-lg overflow-hidden mt-5 sm:mt-20 pop">
+            <img
+                src={imgDurmiendo.src}
+                alt="Gato persa descansando"
+                class="w-full h-[280px] object-cover"
+            />
+
+            <div class="p-6">
+                <h1 class="text-3xl sm:text-4xl font-bold mb-3 text-gray-800 leading-tight">
+                    Con qué frecuencia debo llevar a mi gato persa al veterinario
+                </h1>
+
+                <p class="text-lg text-gray-700 font-medium mb-6">
+                    Las visitas al veterinario son esenciales para asegurar la salud y bienestar de tu gato persa. Esta raza, por su constitución y características, requiere chequeos regulares para prevenir y detectar posibles problemas de salud a tiempo.
+                </p>
+
+                <div class="prose max-w-none prose-lg text-gray-800 leading-relaxed">
+                    <h2>Chequeos generales anuales</h2>
+                    <p>
+                        Los <strong>gatos persas</strong> deben acudir al veterinario al menos una vez al año. En estas revisiones se realizan exámenes físicos, se aplican vacunas necesarias y se evalúa el estado general de su salud.
+                        Estas visitas ayudan a detectar problemas que podrían pasar desapercibidos en casa.
+                    </p>
+
+                    <h2>Atención ante señales de alerta</h2>
+                    <p>
+                        Si tu gato presenta pérdida de apetito, cambios en el comportamiento, pelaje opaco, letargo o cualquier síntoma inusual, no esperes al próximo chequeo. Los gatos tienden a ocultar su malestar, por lo que actuar rápido puede marcar la diferencia.
+                    </p>
+
+                    <div class="my-6">
+                        <img
+                            src={imgChequeo.src}
+                            alt="Chequeo veterinario de un gato persa"
+                            class="rounded-lg shadow-md w-full object-cover"
+                        />
+                    </div>
+
+                    <h2>Gatos mayores y condiciones especiales</h2>
+                    <p>
+                        Si tu gato persa tiene más de 8 años o padece alguna enfermedad crónica, es recomendable aumentar la frecuencia de las visitas a cada seis meses. Un seguimiento cercano permite controlar mejor su estado y adaptar tratamientos de forma oportuna.
+                    </p>
+
+                    <h2>La prevención es la clave</h2>
+                    <p>
+                        Además de reaccionar ante problemas de salud, las visitas periódicas sirven para prevenir enfermedades. Las vacunas, desparasitaciones y controles preventivos son la base para que tu gato persa viva una vida larga y saludable.
+                    </p>
+                </div>
+            </div>
+
+            <div class="w-full flex justify-end mt-8 text-[#FF6B6B] p-6">
+                <a
+                    href="/informacion"
+                    class="hover:underline mt-4 px-4 py-2 rounded bg-[#FF6B6B]/10 hover:bg-[#FF6B6B]/20 transition-colors"
+                >
+                    ← Volver
+                </a>
+            </div>
+        </article>
+    </main>
+</Layout>
