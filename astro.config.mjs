@@ -1,7 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import tailwindcss from "@tailwindcss/vite";
-import netlify from '@astrojs/netlify/functions';
+import netlify from '@astrojs/netlify';
 import path from 'path';
 
 export default defineConfig({
@@ -11,10 +11,10 @@ export default defineConfig({
     plugins: [tailwindcss()],
     resolve: {
       alias: {
-        // your aliases should mirror the ones defined in your tsconfig.json
-        // i'll re-use the ones in the official docs:
         "@components": path.resolve(path.dirname(''), './src/components'),
-        "@assets": path.resolve(path.dirname(''), './src/assets')
+        "@assets": path.resolve(path.dirname(''), './src/assets'),
+        "@layouts": path.resolve(path.dirname(''), './src/layouts'),
+        "@scripts": path.resolve(path.dirname(''), './src/scripts')
       }
     }
   },
