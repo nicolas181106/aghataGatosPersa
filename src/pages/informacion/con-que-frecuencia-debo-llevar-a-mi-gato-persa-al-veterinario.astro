@@ -2,70 +2,200 @@
 import Layout from "../../layouts/layout.astro";
 import imgDurmiendo from "./../../assets/img/gatoDurmiendo.jpg";
 import imgChequeo from "./../../assets/img/gato-veterinario.jpg";
+
+const meta = {
+  date: "2025-01-15",
+  readTime: "6 min",
+};
 ---
 
 <Layout
-    title="Con qué frecuencia debo llevar a mi gato persa al veterinario"
-    description="Frecuencia recomendada para las visitas veterinarias en gatos persas y consejos para mantener su salud óptima."
-    keywords="frecuencia veterinario gato persa, salud gato persa, cuidados veterinarios"
+  title="Con qué frecuencia debo llevar a mi gato persa al veterinario"
+  description="Artículo claro sobre la frecuencia ideal de las visitas al veterinario en gatos persas, según su edad y estado de salud."
 >
-    <main class="backdrop-blur-[5px] min-h-screen mt-35 pb-10 max-sm:p-4">
-        <article class="max-w-[800px] mx-auto bg-white shadow-md rounded-lg overflow-hidden mt-5 sm:mt-20 pop">
-            <img
-                src={imgDurmiendo.src}
-                alt="Gato persa descansando"
-                class="w-full h-[280px] object-cover"
-            />
+  <main class="backdrop-blur-[5px] min-h-screen mt-35 pb-16 max-sm:px-4">
+    <article
+      class="max-w-[800px] mx-auto bg-white/98 shadow-lg rounded-3xl overflow-hidden mt-6 sm:mt-24 border border-[#FFE2E2]/70"
+    >
+      <header>
+        <div class="relative h-[220px] sm:h-[260px] overflow-hidden">
+          <img
+            src={imgDurmiendo.src}
+            alt="Gato persa descansando en casa"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
-            <div class="p-6">
-                <h1 class="text-3xl sm:text-4xl font-bold mb-3 text-gray-800 leading-tight">
-                    Con qué frecuencia debo llevar a mi gato persa al veterinario
-                </h1>
+          <nav class="absolute top-4 left-4 text-[11px] sm:text-xs text-white/90">
+            <a href="/" class="hover:underline">Inicio</a>
+            <span class="mx-1">/</span>
+            <a href="/informacion" class="hover:underline">Información</a>
+          </nav>
 
-                <p class="text-lg text-gray-700 font-medium mb-6">
-                    Las visitas al veterinario son esenciales para asegurar la salud y bienestar de tu gato persa. Esta raza, por su constitución y características, requiere chequeos regulares para prevenir y detectar posibles problemas de salud a tiempo.
-                </p>
+          <div class="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2 text-[11px] sm:text-xs text-white/90">
+            <span>
+              Publicado el{" "}
+              {new Date(meta.date).toLocaleDateString("es-ES", {
+                day: "2-digit",
+                month: "long",
+                year: "numeric",
+              })}
+            </span>
+            <span class="bg-black/35 px-3 py-1 rounded-full">
+              {meta.readTime} de lectura aproximada
+            </span>
+          </div>
+        </div>
 
-                <div class="prose max-w-none prose-lg text-gray-800 leading-relaxed">
-                    <h2>Chequeos generales anuales</h2>
-                    <p>
-                        Los <strong>gatos persas</strong> deben acudir al veterinario al menos una vez al año. En estas revisiones se realizan exámenes físicos, se aplican vacunas necesarias y se evalúa el estado general de su salud.
-                        Estas visitas ayudan a detectar problemas que podrían pasar desapercibidos en casa.
-                    </p>
+        <div class="px-6 sm:px-8 pt-6 pb-4">
+          <p class="text-[11px] sm:text-xs font-semibold tracking-[0.25em] text-[#FF6B6B] uppercase mb-2">
+            SALUD Y VETERINARIO
+          </p>
+          <h1 class="text-2xl sm:text-3xl md:text-[32px] font-bold leading-snug text-[#1F2933] mb-3">
+            Con qué frecuencia debo llevar a mi gato persa al veterinario
+          </h1>
+          <p class="text-[15px] sm:text-base text-gray-700 leading-relaxed">
+            Las visitas al veterinario suelen asociarse a vacunas o a momentos
+            de urgencia. Sin embargo, en el caso del gato persa, las revisiones
+            periódicas tienen un papel clave para detectar a tiempo problemas
+            que a simple vista pueden pasar desapercibidos.
+          </p>
+        </div>
+      </header>
 
-                    <h2>Atención ante señales de alerta</h2>
-                    <p>
-                        Si tu gato presenta pérdida de apetito, cambios en el comportamiento, pelaje opaco, letargo o cualquier síntoma inusual, no esperes al próximo chequeo. Los gatos tienden a ocultar su malestar, por lo que actuar rápido puede marcar la diferencia.
-                    </p>
+      <div class="px-6 sm:px-8 pb-2">
+        <hr class="border-[#FFE2E2]/80 mb-6" />
 
-                    <div class="my-6">
-                        <img
-                            src={imgChequeo.src}
-                            alt="Chequeo veterinario de un gato persa"
-                            class="rounded-lg shadow-md w-full object-cover"
-                        />
-                    </div>
+        <section class="space-y-6 text-[15px] sm:text-[16px] leading-relaxed text-gray-800">
+          <p>
+            Uno de los errores más frecuentes en la convivencia con gatos es
+            asumir que, si el animal come, bebe y parece tranquilo, todo va bien.
+            El <strong>gato persa</strong>, además, tiene cierta tendencia a
+            ocultar el malestar: reduce la actividad, duerme más y, en muchos
+            casos, nadie percibe que algo va mal hasta que el problema ya está
+            avanzado.
+          </p>
 
-                    <h2>Gatos mayores y condiciones especiales</h2>
-                    <p>
-                        Si tu gato persa tiene más de 8 años o padece alguna enfermedad crónica, es recomendable aumentar la frecuencia de las visitas a cada seis meses. Un seguimiento cercano permite controlar mejor su estado y adaptar tratamientos de forma oportuna.
-                    </p>
+          <p>
+            En este contexto, las visitas periódicas al veterinario dejan de ser
+            un trámite para convertirse en una herramienta de prevención. No se
+            trata solo de aplicar vacunas, sino de revisar boca, corazón,
+            respiración, piel, ojos y condición general con una mirada
+            profesional.
+          </p>
 
-                    <h2>La prevención es la clave</h2>
-                    <p>
-                        Además de reaccionar ante problemas de salud, las visitas periódicas sirven para prevenir enfermedades. Las vacunas, desparasitaciones y controles preventivos son la base para que tu gato persa viva una vida larga y saludable.
-                    </p>
-                </div>
-            </div>
+          <h2 class="text-xl sm:text-2xl font-semibold mt-8 mb-2 text-[#111827]">
+            Un mínimo: una revisión al año
+          </h2>
 
-            <div class="w-full flex justify-end mt-8 text-[#FF6B6B] p-6">
-                <a
-                    href="/informacion"
-                    class="hover:underline mt-4 px-4 py-2 rounded bg-[#FF6B6B]/10 hover:bg-[#FF6B6B]/20 transition-colors"
-                >
-                    ← Volver
-                </a>
-            </div>
-        </article>
-    </main>
+          <p>
+            En un gato persa adulto, sano y sin antecedentes relevantes, una
+            visita al año suele ser el mínimo razonable. Durante ese encuentro,
+            el veterinario actualiza el calendario de vacunación, valora el
+            peso, palpa el abdomen, ausculta y explora ojos, oídos y boca. Es
+            también el momento para plantear dudas sobre alimentación, cambios
+            de comportamiento o pequeñas molestias que, quizá, no justifican por
+            sí solas una consulta urgente.
+          </p>
+
+          <p>
+            Estas revisiones son especialmente útiles para detectar alteraciones
+            que el cuidador puede no apreciar en casa: soplos cardíacos incipientes,
+            problemas dentales, masas en etapas muy tempranas o alteraciones en
+            la piel escondidas bajo el pelaje.
+          </p>
+
+          <img
+            src={imgChequeo.src}
+            alt="Gato persa durante un chequeo veterinario"
+            class="rounded-xl shadow-md w-full object-cover my-6"
+          />
+
+          <h2 class="text-xl sm:text-2xl font-semibold mt-8 mb-2 text-[#111827]">
+            Gatos mayores y gatos con antecedentes
+          </h2>
+
+          <p>
+            A partir de cierta edad, el calendario conviene ajustarlo. Muchos
+            veterinarios recomiendan que un gato sea considerado “senior” en
+            torno a los 7–8 años. En el caso del persa, con predisposición a
+            ciertos problemas respiratorios, renales o cardíacos, esa prudencia
+            tiene sentido.
+          </p>
+
+          <p>
+            Para estos gatos mayores, dos revisiones al año permiten controlar
+            mejor la evolución de su estado general. En ocasiones, se añaden
+            analíticas de sangre y orina de rutina que ayudan a descubrir
+            alteraciones renales, hepáticas o metabólicas antes de que aparezcan
+            síntomas claros en casa.
+          </p>
+
+          <h2 class="text-xl sm:text-2xl font-semibold mt-8 mb-2 text-[#111827]">
+            Más allá del calendario: escuchar lo que el gato no dice
+          </h2>
+
+          <p>
+            Ninguna pauta fija sustituye al sentido común. Si un gato persa
+            empieza a comer menos, se esconde con frecuencia, respira con más
+            esfuerzo, vomita con regularidad o muestra cambios llamativos en su
+            carácter, no conviene esperar al “año” de la revisión. La visita
+            veterinaria, en esos casos, deja de ser preventiva para convertirse
+            en una consulta necesaria.
+          </p>
+
+          <p>
+            Los cambios en el pelaje —pérdida de brillo, caída excesiva,
+            aparición de caspa o zonas sin pelo— también merecen atención. A
+            veces, lo que parece un problema estético tiene detrás alergias,
+            alteraciones hormonales o enfermedades sistémicas que solo se
+            confirman con una exploración completa.
+          </p>
+
+          <p class="bg-[#FFF7F7] border-l-4 border-[#FF6B6B] px-4 py-3 rounded-md text-[14px] sm:text-[15px]">
+            Como guía general, cualquier cambio que se mantiene más de unos
+            pocos días, o que se repite con frecuencia, es un buen motivo para
+            pedir cita. Mejor descartar a tiempo que lamentar llegar tarde.
+          </p>
+
+          <h2 class="text-xl sm:text-2xl font-semibold mt-8 mb-2 text-[#111827]">
+            La visita como parte del cuidado, no solo como emergencia
+          </h2>
+
+          <p>
+            Acostumbrar al gato persa a visitas periódicas, aunque no haya una
+            urgencia evidente, ayuda también a normalizar la experiencia: el
+            transportín deja de ser sinónimo exclusivo de “algo grave ocurre”,
+            y el contacto con el personal veterinario se vive con menos estrés.
+          </p>
+
+          <p class="mt-6 text-[14px] sm:text-[15px] text-gray-700">
+            En definitiva, la frecuencia de las visitas al veterinario no se
+            resume en una cifra universal. Un mínimo de una revisión anual para
+            gatos jóvenes y sanos, revisiones semestrales para gatos mayores o
+            con antecedentes, y consultas puntuales ante cualquier cambio
+            llamativo conforman una base sólida para que el persa viva muchos
+            años en las mejores condiciones posibles.
+          </p>
+        </section>
+      </div>
+
+      <footer
+        class="w-full flex flex-wrap justify-between items-center gap-4 text-[#FF6B6B] px-6 sm:px-8 pb-6 pt-4 bg-white/95 border-t border-[#FFE2E2]/70"
+      >
+        <a
+          href="/informacion"
+          class="text-sm hover:underline px-4 py-2 rounded-full bg-[#FF6B6B]/10 hover:bg-[#FF6B6B]/20 transition-colors"
+        >
+          ← Volver al listado de artículos
+        </a>
+        <a
+          href="/contacto"
+          class="text-sm font-semibold hover:underline px-4 py-2 rounded-full bg-[#FF6B6B] text-white hover:bg-[#e65c5c] transition-colors"
+        >
+          Pedir cita o resolver dudas veterinarias
+        </a>
+      </footer>
+    </article>
+  </main>
 </Layout>

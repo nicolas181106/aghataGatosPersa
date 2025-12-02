@@ -2,14 +2,19 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from "@tailwindcss/vite";
 import netlify from '@astrojs/netlify';
-import path from 'path';
 
 export default defineConfig({
-  output: 'server',
-  adapter: netlify({}),
   vite: {
-    plugins: [tailwindcss()],
-    resolve: {
+    plugins: [tailwindcss()],    
+  },
+});
+
+
+/*
+output: 'static',
+adapter: netlify({}),
+
+resolve: {
       alias: {
         "@components": path.resolve(path.dirname(''), './src/components'),
         "@assets": path.resolve(path.dirname(''), './src/assets'),
@@ -17,6 +22,5 @@ export default defineConfig({
         "@scripts": path.resolve(path.dirname(''), './src/scripts')
       }
     }
-  },
-  
-});
+
+*/

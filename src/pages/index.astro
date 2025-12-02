@@ -5,13 +5,13 @@ import imgIndex from "../assets/img/odin.jpg";
 import imgIndex2 from "../assets/img/indeximg2.jpg";
 import imgIndex3 from "../assets/img/sirius.jpg";
 import imgIndex4 from "../assets/img/indeximg4.jpg";
-import imgIndex5 from "../assets/img/indeximg5.jpg";
-import imgIndex6 from "../assets/img/indeximg6.jpg";
-import imgIndex7 from "../assets/img/indeximg7.jpg";
 import imgIndex8 from "../assets/img/indeximg8.jpg";
 import imgIndex9 from "../assets/img/indeximg9.jpg";
 import imgIndex10 from "../assets/img/indeximg10.jpg";
 import imgIndex11 from "../assets/img/indeximg11.jpg";
+import imgIndex12 from "../assets/img/indeximg12.jpg";
+import imgIndex13 from "../assets/img/indeximg13.jpg";
+import imgIndex14 from "../assets/img/indeximg14.jpg";
 import img2 from "../assets/img/osiris.jpg";
 import img3 from "../assets/img/anubis.jpg";
 import slider from "../assets/img/sirius.jpg";
@@ -19,6 +19,7 @@ import slider2 from "../assets/img/osiris.jpg";
 import slider3 from "../assets/img/remo.jpg";
 import slider4 from "../assets/img/oddie.jpg";
 import slider5 from "../assets/img/slider/slider5.png";
+import slider6 from "../assets/img/atlas.jpg";
 
 const gatos = [
 	{
@@ -90,7 +91,7 @@ const gatos = [
                     <div class="text-4xl mb-4">❤️</div>
                     <h3 class="text-xl font-bold mb-4 text-[#FF6B6B]">Cuidado Personal</h3>
                     <p class="text-gray-700">
-                        Visita nuestra sección de <a href="/gatos-disponibles" class="text-[#FF6B6B] underline font-semibold" title="Ver todos los gatos persas disponibles">gatos persas disponibles</a> y encuentra el compañero felino perfecto. Desde <strong>gatitos persas pequeños</strong> hasta adultos, cada uno recibe atención personalizada.
+                        Visita nuestra sección de <a href="/gatos-disponibles" class="text-[#FF6B6B] underline font-semibold" title="Ver todos los gatos persas disponibles">gatos persas disponibles</a> y encuentra el compañero felino perfecto.
                     </p>
                 </div>
             </div>
@@ -135,27 +136,27 @@ const gatos = [
                     </div>
                 </div>
                 <div class="gallery-item item">
-                    <img src={imgIndex5.src} alt="Gatos persas pequeños Oddie y Agatha en venta" class="gallery-image w-full h-full object-cover" />
+                    <img src={imgIndex13.src} alt="Gatos persas pequeños Oddie y Agatha en venta" class="gallery-image w-full h-full object-cover" />
                     <div class="gallery-overlay">
-                        <p class="gallery-text">Oddie y Agatha</p>
+                        <p class="gallery-text">Remo</p>
                     </div>
                 </div>
                 <div class="gallery-item item">
-                    <img src={imgIndex6.src} alt="Gato persa Bluey en adopción España" class="gallery-image w-full h-full object-cover" />
+                    <img src={imgIndex14.src} alt="Gato persa Bluey en adopción España" class="gallery-image w-full h-full object-cover" />
                     <div class="gallery-overlay">
                         <p class="gallery-text">Bluey</p>
                     </div>
                 </div>
                 <div class="gallery-item item">
-                    <img src={imgIndex7.src} alt="Gato persa chinchilla blanco Agatha" class="gallery-image w-full h-full object-cover" />
+                    <img src={imgIndex12.src} alt="Gato persa chinchilla blanco Agatha" class="gallery-image w-full h-full object-cover" />
                     <div class="gallery-overlay">
-                        <p class="gallery-text">Agatha</p>
+                        <p class="gallery-text">Rómulo</p>
                     </div>
                 </div>
                 <div class="gallery-item item">
                     <img src={imgIndex8.src} alt="Gato persa marrón Oddie en adopción" class="gallery-image w-full h-full object-cover" />
                     <div class="gallery-overlay">
-                        <p class="gallery-text">Oddie</p>
+                        <p class="gallery-text">Atlas</p>
                     </div>
                 </div>
                 <div class="gallery-item item">
@@ -202,9 +203,9 @@ const gatos = [
                     </div>
                 </div>
                 <div class="gallery-item item">
-                    <img src={imgIndex5.src} alt="Gatos persas pequeños Oddie y Agatha en venta" class="gallery-image w-full h-full object-cover" />
+                    <img src={imgIndex13.src} alt="Gatos persas pequeños Oddie y Agatha en venta" class="gallery-image w-full h-full object-cover" />
                     <div class="gallery-overlay">
-                        <p class="gallery-text">Oddie y Agatha</p>
+                        <p class="gallery-text">Remo</p>
                     </div>
                 </div>
             </div>
@@ -247,6 +248,9 @@ const gatos = [
                     <div class="carousel-slide flex justify-center items-center bg-white">
                         <img src={slider5.src} alt="Gato persa en adopción Sevilla" class="w-[400px] h-auto object-cover"/>
                     </div>
+                    <div class="carousel-slide flex justify-center items-center bg-white">
+                        <img src={slider6.src} alt="Gato persa en adopción Sevilla" class="w-[400px] h-auto object-cover"/>
+                    </div>
                 
                 <div class="absolute left-4 top-1/2 -translate-y-1/2">
                     <button class="carousel-btn" onclick="previousSlide()">
@@ -269,6 +273,7 @@ const gatos = [
                     <button class="carousel-dot" onclick="currentSlide(3)"></button>
                     <button class="carousel-dot" onclick="currentSlide(4)"></button>
                     <button class="carousel-dot" onclick="currentSlide(5)"></button>
+                    <button class="carousel-dot" onclick="currentSlide(6)"></button>
                 </div>
             </div>
         </section>
@@ -278,7 +283,7 @@ const gatos = [
                 <h2 class="text-4xl font-bold mb-6 text-[#FF6B6B]">Nuevos Gatitos Persas Disponibles</h2>
                 <div class="w-32 h-1 bg-gradient-to-r from-[#FF6B6B] to-pink-400 mx-auto"></div>
             </div>
-            <div class="w-full h-full flex justify-center items-center flex-wrap gap-10 hidden">
+            <div class="w-full h-full flex justify-center items-center flex-wrap gap-10">
                 {gatos.map((gato) => (
                     <article class="px-4 flex flex-col justify-center items-center gap-12 bg-white/90 p-6 rounded-2xl shadow-2xl max-w-[350px] md:max-w-[800px] hover:border-[1.5px] hover:bg-amber-200/10 hover:transform hover:-translate-y-2 transition-transform duration-300 hover:border-amber-300">
                         <img src={gato.imgSrc.src} alt={gato.alt} loading="lazy" class="p-2 h-75 w-75 object-cover rounded-2xl bg-[#FF6B6B]" />
@@ -295,12 +300,12 @@ const gatos = [
                     </article>
                 ))}
                 <article class="border-[#FF6B6B] border-[1.5px] text-[#FF6B6B] flex flex-col justify-center items-center gap-12 bg-white/90 p-6 rounded-2xl shadow-2xl max-w-[350px] md:max-w-[800px] hover:transform hover:-translate-y-2 transition-transform duration-300 hover:border-[1.5px] hover:border-amber-300 hover:bg-amber-100/10">    
-                    <a href="/persa-chinchilla" class="text-2xl font-bold" title="Ver gatos persas chinchilla en adopción">
+                    <a href="/persa-europeo" class="text-2xl font-bold" title="Ver gatos persas chinchilla en adopción">
                         Ver más
                     </a>
                 </article>
             </div>
-            <div class="h-full py-20 flex flex-col items-center justify-center text-center px-4 pop">
+            <div class="h-full py-20 flex flex-col items-center justify-center text-center px-4 pop hidden">
                 <h2 class="text-3xl font-semibold mb-4">¡Ups! No hay gatitos disponibles 😿</h2>
                 <p class="text-lg text-gray-700 mb-6 max-w-xl">
                     Actualmente todos nuestros gatitos están adoptados, pero puedes explorar nuestras camadas anteriores o dejarnos tu correo para avisarte cuando tengamos nuevos gatitos.

@@ -1,3 +1,48 @@
+import unknown from "../assets/img/unknown.jpg";
 
 export const gatosEuropeo = [
+    {
+        name: "Apolo",
+        gender: "Macho",
+        birth: "2025-12-02",
+        img: unknown.src,
+        img2: unknown.src,
+        alt: "",
+        slugEuropeo: "apolo",
+        text: "Apolo",
+        raza: "europeo",
+    },
+    {
+        name: "",
+        gender: "",
+        birth: "2025-12-02",
+        img: unknown.src,
+        img2: unknown.src,
+        alt: "",
+        slugEuropeo: "gato-europeo-2",
+        text: "",
+        raza: "europeo",
+    },
+    {
+        name: "",
+        gender: "",
+        birth: "2025-12-02",
+        img: unknown.src,
+        img2: unknown.src,
+        alt: "",
+        slugEuropeo: "gato-europeo-3",
+        text: "",
+        raza: "europeo",
+    },
+    {
+        name: "",
+        gender: "",
+        birth: "2025-12-02",
+        img: unknown.src,
+        img2: unknown.src,
+        alt: "",
+        slugEuropeo: "gato-europeo-4",
+        text: "",
+        raza: "europeo",
+    },
 ];

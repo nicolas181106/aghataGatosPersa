@@ -10,60 +10,140 @@ const razas = [
 		imgSrc: img,
 		alt: "Gato Persa Europeo",
 		h1: "Persa Europeo",
+		description:
+			"Equilibrado, dulce y muy familiar; perfecto si buscas un persa tranquilo y cariñoso.",
 	},
 	{
 		a: "../persa-chinchilla",
 		imgSrc: img2,
 		alt: "Gato Persa Chinchilla",
 		h1: "Persa Chinchilla",
+		description:
+			"Pelaje muy luminoso y carácter calmado; ideal para hogares relajados y silenciosos.",
 	},
 	{
 		a: "../persa-himalayo",
 		imgSrc: img3,
 		alt: "Gato Persa Himalayo",
 		h1: "Persa Himalayo",
+		description:
+			"Elegante, expresivo y tierno, con un toque exótico en su coloración point.",
 	},
 ];
 ---
 
 <Layout
-	title="Gatos disponibles | Ágatha Gatos Persas"
-	description="Descubre nuestros adorables gatos persa disponibles. Cada uno con su propia personalidad y encanto."
-	keywords="gatos persa, gatos disponibles, criadero de gatos persa"
+	title="Gatos persas por raza | Ágatha Gatos Persas"
+	description="Conoce las razas de gatos persas que criamos en Sevilla: persa europeo, persa chinchilla y persa himalayo, con envíos a toda España."
+	keywords="gato persa chinchilla, gato persa himalayo, gato persa europeo, criadero gatos persas Sevilla, gatos persas España"
 >
-	<main class="text-[#2E2E2E] min-h-screen pb-10 backdrop-blur-[5px]">
-		<div class="bg-[#FF6B6B] h-40 mt-20 flex items-center justify-center">
-			<h1 class="text-[30px] font-bold text-white">Gatos disponibles</h1>
-		</div>
-		<section arial-label="Selecciona una raza de gato persa">
-			<div class="max-w-screen-xl mx-auto px-4 py-10">
-				<h2 class="text-3xl font-bold mb-6 text-[#2E2E2E] text-[25px]">
-					Seleccione una raza
-				</h2>
+	<main class="relative text-[#2E2E2E] min-h-screen pb-16 bg-gradient-to-b from-[#FFF5F5] via-white to-[#FFE2E2]">
+		<section class="mt-20 bg-gradient-to-r from-[#FF6B6B] via-[#ff9f9f] to-[#FFC3C3] text-white">
+			<div class="max-w-screen-xl mx-auto px-4 py-12 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+				<div class="space-y-3 md:space-y-4">
+					<p class="text-xs font-semibold uppercase tracking-[0.25em] text-white/80">
+						Ágatha Gatos Persas · Criadero en Sevilla
+					</p>
+					<h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">
+						Nuestras razas de gatos persas
+					</h1>
+					<p class="max-w-xl text-sm md:text-base text-white/90">
+						Conoce los tipos de <strong>gato persa</strong> que criamos (europeo, chinchilla e himalayo), su carácter y qué los hace ideales como compañeros de vida.
+					</p>
+				</div>
+				<div class="mt-4 md:mt-0">
+					<div class="rounded-3xl border border-white/40 bg-white/10 px-6 py-4 shadow-xl backdrop-blur-sm">
+						<p class="text-xs font-medium uppercase tracking-[0.2em] text-white/80">
+							Razas que criamos
+						</p>
+						<p class="mt-1 text-3xl font-bold leading-none">
+							{razas.length}
+						</p>
+						<p class="mt-1 text-xs text-white/80">
+							Explora cada tipo para saber cómo son, y escríbenos si quieres que te avisemos de próximas camadas.
+						</p>
+					</div>
+				</div>
 			</div>
-			<div
-				class="flex flex-wrap justify-center gap-10 mt-10 max-w-screen-xl max-h-screen-xl mx-auto px-4"
-			>
-				{
-					razas.map((razas) => (
-						<a href={razas.a}>
-							<article class="group pop bg-[#FFE2E2] shadow-2xl p-2 h-100 border-2 border-[#fb9898] hover:border-[#ff5858] rounded-lg flex items-center justify-start flex-col hover:transform hover:scale-105 transition-transform duration-300 hover:cursor-pointer">
-								<div class="overflow-hidden rounded-2xl">
-									<img
-										src={razas.imgSrc.src}
-										alt={razas.alt}
-										class="h-80 w-80 object-cover rounded-2xl group-hover:scale-105 transition-all duration-300 ease-in-out"
-									/>
-								</div>
-								<div class="bg-[#FF6B6B] w-full text-center p-2 rounded-lg mt-2 pulsar">
-									<h1 class="text-2xl text-white">
-										{razas.h1}
-									</h1>
-								</div>
-							</article>
-						</a>
-					))
-				}
+		</section>
+		<section aria-label="Selecciona una raza de gato persa" class="relative">
+			<div class="max-w-screen-xl mx-auto px-4 py-12">
+				<div class="flex flex-col gap-4 text-center md:text-left md:flex-row md:items-end md:justify-between">
+					<div>
+						<h2 class="text-3xl md:text-4xl font-bold tracking-tight text-[#2E2E2E]">
+							Elige el tipo de gato persa que encaja contigo
+						</h2>
+						<p class="mt-2 max-w-xl text-sm md:text-base text-[#5A5A5A] mx-auto md:mx-0">
+							Cada línea de persa tiene su encanto: más tranquilo, más juguetón o más observador. Descubre cuál se adapta mejor a tu hogar, a tu rutina y a tu familia.
+						</p>
+					</div>
+					<p class="text-xs uppercase tracking-[0.25em] text-[#FF6B6B] font-semibold">
+						Razas disponibles · {razas.length}
+					</p>
+				</div>
+				<div class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+					{
+						razas.map((raza) => (
+							<a
+								href={raza.a}
+								aria-label={`Ver gatos persas de la raza ${raza.h1}`}
+							>
+								<article class="group relative h-full overflow-hidden rounded-3xl bg-white/80 shadow-[0_18px_45px_rgba(0,0,0,0.12)] border border-[#ffd3d3] hover:border-[#FF6B6B] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_60px_rgba(0,0,0,0.18)]">
+									<div class="relative overflow-hidden">
+										<img
+											src={raza.imgSrc.src}
+											alt={raza.alt}
+											loading="lazy"
+											class="h-80 w-full object-cover transition-all duration-500 ease-out group-hover:scale-110 group-hover:brightness-105"
+										/>
+										<div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+										<span class="absolute left-4 top-4 inline-flex rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-[#FF6B6B] shadow-sm">
+											Línea de persa
+										</span>
+									</div>
+									<div class="flex flex-col gap-2 p-5">
+										<h3 class="text-xl font-semibold text-[#2E2E2E] group-hover:text-[#FF6B6B] transition-colors">
+											{raza.h1}
+										</h3>
+										<p class="text-sm leading-relaxed text-[#5A5A5A]">
+											{raza.description}
+										</p>
+										<span class="mt-3 inline-flex items-center justify-center rounded-full bg-[#FF6B6B] px-4 py-2 text-sm font-semibold text-white shadow-md transition-all duration-300 group-hover:bg-[#ff5252]">
+											Ver información y camadas
+										</span>
+									</div>
+								</article>
+							</a>
+						))
+					}
+				</div>
+			</div>
+		</section>
+
+		<section class="px-4">
+			<div class="max-w-screen-xl mx-auto mt-4 rounded-3xl bg-gradient-to-r from-[#FF6B6B] to-pink-400 p-8 md:p-10 text-center text-white shadow-2xl">
+				<h2 class="text-2xl md:text-3xl font-bold mb-4">
+					¿No ves gatitos listados ahora mismo?
+				</h2>
+				<p class="text-sm md:text-base max-w-3xl mx-auto mb-6 text-white/95">
+					Es posible que en este momento no tengamos <strong>gatitos persas disponibles</strong>, pero seguimos trabajando en nuevas camadas.
+					Puedes ver nuestras <a href="/camadas-anteriores" class="underline font-semibold hover:text-gray-100">camadas anteriores</a> o
+					contactar con nosotros para que te avisemos cuando nazcan nuevos gatitos.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<a
+						class="inline-block bg-white text-[#FF6B6B] font-semibold py-3 px-6 rounded-full shadow-md hover:bg-gray-100 transition-colors text-sm md:text-base"
+						href="/camadas-anteriores"
+					>
+						Ver camadas anteriores
+					</a>
+					<a
+						class="inline-block border-2 border-white text-white font-semibold py-3 px-6 rounded-full shadow-md hover:bg-white/10 transition-colors text-sm md:text-base"
+						href="/contacto"
+					>
+						Quiero que me aviséis
+					</a>
+				</div>
 			</div>
 		</section>
 	</main>

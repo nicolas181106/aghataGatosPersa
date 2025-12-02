@@ -7,122 +7,122 @@ import { gatosChinchilla } from "../scripts/gatos-chinchilla.js";
 ---
 
 <Layout
-	title="Gato persa europeo | Ágatha gatos persas"
+	title="Gato persa europeo | Ágatha Gatos Persas"
 	description="Conoce al encantador Gato Persa Europeo, una raza conocida por su belleza y carácter dulce. Descubre más sobre esta maravillosa raza en nuestro criadero."
-	keywords="gato persa europeo, criadero de gatos persa, gatos persa en adopción"
+	keywords="gato persa chinchilla, criadero de gatos persa, gatos persa en adopción"
 >
-	<CardClick
-		idClick="oddieClick"
-		idCerrar="oddieCerrar"
-		src={oddie.src}
-		alt={"Gato persa europeo macho"}
-		nombre={"Oddie"}
-		edad={9}
-	/>
 
-	<CardClick
-		idClick="ceresClick"
-		idCerrar="ceresCerrar"
-		src={ceres.src}
-		alt={"Gato persa chinchilla hembra"}
-		nombre={"Ceres"}
-		edad={1}
-	/>
-
-	<main class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen pb-30">
-		<div class="bg-[#FF6B6B] h-40 mt-20 flex items-center justify-center">
-			<h1 class="text-[30px] font-bold text-white">
-				Gato persa chinchilla
-			</h1>
-		</div>
+	<main class="bg-white/90 text-[#2E2E2E] min-h-screen pb-10">
+		<section class="bg-gradient-to-r from-[#FF6B6B] to-pink-400 py-20 mt-20">
+			<div class="max-w-7xl mx-auto px-4 text-center">
+				<h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Gato Persa Chinchilla</h1>
+				<div class="w-32 h-1 bg-white mx-auto mb-4"></div>
+				<p class="text-white text-lg max-w-2xl mx-auto">
+					Explora nuestra colección de gatos persas chinchilla, famosos por su pelaje plateado y su mirada cautivadora.
+				</p>
+			</div>
+		</section>
 		
-		<section class="max-w-[800px] mx-auto px-4 py-10 mt-10 flex flex-col sm:flex-row gap-12 justify-center items-center pop hidden">
-			<figure class="text-center hover:transform hover:scale-105 transition-all duration-300 ease-in-out hover:cursor-pointer" id="oddieImg">
-				<h2 class="text-2xl sm:text-3xl font-bold mb-2">Padre</h2>
-				<img src={oddie.src} alt="Padre gato persa europeo" loading="lazy" class="p-2 h-75 w-75 object-cover rounded-2xl bg-[#FF6B6B]"/>
-			</figure>
-			<figure class="text-center hover:transform hover:scale-105 transition-all duration-300 ease-in-out hover:cursor-pointer" id="blubeImg">
-				<h2 class="text-2xl sm:text-3xl font-bold mb-2">Madre</h2>
-				<img src={ceres.src} alt="Madre gato persa europeo" loading="lazy" class="p-2 h-75 w-75 object-cover rounded-2xl bg-[#FF6B6B]"/>
-			</figure>
+		<section class="max-w-7xl mx-auto px-4 py-16">
+			<div class="text-center mb-12">
+				<h2 class="text-3xl md:text-4xl font-bold text-[#FF6B6B] mb-6">Nuestros Reproductores</h2>
+				<div class="w-32 h-1 bg-gradient-to-r from-[#FF6B6B] to-pink-400 mx-auto"></div>
+			</div>
+			<div class="flex flex-col sm:flex-row gap-12 justify-center items-center">
+				<figure class="bg-white p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:cursor-pointer" id="oddieImg">
+					<h3 class="text-2xl sm:text-3xl font-bold mb-4 text-[#FF6B6B]">Padre - Oddie</h3>
+					<img src={oddie.src} alt="Padre gato persa chinchilla" loading="lazy" class="p-2 h-75 w-75 object-cover rounded-2xl bg-gradient-to-br from-[#FF6B6B] to-pink-400 shadow-lg"/>
+				</figure>
+				<figure class="bg-white p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:cursor-pointer" id="ceresImg">
+					<h3 class="text-2xl sm:text-3xl font-bold mb-4 text-[#FF6B6B]">Madre - Ceres</h3>
+					<img src={ceres.src} alt="Madre gato persa chinchilla" loading="lazy" class="p-2 h-75 w-75 object-cover rounded-2xl bg-gradient-to-br from-[#FF6B6B] to-pink-400 shadow-lg"/>
+				</figure>
+			</div>
     	</section>
 
 		{gatosChinchilla.length === 0 && (
-			<section class="h-full py-20 flex flex-col items-center justify-center text-center px-4 pop">
-			<h2 class="text-3xl font-semibold mb-4">¡Ups! No hay gatitos disponibles 😿</h2>
-			<p class="text-lg text-gray-700 mb-6 max-w-xl">
-				Actualmente todos nuestros gatitos chinchilla están adoptados, pero puedes explorar nuestras camadas anteriores o dejarnos tu correo para avisarte cuando tengamos nuevos gatitos.
-			</p>
-			<div class="flex flex-col sm:flex-row gap-6 mb-10">
-				<a href="/camadas-anteriores" 
-				class="inline-block bg-[#FF6B6B] hover:bg-[#e65c5c] text-white font-semibold py-3 px-6 rounded-full shadow transition duration-300">
-				Ver camadas anteriores
-				</a>
-				<a href="/contacto" 
-				class="inline-block border-2 border-[#FF6B6B] text-[#FF6B6B] hover:bg-[#FF6B6B] hover:text-white font-semibold py-3 px-6 rounded-full shadow transition duration-300">
-				Avisarme cuando haya gatitos
-				</a>
-			</div>
+			<section class="bg-gradient-to-r from-gray-50 to-gray-100 py-20">
+				<div class="max-w-4xl mx-auto px-4 text-center">
+					<div class="text-6xl mb-6">😿</div>
+					<h2 class="text-3xl md:text-4xl font-bold text-[#FF6B6B] mb-4">¡Ups! No hay gatitos disponibles</h2>
+					<p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+						Actualmente todos nuestros gatitos chinchilla están adoptados, pero puedes explorar nuestras camadas anteriores o dejarnos tu correo para avisarte cuando tengamos nuevos gatitos.
+					</p>
+					<div class="flex flex-col sm:flex-row gap-6 justify-center">
+						<a href="/camadas-anteriores" 
+						class="inline-block bg-[#FF6B6B] hover:bg-[#e65c5c] hover:-translate-y-1 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-all duration-300">
+						Ver camadas anteriores
+						</a>
+						<a href="/contacto" 
+						class="inline-block border-2 border-[#FF6B6B] text-[#FF6B6B] hover:bg-[#FF6B6B] hover:text-white hover:-translate-y-1 font-semibold py-3 px-8 rounded-full shadow-lg transition-all duration-300">
+						Avisarme cuando haya gatitos
+						</a>
+					</div>
+				</div>
 			</section>
 		)}
 
-		{
-			gatosChinchilla.map((gato) => (
-				<article class="showImg mt-20 px-4 flex flex-col md:flex-row justify-center items-center gap-12 lg:gap-20 bg-white/90 p-6 rounded-lg shadow-2xl max-w-[350px] md:max-w-[800px] mx-auto hover:transform hover:scale-105 transition-transform duration-300">
-					<a
-						href={`/gatos/${gato.slugChinchilla}`}
-						class="relative block bg-white rounded-2xl shadow-lg overflow-hidden group hover:scale-110 transition-transform duration-300"
-					>
-						<img
-							src={gato.imgSrc.src}
-							alt={gato.alt}
-							loading="lazy"
-							class="p-2 h-75 w-75 object-cover rounded-2xl bg-[#FF6B6B]"
-						/>
-
-						<span
-							class="absolute inset-0 flex items-start justify-center 
-								bg-black/70 text-white text-2xl font-bold pt-5
-								translate-y-full group-hover:translate-y-[70%] 
-								transition-transform duration-500 ease-in-out"
+		<section class="max-w-7xl mx-auto px-4 py-16 hidden">
+			<div class="text-center mb-12">
+				<h2 class="text-3xl md:text-4xl font-bold text-[#FF6B6B] mb-6">Gatitos Disponibles</h2>
+				<div class="w-32 h-1 bg-gradient-to-r from-[#FF6B6B] to-pink-400 mx-auto"></div>
+			</div>
+			<div class="grid gap-12">
+				{gatosChinchilla.map((gato) => (
+					<article class="showImg px-4 flex flex-col md:flex-row justify-center items-center gap-12 bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl max-w-[900px] mx-auto transition-all duration-300 hover:-translate-y-2">
+						<a
+							href={`/gatos/${gato.slugChinchilla}`}
+							class="relative block rounded-2xl shadow-lg overflow-hidden group transition-transform duration-300 hover:scale-105"
 						>
-							Cliqueame
-						</span>
-					</a>
-					<div class="flex flex-col text-left text-lg lg:text-xl">
-						<p>
-							<strong>Nombre:</strong> {gato.nombre}
-						</p>
-						<p>
-							<strong>Género:</strong> {gato.genero}
-						</p>
-						<p>
-							<strong>Edad:</strong>{" "}
+							<img
+								src={gato.imgSrc.src}
+								alt={gato.alt}
+								loading="lazy"
+								class="p-2 h-75 w-75 object-cover rounded-2xl bg-gradient-to-br from-[#FF6B6B] to-pink-400"
+							/>
+
 							<span
-								class="edad-gatito"
-								data-nacimiento={gato.edad.toISOString()}
+								class="absolute inset-0 flex items-start justify-center 
+									bg-black/70 text-white text-2xl font-bold pt-5
+									opacity-0 group-hover:opacity-100
+									transition-opacity duration-300 ease-in-out"
 							>
-								Calculando...
+								Ver más información
 							</span>
-						</p>
-						<div class="flex gap-4 mt-6">
-							<a
-								href="/contacto"
-								class="text-sm sm:text-base inline-block hover:bg-[#FF6B6B] border-2 border-[#FF6B6B] text-[#FF6B6B] hover:text-white font-semibold py-2 px-4 rounded-full transition duration-300 shadow"
-							>
-								Adoptar gatito
-							</a>
-							<a
-								href="/gatos-disponibles"
-								class="text-sm sm:text-base inline-block border-2 border-[#FF6B6B] bg-[#FF6B6B] hover:bg-[#e65c5c] text-white font-semibold py-2 px-4 rounded-full transition duration-300 shadow"
-							>
-								Ver gatos disponibles
-							</a>
+						</a>
+						<div class="flex flex-col text-left text-lg space-y-3">
+							<p class="text-2xl font-bold text-[#FF6B6B]">{gato.nombre}</p>
+							<p>
+								<strong>Género:</strong> {gato.genero}
+							</p>
+							<p>
+								<strong>Edad:</strong>{" "}
+								<span
+									class="edad-gatito"
+									data-nacimiento={gato.edad.toISOString()}
+								>
+									Calculando...
+								</span>
+							</p>
+							<div class="flex flex-col sm:flex-row gap-4 mt-6">
+								<a
+									href="/contacto"
+									class="text-center inline-block hover:bg-[#FF6B6B] border-2 border-[#FF6B6B] text-[#FF6B6B] hover:text-white hover:-translate-y-1 font-semibold py-3 px-6 rounded-full transition-all duration-300 shadow-lg"
+								>
+									Adoptar gatito
+								</a>
+								<a
+									href="/gatos-disponibles"
+									class="text-center inline-block bg-[#FF6B6B] hover:bg-[#e65c5c] hover:-translate-y-1 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 shadow-lg"
+								>
+									Ver todos los gatos
+								</a>
+							</div>
 						</div>
-					</div>
-				</article>
-			))
-		}
+					</article>
+				))}
+			</div>
+		</section>
 
 
 		<script src="../scripts/edad.js"></script>

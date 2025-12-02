@@ -1,74 +1,170 @@
 ---
 import Layout from "../layouts/layout.astro";
-import imgGatoPelaje from '../assets/img/gatoConPelajePregunta.jpg';
-import imgDurmiendo from '../assets/img/gatoDurmiendo.jpg';
-import imgGatoComiendo from '../assets/img/gatoComiendo.jpg';
-import imgGatoJugando from '../assets/img/gatoPersaJugando.jpg';
+import imgGatoPelaje from "../assets/img/gatoConPelajePregunta.jpg";
+import imgDurmiendo from "../assets/img/gatoDurmiendo.jpg";
+import imgGatoComiendo from "../assets/img/gatoComiendo.jpg";
+import imgGatoJugando from "../assets/img/gatoPersaJugando.jpg";
 
 const articles = [
-	{
-		a: "como-cuidar-el-pelaje-de-un-gato-persa",
-		img: imgGatoPelaje,
-		alt: "gato con pelaje",
-		h2: "¿Cómo cuidar el pelaje de un gato persa?",
-		p: "El pelaje largo del gato persa es una de sus características más distintivas y también uno de los aspectos que requiere mayor atención por parte de sus cuidadores. Para mantener su manto en óptimas condiciones, es fundamental realizar un cepillado diario. Esto no solo evita la formación de..."
-	},
-	{
-		a: "con-que-frecuencia-debo-llevar-a-mi-gato-persa-al-veterinario",
-		img: imgDurmiendo,
-		alt: "gato persa durmiendo",
-		h2: "¿Con qué frecuencia debo llevar a mi gato persa al veterinario?",
-		p: "Los gatos persas deben visitar al veterinario al menos una vez al año para realizar un chequeo general, aplicar vacunas y asegurarse de que todo esté bien con su salud. Estos controles preventivos permiten detectar a tiempo cualquier anomalía que no sea visible a simple vista..."
-	},
-	{
-		a: "que-tipo-de-alimentacion-es-mejor-para-un-gato-persa",
-		img: imgGatoComiendo,
-		alt: "gato persa comiendo",
-		h2: "¿Qué tipo de alimentación es mejor para un gato persa?",
-		p: "Una alimentación adecuada es fundamental para la salud del gato persa. Su dieta debe ser rica en proteínas de alta calidad para mantener su musculatura y energía diaria. Opta por alimentos formulados específicamente para razas de pelo largo, ya que contienen ingredientes que ayudan a..."
-	},
-	{
-		a: "como-puedo-mantener-a-mi-gato-persa-activo-y-entretenido",
-		img: imgGatoJugando,
-		alt: "gato persa jugando",
-		h2: "¿Cómo puedo mantener a mi gato persa activo y entretenido?",
-		p: "Aunque el gato persa es una raza tranquila y reservada, eso no significa que no necesite actividad. Es esencial estimularlo a diario, aunque sea con juegos suaves y de baja intensidad. Juguetes como varitas con plumas, pelotas con cascabeles o ratones de tela pueden..."
-	}
-]
+  {
+    slug: "como-cuidar-el-pelaje-de-un-gato-persa",
+    img: imgGatoPelaje,
+    alt: "Gato persa con pelaje largo y bien cuidado",
+    title: "Cómo cuidar el pelaje de un gato persa",
+    excerpt:
+      "Trucos de cepillado, baños y alimentación para mantener el pelaje de tu gato persa suave, brillante y libre de enredos.",
+    category: "Cuidados del pelaje",
+    readTime: "6 min",
+    date: "2025-01-05",
+  },
+  {
+    slug: "con-que-frecuencia-debo-llevar-a-mi-gato-persa-al-veterinario",
+    img: imgDurmiendo,
+    alt: "Gato persa descansando después de una visita al veterinario",
+    title: "Con qué frecuencia debo llevar a mi gato persa al veterinario",
+    excerpt:
+      "Cada cuánto tiempo conviene hacer revisiones, qué chequeos son importantes y qué señales de alerta debes vigilar.",
+    category: "Salud y veterinario",
+    readTime: "5 min",
+    date: "2025-01-10",
+  },
+  {
+    slug: "que-tipo-de-alimentacion-es-mejor-para-un-gato-persa",
+    img: imgGatoComiendo,
+    alt: "Gato persa comiendo pienso de alta calidad",
+    title: "Qué tipo de alimentación es mejor para un gato persa",
+    excerpt:
+      "Pienso, comida húmeda, suplementos y marcas recomendadas para mantener sano y fuerte a tu gato persa.",
+    category: "Alimentación",
+    readTime: "7 min",
+    date: "2025-01-18",
+  },
+  {
+    slug: "como-puedo-mantener-a-mi-gato-persa-activo-y-entretenido",
+    img: imgGatoJugando,
+    alt: "Gato persa jugando con una pelota",
+    title: "Cómo mantener a tu gato persa activo y entretenido",
+    excerpt:
+      "Ideas de juegos, juguetes, rutinas y enriquecimiento ambiental para un gato persa feliz y estimulado.",
+    category: "Comportamiento y juego",
+    readTime: "6 min",
+    date: "2025-01-22",
+  },
+];
 ---
 
 <Layout
-	title="Información | Ágatha Gatos Persas"
-	description="Información y preguntas frecuentes sobre gatos persa"
-	keywords="gatos persa, preguntas frecuentes, cuidados de gatos persa, información sobre gatos persa, preguntas frecuentes gatos persa"
+  title="Blog de cuidados del gato persa | Ágatha Gatos Persas"
+  description="Artículos y guías sobre cuidados, salud, alimentación y comportamiento del gato persa."
+  keywords="blog gato persa, cuidados gato persa, alimentación, salud, información gatos persas"
 >
-	<main class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen pb-10">
-		<div class="bg-[#FF6B6B] h-40 mt-20 flex items-center justify-center">
-			<h1 class="text-[30px] font-bold text-white text-center">
-				Información y preguntas frecuentes
-			</h1>
-		</div>
-		<section
-			aria-label="Preguntas frecuentes"
-			class="grid gap-10 sm:grid-cols-2 xl:grid-cols-3 max-w-[1300px] mx-auto p-6 sm:p-10 mt-10"
-		>
-			{articles.map((article) => (
-				<a 
-					href={`/informacion/${article.a}`} 
-					class="bg-white/90 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 pop"
-				>
-					<img 
-						src={article.img.src} 
-						alt={article.alt} 
-						class="w-full h-56 object-cover"
-					/>
-					<div class="p-5">
-						<h2 class="text-xl font-bold mb-3 text-[#FF6B6B]">{article.h2}</h2>
-						<p class="text-[15px] sm:text-[16px] text-[#2E2E2E]">{article.p}</p>
-						<p class="mt-4 font-semibold text-[#FF6B6B]">Leer más...</p>
-					</div>
-				</a>
-			))}
-		</section>
-	</main>
+  <main class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen pb-16">
+    <section class="mt-24">
+      <div class="max-w-6xl mx-auto px-4">
+        <div
+          class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#FF6B6B] via-pink-400 to-amber-300 text-white shadow-2xl px-6 sm:px-10 py-10 sm:py-14 flex flex-col lg:flex-row items-center gap-10"
+        >
+          <div class="relative z-10 flex-1 space-y-4">
+            <p class="text-xs font-semibold uppercase tracking-[0.25em] text-white/80">
+              Blog · Consejos para tu gato persa
+            </p>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+              Guías y consejos para cuidar a tu gato persa como un profesional
+            </h1>
+            <p class="text-sm sm:text-base text-white/90 max-w-xl">
+              Aprende sobre cuidados del pelaje, salud, alimentación y bienestar
+              emocional de tu gato persa con artículos escritos de forma clara
+              y cercana.
+            </p>
+          </div>
+
+          <div class="relative z-10 flex-1 flex justify-center">
+            <div
+              class="w-56 h-56 sm:w-64 sm:h-64 rounded-full bg-white/10 border border-white/30 backdrop-blur-md flex items-center justify-center shadow-xl"
+            >
+              <div class="w-40 h-40 rounded-3xl bg-white/95 text-[#2E2E2E] flex flex-col items-center justify-center text-center px-4 pop">
+                <span class="text-4xl mb-2">📚</span>
+                <p class="text-sm font-semibold">
+                  Artículos especializados en
+                  <span class="block text-[#FF6B6B]">gatos persas</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <span
+            class="pointer-events-none select-none absolute -bottom-4 -right-2 text-[70px] sm:text-[110px] font-black text-white/10"
+            aria-hidden="true"
+          >
+            BLOG
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section
+      aria-label="Artículos del blog sobre gatos persas"
+      class="max-w-6xl mx-auto px-4 mt-12"
+    >
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#2E2E2E]">
+          Últimos artículos
+        </h2>
+        <p class="text-xs sm:text-sm text-gray-500">
+          Consejos prácticos para el día a día con tu gato persa
+        </p>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        {articles.map((article) => (
+          <a
+            href={`/informacion/${article.slug}`}
+            class="group bg-white/95 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-transparent hover:border-[#FFE2E2] flex flex-col"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src={article.img.src}
+                alt={article.alt}
+                class="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span
+                class="absolute bottom-3 left-3 bg-white/90 text-[#FF6B6B] text-xs font-semibold px-3 py-1 rounded-full shadow-sm"
+              >
+                {article.category}
+              </span>
+            </div>
+
+            <div class="p-5 flex flex-col flex-1">
+              <div class="flex items-center gap-3 text-xs text-gray-500 mb-2">
+                <span>
+                  {new Date(article.date).toLocaleDateString("es-ES", {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                  })}
+                </span>
+                <span class="w-1 h-1 rounded-full bg-gray-400" />
+                <span>{article.readTime} de lectura</span>
+              </div>
+
+              <h2 class="text-lg sm:text-xl font-bold mb-2 text-[#2E2E2E] group-hover:text-[#FF6B6B] transition-colors">
+                {article.title}
+              </h2>
+              <p class="text-sm text-gray-700 flex-1">
+                {article.excerpt}
+              </p>
+
+              <div class="mt-4 flex items-center text-sm font-semibold text-[#FF6B6B]">
+                Leer artículo completo
+                <span class="ml-1 group-hover:translate-x-1 transition-transform">
+                  →
+                </span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  </main>
 </Layout>

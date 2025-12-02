@@ -1,1 +1,0 @@
-document.addEventListener("DOMContentLoaded",()=>{function n(t){const e=new Date(t),o=new Date().getTime()-e.getTime(),a=Math.floor(o/(1e3*60*60*24*7));return a<0?"Gatito aún no nacido":`${a} semana${a!==1?"s":""}`}document.querySelectorAll(".edad-gatito").forEach(t=>{const e=t.dataset.nacimiento;t.textContent=n(e)})});

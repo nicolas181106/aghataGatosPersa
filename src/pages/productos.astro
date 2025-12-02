@@ -1,76 +1,156 @@
 ---
 import Layout from "../layouts/layout.astro";
-import imgRascador from '../assets/img/rascador.jpg';
-import imgJuguete from '../assets/img/juguete.jpg';
-import imgComedero from '../assets/img/comedero.jpg';
-import imgCama from '../assets/img/cama.jpg';
-import imgArena from '../assets/img/arenero.jpg';
+import imgRascador from "../assets/img/rascador.jpg";
+import imgJuguete from "../assets/img/juguete.jpg";
+import imgComedero from "../assets/img/comedero.jpg";
+import imgCama from "../assets/img/cama.jpg";
+import imgArena from "../assets/img/arenero.jpg";
 
-const productos = [
+const categorias = [
   {
-    a: "rascadores",
-    img: imgRascador,
-    alt: "rascador para gato persa",
-    h2: "Rascadores para gatos persas",
-    p: "Mantén sus uñas sanas y ofrécele un espacio propio para estirarse y liberar estrés."
+    slug: "rascadores",
+    img: imgRascador.src,
+    alt: "Rascador para gato persa en el salón de casa",
+    titulo: "Rascadores para gatos persas",
+    descripcion:
+      "Protege tus muebles y ofrece a tu gato un lugar seguro donde estirarse, afilarse las uñas y liberar estrés.",
+    etiqueta: "Cuidado de uñas",
+    destacado: "Ideal para gatos de interior",
   },
   {
-    a: "juguetes",
-    img: imgJuguete,
-    alt: "juguetes para gatos persas",
-    h2: "Juguetes para mantenerlos activos",
-    p: "Estimulación mental y física con pelotas, cañas o ratones de tela ideales para gatos persas."
+    slug: "juguetes",
+    img: imgJuguete.src,
+    alt: "Juguetes para gatos persas sobre el suelo",
+    titulo: "Juguetes para mantenerlos activos",
+    descripcion:
+      "Pelotas, cañas, túneles y juguetes con hierba gatera para estimular cuerpo y mente sin agobiarles.",
+    etiqueta: "Juego y actividad",
+    destacado: "Perfecto para sesiones de 10–15 minutos",
   },
   {
-    a: "comida",
-    img: imgComedero,
-    alt: "comida para gato persa",
-    h2: "Comida, comederos y accesorios de alimentación",
-    p: "Facilita la alimentación diaria y evita molestias digestivas, sobre todo en gatos de cara chata."
+    slug: "comida",
+    img: imgComedero.src,
+    alt: "Comedero y accesorios de alimentación para gatos persas",
+    titulo: "Comida y accesorios de alimentación",
+    descripcion:
+      "Piensos, latas y comederos adaptados a gatos de cara chata para una alimentación cómoda y segura.",
+    etiqueta: "Alimentación",
+    destacado: "Opciones para estómagos sensibles",
   },
   {
-    a: "camas",
-    img: imgCama,
-    alt: "camas para gatos persas",
-    h2: "Camas cómodas y acogedoras",
-    p: "Un lugar cálido y cómodo para descansar y dormir, adaptado al tamaño de tu gato persa."
+    slug: "camas",
+    img: imgCama.src,
+    alt: "Cama cómoda para gato persa",
+    titulo: "Camas cómodas y acogedoras",
+    descripcion:
+      "Camas mullidas, cuevas y mantas suaves para sus largas siestas en los lugares que más le gustan.",
+    etiqueta: "Descanso",
+    destacado: "Pensado para gatos muy tranquilos",
   },
   {
-    a: "areneros",
-    img: imgArena,
-    alt: "areneros para gatos persas",
-    h2: "Areneros y accesorios de higiene",
-    p: "Mantén la higiene de tu gato con areneros fáciles de limpiar y adaptados a gatos persas."
-  }
-]
+    slug: "areneros",
+    img: imgArena.src,
+    alt: "Arenero higiénico para gatos persas",
+    titulo: "Areneros y accesorios de higiene",
+    descripcion:
+      "Areneros cerrados y accesorios para mantener la higiene diaria de forma discreta y fácil de limpiar.",
+    etiqueta: "Higiene",
+    destacado: "Mejora el olor y la limpieza del hogar",
+  },
+];
 ---
 
 <Layout
-  title="Productos | Ágatha Gatos Persas"
+  title="Productos para Gatos | Ágatha Gatos Persas"
   description="Productos y accesorios recomendados para gatos persa: rascadores, juguetes, comederos, camas y areneros."
-  keywords="productos gatos persa, rascadores gatos persa, juguetes gatos persa, comederos gatos persa, camas gatos persa, areneros gatos persa"
+  keywords="productos gatos persa, rascadores gatos persa, juguetes gatos persa, comederos gatos persa, camas gatos persa, areneros gatos persa, producto para gatos"
 >
-	<main class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen pb-16">
-    <div class="bg-[#FF6B6B] h-40 flex items-center justify-center mt-20">
-      <h1 class="text-3xl font-extrabold text-white text-center">
-        Productos para gatos persas
-      </h1>
-    </div>
-   <section class="max-w-[1300px] mx-auto p-6 sm:p-10 mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {productos.map((producto) => (
-        <a 
-          href={`/productos/${producto.a}`} 
-          class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col pop hover:-translate-y-2 border-transparent hover:border-[1px] hover:border-[#FF6B6B]"
-        >
-          <div class="relative">
-            <img src={producto.img.src} alt={producto.alt} class="w-full h-64 object-cover rounded-t-2xl"/>
+  <main class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen pb-16 mt-20">
+    <header class="bg-gradient-to-r from-[#FF6B6B] via-[#FF8A8A] to-[#FFC0C0] text-white">
+      <div class="max-w-[1200px] mx-auto px-6 sm:px-10 py-8 sm:py-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div class="max-w-xl">
+          <nav class="text-[11px] sm:text-xs text-white/80 mb-2">
+            <a href="/" class="hover:underline">Inicio</a>
+            <span class="mx-1">/</span>
+            <span class="font-semibold">Productos</span>
+          </nav>
+
+          <h1 class="text-2xl sm:text-3xl md:text-[32px] font-extrabold leading-snug">
+            Productos y accesorios para gatos persas
+          </h1>
+          <p class="mt-2 text-[13px] sm:text-sm text-white/90 leading-relaxed">
+            Una selección organizada por categorías para que encuentres rápido lo que necesitas:
+            <strong>rascadores, juguetes, comida, camas y areneros</strong>. Pensado para gatos de carácter
+            tranquilo que viven principalmente en casa.
+          </p>
+          <p class="mt-2 text-[12px] sm:text-xs text-white/80">
+            En muchos casos enlazamos a tiendas como Amazon. Revisa siempre medidas, valoraciones y plazos de envío antes de comprar.
+          </p>
+        </div>
+
+        <div class="mt-3 sm:mt-0 flex flex-col gap-2 text-[12px] sm:text-[13px]">
+          <p class="font-semibold uppercase tracking-[0.18em] text-white/80">
+            Explorar por categoría
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {categorias.map((cat) => (
+              <a
+                href={`/productos/${cat.slug}`}
+                class="inline-flex items-center gap-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/30 px-3 py-1 transition-colors"
+              >
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-300" />
+                <span>{cat.titulo.split(" ")[0]}</span>
+              </a>
+            ))}
           </div>
-          <div class="p-5 flex flex-col flex-1">
-            <h2 class="text-lg font-bold mb-2 text-[#FF6B6B]">{producto.h2}</h2>
-            <p class="text-sm text-gray-700 flex-1">{producto.p}</p>
-            <div class="mt-4">
-              <span class="inline-block bg-[#FF6B6B] text-white font-semibold py-2 px-4 rounded hover:bg-[#e55a5a] text-center transition-colors">
-                Ver más →
+        </div>
+      </div>
+    </header>
+
+    <section
+      class="max-w-[1200px] mx-auto px-6 sm:px-10 mt-10 grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3"
+      aria-label="Categorías de productos para gatos persas"
+    >
+      {categorias.map((categoria) => (
+        <a
+          href={`/productos/${categoria.slug}`}
+          class="group bg-white rounded-2xl shadow-sm hover:shadow-md border border-[#FFE2E2]/80 hover:border-[#FF6B6B]/80 transition-all duration-200 flex flex-col overflow-hidden"
+        >
+          <div class="relative h-48 sm:h-52 overflow-hidden">
+            <img
+              src={categoria.img}
+              alt={categoria.alt}
+              class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-200"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+            <span
+              class="absolute top-3 left-3 inline-flex items-center rounded-full bg-black/45 text-white text-[11px] font-medium px-2 py-[2px]"
+            >
+              {categoria.etiqueta}
+            </span>
+            <span
+              class="absolute bottom-3 left-3 inline-flex items-center gap-1 rounded-full bg-white/90 text-[#FF6B6B] text-[11px] font-semibold px-2.5 py-[3px]"
+            >
+              <span class="text-xs">★</span>
+              Selección recomendada
+            </span>
+          </div>
+
+          <div class="p-4 sm:p-5 flex flex-col flex-1">
+            <h2 class="text-[15px] sm:text-[16px] font-bold mb-1 text-[#111827]">
+              {categoria.titulo}
+            </h2>
+            <p class="text-[13px] sm:text-[14px] text-gray-700 leading-relaxed flex-1">
+              {categoria.descripcion}
+            </p>
+            <p class="mt-2 text-[12px] text-emerald-700 font-medium">
+              {categoria.destacado}
+            </p>
+
+            <div class="mt-4 flex items-center justify-between text-[13px]">
+              <span class="text-[#FF6B6B] font-semibold">
+                Ver productos →
               </span>
             </div>
           </div>

@@ -1,0 +1,102 @@
+---
+import Layout from "../layouts/layout.astro";
+---
+
+<Layout
+  title="Página no encontrada | Ágatha Gatos Persas"
+  description="La página que buscas no existe. Puede que el enlace esté roto o que el contenido haya sido retirado."
+>
+  <main class="min-h-[80vh] pt-32 pb-20 flex items-center justify-center">
+    <section class="max-w-6xl mx-auto px-4">
+      <div
+        class="relative overflow-hidden bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl border border-[#FFE2E2] px-6 sm:px-12 py-12 lg:py-14 flex flex-col lg:flex-row gap-10 lg:gap-14 items-center"
+      >
+        {/* Número 404 grande de fondo */}
+        <span
+          class="pointer-events-none select-none absolute -top-6 -left-2 text-[110px] sm:text-[140px] lg:text-[170px] font-black text-[#FFE2E2] leading-none"
+          aria-hidden="true"
+        >
+          404
+        </span>
+
+        {/* Columna texto principal */}
+        <div class="relative z-10 flex-1 space-y-6 text-center lg:text-left">
+          <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#FF6B6B] bg-[#FFE2E2]/60 rounded-full px-4 py-1">
+            Página no encontrada
+          </p>
+
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2E2E2E] leading-tight">
+            El gatito se ha ido a otra página
+          </h1>
+
+          <p class="text-base sm:text-lg text-gray-700">
+            Es posible que el enlace esté mal escrito, haya caducado o que
+            la página haya cambiado de dirección. Mientras tanto, puedes volver
+            al inicio o ver los <strong>gatos persas disponibles</strong>.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start pt-2">
+            <a
+              href="/"
+              class="inline-flex items-center justify-center gap-2 bg-[#FF6B6B] hover:bg-[#e65c5c] text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 hover:-translate-y-1"
+            >
+              Volver al inicio
+            </a>
+
+            <a
+              href="/gatos-disponibles"
+              class="inline-flex items-center justify-center gap-2 border-2 border-[#FF6B6B] text-[#FF6B6B] hover:bg-[#FF6B6B] hover:text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 hover:-translate-y-1"
+            >
+              Ver gatos disponibles
+            </a>
+          </div>
+
+          <p class="text-xs sm:text-sm text-gray-500 mt-3">
+            ¿Crees que debería estar aquí este contenido?
+            <a href="/contacto" class="text-[#FF6B6B] underline ml-1">
+              Escríbenos y lo revisamos.
+            </a>
+          </p>
+        </div>
+
+        {/* Columna “tarjeta gatito perdido” */}
+        <div class="relative z-10 flex-1 flex justify-center">
+          <div
+            class="w-full max-w-xs sm:max-w-sm bg-gradient-to-b from-[#FFF1F1] via-white to-[#FFE2E2]/80 rounded-3xl shadow-xl border border-[#FFD0D0] px-6 py-7 flex flex-col items-center gap-4 pop"
+          >
+            <div class="w-20 h-20 rounded-full bg-[#FF6B6B] flex items-center justify-center shadow-lg">
+              <span class="text-4xl text-white">🐾</span>
+            </div>
+
+            <h2 class="text-xl font-bold text-[#2E2E2E] text-center">
+              “Gatito desorientado en la web”
+            </h2>
+
+            <p class="text-sm text-gray-700 text-center">
+              Este gatito no sabe cómo ha llegado aquí. Tal vez
+              encuentre su hogar si vuelves al inicio o visitas la
+              sección de gatos.
+            </p>
+
+            <div class="w-full h-px bg-gradient-to-r from-transparent via-[#FF6B6B]/40 to-transparent my-1" />
+
+            <ul class="w-full text-xs text-gray-600 space-y-2">
+              <li class="flex justify-between">
+                <span class="font-semibold text-[#2E2E2E]">Estado:</span>
+                <span>Buscando su página</span>
+              </li>
+              <li class="flex justify-between">
+                <span class="font-semibold text-[#2E2E2E]">Última vez visto:</span>
+                <span>En un enlace roto</span>
+              </li>
+              <li class="flex justify-between">
+                <span class="font-semibold text-[#2E2E2E]">Sugerencia:</span>
+                <span>Volver al inicio</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

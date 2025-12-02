@@ -2,67 +2,201 @@
 import Layout from "../../layouts/layout.astro";
 import imgComida from "./../../assets/img/gatoComiendo.jpg";
 import imgBol from "./../../assets/img/gato-comiendo2.jpg";
+
+const meta = {
+  date: "2025-01-20",
+  readTime: "7 min",
+};
 ---
 
 <Layout
-    title="Qué tipo de alimentación es mejor para un gato persa | Ágatha Gatos Persas"
-    description="Recomendaciones sobre la alimentación adecuada para gatos persas."
-    keywords="alimentación gato persa, dieta gato persa, comida gato persa"
+  title="Qué tipo de alimentación es mejor para un gato persa"
+  description="Artículo detallado sobre la alimentación ideal del gato persa: tipos de comida, nutrientes clave y recomendaciones prácticas."
 >
-    <main class="backdrop-blur-[5px] min-h-screen mt-35 pb-10 max-sm:p-4">
-        <article class="max-w-[800px] mx-auto bg-white shadow-md rounded-lg overflow-hidden mt-5 sm:mt-20 pop">
-            <img
-                src={imgComida.src}
-                alt="Gato persa comiendo"
-                class="w-full h-[280px] object-cover"
-            />
+  <main class="backdrop-blur-[5px] min-h-screen mt-35 pb-16 max-sm:px-4">
+    <article
+      class="max-w-[800px] mx-auto bg-white/98 shadow-lg rounded-3xl overflow-hidden mt-6 sm:mt-24 border border-[#FFE2E2]/70"
+    >
+      <header>
+        <div class="relative h-[220px] sm:h-[260px] overflow-hidden">
+          <img
+            src={imgComida.src}
+            alt="Gato persa comiendo de un cuenco"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
-            <div class="p-6">
-                <h1 class="text-3xl sm:text-4xl font-bold mb-3 text-gray-800 leading-tight">
-                    Qué tipo de alimentación es mejor para un gato persa
-                </h1>
+          <nav class="absolute top-4 left-4 text-[11px] sm:text-xs text-white/90">
+            <a href="/" class="hover:underline">Inicio</a>
+            <span class="mx-1">/</span>
+            <a href="/informacion" class="hover:underline">Información</a>
+          </nav>
 
-                <p class="text-lg text-gray-700 font-medium mb-6">
-                    La alimentación adecuada es esencial para mantener a un gato persa sano, activo y con un pelaje brillante. Esta raza requiere una dieta equilibrada, rica en nutrientes y adaptada a sus necesidades específicas.
-                </p>
+          <div class="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2 text-[11px] sm:text-xs text-white/90">
+            <span>
+              Publicado el{" "}
+              {new Date(meta.date).toLocaleDateString("es-ES", {
+                day: "2-digit",
+                month: "long",
+                year: "numeric",
+              })}
+            </span>
+            <span class="bg-black/35 px-3 py-1 rounded-full">
+              {meta.readTime} de lectura aproximada
+            </span>
+          </div>
+        </div>
 
-                <div class="prose max-w-none prose-lg text-gray-800 leading-relaxed">
-                    <h2>Dieta rica en proteínas</h2>
-                    <p>
-                        Los gatos persas necesitan proteínas de alta calidad para conservar su musculatura y energía diaria. Lo ideal es optar por piensos formulados para razas de pelo largo, ya que ayudan a reducir la formación de bolas de pelo y mantienen el pelaje sedoso.
-                        Algunas marcas recomendadas por veterinarios incluyen <strong>Royal Canin Persian</strong>, <strong>Hill's Science Plan</strong> y <strong>Purina Pro Plan</strong>.
-                    </p>
+        <div class="px-6 sm:px-8 pt-6 pb-4">
+          <p class="text-[11px] sm:text-xs font-semibold tracking-[0.25em] text-[#FF6B6B] uppercase mb-2">
+            ALIMENTACIÓN
+          </p>
+          <h1 class="text-2xl sm:text-3xl md:text-[32px] font-bold leading-snug text-[#1F2933] mb-3">
+            Qué tipo de alimentación es mejor para un gato persa
+          </h1>
+          <p class="text-[15px] sm:text-base text-gray-700 leading-relaxed">
+            La alimentación es uno de los pilares de la salud del gato persa.
+            De ella dependen su energía diaria, el estado de su pelaje, su peso
+            y, en gran parte, la prevención de problemas urinarios o digestivos.
+            Elegir bien qué poner en su cuenco no es un detalle menor.
+          </p>
+        </div>
+      </header>
 
-                    <h2>Comida seca y húmeda: el equilibrio perfecto</h2>
-                    <p>
-                        La comida seca es beneficiosa para la salud dental, mientras que la comida húmeda ayuda a mantener una buena hidratación. Combinar ambos formatos, ofreciendo húmeda una o dos veces por semana, es una estrategia muy saludable.
-                        Marcas como <strong>Applaws</strong> y <strong>Almo Nature</strong> destacan por su calidad y alto contenido en proteínas naturales.
-                    </p>
+      <div class="px-6 sm:px-8 pb-2">
+        <hr class="border-[#FFE2E2]/80 mb-6" />
 
-                    <div class="my-6">
-                        <img
-                            src={imgBol.src}
-                            alt="Bol de comida para gato persa"
-                            class="rounded-lg shadow-md w-full object-cover"
-                        />
-                    </div>
+        <section class="space-y-6 text-[15px] sm:text-[16px] leading-relaxed text-gray-800">
+          <p>
+            El <strong>gato persa</strong> comparte con el resto de gatos una
+            característica clave: es un carnívoro estricto. Esto significa que
+            su organismo está diseñado para aprovechar, sobre todo, proteínas
+            de origen animal y grasas de calidad. Cuando la dieta se aleja de
+            esa realidad, tarde o temprano aparecen señales: menos vitalidad,
+            aumento de peso, pelaje apagado o digestiones más complicadas.
+          </p>
 
-                    <h2>Suplementos y agua siempre fresca</h2>
-                    <p>
-                        Los ácidos grasos esenciales como el omega 3 y omega 6 son grandes aliados para un pelaje brillante y una piel sana. Suplementos como <strong>Dermocanis Omega</strong> o <strong>Viacutan Plus</strong> pueden ser útiles en casos específicos.
-                        Además, el agua limpia y fresca debe estar siempre disponible. Una fuente para gatos puede incentivar su consumo y prevenir problemas urinarios.
-                    </p>
-                </div>
-            </div>
+          <p>
+            Al mismo tiempo, la forma de la cara y la mandíbula del persa, junto
+            con su estilo de vida generalmente tranquilo, plantean retos
+            específicos: necesita un alimento fácil de recoger, que favorezca
+            una buena digestión y que no aporte más calorías de las que puede
+            gastar en su día a día.
+          </p>
 
-            <div class="w-full flex justify-end mt-8 text-[#FF6B6B] p-6">
-                <a
-                    href="/informacion"
-                    class="hover:underline mt-4 px-4 py-2 rounded bg-[#FF6B6B]/10 hover:bg-[#FF6B6B]/20 transition-colors"
-                >
-                    ← Volver
-                </a>
-            </div>
-        </article>
-    </main>
+          <h2 class="text-xl sm:text-2xl font-semibold mt-8 mb-2 text-[#111827]">
+            Proteína y grasa: el núcleo de su dieta
+          </h2>
+
+          <p>
+            Cuando se mira la etiqueta de un alimento, no todo tiene el mismo
+            peso. En el caso del persa, interesa que la <strong>proteína</strong> provenga
+            principalmente de carne o pescado, y que la <strong>grasa</strong> incluya
+            fuentes de omega 3 y omega 6. Estos nutrientes contribuyen a
+            mantener la masa muscular, la energía y un pelaje denso y brillante.
+          </p>
+
+          <p>
+            Los piensos específicos para razas de pelo largo suelen contemplar
+            estas necesidades, añadiendo formulaciones que ayudan también a
+            gestionar las bolas de pelo. No es imprescindible que el alimento
+            lleve la palabra “persa” en la etiqueta, pero sí que responda a esas
+            características básicas de composición.
+          </p>
+
+          <img
+            src={imgBol.src}
+            alt="Bol de comida para gato persa"
+            class="rounded-xl shadow-md w-full object-cover my-6"
+          />
+
+          <h2 class="text-xl sm:text-2xl font-semibold mt-8 mb-2 text-[#111827]">
+            Comida seca, comida húmeda y el equilibrio posible
+          </h2>
+
+          <p>
+            La comida seca (pienso) ofrece comodidad, buena conservación y un
+            efecto beneficioso sobre la masticación. La comida húmeda, por su
+            parte, aporta más agua, suele resultar muy palatable y puede ser
+            útil en gatos que beben poco o que necesitan un apoyo extra para el
+            sistema urinario.
+          </p>
+
+          <p>
+            En muchos hogares, la opción más práctica es combinar ambos
+            formatos: pienso como base diaria y raciones de comida húmeda
+            puntuales, a modo de comida principal en alguno de los momentos del
+            día o como complemento. Lo importante es considerar el conjunto para
+            no duplicar calorías sin darnos cuenta.
+          </p>
+
+          <h2 class="text-xl sm:text-2xl font-semibold mt-8 mb-2 text-[#111827]">
+            Agua siempre disponible y algunos aliados extra
+          </h2>
+
+          <p>
+            Por muy bien diseñado que esté el pienso, nada sustituye al agua.
+            Mantener varios puntos de agua fresca repartidos por la casa o
+            utilizar fuentes específicas para gatos puede animar al persa a
+            beber más. Es un gesto sencillo que tiene impacto directo en la
+            salud renal y urinaria.
+          </p>
+
+          <p>
+            En determinados casos, el veterinario puede recomendar
+            suplementos —como ácidos grasos esenciales— para apoyar el pelaje o
+            la piel. También existen dietas específicas para gatos con
+            necesidades concretas: control del peso, problemas urinarios,
+            digestiones delicadas o alergias alimentarias. Estas opciones deben
+            siempre plantearse con asesoramiento profesional.
+          </p>
+
+          <p class="bg-[#FFF7F7] border-l-4 border-[#FF6B6B] px-4 py-3 rounded-md text-[14px] sm:text-[15px]">
+            Cambiar de alimento de forma brusca suele provocar rechazo o
+            problemas digestivos. Es preferible hacer la transición poco a poco,
+            mezclando el pienso nuevo con el anterior durante varios días, hasta
+            que uno vaya sustituyendo al otro.
+          </p>
+
+          <h2 class="text-xl sm:text-2xl font-semibold mt-8 mb-2 text-[#111827]">
+            Señales de que conviene revisar la dieta
+          </h2>
+
+          <p>
+            Más allá de la teoría, es el propio gato quien termina dando las
+            pistas. Un persa que gana peso sin explicación, que pierde interés
+            por la comida, que presenta heces muy blandas o muy secas, o cuyo
+            pelaje pierde calidad, puede estar indicando que la dieta actual no
+            es la más adecuada para él.
+          </p>
+
+          <p class="mt-6 text-[14px] sm:text-[15px] text-gray-700">
+            Elegir la alimentación de un gato persa no consiste en encontrar el
+            pienso perfecto a la primera, sino en observar, ajustar y, cuando
+            haga falta, pedir orientación profesional. Una dieta bien planteada
+            se traduce en más años de vida con buena calidad, menos visitas
+            inesperadas al veterinario y un pelaje que refleja, desde fuera,
+            que por dentro las cosas funcionan como deben.
+          </p>
+        </section>
+      </div>
+
+      <footer
+        class="w-full flex flex-wrap justify-between items-center gap-4 text-[#FF6B6B] px-6 sm:px-8 pb-6 pt-4 bg-white/95 border-t border-[#FFE2E2]/70"
+      >
+        <a
+          href="/informacion"
+          class="text-sm hover:underline px-4 py-2 rounded-full bg-[#FF6B6B]/10 hover:bg-[#FF6B6B]/20 transition-colors"
+        >
+          ← Volver al listado de artículos
+        </a>
+        <a
+          href="/contacto"
+          class="text-sm font-semibold hover:underline px-4 py-2 rounded-full bg-[#FF6B6B] text-white hover:bg-[#e65c5c] transition-colors"
+        >
+          Consultar sobre alimentación
+        </a>
+      </footer>
+    </article>
+  </main>
 </Layout>

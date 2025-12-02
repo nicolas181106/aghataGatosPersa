@@ -4,85 +4,125 @@ import Layout from "../layouts/layout.astro";
 
 <Layout
   title="Contacto | Ágatha Gatos Persas"
-  description="Contáctanos para más información sobre nuestros gatos persa, adopciones y cuidados. Estamos aquí para ayudarte."
+  description="Contacta con Ágatha Gatos Persas en Sevilla para información sobre camadas, reservas, envíos a toda España y cuidados de gatos persas."
 >
-  <main class="min-h-screen flex flex-col items-center justify-start pt-20 pb-10 text-[#2E2E2E]">
-    
-    <div class="bg-[#FF6B6B] w-full h-40 flex items-center justify-center shadow-lg">
-      <h1 class="text-4xl sm:text-5xl font-bold text-white drop-shadow-md">Contacto</h1>
-    </div>
-
-    <section class="w-full flex justify-center mt-10 px-4">
-      <form id="contact-form" class="relative w-full max-w-xl bg-white/90 backdrop-blur-lg rounded-xl shadow-2xl p-8 flex flex-col gap-6 border-t-4 border-[#FF6B6B] transition-transform transform">
-        
-        <label for="name" class="font-medium text-[#333]">Nombre</label>
-        <input type="text" id="name" name="name" required class="p-3 rounded-md border border-[#FF6B6B] focus:ring-2 focus:ring-[#FF6B6B] outline-none transition-all" />
-
-        <label for="email" class="font-medium text-[#333]">Correo electrónico</label>
-        <input type="email" id="email" name="email" required class="p-3 rounded-md border border-[#FF6B6B] focus:ring-2 focus:ring-[#FF6B6B] outline-none transition-all" />
-
-        <label for="gato" class="font-medium text-[#333]">Gato</label>
-        <select id="gato" name="gato" required class="p-3 rounded-md border border-[#FF6B6B] focus:ring-2 focus:ring-[#FF6B6B] outline-none transition-all cursor-pointer">
-          <option value="">-- Selecciona un tipo --</option>
-          <option value="Persa Europeo">Gato Persa Europeo</option>
-          <option value="Persa Chinchilla">Gato Persa Chinchilla</option>
-          <option value="Persa Himalayo">Gato Persa Himalayo</option>
-        </select>
-
-        <label for="message" class="font-medium text-[#333]">Mensaje</label>
-        <textarea id="message" name="message" required rows="5" class="p-3 rounded-md border border-[#FF6B6B] focus:ring-2 focus:ring-[#FF6B6B] outline-none transition-all resize-none"></textarea>
-
-        <button type="submit" class="bg-[#FF6B6B] text-white font-bold py-3 px-6 rounded-full shadow-md hover:bg-[#e65c5c] transition-all duration-300">
-          Enviar
-        </button>
-
-        <!-- Feedback tipo tarjeta flotante -->
-        <div id="form-feedback" class="absolute top-[-60px] left-1/2 -translate-x-1/2 w-full max-w-md text-center font-semibold text-lg rounded-lg p-4 shadow-lg hidden transition-all"></div>
-
-      </form>
+  <main class="min-h-screen bg-white/90 text-[#2E2E2E] pt-24 pb-16">
+    <section class="w-full">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="bg-gradient-to-r from-[#FF6B6B] to-pink-400 rounded-3xl shadow-2xl p-8 sm:p-10 flex flex-col md:flex-row items-center gap-8">
+          <div class="flex-1 text-center md:text-left">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-md">
+              Hablemos de tu futuro gato persa
+            </h1>
+            <p class="text-white/90 text-base sm:text-lg max-w-xl">
+              Cuéntanos qué tipo de <strong>gato persa</strong> buscas (chinchilla, himalayo o angora), desde dónde nos escribes
+              y resolveremos tus dudas sobre reservas, envíos y cuidados.
+            </p>
+          </div>
+          <div class="flex-1 flex flex-col gap-4 bg-white/10 rounded-2xl p-4 sm:p-5 border border-white/30 text-white text-sm sm:text-base">
+            <p class="font-semibold text-lg">Contacto directo</p>
+            <p><span class="font-semibold">Ubicación:</span> Sevilla, envíos a toda España</p>
+            <p class="text-white/80 text-xs sm:text-sm">
+              Te responderemos lo antes posible para ayudarte a encontrar el compañero felino perfecto.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <script type="module">
-      const form = document.getElementById('contact-form');
-      const feedback = document.getElementById('form-feedback');
+    <section class="w-full mt-12">
+      <div class="max-w-5xl mx-auto px-4 grid lg:grid-cols-2 gap-10 items-start">
+        {/* Texto explicativo */}
+        <article class="space-y-6">
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#FF6B6B]">
+            Cuéntanos qué necesitas
+          </h2>
+          <p class="text-gray-700 text-base sm:text-lg leading-relaxed">
+            En <strong>Ágatha Gatos Persas</strong> tratamos cada consulta de forma personalizada. Puedes escribirnos para:
+          </p>
+          <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm sm:text-base">
+            <li>Preguntar por las <strong>próximas camadas</strong> de gatos persas.</li>
+            <li>Solicitar información sobre <strong>reservas</strong> y tiempos de espera.</li>
+            <li>Consultar cómo gestionamos los <strong>envíos a otras ciudades de España</strong>.</li>
+            <li>Recibir consejos sobre <strong>cuidados, alimentación y adaptación</strong> al nuevo hogar.</li>
+          </ul>
+          <div class="bg-white rounded-2xl shadow-lg border-l-4 border-[#FF6B6B] p-5 text-sm sm:text-base">
+            <p class="font-semibold mb-1 text-[#FF6B6B]">Consejo:</p>
+            <p class="text-gray-700">
+              Si ya tienes visto un gato en la web, indícanos su nombre o tipo (por ejemplo:
+              "persa chinchilla", "himalayo" o "camadas anteriores") para poder ayudarte más rápido.
+            </p>
+          </div>
+        </article>
 
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
+        <form
+          id="contact-form"
+          class="relative w-full bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl p-6 sm:p-8 flex flex-col gap-5 border-t-4 border-[#FF6B6B]"
+          action="https://formsubmit.co/nicolasbernalbermudez@gmail.com"
+          method="POST"
+        >
+          <h2 class="text-xl sm:text-2xl font-bold mb-1 text-[#2E2E2E]">
+            Envíanos un mensaje
+          </h2>
+          <p class="text-gray-600 text-xs sm:text-sm mb-3">
+            Rellena el formulario y te responderemos por correo lo antes posible.
+          </p>
 
-        feedback.classList.add('hidden');
-        feedback.textContent = '';
-        feedback.classList.remove('bg-green-100', 'bg-red-100', 'text-green-700', 'text-red-700');
+          <label for="name" class="font-medium text-[#333] text-sm sm:text-base">Nombre</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="p-3 rounded-md border border-[#FF6B6B]/70 focus:ring-2 focus:ring-[#FF6B6B] outline-none transition-all text-sm sm:text-base"
+            placeholder="Tu nombre"
+          />
 
-        const formData = new FormData(form);
+          <label for="email" class="font-medium text-[#333] text-sm sm:text-base">Correo electrónico</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="p-3 rounded-md border border-[#FF6B6B]/70 focus:ring-2 focus:ring-[#FF6B6B] outline-none transition-all text-sm sm:text-base"
+            placeholder="tucorreo@ejemplo.com"
+          />
 
-        try {
-          const response = await fetch('/api/form', {
-            method: 'POST',
-            body: formData
-          });
+          <label for="gato" class="font-medium text-[#333] text-sm sm:text-base">Tipo de gato</label>
+          <select
+            id="gato"
+            name="gato"
+            required
+            class="p-3 rounded-md border border-[#FF6B6B]/70 focus:ring-2 focus:ring-[#FF6B6B] outline-none transition-all cursor-pointer text-sm sm:text-base bg-white"
+          >
+            <option value="">-- Selecciona un tipo --</option>
+            <option value="Persa Europeo">Gato persa europeo</option>
+            <option value="Persa Chinchilla">Gato persa chinchilla</option>
+            <option value="Persa Himalayo">Gato persa himalayo</option>
+            <option value="No estoy seguro">No lo tengo claro, quiero asesoramiento</option>
+          </select>
 
-          const message = await response.text();
+          <label for="message" class="font-medium text-[#333] text-sm sm:text-base">Mensaje</label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            rows="5"
+            class="p-3 rounded-md border border-[#FF6B6B]/70 focus:ring-2 focus:ring-[#FF6B6B] outline-none transition-all resize-none text-sm sm:text-base"
+            placeholder="Cuéntanos desde dónde nos escribes y qué tipo de gatito persa te interesa..."
+          ></textarea>
 
-          if (response.ok) {
-            feedback.textContent = message;
-            feedback.classList.add('bg-green-100', 'text-green-700');
-            feedback.classList.remove('hidden');
-            form.reset();
-          } else {
-            feedback.textContent = message;
-            feedback.classList.add('bg-red-100', 'text-red-700');
-            feedback.classList.remove('hidden');
-          }
+          <input type="hidden" name="_subject" value="Nueva consulta desde la web Ágatha Gatos Persas" />
+          <input type="hidden" name="_template" value="table" />
 
-          // Animación para que desaparezca después de 4 segundos
-          setTimeout(() => feedback.classList.add('hidden'), 4000);
-        } catch (err) {
-          feedback.textContent = 'Error de conexión. Intenta de nuevo.';
-          feedback.classList.add('bg-red-100', 'text-red-700');
-          feedback.classList.remove('hidden');
-          setTimeout(() => feedback.classList.add('hidden'), 4000);
-        }
-      });
-    </script>
+          <button
+            type="submit"
+            class="mt-2 bg-[#FF6B6B] text-white font-bold py-3 px-6 rounded-full shadow-md hover:bg-[#e65c5c] hover:-translate-y-0.5 transition-all duration-300 text-sm sm:text-base"
+          >
+            Enviar mensaje
+          </button>
+        </form>
+      </div>
+    </section>
   </main>
 </Layout>

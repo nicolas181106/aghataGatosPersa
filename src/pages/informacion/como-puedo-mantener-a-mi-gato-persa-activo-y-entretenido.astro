@@ -2,78 +2,217 @@
 import Layout from "../../layouts/layout.astro";
 import imgJugando from "./../../assets/img/gatoPersaJugando.jpg";
 import imgJuguetes from "./../../assets/img/gatoJugando2.webp";
+
+const meta = {
+  date: "2025-01-10",
+  readTime: "7 min",
+};
 ---
 
 <Layout
-    title="Cómo mantener activo a un gato persa: juegos, rutinas y consejos"
-    description="Descubre cómo mantener a tu gato persa estimulado y feliz con juegos, rutinas y enriquecimiento sensorial adaptados a su personalidad."
-    keywords="juego gato persa, actividad gato persa, entretenimiento felino"
+  title="Cómo mantener a tu gato persa activo y entretenido en casa"
+  description="Artículo en profundidad sobre cómo estimular a un gato persa: juegos, rutinas, entorno y pequeñas ideas para evitar el sedentarismo."
 >
-    <main class="backdrop-blur-[5px] min-h-screen mt-35 pb-10 max-sm:p-4">
-        <article class="max-w-[800px] mx-auto bg-white shadow-md rounded-lg overflow-hidden mt-5 sm:mt-20 pop">
-            <img
-                src={imgJugando.src}
-                alt="Gato persa jugando"
-                class="w-full h-[280px] object-cover"
-            />
+  <main class="backdrop-blur-[5px] min-h-screen mt-35 pb-16 max-sm:px-4">
+    <article
+      class="max-w-[800px] mx-auto bg-white/98 shadow-lg rounded-3xl overflow-hidden mt-6 sm:mt-24 border border-[#FFE2E2]/70"
+    >
+      <header>
+        <div class="relative h-[220px] sm:h-[260px] overflow-hidden">
+          <img
+            src={imgJugando.src}
+            alt="Gato persa jugando en casa"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
-            <div class="p-6">
-                <h1 class="text-3xl sm:text-4xl font-bold mb-3 text-gray-800 leading-tight">
-                    Cómo mantener activo a un gato persa: juegos, rutinas y consejos
-                </h1>
+          <nav class="absolute top-4 left-4 text-[11px] sm:text-xs text-white/90">
+            <a href="/" class="hover:underline">Inicio</a>
+            <span class="mx-1">/</span>
+            <a href="/informacion" class="hover:underline">Información</a>
+          </nav>
 
-                <p class="text-lg text-gray-700 font-medium mb-6">
-                    Aunque el gato persa es una raza tranquila, también necesita estimulación diaria para mantenerse sano y feliz. Con la combinación adecuada de juegos, espacios y rutinas, tu persa podrá disfrutar de una vida activa y equilibrada.
-                </p>
+          <div class="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2 text-[11px] sm:text-xs text-white/90">
+            <span>
+              Publicado el{" "}
+              {new Date(meta.date).toLocaleDateString("es-ES", {
+                day: "2-digit",
+                month: "long",
+                year: "numeric",
+              })}
+            </span>
+            <span class="bg-black/35 px-3 py-1 rounded-full">
+              {meta.readTime} de lectura aproximada
+            </span>
+          </div>
+        </div>
 
-                <div class="prose max-w-none prose-lg text-gray-800 leading-relaxed">
-                    <h2>Juegos suaves y estimulación diaria</h2>
-                    <p>
-                        El <strong>gato persa</strong> puede ser calmado por naturaleza, pero eso no significa que deba llevar una vida sedentaria. Juguetes como varitas con plumas, pelotas con cascabel o ratones de tela mantienen su interés y fomentan el ejercicio suave. 
-                        Marcas como <em>KONG</em>, <em>Catit</em> o <em>Trixie</em> ofrecen opciones seguras y duraderas.
-                    </p>
-                    <p>
-                        Los juguetes interactivos que liberan premios, como el <em>Catit Senses Food Tree</em>, ayudan a ejercitar su cuerpo y mente al mismo tiempo, incentivando el juego de forma más estratégica.
-                    </p>
+        <div class="px-6 sm:px-8 pt-6 pb-4">
+          <p class="text-[11px] sm:text-xs font-semibold tracking-[0.25em] text-[#FF6B6B] uppercase mb-2">
+            COMPORTAMIENTO Y JUEGO
+          </p>
+          <h1 class="text-2xl sm:text-3xl md:text-[32px] font-bold leading-snug text-[#1F2933] mb-3">
+            Cómo mantener a tu gato persa activo y entretenido en casa
+          </h1>
+          <p class="text-[15px] sm:text-base text-gray-700 leading-relaxed">
+            El gato persa tiene fama de tranquilo y reservado. Esa calma, sin
+            embargo, no debe confundirse con sedentarismo absoluto. También
+            necesita estímulos, pequeños retos y momentos de juego, aunque su
+            estilo de vida no tenga nada que ver con el de un gato muy
+            deportivo. La clave está en adaptar la actividad a su carácter.
+          </p>
+        </div>
+      </header>
 
-                    <h2>Espacios para explorar y trepar</h2>
-                    <p>
-                        Aunque no es tan ágil como otras razas, el gato persa disfruta observando desde lugares altos y moviéndose por su territorio. Un árbol para gatos con varias plataformas, estantes elevados o redes seguras pueden proporcionarle horas de entretenimiento.
-                    </p>
-                    <p>
-                        Si cuentas con un balcón o terraza segura, habilítalo como zona de exploración para que disfrute del aire libre con seguridad, usando redes protectoras y camitas confortables.
-                    </p>
+      <div class="px-6 sm:px-8 pb-2">
+        <hr class="border-[#FFE2E2]/80 mb-6" />
 
-                    <img
-                        src={imgJuguetes.src}
-                        alt="Gato persa con juguetes"
-                        class="rounded-lg shadow-md w-full object-cover my-6"
-                    />
+        <section class="space-y-6 text-[15px] sm:text-[16px] leading-relaxed text-gray-800">
+          <p>
+            La vida de un gato persa suele girar en torno al hogar, el sofá y
+            las zonas de descanso. En ese contexto tan cómodo, es fácil que el
+            movimiento se reduzca a lo mínimo imprescindible: ir al comedero,
+            al arenero y volver al mismo lugar de siempre. Si se prolonga en el
+            tiempo, esa falta de actividad puede favorecer el sobrepeso y un
+            carácter cada vez más apático.
+          </p>
 
-                    <h2>Compañía y rutinas diarias</h2>
-                    <p>
-                        Dedica entre 15 y 20 minutos al día para jugar, acariciar y hablar con tu gato persa. Esta interacción fortalece vuestro vínculo y lo mantiene emocionalmente equilibrado. Mantener horarios estables para comida, juego y descanso le aporta seguridad.
-                    </p>
-                    <p>
-                        Si pasas mucho tiempo fuera, considera la compañía de otro gato compatible o juguetes automáticos como el <em>PetSafe Bolt</em>, que lanza luces láser de forma aleatoria para mantenerlo activo.
-                    </p>
+          <p>
+            No se trata de convertir al persa en un atleta, sino de ofrecerle
+            pequeñas oportunidades de moverse y explorar. Un par de sesiones
+            cortas de juego al día, cambios en el entorno y algunos recursos
+            sencillos suelen ser suficientes para mantener despierta su
+            curiosidad sin sacarlo de su naturaleza tranquila.
+          </p>
 
-                    <h2>Enriquecimiento sensorial</h2>
-                    <p>
-                        Estimula sus sentidos con música suave, aromas como la hierba gatera o la valeriana, y diferentes texturas en mantas o cojines. Dejarle una ventana con vista al exterior y una repisa acolchada para observar aves y la calle también es una forma sencilla y efectiva de mantenerlo entretenido.
-                    </p>
-                </div>
-            </div>
+          <h2 class="text-xl sm:text-2xl font-semibold mt-8 mb-2 text-[#111827]">
+            El juego como rutina, no como excepción
+          </h2>
 
-            <div class="w-full flex justify-end mt-8 text-[#FF6B6B] p-6">
-                <a
-                    href="/informacion"
-                    class="hover:underline mt-4 px-4 py-2 rounded bg-[#FF6B6B]/10 hover:bg-[#FF6B6B]/20 transition-colors"
-                >
-                    ← Volver
-                </a>
-            </div>
+          <p>
+            En muchos hogares, el juego aparece de forma esporádica: unos días
+            intensos, seguidos de semanas en las que nadie encuentra tiempo.
+            Para el gato, en cambio, lo ideal es justo lo contrario: momentos
+            breves, previsibles y constantes. Diez minutos por la mañana y diez
+            por la noche, con un juguete sencillo, pueden hacer más por su
+            bienestar que una larga sesión de vez en cuando.
+          </p>
 
-        </article>
-    </main>
+          <p>
+            Las varitas con plumas, las pelotas ligeras o los pequeños ratones
+            de tela permiten que el gato persa se mueva sin necesidad de saltos
+            exagerados. Lo importante no es la velocidad, sino la interacción:
+            que persiga, que se agazape, que sienta que participa en algo que
+            ocurre delante de él y que no siempre es previsible.
+          </p>
+
+          <p class="bg-[#FFF7F7] border-l-4 border-[#FF6B6B] px-4 py-3 rounded-md text-[14px] sm:text-[15px]">
+            Un buen truco es terminar siempre las sesiones con una pequeña
+            recompensa o una caricia tranquila. Así, el gato asocia el juego a
+            un momento positivo y no a algo abrupto que se interrumpe de golpe.
+          </p>
+
+          <h2 class="text-xl sm:text-2xl font-semibold mt-8 mb-2 text-[#111827]">
+            Un hogar pensado para ser observado
+          </h2>
+
+          <p>
+            El persa no es, por lo general, un escalador incansable. Aun así,
+            agradece tener puntos altos desde los que observar lo que ocurre a
+            su alrededor. Un rascador con varias plataformas, una estantería
+            adaptada o un simple mueble con una manta en la parte superior
+            pueden convertirse en puestos de vigilancia perfectos.
+          </p>
+
+          <p>
+            Las ventanas también juegan un papel importante. Un alféizar amplio
+            o una repisa acolchada permiten al gato pasar largos ratos mirando
+            al exterior: aves, coches, personas, luz cambiante. Sin moverse en
+            exceso, su mente sigue activa. Si se trata de un balcón o terraza,
+            la seguridad (redes, cierres, supervisión) debe ir siempre por
+            delante de cualquier otro aspecto.
+          </p>
+
+          <img
+            src={imgJuguetes.src}
+            alt="Gato persa jugando con diferentes juguetes"
+            class="rounded-xl shadow-md w-full object-cover my-6"
+          />
+
+          <p>
+            Para los gatos que pasan muchas horas solos, los juguetes que se
+            mueven o suenan con el mínimo contacto pueden ser un aliado
+            interesante. No sustituyen la interacción con la persona, pero sí
+            añaden pequeñas sorpresas a lo largo del día.
+          </p>
+
+          <h2 class="text-xl sm:text-2xl font-semibold mt-8 mb-2 text-[#111827]">
+            Rutinas que dan estructura al día
+          </h2>
+
+          <p>
+            A diferencia de otras razas más impulsivas, el gato persa suele
+            tolerar y agradecer la previsibilidad. Saber, más o menos, cuándo
+            llega la comida, cuándo se abre la ventana o cuándo aparece su
+            persona con el juguete aporta seguridad. Dentro de ese marco, se
+            puede introducir variedad en los juegos, en los recorridos por la
+            casa o en las zonas habilitadas para descansar.
+          </p>
+
+          <p>
+            Compartir unos minutos de juego antes de las comidas suele dar
+            buen resultado: el gato se activa, caza el juguete y, como cierre,
+            come y descansa. Es una secuencia sencilla que imita, a pequeña
+            escala, lo que haría en la naturaleza. Lo importante no es la
+            perfección, sino la coherencia.
+          </p>
+
+          <h2 class="text-xl sm:text-2xl font-semibold mt-8 mb-2 text-[#111827]">
+            Cuándo prestar más atención
+          </h2>
+
+          <p>
+            Un cierto gusto por la calma encaja con el carácter del persa. Sin
+            embargo, hay señales que conviene no pasar por alto: gatos que dejan
+            de interesarse por cualquier juego, que duermen mucho más de lo
+            habitual o que evitan moverse pueden estar expresando algo más que
+            simple pereza.
+          </p>
+
+          <p>
+            En esos casos, merece la pena comentar la situación con el
+            veterinario. El dolor articular, el sobrepeso avanzado o algunos
+            problemas internos pueden traducirse en una caída notable de la
+            actividad. Descubrir la causa a tiempo permite adaptar el entorno y
+            la rutina sin forzar al animal más de lo necesario.
+          </p>
+
+          <p class="mt-6 text-[14px] sm:text-[15px] text-gray-700">
+            Mantener a un gato persa activo no implica convertirlo en algo que
+            no es. Se trata, más bien, de ofrecerle pequeñas oportunidades
+            diarias para moverse, investigar y compartir momentos de juego. El
+            resultado suele ser un gato más equilibrado, más seguro y, también,
+            más conectado con quienes viven con él.
+          </p>
+        </section>
+      </div>
+
+      <footer
+        class="w-full flex flex-wrap justify-between items-center gap-4 text-[#FF6B6B] px-6 sm:px-8 pb-6 pt-4 bg-white/95 border-t border-[#FFE2E2]/70"
+      >
+        <a
+          href="/informacion"
+          class="text-sm hover:underline px-4 py-2 rounded-full bg-[#FF6B6B]/10 hover:bg-[#FF6B6B]/20 transition-colors"
+        >
+          ← Volver al listado de artículos
+        </a>
+        <a
+          href="/contacto"
+          class="text-sm font-semibold hover:underline px-4 py-2 rounded-full bg-[#FF6B6B] text-white hover:bg-[#e65c5c] transition-colors"
+        >
+          Consultar dudas sobre comportamiento
+        </a>
+      </footer>
+    </article>
+  </main>
 </Layout>

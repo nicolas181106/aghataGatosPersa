@@ -34,19 +34,43 @@ const articles = [
 	description="Política de privacidad de Ágatha Gatos Persas"
 	keywords="gatos persas, política de privacidad, política, privacidad"
 >
-	<main class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen pb-10">
-		<div class="bg-[#FF6B6B] h-40 mt-20 flex items-center justify-center">
-			<h1 class="text-[30px] font-bold text-white text-center">
-				Política de privacidad
-			</h1>
-		</div>
+	<main class="bg-white/90 text-[#2E2E2E] min-h-screen pb-16">
+		<section class="bg-gradient-to-r from-[#FF6B6B] to-pink-400 py-20 mt-20">
+			<div class="max-w-7xl mx-auto px-4 text-center">
+				<h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Política de Privacidad</h1>
+				<div class="w-32 h-1 bg-white mx-auto mb-4"></div>
+				<p class="text-white text-lg max-w-2xl mx-auto">
+					Cómo protegemos y gestionamos tus datos personales
+				</p>
+			</div>
+		</section>
+
 		<section
 			arial-label="Política de privacidad"
-			class="max-w-[325px] sm:max-w-[600px] md:max-w-[700px] xl:max-w-[1000px] 2xl:max-w-[1100px] mx-auto p-6 sm:p-20 mt-10 bg-white/90 rounded-lg shadow-lg pop"
+			class="max-w-5xl mx-auto px-4 py-16"
 		>
-			{articles.map((articles) => (
-				<h1 class="text-3xl font-bold mb-4 text-[#FF6B6B]">{articles.h1}</h1>
-				<p class="mb-8 text-[15px] sm:text-[20px]">{articles.p}</p>
+			<div class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 md:p-8 rounded-3xl shadow-lg mb-12 border-l-4 border-[#FF6B6B]">
+				<div class="flex items-start gap-4">
+					<svg class="w-8 h-8 text-[#FF6B6B] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+					</svg>
+					<div>
+						<h2 class="text-xl font-bold text-[#FF6B6B] mb-2">🛡️ Tu privacidad es importante</h2>
+						<p class="text-gray-700 leading-relaxed">
+							En Ágatha Gatos Persas nos comprometemos a proteger tu información personal. A continuación, te explicamos cómo gestionamos tus datos.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			{articles.map((article) => (
+				<article class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 mb-8">
+					<h2 class="text-2xl md:text-3xl font-bold mb-4 text-[#FF6B6B] flex items-center gap-3">
+						<span class="w-2 h-8 bg-gradient-to-b from-[#FF6B6B] to-pink-400 rounded-full"></span>
+						{article.h1}
+					</h2>
+					<p class="text-gray-700 text-base md:text-lg leading-relaxed">{article.p}</p>
+				</article>
 			))}
 		</section>
 	</main>

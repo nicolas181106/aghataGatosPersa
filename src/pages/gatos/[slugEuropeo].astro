@@ -18,33 +18,34 @@ if (!gato) {
 ---
 
 <Layout
-  title={`${gato.nombre} | Ágatha Gatos Persa`}
-  description={`Conoce a ${gato.nombre}, un adorable gato persa.`}
+  title={`${gato.name} | Ágatha Gatos Persa`}
+  description={`Conoce a ${gato.name}, un adorable gato persa.`}
 >
-  <main class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen pb-10">
-    <div class="bg-[#FF6B6B] h-40 mt-20 flex items-center justify-center">
-      <h1 class="text-[30px] font-bold text-white text-center">
-        {gato.nombre}
+  <main class="bg-white/90 text-[#2E2E2E] min-h-screen pb-10">
+    <section class="bg-gradient-to-r from-[#FF6B6B] to-pink-400 h-40 mt-20 flex items-center justify-center">
+      <h1 class="text-4xl font-bold text-white text-center">
+        {gato.name}
       </h1>
-    </div>
+    </section>
+    
     <section
       aria-label="Perfil de gato"
       class="max-w-[350px] sm:max-w-3xl mx-auto p-6 sm:p-12 mt-16 bg-white/80 backdrop-blur rounded-3xl shadow-xl border border-[#ffeaea] pop"
     >
       <div class="flex flex-col sm:flex-row items-center gap-8">
-        <img src={gato.imgSrc.src} alt={gato.nombre} class="w-64 h-64 rounded-xl object-cover ring-4 ring-[#FF6B6B] shadow-md"/>
+        <img src={gato.img} alt={gato.name} class="w-64 h-64 rounded-xl object-cover ring-4 ring-[#FF6B6B] shadow-md"/>
         <div class="text-center sm:text-left">
-          <h2 class="text-3xl font-semibold text-[#FF6B6B] mb-4">{gato.nombre}</h2>
+          <h2 class="text-3xl font-semibold text-[#FF6B6B] mb-4">{gato.name}</h2>
           <p class="text-xl mb-2">
             <strong>Edad:</strong>
-            <span class="edad-gatito" data-nacimiento={gato.edad.toISOString()}></span>
+            <span class="edad-gatito" data-nacimiento={gato.birth.toString()}></span>
           </p>
-          <p class="text-xl"><strong>Género:</strong> {gato.genero}</p>
+          <p class="text-xl"><strong>Género:</strong> {gato.gender}</p>
         </div>
       </div>
 
       <div class="mt-8">
-        <p class="text-lg text-gray-800 leading-relaxed text-center sm:text-justify">{gato.texto}</p>
+        <p class="text-lg text-gray-800 leading-relaxed text-center sm:text-justify">{gato.text}</p>
       </div>
 
       <div class="w-full flex justify-end mt-8 text-[#FF6B6B]">

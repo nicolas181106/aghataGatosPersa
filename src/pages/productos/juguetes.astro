@@ -9,116 +9,231 @@ import art6 from "./../../assets/img/juguetes/art6.jpg";
 import art7 from "./../../assets/img/juguetes/art7.jpg";
 import art8 from "./../../assets/img/juguetes/art8.jpg";
 
-const rascadores = [
+const juguetes = [
   {
     a: "https://amzn.to/4goxa8d",
     img: art1.src,
     alt: "Juguete interactivo para gatos persas con varitas y plumas",
     h2: "Juguete para Gatos – Varitas con Plumas y Cintas",
-    p: "Set de juguetes interactivos para gatos persas y domésticos que incluye varitas con plumas y cintas de arcoíris. Fabricado con materiales duraderos y seguros, fomenta el ejercicio diario, la estimulación mental y la interacción segura entre dueño y mascota.",
-    precio: "10,99 €"
+    p: "Set de juguetes interactivos con varitas de plumas y cintas de arcoíris. Perfecto para sesiones cortas de juego diario y para fortalecer el vínculo con tu gato.",
+    badge: "Top interactivo",
+    rating: "4,6 · 1.230 opiniones",
+    info: "Interactivo · Varitas · Para gatos adultos y jóvenes",
   },
   {
     a: "https://amzn.to/467aO7T",
     img: art2.src,
     alt: "Set de juguetes variados para gatos persas: ratones, plumas y pelotas",
     h2: "Set de Juguetes para Gatos – Ratones, Bolas y Plumas",
-    p: "Pack de 16 juguetes para gatos persas y gatitos: ratones, bolas y plumas en varios colores, fabricados con materiales resistentes. Ideales para mantener a tu gato activo, entretenido y feliz.",
-    precio: "11,39 €"
+    p: "Pack de 16 juguetes variados: ratones, pelotas y plumas de colores. Ideal para hogares con uno o varios gatos que necesitan variedad y estímulo.",
+    badge: "Más vendido",
+    rating: "4,4 · 2.050 opiniones",
+    info: "Pack variado · Ratones, pelotas y plumas",
   },
   {
     a: "https://amzn.to/3VR4riZ",
     img: art3.src,
     alt: "Túnel Lionto para gatos persas: plegable, resistente y con pelota integrada",
     h2: "Túnel para Gatos Lionto – Resistente y Plegable",
-    p: "Túnel interactivo para gatos persas y gatitos Lionto. Juguete imprescindible y duradero, fabricado en lino sintético elegante. Es extensible, conectable y cuenta con cuevas integradas y pelota de juego para mayor diversión.",
-    precio: "22,95 €"
+    p: "Túnel interactivo plegable con varias entradas y pelota integrada. Ideal para gatos curiosos que disfrutan escondiéndose y corriendo de un lado a otro.",
+    badge: "Perfecto para casas pequeñas",
+    rating: "4,5 · 1.100 opiniones",
+    info: "Túnel plegable · Interior · Con pelota",
   },
   {
     a: "https://amzn.to/3VyLMIN",
     img: art4.src,
-    alt: "Este juguete masticable para gatos de interior está hecho de cuerda de algodón enrollada a mano. El palo masticable viene con ingredientes hechos de hierba gatera. La hierba gatera puede promover el peristaltismo intestinal, mejorar la digestión y mantener sana a su mascota.",
-    h2: "Juguete De Dentición para Gatos",
-    p: "Este juguete masticable para gatos de interior está hecho de cuerda de algodón enrollada a mano. El palo masticable viene con ingredientes hechos de hierba gatera. La hierba gatera puede promover el peristaltismo intestinal, mejorar la digestión y mantener sana a su mascota.",
-    precio: "11,99 €"
+    alt: "Juguete masticable con cuerda de algodón e hierba gatera",
+    h2: "Juguete de Dentición con Hierba Gatera",
+    p: "Juguete masticable hecho de cuerda de algodón enrollada a mano con hierba gatera. Ayuda a la higiene dental y aporta estimulación suave para gatos de interior.",
+    badge: "Con catnip",
+    rating: "4,3 · 640 opiniones",
+    info: "Masticable · Hierba gatera · Higiene dental",
   },
   {
     a: "https://amzn.to/3Ko4iRB",
     img: art5.src,
-    alt: "Modo manual y modo automático. Juguete automático para gatos: Con la ayuda de las ventosas, puede liberar sus manos y ver a su gato correr y jugar libremente;",
-    h2: "JOPHEK Juguetes para Gatos",
-    p: "Modo manual y modo automático. Juguete automático para gatos: Con la ayuda de las ventosas, puede liberar sus manos y ver a su gato correr y jugar libremente;",
-    precio: "7,59 €"
+    alt: "Juguete automático para gatos con ventosas y movimiento",
+    h2: "JOPHEK Juguetes Automáticos para Gatos",
+    p: "Juguete automático con modos manual y automático. Gracias a las ventosas, se fija en superficies lisas para que el gato pueda jugar incluso cuando no estás.",
+    badge: "Automático",
+    rating: "4,2 · 710 opiniones",
+    info: "Automático · Con ventosa · Para interior",
   },
   {
     a: "https://amzn.to/4mAOw3m",
     img: art6.src,
     alt: "Juguetes resistentes para gatos",
-    h2: "Trixie Accesorio para Mascotas 21 g",
-    p: "Juguetes resistentes para gatos",
-    precio: "1,57 €"
+    h2: "Trixie Accesorio para Mascotas",
+    p: "Juguete resistente pensado para soportar las garras y mordiscos de gatos activos. Ideal como complemento a otros juguetes más suaves.",
+    badge: "Resistente",
+    rating: "4,1 · 390 opiniones",
+    info: "Resistente · Uso diario",
   },
   {
     a: "https://amzn.to/4pJ8iwc",
     img: art7.src,
-    alt: "El juego de juguetes para gatos contiene 20 almohadillas de plumas para gatos en 4 colores. Hay amarillo, verde, azul y rojo. Los coloridos juguetes de primavera para gatos pueden aliviar eficazmente el estado de ánimo del gato y mejorar la atracción del juguete, mucho entretenimiento para su mascota.",
-    h2: "TaimeiMao 20 Piezas Muelle en Espiral para Gato",
-    p: "El juego de juguetes para gatos contiene 20 almohadillas de plumas para gatos en 4 colores. Hay amarillo, verde, azul y rojo. Los coloridos juguetes de primavera para gatos pueden aliviar eficazmente el estado de ánimo del gato y mejorar la atracción del juguete, mucho entretenimiento para su mascota.",
-    precio: "6,99 €"
+    alt: "Muelle en espiral para gatos en varios colores",
+    h2: "TaimeiMao – 20 Muelles en Espiral para Gatos",
+    p: "Set de 20 muelles de colores que rebotan con el mínimo movimiento del gato. Muy ligeros y llamativos para estimular el juego independiente.",
+    badge: "Juego independiente",
+    rating: "4,4 · 1.450 opiniones",
+    info: "Pack 20 uds · Juego autónomo",
   },
   {
     a: "https://amzn.to/4mv3gAB",
     img: art8.src,
-    alt: "Obtendrá 3 piezas de cuerda para morder gatos, los palitos coloridos de hierba gatera pueden atraer a los gatos y ayudarlos a encontrarlos rápidamente.",
-    h2: "Juguetes Gatos, Juguete Cuerda Gato, Juguete De Dentición para Gatos",
-    p: "Obtendrá 3 piezas de cuerda para morder gatos, los palitos coloridos de hierba gatera pueden atraer a los gatos y ayudarlos a encontrarlos rápidamente.",
-    precio: "11,99 €"
+    alt: "Cuerdas con hierba gatera para gatos",
+    h2: "Juguete de Cuerda con Hierba Gatera (3 uds)",
+    p: "Pack de 3 cuerdas con hierba gatera que invitan a morder, jugar y rodar. Ideal para gatos que disfrutan con el aroma del catnip.",
+    badge: "Capricho con catnip",
+    rating: "4,5 · 780 opiniones",
+    info: "Catnip · 3 unidades · Para gatos adultos",
   },
 ];
 ---
 
 <Layout
-  title="Juguetes para gatos persas | Mejores artículos y accesorios"
-  description="Descubre los mejores juguetes para gatos persas y domésticos: interactivos, túneles, plumas, ratones y bolas para mantener a tu gato activo y feliz."
-  keywords="juguete para gatos, juguetes para gatos, juguete para gato persa, juguetes para gatos persa, juguetes gatos, juguetes gatos persas, artículos para gatos, juguetes interactivos para gatos, juguetes para gatitos, juguetes y accesorios para gatos persas, mejores juguetes para gatos"
+  title="Juguetes para Gatos | Mejores artículos y accesorios 2025"
+  description="Descubre los mejores juguetes para gatos domésticos: interactivos, túneles, plumas, ratones y bolas para mantener a tu gato activo y feliz."
+  keywords="juguete para gato, juguetes para gatos, juguete para gato persa, juguetes para gatos persa, juguetes gatos, juguetes interactivos para gatos, juguetes para gatitos, juguetes y accesorios para gatos persas, mejores juguetes para gatos"
 >
+  <main class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen pb-16 mt-20">
+    <!-- Hero -->
+    <header class="bg-gradient-to-r from-[#FF6B6B] via-[#FF8A8A] to-[#FFC0C0] text-white">
+      <div class="max-w-[1200px] mx-auto px-6 sm:px-10 py-8 sm:py-10">
+        <nav class="text-[11px] sm:text-xs text-white/80 mb-2">
+          <a href="/" class="hover:underline">Inicio</a>
+          <span class="mx-1">/</span>
+          <a href="/productos" class="hover:underline">Productos</a>
+          <span class="mx-1">/</span>
+          <span class="font-semibold">Juguetes para gatos</span>
+        </nav>
 
-  <main class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen pb-16">
-    <div class="bg-[#FF6B6B] h-40 flex items-center justify-center mt-20">
-      <h1 class="text-3xl font-extrabold text-white text-center">
-        Juguetes para gatos persas – Guía y Recomendaciones
-      </h1>
-    </div>
+        <h1 class="text-2xl sm:text-3xl md:text-[32px] font-extrabold leading-snug">
+          Juguetes para gatos – Guía y recomendaciones 2025
+        </h1>
+        <p class="mt-2 text-[13px] sm:text-sm text-white/90 max-w-2xl">
+          Selección de <strong>juguetes para gatos domésticos y gatos persas</strong>: varitas, pelotas, muelles,
+          túneles y juguetes con hierba gatera para que se mantenga activo sin agobios.
+        </p>
+        <p class="mt-2 text-[12px] sm:text-xs text-white/80 max-w-2xl">
+          Recuerda combinar ratos de juego contigo con juguetes que pueda usar solo, sobre todo si pasa muchas horas en casa.
+        </p>
 
-    <section class="max-w-[1300px] mx-auto p-6 sm:p-10 mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {rascadores.map((producto) => (
-        <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col pop hover:-translate-y-2 hover:border-[1px] hover:border-[#FF6B6B] border-transparent">
-          <div class="relative">
-            <img src={producto.img} alt={producto.alt} class="w-full h-64 object-cover rounded-t-2xl"/>
+        <div class="mt-4 flex flex-wrap gap-2 text-[11px] sm:text-[12px]">
+          <span class="px-3 py-1 rounded-full bg-white/15 border border-white/30">
+            Interactivos
+          </span>
+          <span class="px-3 py-1 rounded-full bg-white/10 border border-white/20">
+            Con hierba gatera
+          </span>
+          <span class="px-3 py-1 rounded-full bg-white/10 border border-white/20">
+            Para juego independiente
+          </span>
+          <span class="px-3 py-1 rounded-full bg-white/10 border border-white/20">
+            Para gatitos
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Intro -->
+    <section class="max-w-[325px] lg:max-w-[900px] mx-auto mt-10 p-6 bg-white rounded-2xl shadow-md text-gray-700 pop">
+      <h2 class="text-xl font-extrabold text-[#FF6B6B] mb-3 text-center">
+        Cómo elegir juguetes para tu gato (y para un persa)
+      </h2>
+      <p class="mb-3 text-sm sm:text-[15px]">
+        Los <strong>juguetes para gatos</strong> no solo sirven para entretener: también ayudan a mantener su mente activa,
+        reducir el estrés y evitar el aburrimiento. Los gatos persas suelen disfrutar de juegos más tranquilos,
+        con movimientos suaves y sesiones cortas.
+      </p>
+      <p class="text-sm sm:text-[15px]">
+        Combina juguetes <strong>interactivos</strong> (varitas, plumas) con opciones de <strong>juego independiente</strong>
+        (muelles, pelotas, túneles). Lo importante no es la intensidad, sino la constancia y que el gato se sienta seguro
+        mientras explora y persigue.
+      </p>
+    </section>
+
+    <!-- Grid de juguetes -->
+    <section
+      class="max-w-[1300px] mx-auto p-6 sm:p-10 mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+      aria-label="Juguetes recomendados para gatos"
+    >
+      {juguetes.map((producto) => (
+        <article class="group bg-white rounded-2xl pop shadow-sm hover:shadow-md transition-all duration-200 flex flex-col border border-[#FFE2E2]/80 hover:border-[#FF6B6B]/80 hover:-translate-y-1.5 overflow-hidden">
+          <div class="relative h-64 overflow-hidden">
+            <img
+              src={producto.img}
+              alt={producto.alt}
+              class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-200"
+              loading="lazy"
+            />
+            {producto.badge && (
+              <span class="absolute top-3 left-3 inline-flex items-center rounded-full bg-black/55 text-white text-[11px] font-medium px-2.5 py-[3px]">
+                {producto.badge}
+              </span>
+            )}
           </div>
-          <div class="p-5 flex flex-col flex-1">
-            <h2 class="text-lg font-bold mb-1 text-[#FF6B6B]">{producto.h2}</h2>
-            <span class="text-md font-semibold text-gray-900 mb-2">{producto.precio}</span>
-            <p class="text-sm text-gray-700 flex-1">{producto.p}</p>
-            <a 
-              href={producto.a} 
-              target="_blank" 
+
+          <div class="p-4 sm:p-5 flex flex-col flex-1">
+            <h3 class="text-[15px] sm:text-[16px] font-bold mb-1 text-[#111827]">
+              {producto.h2}
+            </h3>
+
+            <p class="text-[13px] text-gray-700 leading-relaxed flex-1">
+              {producto.p}
+            </p>
+
+            {producto.info && (
+              <p class="mt-2 text-[11px] text-emerald-700 font-medium">
+                {producto.info}
+              </p>
+            )}
+
+            {producto.rating && (
+              <div class="mt-2 flex items-center gap-1 text-[12px] text-yellow-500">
+                <span>★</span>
+                <span class="text-gray-700">{producto.rating}</span>
+              </div>
+            )}
+
+            <a
+              href={producto.a}
+              target="_blank"
               rel="nofollow noopener noreferrer"
-              class="mt-4 inline-block bg-[#FF6B6B] text-white font-semibold py-2 px-4 rounded hover:bg-[#e55a5a] text-center transition-colors"
+              class="mt-4 inline-flex items-center justify-center gap-2 bg-[#FF6B6B] text-white font-semibold py-2.5 px-4 rounded-full hover:bg-[#e55a5a] text-[13px] text-center transition-colors"
             >
-              Comprar en Amazon →
+              Ver en Amazon
+              <span class="text-[11px] bg-white/20 rounded-full px-2 py-[2px]">
+                Enlace afiliado
+              </span>
             </a>
           </div>
-        </div>
+        </article>
       ))}
     </section>
-    <div class="w-full h-full flex justify-center items-center mt-10">
-      <a 
-        href="/productos" 
+
+    <!-- Aviso afiliación -->
+    <div class="max-w-[325px] lg:max-w-[900px] mx-auto mt-16 mb-10 px-6 py-5 text-center rounded-2xl bg-[#FFF5F5] border border-[#FFD6D6] shadow-sm pop">
+      <h3 class="text-[#FF6B6B] font-extrabold text-lg mb-2">Transparencia con nuestros lectores</h3>
+      <p class="text-sm text-gray-700 leading-relaxed mb-2">
+        Esta página contiene enlaces de afiliado. Si realizas una compra a través de ellos, podríamos recibir una pequeña comisión
+        sin coste adicional para ti.
+      </p>
+      <p class="text-sm text-gray-700 leading-relaxed">
+        Como afiliado de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables.
+        También participamos en otros programas de afiliados de comercios online.
+      </p>
+    </div>
+
+    <div class="w-full flex justify-center items-center mt-6">
+      <a
+        href="/productos"
         rel="nofollow noopener noreferrer"
-        class="mt-4 inline-block bg-[#FF6B6B] text-white font-semibold py-2 px-4 rounded hover:bg-[#e55a5a] text-center transition-colors text-2xl"
-        >
-        Ver más productos →
+        class="mt-4 inline-block bg-[#FF6B6B] text-white font-semibold py-3 px-6 rounded-full hover:bg-[#e55a5a] text-center transition-colors text-lg pop"
+      >
+        Volver a todas las categorías →
       </a>
     </div>
   </main>

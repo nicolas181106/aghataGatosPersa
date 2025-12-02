@@ -1,0 +1,5 @@
+# Redirige todo el tráfico del dominio antiguo (Netlify)
+https://agathagatospersa.netlify.app/*    https://agathagatospersas.es/:splat    301!
+
+# Redirige todo el tráfico con www al dominio sin www
+https://www.agathagatospersas.es/*    https://agathagatospersas.es/:splat    301!
