@@ -1,5 +1,5 @@
 ---
-import Layout from "../../layouts/layout.astro";
+import Layout from "../../layouts/Layout.astro";
 import img from "../../assets/img/blue/blube.jpg";
 import img2 from "../../assets/img/ceres/ceres2.jpg";
 import img3 from "../../assets/img/cleo/cleo.jpeg";
@@ -90,45 +90,52 @@ const razas = [
 				<div class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 					{
 						razas.map((raza) => (
-							<a
-								href={raza.a}
-								aria-label={`Ver gatos persas de la raza ${raza.h1}`}
-							>
-								<article class="group relative h-full overflow-hidden rounded-3xl bg-white/80 shadow-[0_18px_45px_rgba(0,0,0,0.12)] border border-[#ffd3d3] hover:border-[#FF6B6B] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_60px_rgba(0,0,0,0.18)]">
-									<div class="relative overflow-hidden">
-										<img
-											src={raza.imgSrc.src}
-											alt={raza.alt}
-											loading="lazy"
-											class="h-80 w-full object-cover transition-all duration-500 ease-out group-hover:scale-110 group-hover:brightness-105"
-										/>
-										<div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-										<span class="absolute left-4 top-4 inline-flex rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-[#FF6B6B] shadow-sm">
-											Línea de persa
-										</span>
-									</div>
-									<div class="flex flex-col gap-2 p-5">
-										<h3 class="text-xl font-semibold text-[#2E2E2E] group-hover:text-[#FF6B6B] transition-colors">
-											{raza.h1}
-										</h3>
-										<p class="text-sm leading-relaxed text-[#5A5A5A]">
-											{raza.description}
-										</p>
-										<span class="mt-3 inline-flex items-center justify-center rounded-full bg-[#FF6B6B] px-4 py-2 text-sm font-semibold text-white shadow-md transition-all duration-300 group-hover:bg-[#ff5252]">
-											Ver información y camadas
-										</span>
-									</div>
-								</article>
-							</a>
-									<div class="px-5 pb-5">
-										<button 
-											data-id={raza.id} 
-											class="like-btn w-full flex items-center justify-center gap-2 rounded-full bg-[#FF6B6B] px-4 py-2 text-sm font-semibold text-white shadow-md hover:bg-[#ff5252] transition-all"
-										>
-											<span>❤️</span>
-											<span id={`count-${raza.id}`}>{getLikes(raza.id)}</span>
-										</button>
-									</div>
+								<a
+									href={raza.a}
+									aria-label={`Ver gatos persas de la raza ${raza.h1}`}
+									class="z-10"
+								>
+									<article class="group relative h-full overflow-hidden rounded-3xl bg-white/80 shadow-[0_18px_45px_rgba(0,0,0,0.12)] border border-[#ffd3d3] hover:border-[#FF6B6B] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_60px_rgba(0,0,0,0.18)]">
+										<div class="relative overflow-hidden">
+											<img
+												src={raza.imgSrc.src}
+												alt={raza.alt}
+												loading="lazy"
+												class="h-80 w-full object-cover transition-all duration-500 ease-out group-hover:scale-110 group-hover:brightness-105"
+											/>
+											<div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+											<span class="absolute left-4 top-4 inline-flex rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-[#FF6B6B] shadow-sm">
+												Línea de persa
+											</span>
+										</div>
+										<div class="flex flex-col gap-2 p-5">
+											<h3 class="text-xl font-semibold text-[#2E2E2E] group-hover:text-[#FF6B6B] transition-colors">
+												{raza.h1}
+											</h3>
+											<p class="text-sm leading-relaxed text-[#5A5A5A]">
+												{raza.description}
+											</p>
+											<span class="mt-3 inline-flex items-center justify-center rounded-full bg-[#FF6B6B] px-4 py-2 text-sm font-semibold text-white shadow-md transition-all duration-300 group-hover:bg-[#ff5252]">
+												Ver información y camadas
+											</span>
+										</div>
+									</article>
+								</a>
+						))
+					}
+				</div>
+				<div class="my-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+					{
+						razas.map((raza) => (
+								<div class="flex items-center justify-center">
+									<button 
+										data-id={raza.id} 
+										class="like-btn w-[25%] flex items-center justify-center gap-2 rounded-full bg-[#FF6B6B] py-2 text-sm font-semibold text-white shadow-md hover:bg-[#ff5252] transition-all"
+									>
+										<span>❤️</span>
+										<span id={`count-${raza.id}`}>{getLikes(raza.id)}</span>
+									</button>
+								</div>
 						))
 					}
 				</div>
@@ -183,6 +190,7 @@ const razas = [
 				btn.disabled = true;
 				btn.style.opacity = "0.5";
 				btn.style.cursor = "not-allowed";
+				btn.innerText = "Enviado";
 			}
 
 			btn.addEventListener("click", async () => {
@@ -219,6 +227,7 @@ const razas = [
 				localStorage.setItem(`liked-${id}`, "true");
 
 				btn.style.opacity = "0.5";
+				btn.innerText = "Enviado";
 				btn.style.cursor = "not-allowed";
 
 				} catch (err) {
@@ -230,7 +239,6 @@ const razas = [
 				}
 
 			});
-
 			});
 			</script>
 	</main>
