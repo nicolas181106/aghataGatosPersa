@@ -18,11 +18,11 @@ if (!gato) {
 ---
 
 <Layout
-  title={`${gato.name} | Ágatha Gatos Persa`}
-  description={`Conoce a ${gato.name}, un adorable gato persa.`}
+  title={`${gato.name} | Gato persa europeo en Sevilla | Ágatha Gatos Persas`}
+  description={`Conoce a ${gato.name}, un gato persa europeo criado en un entorno familiar en Sevilla. Descubre su carácter, edad y cómo adoptarlo.`}
 >
   <main class="bg-white/90 text-[#2E2E2E] min-h-screen pb-10">
-    <section class="bg-gradient-to-r from-[#FF6B6B] to-pink-400 h-40 mt-20 flex items-center justify-center">
+    <section class="bg-gradient-to-r from-[#FF6B6B] via-[#ff9f9f] to-[#FFC3C3] text-white h-40 mt-20 flex items-center justify-center">
       <h1 class="text-4xl font-bold text-white text-center">
         {gato.name}
       </h1>
@@ -30,27 +30,63 @@ if (!gato) {
     
     <section
       aria-label="Perfil de gato"
-      class="max-w-[350px] sm:max-w-3xl mx-auto p-6 sm:p-12 mt-16 bg-white/80 backdrop-blur rounded-3xl shadow-xl border border-[#ffeaea] pop"
+      class="max-w-5xl mx-auto mt-16 px-4 sm:px-8"
     >
-      <div class="flex flex-col sm:flex-row items-center gap-8">
-        <img src={gato.img} alt={gato.name} class="w-64 h-64 rounded-xl object-cover ring-4 ring-[#FF6B6B] shadow-md"/>
-        <div class="text-center sm:text-left">
-          <h2 class="text-3xl font-semibold text-[#FF6B6B] mb-4">{gato.name}</h2>
-          <p class="text-xl mb-2">
-            <strong>Edad:</strong>
-            <span class="edad-gatito" data-nacimiento={gato.birth.toString()}></span>
-          </p>
-          <p class="text-xl"><strong>Género:</strong> {gato.gender}</p>
+      <article class="bg-white/90 backdrop-blur rounded-3xl shadow-xl border border-[#ffeaea] p-6 sm:p-10 flex flex-col md:flex-row gap-8 items-center">
+        <div class="w-full md:w-1/2 flex justify-center">
+          <img
+            src={gato.img2}
+            alt={gato.name}
+            class="w-64 h-64 sm:w-80 sm:h-80 rounded-3xl object-cover ring-4 ring-[#FF6B6B] shadow-lg"
+          />
         </div>
-      </div>
 
-      <div class="mt-8">
-        <p class="text-lg text-gray-800 leading-relaxed text-center sm:text-justify">{gato.text}</p>
-      </div>
+        <div class="w-full md:w-1/2 space-y-4">
+          <header>
+            <p class="text-xs font-semibold tracking-[0.25em] uppercase text-[#FF6B6B] mb-2">
+              Gatito disponible · Persa {gato.raza}
+            </p>
+            <h2 class="text-3xl font-bold text-[#2E2E2E] mb-1">{gato.name}</h2>
+          </header>
 
-      <div class="w-full flex justify-end mt-8 text-[#FF6B6B]">
-        <a href={`/persa-${gato.raza}`} class="hover:underline mt-4 px-4 py-2 rounded bg-[#FF6B6B]/10 hover:bg-[#FF6B6B]/20 transition-colors">← Volver</a>
-      </div>
+          <dl class="space-y-2 text-sm text-gray-700">
+            <div class="flex items-center gap-2">
+              <span class="text-lg">📅</span>
+              <dt class="font-semibold text-[#FF6B6B]">Edad:</dt>
+              <dd class="edad-gatito" data-nacimiento={gato.birth.toString()}></dd>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-lg">{gato.gender === 'Macho' || gato.gender === 'Masculino' ? '💈' : '🎀'}</span>
+              <dt class="font-semibold text-[#FF6B6B]">Género:</dt>
+              <dd>{gato.gender}</dd>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-lg">🐾</span>
+              <dt class="font-semibold text-[#FF6B6B]">Raza:</dt>
+              <dd>Persa {gato.raza}</dd>
+            </div>
+          </dl>
+
+          <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+            {gato.text || "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt auctor, nibh erat facilisis turpis, vitae tincidunt urna lectus eget lorem. Este es un texto de prueba para ver cómo quedaría la descripción de un gato persa europeo en la ficha individual."}
+          </p>
+
+          <div class="pt-2 flex flex-col sm:flex-row gap-3">
+            <a
+              href="/principal/contacto"
+              class="inline-flex items-center justify-center gap-2 rounded-full bg-[#FF6B6B] hover:bg-[#e65c5c] text-white text-sm font-semibold px-6 py-3 shadow-md transition-colors"
+            >
+              ❤️ Pedir información
+            </a>
+            <a
+              href={`/persa-${gato.raza}`}
+              class="inline-flex items-center justify-center gap-2 rounded-full border border-[#FF6B6B] text-[#FF6B6B] text-sm font-medium px-6 py-3 hover:bg-[#FF6B6B] hover:text-white transition-colors"
+            >
+              ← Volver
+            </a>
+          </div>
+        </div>
+      </article>
     </section>
     <script src="../../scripts/edad.js"></script>
   </main>

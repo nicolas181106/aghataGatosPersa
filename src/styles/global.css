@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import 'tailwind-animations';
 @import "@fontsource/balsamiq-sans";
 @plugin "daisyui" {
     themes: all;
@@ -82,7 +83,7 @@
     }
 }
 
-.pop {
+/* .pop {
     opacity: 0;
     transform: translateY(50px) scale(0.9);
     animation: pop 0.5s ease-out forwards;
@@ -93,7 +94,7 @@
         opacity: 1;
         transform: translateY(0) scale(1);
     }
-}
+} */
 
 .fadeInPage {
     opacity: 0;
@@ -153,12 +154,17 @@
 }
 
 .item {
-  background: #FF6B6B;
   padding: 0.5rem;
-  height: 20rem;
+  height: 30rem;
   width: 20rem;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.item:active {
+  width: 30rem;
+  transition: all 0.3s ease;
 }
 
 .slider-track {
@@ -166,6 +172,10 @@
   gap: 1rem;
   width: max-content;
   animation: scroll 40s linear infinite;
+}
+
+.slider-track:hover {
+  animation-play-state: paused;
 }
 
 @keyframes scroll {
@@ -191,6 +201,7 @@
 
 .gallery-image {
   transition: transform 0.5s ease;
+  border-radius: 1rem;
 }
 
 .gallery-item:hover .gallery-image {

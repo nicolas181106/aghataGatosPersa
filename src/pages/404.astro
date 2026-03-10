@@ -3,100 +3,103 @@ import Layout from "../layouts/layout.astro";
 ---
 
 <Layout
-  title="Página no encontrada | Ágatha Gatos Persas"
-  description="La página que buscas no existe. Puede que el enlace esté roto o que el contenido haya sido retirado."
+  title="404 - El gatito se ha perdido | Ágatha Gatos Persas"
+  description="Página no encontrada. Parece que el gatito se ha ido a otra sección de la web."
 >
-  <main class="min-h-[80vh] pt-32 pb-20 flex items-center justify-center">
-    <section class="max-w-6xl mx-auto px-4">
-      <div
-        class="relative overflow-hidden bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl border border-[#FFE2E2] px-6 sm:px-12 py-12 lg:py-14 flex flex-col lg:flex-row gap-10 lg:gap-14 items-center"
-      >
-        {/* Número 404 grande de fondo */}
-        <span
-          class="pointer-events-none select-none absolute -top-6 -left-2 text-[110px] sm:text-[140px] lg:text-[170px] font-black text-[#FFE2E2] leading-none"
-          aria-hidden="true"
-        >
-          404
-        </span>
+  <main class="min-h-screen bg-[#FDFCFB] flex items-center justify-center pt-20 pb-20 px-4 overflow-hidden">
+    
+    <div class="absolute top-1/4 -left-20 w-64 h-64 bg-[#FFE2E2] rounded-full blur-3xl opacity-50 -z-10"></div>
+    <div class="max-md:hidden absolute bottom-1/4 -right-20 w-96 h-96 bg-amber-100 rounded-full blur-3xl opacity-40 -z-10"></div>
 
-        {/* Columna texto principal */}
-        <div class="relative z-10 flex-1 space-y-6 text-center lg:text-left">
-          <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#FF6B6B] bg-[#FFE2E2]/60 rounded-full px-4 py-1">
-            Página no encontrada
+    <section class="max-lg:mt-20 max-w-[1100px] w-full relative">
+      
+      <div class="absolute -top-20 lg:-top-32 left-1/2 -translate-x-1/2 opacity-[0.08] select-none pointer-events-none">
+        <span class="text-[200px] md:text-[350px] font-black text-[#FF6B6B] leading-none tracking-tighter">404</span>
+      </div>
+
+      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 relative z-10">
+        
+        <div class="flex-1 text-center lg:text-left space-y-8">
+          <div>
+            <span class="bg-[#FF6B6B] text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-[0.2em] shadow-lg shadow-pink-200">
+              Oops! El gatito se ha ido
+            </span>
+            <h1 class="text-4xl md:text-6xl font-black text-gray-900 tracking-tighter leading-[1.1] mt-6">
+              Página no <br/> <span class="text-[#FF6B6B]">encontrada.</span>
+            </h1>
+          </div>
+
+          <p class="text-lg text-gray-600 font-medium max-w-md mx-auto lg:mx-0 leading-relaxed italic">
+            "Parece que este enlace se ha quedado dormido o ha decidido explorar un rincón que todavía no existe."
           </p>
 
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2E2E2E] leading-tight">
-            El gatito se ha ido a otra página
-          </h1>
-
-          <p class="text-base sm:text-lg text-gray-700">
-            Es posible que el enlace esté mal escrito, haya caducado o que
-            la página haya cambiado de dirección. Mientras tanto, puedes volver
-            al inicio o ver los <strong>gatos persas disponibles</strong>.
-          </p>
-
-          <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start pt-2">
-            <a
-              href="/"
-              class="inline-flex items-center justify-center gap-2 bg-[#FF6B6B] hover:bg-[#e65c5c] text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 hover:-translate-y-1"
-            >
-              Volver al inicio
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a href="/" class="bg-[#FF6B6B] text-white font-black uppercase text-xs tracking-widest py-4 px-10 rounded-full hover:bg-gray-900 transition-all shadow-xl shadow-pink-100 hover:shadow-gray-200 hover:-translate-y-1">
+              Volver al Inicio
             </a>
-
-            <a
-              href="/gatos-disponibles"
-              class="inline-flex items-center justify-center gap-2 border-2 border-[#FF6B6B] text-[#FF6B6B] hover:bg-[#FF6B6B] hover:text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 hover:-translate-y-1"
-            >
-              Ver gatos disponibles
+            <a href="/gatos-disponibles" class="border-2 border-gray-200 text-gray-700 font-black uppercase text-xs tracking-widest py-4 px-10 rounded-full hover:border-[#FF6B6B] hover:text-[#FF6B6B] transition-all">
+              Ver Gatitos
             </a>
           </div>
 
-          <p class="text-xs sm:text-sm text-gray-500 mt-3">
-            ¿Crees que debería estar aquí este contenido?
-            <a href="/contacto" class="text-[#FF6B6B] underline ml-1">
-              Escríbenos y lo revisamos.
-            </a>
-          </p>
-        </div>
-
-        {/* Columna “tarjeta gatito perdido” */}
-        <div class="relative z-10 flex-1 flex justify-center">
-          <div
-            class="w-full max-w-xs sm:max-w-sm bg-gradient-to-b from-[#FFF1F1] via-white to-[#FFE2E2]/80 rounded-3xl shadow-xl border border-[#FFD0D0] px-6 py-7 flex flex-col items-center gap-4 pop"
-          >
-            <div class="w-20 h-20 rounded-full bg-[#FF6B6B] flex items-center justify-center shadow-lg">
-              <span class="text-4xl text-white">🐾</span>
-            </div>
-
-            <h2 class="text-xl font-bold text-[#2E2E2E] text-center">
-              “Gatito desorientado en la web”
-            </h2>
-
-            <p class="text-sm text-gray-700 text-center">
-              Este gatito no sabe cómo ha llegado aquí. Tal vez
-              encuentre su hogar si vuelves al inicio o visitas la
-              sección de gatos.
+          <div class="pt-4 border-t border-gray-100">
+            <p class="text-xs text-gray-400 font-bold uppercase tracking-widest leading-loose">
+              ¿Crees que es un error? <br/>
+              <a href="/contacto" class="text-[#FF6B6B] hover:underline decoration-2 underline-offset-4">Avísanos para que lo arreglemos</a>
             </p>
-
-            <div class="w-full h-px bg-gradient-to-r from-transparent via-[#FF6B6B]/40 to-transparent my-1" />
-
-            <ul class="w-full text-xs text-gray-600 space-y-2">
-              <li class="flex justify-between">
-                <span class="font-semibold text-[#2E2E2E]">Estado:</span>
-                <span>Buscando su página</span>
-              </li>
-              <li class="flex justify-between">
-                <span class="font-semibold text-[#2E2E2E]">Última vez visto:</span>
-                <span>En un enlace roto</span>
-              </li>
-              <li class="flex justify-between">
-                <span class="font-semibold text-[#2E2E2E]">Sugerencia:</span>
-                <span>Volver al inicio</span>
-              </li>
-            </ul>
           </div>
         </div>
+
+        <div class="w-full max-w-sm">
+          <div class="bg-white p-2 rounded-[3rem] shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500 border border-gray-100">
+            <div class="bg-gray-50 rounded-[2.5rem] p-8 border border-dashed border-gray-200 flex flex-col items-center">
+              
+              <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl mb-6 relative group">
+                <span class="text-4xl group-hover:scale-125 transition-transform duration-300">🐾</span>
+                <div class="absolute inset-0 rounded-full border-2 border-[#FF6B6B] animate-ping opacity-20"></div>
+              </div>
+
+              <h2 class="text-xl font-black text-gray-900 text-center uppercase tracking-tight mb-2">
+                Ficha de Extravío
+              </h2>
+              
+              <div class="w-12 h-1 bg-[#FF6B6B] mb-6 rounded-full"></div>
+
+              <ul class="w-full space-y-4">
+                <li class="flex justify-between items-center border-b border-gray-100 pb-2">
+                  <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Nombre</span>
+                  <span class="text-sm font-bold text-gray-700 italic">Enlace Roto</span>
+                </li>
+                <li class="flex justify-between items-center border-b border-gray-100 pb-2">
+                  <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Estado</span>
+                  <span class="text-sm font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">Buscando hogar</span>
+                </li>
+                <li class="flex justify-between items-center">
+                  <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Sugerencia</span>
+                  <span class="text-sm font-bold text-[#FF6B6B]">Pulsa el botón rosa</span>
+                </li>
+              </ul>
+
+              <div class="mt-8 text-[10px] text-center text-gray-400 font-medium leading-relaxed italic">
+                "Ningún gatito persa fue dañado durante la carga de esta página inexistente."
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
+
   </main>
 </Layout>
+
+<style>
+  main {
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style>

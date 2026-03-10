@@ -1,77 +1,100 @@
 ---
 import Layout from "../../layouts/layout.astro";
 
-const articles = [
-	{
-		h1: "¿Qué datos recopilamos?",
-		p: "Este sitio no recopila datos personales de forma automática. Solo se recopilan datos si el usuario contacta voluntariamente."
-	},
-	{
-		h1: "Finalidad del tratamiento",
-		p: "Responder consultas o comunicaciones enviadas de forma voluntaria por el usuario."
-	},
-	{
-		h1: "Legitimación",
-		p: "Consentimiento del usuario al contactarnos."
-	},
-	{
-		h1: "Conservación de datos",
-		p: "Los datos enviados por correo o formulario se conservarán solo el tiempo necesario para responder la solicitud, y luego serán eliminados."
-	},
-	{
-		h1: "Cesiones",
-		p: "No se ceden datos a terceros."
-	},
-	{
-		h1: "Derechos",
-		p: "Puedes solicitar en cualquier momento el acceso, rectificación o eliminación de tus datos escribiendo a nuestro email."
-	},
+const sections = [
+    {
+        title: "¿Qué datos recopilamos?",
+        content: "Este sitio web no recopila datos personales de forma automática. Solo tratamos aquella información que el usuario facilita de forma voluntaria al contactar con nosotros a través de correo electrónico o formularios."
+    },
+    {
+        title: "Finalidad del tratamiento",
+        content: "La única finalidad del tratamiento de tus datos es responder a las consultas, dudas o comunicaciones que nos envíes. No utilizaremos tu información para el envío de publicidad no solicitada (spam)."
+    },
+    {
+        title: "Legitimación",
+        content: "La base legal para el tratamiento de tus datos es el consentimiento explícito que otorgas al pulsar el botón de envío en nuestras vías de contacto."
+    },
+    {
+        title: "Conservación de datos",
+        content: "Los datos personales proporcionados se conservarán únicamente durante el tiempo necesario para resolver tu solicitud. Una vez finalizada la comunicación, los datos serán eliminados de forma segura de nuestros registros."
+    },
+    {
+        title: "Cesiones a terceros",
+        content: "Ágatha Gatos Persas no cede, vende ni alquila datos personales a terceros bajo ninguna circunstancia, salvo obligación legal expresa."
+    },
+    {
+        title: "Tus Derechos",
+        content: "Como usuario, tienes derecho a acceder, rectificar o solicitar la eliminación de tus datos en cualquier momento. Para ejercer estos derechos, puedes escribirnos directamente a través de nuestra sección de contacto."
+    },
 ]
 ---
 
 <Layout
-	title="Política de pivacidad | Ágatha Gatos Persas"
-	description="Política de privacidad de Ágatha Gatos Persas"
-	keywords="gatos persas, política de privacidad, política, privacidad"
+    title="Política de privacidad | Ágatha Gatos Persas"
+    description="Cómo protegemos y gestionamos tus datos personales en Ágatha Gatos Persas."
 >
-	<main class="bg-white/90 text-[#2E2E2E] min-h-screen pb-16">
-		<section class="bg-gradient-to-r from-[#FF6B6B] to-pink-400 py-20 mt-20">
-			<div class="max-w-7xl mx-auto px-4 text-center">
-				<h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Política de Privacidad</h1>
-				<div class="w-32 h-1 bg-white mx-auto mb-4"></div>
-				<p class="text-white text-lg max-w-2xl mx-auto">
-					Cómo protegemos y gestionamos tus datos personales
-				</p>
-			</div>
-		</section>
+    <main class="bg-[#FDFCFB] min-h-screen pb-16">
+        
+        <section class="bg-gradient-to-r from-[#FF6B6B] via-[#ff9f9f] to-[#FFC3C3] py-20 mb-16 mt-20">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Política de Privacidad</h1>
+                <div class="w-32 h-1 bg-white mx-auto mb-4"></div>
+                <p class="text-white text-lg max-w-2xl mx-auto">
+                    Cómo protegemos y gestionamos tus datos personales
+                </p>
+            </div>
+        </section>
 
-		<section
-			arial-label="Política de privacidad"
-			class="max-w-5xl mx-auto px-4 py-16"
-		>
-			<div class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 md:p-8 rounded-3xl shadow-lg mb-12 border-l-4 border-[#FF6B6B]">
-				<div class="flex items-start gap-4">
-					<svg class="w-8 h-8 text-[#FF6B6B] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-					</svg>
-					<div>
-						<h2 class="text-xl font-bold text-[#FF6B6B] mb-2">🛡️ Tu privacidad es importante</h2>
-						<p class="text-gray-700 leading-relaxed">
-							En Ágatha Gatos Persas nos comprometemos a proteger tu información personal. A continuación, te explicamos cómo gestionamos tus datos.
-						</p>
-					</div>
-				</div>
-			</div>
+        <section class="max-w-4xl mx-auto px-6">
+            <div class="bg-blue-50/50 border border-blue-100 rounded-[2.5rem] p-8 mb-12 flex items-start gap-6 shadow-sm">
+                <div class="hidden sm:flex w-14 h-14 bg-white rounded-full items-center justify-center text-2xl shadow-sm flex-shrink-0 border border-blue-100">
+                    🛡️
+                </div>
+                <div>
+                    <h2 class="text-blue-900 font-bold text-lg leading-tight">Tu privacidad es prioritaria</h2>
+                    <p class="text-blue-700/80 text-sm mt-2 leading-relaxed">
+                        Cumplimos estrictamente con la normativa de protección de datos para garantizar que tu contacto con nosotros sea 100% seguro.
+                    </p>
+                </div>
+            </div>
 
-			{articles.map((article) => (
-				<article class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 mb-8">
-					<h2 class="text-2xl md:text-3xl font-bold mb-4 text-[#FF6B6B] flex items-center gap-3">
-						<span class="w-2 h-8 bg-gradient-to-b from-[#FF6B6B] to-pink-400 rounded-full"></span>
-						{article.h1}
-					</h2>
-					<p class="text-gray-700 text-base md:text-lg leading-relaxed">{article.p}</p>
-				</article>
-			))}
-		</section>
-	</main>
+            <div class="bg-white rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
+                <div class="p-8 md:p-12 space-y-12">
+                    {sections.map((section, index) => (
+                        <div class="relative">
+                            <div class="flex items-start gap-6">
+                                <span class="hidden md:flex text-pink-100 text-4xl font-black select-none">
+                                    {String(index + 1).padStart(2, '0')}
+                                </span>
+                                <article class="space-y-4">
+                                    <h2 class="text-xl md:text-2xl font-black text-gray-900 tracking-tight">
+                                        {section.title}
+                                    </h2>
+                                    <p class="text-gray-600 leading-[1.8] text-sm md:text-base">
+                                        {section.content}
+                                    </p>
+                                </article>
+                            </div>
+                            {index !== sections.length - 1 && (
+                                <div class="mt-12 border-b border-gray-50"></div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+                
+                <div class="bg-gray-50 p-8 border-t border-gray-100 text-center">
+                    <p class="text-xs text-gray-400 font-medium uppercase tracking-widest leading-relaxed">
+                        Información actualizada según el RGPD europeo. <br/>
+                        <a class="text-[#FF6B6B] hover:underline" href="/contacto">contacto</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="/" class="inline-flex items-center gap-2 text-gray-400 font-bold hover:text-[#FF6B6B] transition-colors text-sm">
+                    ← Volver a Inicio
+                </a>
+            </div>
+        </section>
+    </main>
 </Layout>

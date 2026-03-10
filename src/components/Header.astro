@@ -1,66 +1,109 @@
-<nav class="fixed top-0 w-full z-50 bg-[#FFE2E2]/80 shadow-md">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center max-md:justify-between h-20 items-center">
+---
+import logo2 from "../assets/img/logoAnimated.png";
 
-    <a href="/" class="text-lg font-bold text-[#2E2E2E] sm:hidden">Ágatha Gatos Persas</a>
+---
+
+<nav class="fixed top-0 w-full z-50 bg-[#FFE2E2]/70 backdrop-blur-md shadow-sm border-b border-white/20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-20 items-center">
+
+    <a href="/" class="group flex items-center gap-3">
+      <div class="relative">
+        <img 
+          src={logo2.src} 
+          alt="Ágatha Logo" 
+          class="w-12 h-12 md:w-14 md:h-14 object-contain transition-transform duration-500 group-hover:scale-110"
+        />
+      </div>
+      
+      <div class="flex flex-col justify-center border-l-2 border-[#FF6B6B]/20 pl-3">
+        <span class="text-xl md:text-2xl font-black tracking-tighter text-[#2E2E2E] leading-none">
+          ÁGATHA
+        </span>
+        <span class="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] text-[#FF6B6B] mt-1">
+          Gatos Persas
+        </span>
+      </div>
+    </a>
 
     <div class="sm:hidden">
-      <button id="menu-btn" class="text-[#2E2E2E] focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <button id="menu-btn" class="p-2 rounded-lg text-[#2E2E2E] hover:bg-[#FF6B6B]/10 transition-colors focus:outline-none">
+        <svg id="menu-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
     </div>
 
-    <ul class="hidden sm:flex items-center justify-center gap-5 sm:gap-10 md:gap-20 text-[18px] md:text-[20px] text-[#2E2E2E] font-semibold">
-      <li><a class="hover:text-[#FF4C4C]" href="/">Inicio</a></li>
+    <ul class="hidden sm:flex items-center gap-6 md:gap-10 text-[16px] md:text-[17px] text-[#2E2E2E] font-bold">
+      <li>
+        <a href="/" class="relative py-2 hover:text-[#FF6B6B] transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#FF6B6B] hover:after:w-full after:transition-all">Inicio</a>
+      </li>
 
-      <li class="group relative">
-        <a href="/gatos-disponibles" class="hover:text-[#FF6B6B] flex items-center gap-1">Gatos</a>
-        <div class="absolute left-1/2 -translate-x-1/2 top-full bg-white shadow-lg rounded-md min-w-max opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 origin-top scale-y-0 group-hover:scale-y-100 z-10">
-          <ul class="py-2">
-            <li><a href="/persa-europeo" class="block px-4 py-2 hover:bg-[#FFE2E2]">Persa Europeo</a></li>
-            <li><a href="/persa-chinchilla" class="block px-4 py-2 hover:bg-[#FFE2E2]">Persa Chinchilla</a></li>
-            <li><a href="/persa-himalayo" class="block px-4 py-2 hover:bg-[#FFE2E2]">Persa Himalayo</a></li>
+      <li class="group relative py-2">
+        <button class="flex items-center gap-1 group-hover:text-[#FF6B6B] transition-colors">
+          Gatos 
+          <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="absolute left-1/2 -translate-x-1/2 top-[100%] pt-4 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+          <ul class="bg-white shadow-2xl rounded-2xl py-3 min-w-[200px] border border-pink-50">
+            <li><a href="/principal/persa-europeo" class="block px-5 py-2.5 hover:bg-[#FFE2E2] hover:text-[#FF6B6B] transition-colors">Persa Europeo</a></li>
+            <li><a href="/principal/persa-chinchilla" class="block px-5 py-2.5 hover:bg-[#FFE2E2] hover:text-[#FF6B6B] transition-colors">Persa Chinchilla</a></li>
+            <li><a href="/principal/persa-himalayo" class="block px-5 py-2.5 hover:bg-[#FFE2E2] hover:text-[#FF6B6B] transition-colors">Persa Himalayo</a></li>
+            <div class="border-t border-gray-50 my-2"></div>
+            <li><a href="/principal/gatos-disponibles" class="block px-5 py-2.5 font-black text-[#FF6B6B] hover:bg-pink-50">Ver Disponibles</a></li>
           </ul>
         </div>
       </li>
 
-      <li class="group relative">
-        <a href="/informacion" class="hover:text-[#FF6B6B] flex items-center gap-1">Blog</a>
-        <div class="absolute left-1/2 -translate-x-1/2 top-full bg-white shadow-lg rounded-md min-w-max opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 origin-top scale-y-0 group-hover:scale-y-100 z-10">
-          <ul class="py-2">
-            <li><a href="/informacion/como-cuidar-el-pelaje-de-un-gato-persa" class="block px-4 py-2 hover:bg-[#FFE2E2]">Cuidar pelaje</a></li>
-            <li><a href="/informacion/como-puedo-mantener-a-mi-gato-persa-activo-y-entretenido" class="block px-4 py-2 hover:bg-[#FFE2E2]">Mantener activo</a></li>
-            <li><a href="/informacion/con-que-frecuencia-debo-llevar-a-mi-gato-persa-al-veterinario" class="block px-4 py-2 hover:bg-[#FFE2E2]">Visitas veterinario</a></li>
-            <li><a href="/informacion/que-tipo-de-alimentacion-es-mejor-para-un-gato-persa" class="block px-4 py-2 hover:bg-[#FFE2E2]">Alimentación</a></li>
+      <li class="group relative py-2">
+        <button class="flex items-center gap-1 group-hover:text-[#FF6B6B] transition-colors">
+          Blog
+          <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="absolute left-1/2 -translate-x-1/2 top-[100%] pt-4 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+          <ul class="bg-white shadow-2xl rounded-2xl py-3 min-w-[220px] border border-pink-50">
+            <li><a href="/informacion/como-cuidar-el-pelaje-de-un-gato-persa" class="block px-5 py-2.5 hover:bg-[#FFE2E2] transition-colors">Cuidado del Pelaje</a></li>
+            <li><a href="/informacion/que-tipo-de-alimentacion-es-mejor-para-un-gato-persa" class="block px-5 py-2.5 hover:bg-[#FFE2E2] transition-colors">Alimentación</a></li>
+            <div class="border-t border-gray-50 my-2"></div>
+            <li><a href="/principal/informacion" class="block px-5 py-2.5 font-black text-[#FF6B6B] hover:bg-pink-50">Ver todo el Blog</a></li>
           </ul>
         </div>
       </li>
 
-      <li class="group relative">
-        <a href="/productos" class="hover:text-[#FF6B6B] flex items-center gap-1">Productos</a>
-        <div class="absolute left-1/2 -translate-x-1/2 top-full bg-white shadow-lg rounded-md min-w-max opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 origin-top scale-y-0 group-hover:scale-y-100 z-10">
-          <ul class="py-2">
-            <li><a href="/productos/rascadores" class="block px-4 py-2 hover:bg-[#FFE2E2]">Rascadores</a></li>
-            <li><a href="/productos/juguetes" class="block px-4 py-2 hover:bg-[#FFE2E2]">Juguetes</a></li>
-            <li><a href="/productos/comida" class="block px-4 py-2 hover:bg-[#FFE2E2]">Comida</a></li>
-            <li><a href="/productos/camas" class="block px-4 py-2 hover:bg-[#FFE2E2]">Camas</a></li>
-            <li><a href="/productos/areneros" class="block px-4 py-2 hover:bg-[#FFE2E2]">Areneros</a></li>
+      <li class="group relative py-2">
+        <button class="flex items-center gap-1 group-hover:text-[#FF6B6B] transition-colors">
+          Productos
+          <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="absolute left-1/2 -translate-x-1/2 top-[100%] pt-4 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+          <ul class="bg-white shadow-2xl rounded-2xl py-3 min-w-[200px] border border-pink-50">
+            <li><a href="/productos/rascadores" class="flex items-center gap-2 px-5 py-2.5 hover:bg-[#FFE2E2] transition-colors"><span>🐾</span> Rascadores</a></li>
+            <li><a href="/productos/juguetes" class="flex items-center gap-2 px-5 py-2.5 hover:bg-[#FFE2E2] transition-colors"><span>🧶</span> Juguetes</a></li>
+            <li><a href="/productos/comida" class="flex items-center gap-2 px-5 py-2.5 hover:bg-[#FFE2E2] transition-colors"><span>🍽️</span> Comida</a></li>
+            <li><a href="/productos/camas" class="flex items-center gap-2 px-5 py-2.5 hover:bg-[#FFE2E2] transition-colors"><span>🛌</span> Camas</a></li>
+            <li><a href="/productos/areneros" class="flex items-center gap-2 px-5 py-2.5 hover:bg-[#FFE2E2] transition-colors"><span>✨</span> Areneros</a></li>
+            <div class="border-t border-gray-50 my-2"></div>
+            <li><a href="/principal/productos" class="block px-5 py-2.5 font-black text-[#FF6B6B] hover:bg-pink-50">Ver todos los productos</a></li>
           </ul>
         </div>
       </li>
 
-      <li><a class="hover:text-[#FF4C4C]" href="/contacto">Contacto</a></li>
+      <li>
+        <a href="/principal/contacto" class="bg-[#FF6B6B] text-white px-6 py-2.5 rounded-full hover:bg-[#FF4C4C] hover:shadow-lg hover:-translate-y-0.5 transition-all active:scale-95">
+          Contacto
+        </a>
+      </li>
     </ul>
   </div>
 
-  <ul id="mobile-menu" class="hidden flex-col sm:hidden bg-white w-full text-[#2E2E2E] font-semibold">
-    <li><a class="block px-4 py-3 hover:bg-[#FFE2E2]" href="/">Inicio</a></li>
-    <li><a class="block px-4 py-3 hover:bg-[#FFE2E2]" href="/gatos-disponibles">Gatos</a></li>
-    <li><a class="block px-4 py-3 hover:bg-[#FFE2E2]" href="/informacion">Blog</a></li>
-    <li><a class="block px-4 py-3 hover:bg-[#FFE2E2]" href="/productos">Productos</a></li>
-    <li><a class="block px-4 py-3 hover:bg-[#FFE2E2]" href="/contacto">Contacto</a></li>
-  </ul>
+  <div id="mobile-menu" class="hidden sm:hidden bg-white/95 backdrop-blur-lg border-b border-pink-100 overflow-hidden transition-all duration-300">
+    <ul class="flex flex-col p-4 gap-1 text-[#2E2E2E] font-bold">
+      <li><a class="block px-4 py-3 rounded-xl hover:bg-[#FFE2E2]" href="/">Inicio</a></li>
+      <li><a class="block px-4 py-3 rounded-xl hover:bg-[#FFE2E2]" href="/principal/gatos-disponibles">Gatos</a></li>
+      <li><a class="block px-4 py-3 rounded-xl hover:bg-[#FFE2E2]" href="/principal/informacion">Blog</a></li>
+      <li><a class="block px-4 py-3 rounded-xl hover:bg-[#FFE2E2]" href="/principal/productos">Productos</a></li>
+      <li><a class="block px-4 py-3 rounded-xl bg-[#FF6B6B] text-white text-center mt-2" href="/contacto">Contacto</a></li>
+    </ul>
+  </div>
 </nav>
 
 <script is:inline>
@@ -69,5 +112,21 @@
 
   btn.addEventListener('click', () => {
     menu.classList.toggle('hidden');
+    if (!menu.classList.contains('hidden')) {
+      menu.style.animation = 'slideDown 0.3s ease-out forwards';
+    }
+  });
+
+  window.addEventListener('scroll', () => {
+    if (!menu.classList.contains('hidden')) {
+      menu.classList.add('hidden');
+    }
   });
 </script>
+
+<style>
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>

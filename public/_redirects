@@ -3,3 +3,12 @@ https://agathagatospersa.netlify.app/*    https://agathagatospersas.es/:splat   
 
 # Redirige todo el tráfico con www al dominio sin www
 https://www.agathagatospersas.es/*    https://agathagatospersas.es/:splat    301!
+
+/contacto               /principal/contacto             301!
+/gatos-disponibles      /principal/gatos-disponibles    301!
+/informacion            /principal/informacion          301!
+/persa-chinchilla       /principal/persa-chinchilla     301!
+/persa-europeo          /principal/persa-europeo        301!
+/persa-himalayo         /principal/persa-himalayo       301!
+/productos              /principal/productos            301!
+/camadas-anteriores     /principal/camadas-anteriores   301!
