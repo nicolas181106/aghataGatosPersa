@@ -130,12 +130,11 @@ const razas = [
 				<div class="my-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 					{
 						razas.map((raza) => (
-								<div class="flex items-center justify-center" data-id={raza.id} 
-									data-url={supabaseUrl} 
-									data-key={supabaseKey}
-									class="like-btn ...">
+								<div class="flex items-center justify-center">
 									<button 
-										data-id={raza.id} 
+										data-id={raza.id}
+										data-url={supabaseUrl} 
+										data-key={supabaseKey}
 										class="like-btn w-[25%] flex items-center justify-center gap-2 rounded-full bg-[#FF6B6B] py-2 text-sm font-semibold text-white shadow-md hover:bg-[#ff5252] transition-all"
 									>
 										<span>❤️</span>
