@@ -7,6 +7,9 @@ import { supabase } from "../../lib/supabase";
 const { data: likesData } = await supabase.from('cats').select('*');
 const getLikes = (id: number) => likesData?.find(r => r.id === id)?.likes || 0;
 
+const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
+const supabaseKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+
 const razas = [
 	{
 		id: 1,
@@ -127,7 +130,10 @@ const razas = [
 				<div class="my-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 					{
 						razas.map((raza) => (
-								<div class="flex items-center justify-center">
+								<div class="flex items-center justify-center" data-id={raza.id} 
+									data-url={supabaseUrl} 
+									data-key={supabaseKey}
+									class="like-btn ...">
 									<button 
 										data-id={raza.id} 
 										class="like-btn w-[25%] flex items-center justify-center gap-2 rounded-full bg-[#FF6B6B] py-2 text-sm font-semibold text-white shadow-md hover:bg-[#ff5252] transition-all"
@@ -172,74 +178,69 @@ const razas = [
 		<script type="module">
 			import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
-			const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
-			const supabaseKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
-
-			const supabase = createClient(supabaseUrl, supabaseKey);
-
-			// Inicializar botones
 			document.querySelectorAll(".like-btn").forEach((btn) => {
 
-			const id = Number(btn.dataset.id);
-			const countSpan = document.getElementById(`count-${id}`);
+				const supabaseUrl = btn.dataset.url;
+        		const supabaseKey = btn.dataset.key;
+				const id = Number(btn.dataset.id);
+				const supabase = createClient(supabaseUrl, supabaseKey);
+				const countSpan = document.getElementById(`count-${id}`);
 
-			if (!countSpan) return;
+				if (!countSpan) return;
 
-			// Si ya dio like antes
-			if (localStorage.getItem(`liked-${id}`)) {
-				btn.disabled = true;
-				btn.style.opacity = "0.5";
-				btn.style.cursor = "not-allowed";
-				btn.innerText = "Enviado";
-			}
-
-			btn.addEventListener("click", async () => {
-
-				btn.disabled = true;
-
-				try {
-
-				// Obtener likes actuales desde Supabase
-				const { data: currentData, error: selectError } = await supabase
-					.from("cats")
-					.select("likes")
-					.eq("id", id)
-					.single();
-
-				if (selectError) throw selectError;
-
-				const newLikes = (currentData.likes || 0) + 1;
-
-				// Actualizar likes
-				const { data, error } = await supabase
-					.from("cats")
-					.update({ likes: newLikes })
-					.eq("id", id)
-					.select()
-					.single();
-
-				if (error) throw error;
-
-				// Actualizar contador en la web
-				countSpan.innerText = data.likes;
-
-				// Guardar en localStorage
-				localStorage.setItem(`liked-${id}`, "true");
-
-				btn.style.opacity = "0.5";
-				btn.innerText = "Enviado";
-				btn.style.cursor = "not-allowed";
-
-				} catch (err) {
-
-				console.error("Error Supabase:", err);
-				btn.disabled = false;
-				alert("Error al guardar el like");
-
+				// Si ya dio like antes
+				if (localStorage.getItem(`liked-${id}`)) {
+					btn.disabled = true;
+					btn.style.opacity = "0.5";
+					btn.style.cursor = "not-allowed";
 				}
 
+				btn.addEventListener("click", async () => {
+
+					btn.disabled = true;
+
+					try {
+
+					// Obtener likes actuales desde Supabase
+					const { data: currentData, error: selectError } = await supabase
+						.from("cats")
+						.select("likes")
+						.eq("id", id)
+						.single();
+
+					if (selectError) throw selectError;
+
+					const newLikes = (currentData.likes || 0) + 1;
+
+					// Actualizar likes
+					const { data, error } = await supabase
+						.from("cats")
+						.update({ likes: newLikes })
+						.eq("id", id)
+						.select()
+						.single();
+
+					if (error) throw error;
+
+					// Actualizar contador en la web
+					countSpan.innerText = data.likes;
+
+					// Guardar en localStorage
+					localStorage.setItem(`liked-${id}`, "true");
+
+					btn.style.opacity = "0.5";
+					btn.style.cursor = "not-allowed";
+
+					} catch (err) {
+
+					console.error("Error Supabase:", err);
+					btn.disabled = false;
+					alert("Error al guardar el like");
+
+					}
+
+				});
 			});
-			});
-			</script>
+		</script>
 	</main>
 </Layout>
