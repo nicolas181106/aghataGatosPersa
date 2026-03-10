@@ -172,8 +172,8 @@ const razas = [
 		<script type="module">
 			import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
-			const supabaseUrl = "https://glknffedfsdqgbdcklzg.supabase.co";
-			const supabaseKey = "sb_publishable_7ywkn3MkXWfizG-NpbQJUw_JwSlR0EO";
+			const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
+			const supabaseKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
 
 			const supabase = createClient(supabaseUrl, supabaseKey);
 
