@@ -2,12 +2,12 @@
 import Layout from "../../layouts/Layout.astro";
 import { gatosEuropeo } from "../../scripts/gatos-europeo.js";
 
-export function getStaticPaths() {
+/* export function getStaticPaths() {
   return gatosEuropeo.map((gato) => ({
     params: { slugEuropeo: gato.slugEuropeo },
     props: { gato },
   }));
-}
+} */
 
 const { slugEuropeo } = Astro.params;
 const gato = gatosEuropeo.find((g) => g.slugEuropeo === slugEuropeo);

@@ -2,12 +2,12 @@
 import Layout from "../../layouts/Layout.astro";
 import { gatosChinchilla } from "@/scripts/gatos-chinchilla.js";
 
-export function getStaticPaths() {
+/*export function getStaticPaths() {
   return gatosChinchilla.map((gato) => ({
     params: { slugChinchilla: gato.slugChinchilla },
     props: { gato },
   }));
-}
+}*/
 
 const { slugChinchilla } = Astro.params;
 const gato = gatosChinchilla.find((g) => g.slugChinchilla === slugChinchilla);
