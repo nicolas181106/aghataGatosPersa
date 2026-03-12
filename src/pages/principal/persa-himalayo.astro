@@ -3,167 +3,157 @@ import Layout from "../../layouts/Layout.astro";
 import oddie from "../../assets/img/oddie.jpg";
 import cleo from "../../assets/img/cleo/cleo.jpeg";
 import { gatosHimalayo } from "../../scripts/gatos-himalayo.js";
+import { gatosHimalayo as gatosHimalayoAnteriores } from "../../scripts/gatos-himalayo anterior.js";
 ---
 
 <Layout
-	title="Gato persa himalayo | Ágatha Gatos Persas"
-	description="Conoce al encantador Gato Persa Himalayo, una raza única con un pelaje impresionante y una personalidad cariñosa. Descubre más sobre esta maravillosa raza en nuestro criadero."
-	keywords="gato persa himalayo, criadero de gatos persa, gatos persa en adopción"
+    title="Gato Persa Himalayo | Ágatha Gatos Persas"
+    description="Conoce al encantador Gato Persa Himalayo, una raza única con un pelaje impresionante y una personalidad cariñosa en nuestro criadero familiar."
+    keywords="gato persa himalayo, criadero de gatos persa, adoptar gato himalayo"
 >
-	<main class="bg-white/90 text-[#2E2E2E] min-h-screen pb-10">
-		<section class="bg-gradient-to-r from-[#FF6B6B] via-[#ff9f9f] to-[#FFC3C3] text-white py-20 mt-20">
-			<div class="max-w-7xl mx-auto px-4 text-center">
-				<h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Gato Persa Himalayo</h1>
-				<div class="w-32 h-1 bg-white mx-auto mb-4"></div>
-				<p class="text-white text-lg max-w-2xl mx-auto">
-					Conóce nuestros exclusivos gatos persas himalayos, una raza única con un pelaje impresionante y una personalidad cariñosa.
-				</p>
-			</div>
-		</section>
 
-		<section class="max-w-7xl mx-auto px-4 py-16">
-			<div class="text-center mb-12">
-				<h2 class="text-3xl md:text-4xl font-bold text-[#FF6B6B] mb-6">Nuestros Reproductores</h2>
-				<div class="w-32 h-1 bg-gradient-to-r from-[#FF6B6B] to-pink-400 mx-auto"></div>
-			</div>
-			<div class="flex flex-col sm:flex-row gap-12 justify-center items-center">
-				<figure class="bg-white p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:cursor-pointer" id="oddieImg">
-					<h3 class="text-2xl sm:text-3xl font-bold mb-4 text-[#FF6B6B]">Padre - Oddie</h3>
-					<img src={oddie.src} alt="Padre gato persa europeo" loading="lazy" class="p-2 h-75 w-75 object-cover rounded-2xl bg-gradient-to-br from-[#FF6B6B] to-pink-400 shadow-lg"/>
-				</figure>
-				<figure class="bg-white p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:cursor-pointer" id="blubeImg">
-					<h3 class="text-2xl sm:text-3xl font-bold mb-4 text-[#FF6B6B]">Madre - Cleo</h3>
-					<img src={cleo.src} alt="Madre gato persa europeo" loading="lazy" class="p-2 h-75 w-75 object-cover rounded-2xl bg-gradient-to-br from-[#FF6B6B] to-pink-400 shadow-lg"/>
-				</figure>
-			</div>
-		</section>
+    <main class="bg-[#FFF9F9] text-[#2E2E2E] min-h-screen pb-10">
+        <section class="relative bg-gradient-to-r from-[#FF6B6B] via-[#ff9f9f] to-[#FFC3C3] text-white py-24 mt-16 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">Gato Persa Himalayo</h1>
+                <div class="w-24 h-1.5 bg-white mx-auto mb-8 rounded-full"></div>
+                <p class="text-white/90 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-medium">
+                    Conoce nuestros exclusivos gatos persas himalayos, una raza única con un pelaje impresionante y una personalidad cariñosa.
+                </p>
+            </div>
+        </section>
 
-		{gatosHimalayo.length === 0 && (
-			<section class="bg-gradient-to-r from-gray-50 to-gray-100 py-20">
-				<div class="max-w-4xl mx-auto px-4 text-center">
-					<div class="text-6xl mb-6">😿</div>
-					<h2 class="text-3xl md:text-4xl font-bold text-[#FF6B6B] mb-4">¡Ups! No hay gatitos disponibles</h2>
-					<p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-						Actualmente todos nuestros gatitos himalayos están adoptados, pero puedes explorar nuestras camadas anteriores o dejarnos tu correo para avisarte cuando tengamos nuevos gatitos.
-					</p>
-					<div class="flex flex-col sm:flex-row gap-6 justify-center">
-						<a href="/principal/camadas-anteriores" 
-						class="inline-block bg-[#FF6B6B] hover:bg-[#e65c5c] hover:-translate-y-1 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-all duration-300">
-						Ver camadas anteriores
-						</a>
-						<a href="/principal/contacto" 
-						class="inline-block border-2 border-[#FF6B6B] text-[#FF6B6B] hover:bg-[#FF6B6B] hover:text-white hover:-translate-y-1 font-semibold py-3 px-8 rounded-full shadow-lg transition-all duration-300">
-						Avisarme cuando haya gatitos
-						</a>
-					</div>
-				</div>
-			</section>
-		)}
+        <section class="max-w-7xl mx-auto px-4 py-20">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#FF6B6B] mb-4">Nuestros Reproductores</h2>
+                <div class="w-32 h-1 bg-gradient-to-r from-[#FF6B6B] to-pink-400 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-10 justify-center items-center max-w-5xl mx-auto">
+                <figure class="group relative bg-white p-4 rounded-[2.5rem] shadow-xl transition-all duration-500 hover:-translate-y-2 border border-pink-50">
+                    <div class="absolute -top-4 -right-4 bg-[#FF6B6B] text-white px-6 py-2 rounded-full font-bold text-sm shadow-lg z-10">Padre</div>
+                    <div class="overflow-hidden rounded-[2rem]">
+                        <img src={oddie.src} alt="Oddie - Padre persa himalayo" class="w-80 h-80 object-cover transition-transform duration-700 group-hover:scale-110"/>
+                    </div>
+                    <figcaption class="text-center py-6">
+                        <h3 class="text-2xl font-bold text-gray-800">Oddie</h3>
+                    </figcaption>
+                </figure>
 
-		<section class="max-w-7xl mx-auto px-4 py-16 hidden">
-			<div class="text-center mb-12">
-				<h2 class="text-3xl md:text-4xl font-bold text-[#FF6B6B] mb-6">Gatitos Disponibles</h2>
-				<div class="w-32 h-1 bg-gradient-to-r from-[#FF6B6B] to-pink-400 mx-auto"></div>
-			</div>
-			<div class="grid gap-12">
-				{gatosHimalayo.map((gato) => (
-					<article class="showImg px-4 flex flex-col md:flex-row justify-center items-center gap-12 bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl max-w-[900px] mx-auto transition-all duration-300 hover:-translate-y-2">
-						<a
-							href={`/gatos/${gato.slugHimalayo}`}
-							class="relative block rounded-2xl shadow-lg overflow-hidden group transition-transform duration-300 hover:scale-105"
-						>
-							<img
-								src={gato.imgSrc.src}
-								alt={gato.alt}
-								loading="lazy"
-								class="p-2 h-75 w-75 object-cover rounded-2xl bg-gradient-to-br from-[#FF6B6B] to-pink-400"
-							/>
+                <figure class="group relative bg-white p-4 rounded-[2.5rem] shadow-xl transition-all duration-500 hover:-translate-y-2 border border-pink-50">
+                    <div class="absolute -top-4 -right-4 bg-[#FF8A8A] text-white px-6 py-2 rounded-full font-bold text-sm shadow-lg z-10">Madre</div>
+                    <div class="overflow-hidden rounded-[2rem]">
+                        <img src={cleo.src} alt="Cleo - Madre persa himalayo" class="w-80 h-80 object-cover transition-transform duration-700 group-hover:scale-110"/>
+                    </div>
+                    <figcaption class="text-center py-6">
+                        <h3 class="text-2xl font-bold text-gray-800">Cleo</h3>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
 
-							<span
-								class="absolute inset-0 flex items-start justify-center 
-									bg-black/70 text-white text-2xl font-bold pt-5
-									opacity-0 group-hover:opacity-100
-									transition-opacity duration-300 ease-in-out"
-							>
-								Ver más fotos
-							</span>
-						</a>
-						<div class="flex flex-col text-left text-lg space-y-3">
-							<p class="text-2xl font-bold text-[#FF6B6B]">{gato.nombre}</p>
-							<p>
-								<strong>Género:</strong> {gato.genero}
-							</p>
-							<p>
-								<strong>Edad:</strong>{" "}
-								<span
-									class="edad-gatito"
-									data-nacimiento={gato.edad.toISOString()}
-								>
-									Calculando...
-								</span>
-							</p>
-							<div class="flex flex-col sm:flex-row gap-4 mt-6">
-								<a
-									href="/contacto"
-									class="text-center inline-block hover:bg-[#FF6B6B] border-2 border-[#FF6B6B] text-[#FF6B6B] hover:text-white hover:-translate-y-1 font-semibold py-3 px-6 rounded-full transition-all duration-300 shadow-lg"
-								>
-									Adoptar gatito
-								</a>
-								<a
-									href="/gatos-disponibles"
-									class="text-center inline-block bg-[#FF6B6B] hover:bg-[#e65c5c] hover:-translate-y-1 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 shadow-lg"
-								>
-									Ver todos los gatos
-								</a>
-							</div>
-						</div>
-					</article>
-				))}
-			</div>
-		</section>
+        {gatosHimalayo.length === 0 && (
+            <section class="max-w-5xl mx-auto px-4 mb-20">
+                <div class="bg-white rounded-[3rem] p-12 text-center shadow-2xl border-2 border-dashed border-[#FFC3C3] relative overflow-hidden">
+                    <span class="text-6xl mb-6 block">✨</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#FF6B6B] mb-4">Próximas Camadas Himalayo</h2>
+                    <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                        Nuestros pequeños tesoros himalayos han volado a sus nuevos hogares. Estamos esperando nuevos bebés pronto.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="/principal/contacto" class="bg-[#FF6B6B] text-white font-bold py-4 px-10 rounded-full shadow-lg hover:bg-[#ff5252] transition-all hover:scale-105">
+                            Lista de Espera
+                        </a>
+                        <a href="/principal/camadas-anteriores" class="bg-white border-2 border-[#FF6B6B] text-[#FF6B6B] font-bold py-4 px-10 rounded-full hover:bg-[#FFF9F9] transition-all">
+                            Ver Galería Himalayo
+                        </a>
+                    </div>
+                </div>
+            </section>
+        )}
 
-		<!-- Sección de Camadas Anteriores -->
-		<section class="bg-gradient-to-br from-gray-50 to-pink-50 py-20">
-			<div class="max-w-7xl mx-auto px-4">
-				<div class="text-center mb-12">
-					<h2 class="text-3xl md:text-4xl font-bold text-[#FF6B6B] mb-4">Camadas Anteriores</h2>
-					<div class="w-32 h-1 bg-gradient-to-r from-[#FF6B6B] to-pink-400 mx-auto mb-6"></div>
-					<p class="text-lg text-gray-700 max-w-2xl mx-auto">
-						Mira algunos de nuestros gatitos himalayos de camadas anteriores para que te hagas una idea de cómo crecen nuestros bebés.
-					</p>
-				</div>
-				
-				{gatosHimalayo.length > 0 ? (
-					<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
-						{gatosHimalayo.map((gatoAnterior) => (
-							<figure class="bg-white p-4 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 cursor-pointer">
-								<img 
-									src={gatoAnterior.img} 
-									alt={gatoAnterior.alt}
-									loading="lazy" 
-									class="w-full h-48 object-cover rounded-xl mb-3 bg-gradient-to-br from-[#FF6B6B] to-pink-400 p-1"
-								/>
-								<figcaption class="text-center">
-									<p class="font-bold text-[#2E2E2E] text-sm">{gatoAnterior.name}</p>
-									<p class="text-xs text-gray-600">{gatoAnterior.gender}</p>
-								</figcaption>
-							</figure>
-						))}
-					</div>
-				) : (
-					<div class="bg-white/80 rounded-2xl shadow-lg p-8 text-center max-w-2xl mx-auto">
-						<p class="text-gray-700 mb-4">Pronto agregaremos fotos de camadas anteriores de gatitos himalayos.</p>
-						<p class="text-sm text-gray-600">Estamos trabajando en nuevas camadas de esta hermosa variedad.</p>
-					</div>
-				)}
+        {gatosHimalayo.length > 0 && (
+            <section class="max-w-7xl mx-auto px-4 py-16">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#FF6B6B] mb-4">Gatitos Disponibles</h2>
+                    <div class="w-32 h-1 bg-gradient-to-r from-[#FF6B6B] to-pink-400 mx-auto"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+                    {gatosHimalayo.map((gato) => (
+                        <article class="group bg-white rounded-[2.5rem] shadow-lg hover:shadow-[0_20px_50px_rgba(255,107,107,0.2)] transition-all duration-500 overflow-hidden border border-pink-50">
+                            <div class="relative aspect-[4/5] overflow-hidden">
+                                <img src={gato.img} alt={gato.alt} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                                
+                                <div class={`absolute top-5 left-5 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-lg ${gato.disponibleEstilo}`}>
+                                    {gato.disponibleTexto}
+                                </div>
 
-				<div class="text-center mt-10">
-					<a href="/principal/camadas-anteriores" 
-						class="inline-block bg-[#FF6B6B] hover:bg-[#e65c5c] hover:-translate-y-1 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-all duration-300">
-						Ver todas las camadas anteriores
-					</a>
-				</div>
-			</div>
-		</section>
-	</main>
+                                <a href="/contacto" class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <span class="bg-white text-[#FF6B6B] px-6 py-2 rounded-full font-bold shadow-xl translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                        Conocer a {gato.name}
+                                    </span>
+                                </a>
+                            </div>
+                            
+                            <div class="p-8">
+                                <h3 class="text-3xl font-bold text-gray-800 mb-4">{gato.name}</h3>
+                                
+                                <div class="grid grid-cols-2 gap-4 mb-8">
+                                    <div class="flex items-center gap-3 bg-[#FFF9F9] p-3 rounded-2xl">
+                                        <span class="text-xl">{gato.gender === 'Macho' || gato.gender === 'Masculino' ? '💈' : '🎀'}</span>
+                                        <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">{gato.gender}</span>
+                                    </div>
+                                    <div class="flex items-center gap-3 bg-[#FFF9F9] p-3 rounded-2xl">
+                                        <span class="text-xl">📅</span>
+                                        <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest edad-gatito" data-nacimiento={gato.birth.toString()}>...</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex flex-col gap-3">
+                                    <a href="/contacto" class="w-full text-center bg-[#FF6B6B] text-white font-bold py-4 rounded-2xl transition-all hover:bg-[#ff5252] shadow-md active:scale-95">
+                                        ❤️ Adoptar a {gato.name}
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+            </section>
+        )}
+
+        <section class="bg-white py-24 border-y border-pink-100">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#FF6B6B] mb-2">Camadas anteriores</h2>
+                    <a href="/principal/camadas-anteriores" class="text-[#FF6B6B] font-bold border-b-2 border-[#FF6B6B] pb-1 hover:text-[#ff5252] transition-colors">
+                        Explorar Galería Completa →
+                    </a>
+                </div>
+                
+                {gatosHimalayoAnteriores && gatosHimalayoAnteriores.length > 0 ? (
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
+                        {gatosHimalayoAnteriores.slice(0, 5).map((gatoAnterior) => (
+                            <figure class="group">
+                                <div class="relative overflow-hidden rounded-[2rem] shadow-md mb-4 aspect-square border border-pink-50">
+                                    <img src={gatoAnterior.img} alt={gatoAnterior.alt} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-pink-500/20 to-transparent"></div>
+                                </div>
+                                <figcaption class="text-center">
+                                    <p class="font-bold text-gray-800 tracking-tight">{gatoAnterior.name}</p>
+                                    <p class="text-[10px] text-[#FF8A8A] font-black uppercase tracking-[0.2em] mt-1">{gatoAnterior.gender}</p>
+                                </figcaption>
+                            </figure>
+                        ))}
+                    </div>
+                ) : (
+                    <div class="bg-[#FFF9F9] rounded-3xl p-10 text-center text-gray-400 font-medium">
+                    Estamos preparando el archivo fotográfico...
+                    </div>
+                )}
+            </div>
+        </section>
+
+        <script src="../../scripts/edad.js"></script>
+    </main>
 </Layout>

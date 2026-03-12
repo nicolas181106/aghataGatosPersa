@@ -93,7 +93,7 @@ const razas = [
 				<div class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 					{
 						razas.map((raza) => (
-								<a
+							<div class="relative group"> <a
 									href={raza.a}
 									aria-label={`Ver gatos persas de la raza ${raza.h1}`}
 									class="z-10"
@@ -107,10 +107,12 @@ const razas = [
 												class="h-80 w-full object-cover transition-all duration-500 ease-out group-hover:scale-110 group-hover:brightness-105"
 											/>
 											<div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+											
 											<span class="absolute left-4 top-4 inline-flex rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-[#FF6B6B] shadow-sm">
 												Línea de persa
 											</span>
 										</div>
+
 										<div class="flex flex-col gap-2 p-5">
 											<h3 class="text-xl font-semibold text-[#2E2E2E] group-hover:text-[#FF6B6B] transition-colors">
 												{raza.h1}
@@ -124,23 +126,17 @@ const razas = [
 										</div>
 									</article>
 								</a>
-						))
-					}
-				</div>
-				<div class="my-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-					{
-						razas.map((raza) => (
-								<div class="flex items-center justify-center">
-									<button 
-										data-id={raza.id}
-										data-url={supabaseUrl} 
-										data-key={supabaseKey}
-										class="like-btn w-[25%] flex items-center justify-center gap-2 rounded-full bg-[#FF6B6B] py-2 text-sm font-semibold text-white shadow-md hover:bg-[#ff5252] transition-all"
-									>
-										<span>❤️</span>
-										<span id={`count-${raza.id}`}>{getLikes(raza.id)}</span>
-									</button>
-								</div>
+
+								<button 
+									data-id={raza.id}
+									data-url={supabaseUrl} 
+									data-key={supabaseKey}
+									class="like-btn absolute top-4 right-4 z-20 flex items-center gap-2 rounded-full bg-white/90 px-3 py-1.5 text-xs font-bold text-[#FF6B6B] shadow-sm hover:scale-110 transition-all hover:bg-white active:scale-95 border border-[#ffd3d3]"
+								>
+									<span>❤️</span>
+									<span id={`count-${raza.id}`}>{getLikes(raza.id)}</span>
+								</button>
+							</div>
 						))
 					}
 				</div>
