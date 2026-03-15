@@ -1,0 +1,275 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+    title="Mi Perfil | Ágatha Gatos Persas"
+    description="Gestiona tu perfil en Ágatha Gatos Persas."
+>
+    <main
+        class="min-h-screen bg-[#FAF9F6] pt-32 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+    >
+        <!-- Decoración de fondo -->
+        <div
+            class="absolute top-0 right-0 w-64 h-64 bg-pink-100 rounded-full blur-3xl opacity-50 translate-x-1/2 -translate-y-1/2 pointer-events-none"
+        >
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-96 h-96 bg-[#FF6B6B]/10 rounded-full blur-3xl opacity-50 -translate-x-1/3 translate-y-1/3 pointer-events-none"
+        >
+        </div>
+
+        <div class="max-w-3xl mx-auto relative z-10">
+            <div
+                class="bg-white rounded-[3rem] shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border border-pink-50 overflow-hidden"
+            >
+                <!-- Banner decorativo del perfil -->
+                <div
+                    class="h-32 sm:h-48 bg-gradient-to-r from-[#FF6B6B] to-pink-400 relative"
+                >
+                    <div
+                        class="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')]"
+                    >
+                    </div>
+                </div>
+
+                <div class="px-8 sm:px-12 pb-12 relative">
+                    <!-- Avatar section -->
+                    <div
+                        class="relative -mt-16 sm:-mt-20 mb-8 flex justify-center sm:justify-start"
+                    >
+                        <div class="relative group">
+                            <div
+                                class="w-32 h-32 sm:w-40 sm:h-40 rounded-[2rem] bg-white p-2 shadow-xl"
+                            >
+                                <img
+                                    id="profile-avatar"
+                                    src="https://api.dicebear.com/7.x/notionists/svg?seed=Agatha"
+                                    alt="Foto de perfil"
+                                    class="w-full h-full object-cover rounded-[1.5rem] bg-pink-50"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botón de logout arriba a la derecha en desktop -->
+                    <div class="hidden sm:block absolute top-6 right-8">
+                        <button
+                            id="logout-btn-profile"
+                            class="flex items-center gap-2 text-[#FF6B6B] bg-pink-100 border-2 border-pink-100 hover:border-[#FF6B6B] hover:bg-pink-50 font-bold py-2.5 px-6 rounded-2xl transition-all duration-300"
+                        >
+                            <svg
+                                class="w-5 h-5"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                                ></path></svg
+                            >
+                            Cerrar Sesión
+                        </button>
+                    </div>
+
+                    <div id="loading-spinner" class="py-12 flex justify-center">
+                        <div
+                            class="w-10 h-10 border-4 border-pink-100 border-t-[#FF6B6B] rounded-full animate-spin"
+                        >
+                        </div>
+                    </div>
+
+                    <div id="profile-content" class="hidden animate-fade-in-up">
+                        <h1
+                            class="text-2xl max-sm:text-center sm:text-4xl font-black text-[#2E2E2E] mb-2"
+                            id="profile-name"
+                        >
+                            Cargando perfil...
+                        </h1>
+                        <p
+                            class="text-gray-500 font-medium mb-8 flex items-center gap-2"
+                        >
+                            <svg
+                                class="w-5 h-5"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                ></path></svg
+                            >
+                            <span id="profile-email">...</span>
+                        </p>
+
+                        <div
+                            class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-2xl"
+                        >
+                            <!-- Card Info -->
+                            <div
+                                class="bg-gray-50 rounded-3xl p-6 border border-gray-100 flex items-start gap-4"
+                            >
+                                <div
+                                    class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-[#FF6B6B] shrink-0"
+                                >
+                                    <svg
+                                        class="w-6 h-6"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                        ><path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                                        ></path></svg
+                                    >
+                                </div>
+                                <div>
+                                    <h3
+                                        class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-1"
+                                    >
+                                        Miembro desde
+                                    </h3>
+                                    <p
+                                        class="text-lg font-bold text-[#2E2E2E]"
+                                        id="profile-date"
+                                    >
+                                        ...
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-gray-50 rounded-3xl p-6 border border-gray-100 flex items-start gap-4"
+                            >
+                                <div
+                                    class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-500 shrink-0"
+                                >
+                                    <svg
+                                        class="w-6 h-6"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                        ><path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                                        ></path></svg
+                                    >
+                                </div>
+                                <div>
+                                    <h3
+                                        class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-1"
+                                    >
+                                        Cachorros reservados
+                                    </h3>
+                                    <p class="text-lg font-bold text-[#2E2E2E]">
+                                        0 (Próximamente)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botón de logout en mobile (abajo de los detalles) -->
+                        <div class="mt-10 sm:hidden">
+                            <button
+                                id="logout-btn-mobile-profile"
+                                class="w-full flex justify-center items-center gap-2 text-[#FF6B6B] border-2 border-pink-100 hover:border-[#FF6B6B] hover:bg-pink-50 font-bold py-3.5 px-6 rounded-2xl transition-all duration-300"
+                            >
+                                <svg
+                                    class="w-5 h-5"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    ><path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                                    ></path></svg
+                                >
+                                Cerrar Sesión
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</Layout>
+
+<script>
+    import { supabase } from "../lib/supabase";
+
+    const redirectIfNotAuthenticated = async () => {
+        const {
+            data: { session },
+        } = await supabase.auth.getSession();
+
+        if (!session) {
+            window.location.href = "/login";
+            return;
+        }
+
+        const user = session.user;
+
+        // Elementos del DOM
+        const loadingSpinner = document.getElementById("loading-spinner");
+        const profileContent = document.getElementById("profile-content");
+        const emailEl = document.getElementById("profile-email");
+        const nameEl = document.getElementById("profile-name");
+        const dateEl = document.getElementById("profile-date");
+        const avatarEl = document.getElementById(
+            "profile-avatar",
+        ) as HTMLImageElement;
+
+        // Formatear fecha
+        const date = new Date(user.created_at);
+        const formattedDate = new Intl.DateTimeFormat("es-ES", {
+            month: "long",
+            year: "numeric",
+        }).format(date);
+
+        // Si es cuenta de google, pillamos el nombre y la foto real
+        const metadata = user.user_metadata;
+        const displayName =
+            metadata?.full_name ||
+            metadata?.name ||
+            user.email?.split("@")[0] ||
+            "Amante de los gatos";
+        const avatarUrl = metadata?.avatar_url || metadata?.picture;
+
+        // Actualizar UI
+        if (emailEl) emailEl.textContent = user.email || "Sin correo asociado";
+        if (nameEl) nameEl.textContent = displayName;
+        if (dateEl)
+            dateEl.textContent =
+                formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1);
+        if (avatarEl && avatarUrl) avatarEl.src = avatarUrl;
+
+        // Mostrar todo
+        if (loadingSpinner) loadingSpinner.classList.add("hidden");
+        if (profileContent) profileContent.classList.remove("hidden");
+
+        // Lógica de deslogueo
+        const handleLogout = async () => {
+            await supabase.auth.signOut();
+            window.location.href = "/login";
+        };
+
+        document
+            .getElementById("logout-btn-profile")
+            ?.addEventListener("click", handleLogout);
+        document
+            .getElementById("logout-btn-mobile-profile")
+            ?.addEventListener("click", handleLogout);
+    };
+
+    redirectIfNotAuthenticated();
+</script>

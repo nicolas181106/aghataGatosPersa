@@ -92,6 +92,9 @@ import logo2 from "../assets/img/logoAnimated.png";
           Contacto
         </a>
       </li>
+      <li id="auth-buttons-desktop" class="flex items-center gap-3">
+        <!-- Auth buttons will be injected here via client script -->
+      </li>
     </ul>
   </div>
 
@@ -102,9 +105,43 @@ import logo2 from "../assets/img/logoAnimated.png";
       <li><a class="block px-4 py-3 rounded-xl hover:bg-[#FFE2E2]" href="/principal/informacion">Blog</a></li>
       <li><a class="block px-4 py-3 rounded-xl hover:bg-[#FFE2E2]" href="/principal/productos">Productos</a></li>
       <li><a class="block px-4 py-3 rounded-xl bg-[#FF6B6B] text-white text-center mt-2" href="/contacto">Contacto</a></li>
+      <div id="auth-buttons-mobile" class="mt-2 flex flex-col gap-1 border-t border-pink-100 pt-2">
+        <!-- Auth buttons will be injected here via client script -->
+      </div>
     </ul>
   </div>
 </nav>
+
+<script>
+  import { supabase } from '../lib/supabase';
+
+  const authDesktop = document.getElementById('auth-buttons-desktop');
+  const authMobile = document.getElementById('auth-buttons-mobile');
+
+  const updateAuthUI = async () => {
+    const { data: { session } } = await supabase.auth.getSession();
+    
+    if (session) {
+      if (authDesktop) authDesktop.innerHTML = '<a href="/profile" class="flex items-center gap-2 text-[14px] md:text-[15px] font-bold text-gray-600 hover:text-[#FF6B6B] border-2 border-transparent hover:border-pink-100 hover:bg-pink-50 px-5 py-2 rounded-full transition-all duration-300"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg> Mi Perfil</a>';
+      if (authMobile) authMobile.innerHTML = '<li><a href="/profile" class="w-full text-left font-bold block px-4 py-3 rounded-xl text-[#FF6B6B] hover:bg-[#FFE2E2] flex items-center gap-2"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg> Mi Perfil</a></li>';
+    } else {
+      if (authDesktop) {
+        authDesktop.innerHTML = '<a href="/login" class="text-[15px] md:text-[16px] hover:text-[#FF6B6B] transition-colors">Entrar</a><a href="/register" class="bg-[#FF6B6B]/10 text-[#FF6B6B] px-5 py-2 rounded-full hover:bg-[#FF6B6B]/20 transition-all font-bold">Registro</a>';
+      }
+      if (authMobile) {
+        authMobile.innerHTML = '<li><a href="/login" class="block px-4 py-3 rounded-xl hover:bg-[#FFE2E2] font-bold">Entrar</a></li><li><a href="/register" class="block px-4 py-3 rounded-xl hover:bg-[#FFE2E2] text-[#FF6B6B] font-bold">Registro</a></li>';
+      }
+    }
+  };
+
+  updateAuthUI();
+
+  supabase.auth.onAuthStateChange((event, session) => {
+    if (event === 'SIGNED_IN' || event === 'SIGNED_OUT') {
+      updateAuthUI();
+    }
+  });
+</script>
 
 <script is:inline>
   const btn = document.getElementById('menu-btn');
