@@ -6,198 +6,152 @@ import Layout from "../layouts/Layout.astro";
     title="Mi Perfil | Ágatha Gatos Persas"
     description="Gestiona tu perfil en Ágatha Gatos Persas."
 >
-    <main
-        class="min-h-screen bg-[#FAF9F6] pt-32 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
-    >
-        <!-- Decoración de fondo -->
-        <div
-            class="absolute top-0 right-0 w-64 h-64 bg-pink-100 rounded-full blur-3xl opacity-50 translate-x-1/2 -translate-y-1/2 pointer-events-none"
-        >
+    <!-- Modal de Selección de Avatar (Estilo PlayStation) -->
+    <div id="avatar-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="close-modal-bg"></div>
+        <div class="bg-white rounded-[3rem] w-full max-w-2xl relative z-10 overflow-hidden animate-fade-in-up shadow-2xl">
+            <div class="px-8 pt-8 pb-4 flex justify-between items-center border-b border-gray-100">
+                <h2 class="text-2xl font-black text-[#2E2E2E]">Elige tu Avatar</h2>
+                <button id="close-modal" class="text-gray-400 hover:text-gray-600 p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div class="p-8 grid grid-cols-2 sm:grid-cols-5 gap-4 overflow-y-auto max-h-[60vh]">
+                <!-- Avatares se insertarán por JS -->
+                <div id="avatar-grid-container" class="contents"></div>
+            </div>
+            <div class="p-6 bg-gray-50 flex justify-end">
+                <button id="save-avatar-selection" class="bg-[#FF6B6B] text-white font-bold py-3 px-8 rounded-2xl hover:bg-[#e65c5c] transition-all duration-300 shadow-lg">
+                    Confirmar
+                </button>
+            </div>
         </div>
-        <div
-            class="absolute bottom-0 left-0 w-96 h-96 bg-[#FF6B6B]/10 rounded-full blur-3xl opacity-50 -translate-x-1/3 translate-y-1/3 pointer-events-none"
-        >
-        </div>
+    </div>
 
-        <div class="max-w-3xl mx-auto relative z-10">
-            <div
-                class="bg-white rounded-[3rem] shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border border-pink-50 overflow-hidden"
-            >
-                <!-- Banner decorativo del perfil -->
-                <div
-                    class="h-32 sm:h-48 bg-gradient-to-r from-[#FF6B6B] to-pink-400 relative"
-                >
-                    <div
-                        class="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')]"
-                    >
-                    </div>
+    <main class="min-h-screen bg-[#FAF9F6] pt-32 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <!-- Decoración de fondo -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-pink-100 rounded-full blur-3xl opacity-50 translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-[#FF6B6B]/10 rounded-full blur-3xl opacity-50 -translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="bg-white rounded-[3rem] shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border border-pink-50 overflow-hidden">
+                <!-- Banner decorativo -->
+                <div class="h-32 sm:h-48 bg-gradient-to-r from-[#FF6B6B] to-pink-400 relative">
+                    <div class="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')] text-white"></div>
                 </div>
 
                 <div class="px-8 sm:px-12 pb-12 relative">
                     <!-- Avatar section -->
-                    <div
-                        class="relative -mt-16 sm:-mt-20 mb-8 flex justify-center sm:justify-start"
-                    >
+                    <div class="relative -mt-16 sm:-mt-20 mb-8 flex flex-col sm:flex-row items-center sm:items-end gap-6">
                         <div class="relative group">
-                            <div
-                                class="w-32 h-32 sm:w-40 sm:h-40 rounded-[2rem] bg-white p-2 shadow-xl"
-                            >
+                            <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-[2rem] bg-white p-2 shadow-xl overflow-hidden">
                                 <img
                                     id="profile-avatar"
                                     src="https://api.dicebear.com/7.x/notionists/svg?seed=Agatha"
                                     alt="Foto de perfil"
-                                    class="w-full h-full object-cover rounded-[1.5rem] bg-pink-50"
+                                    class="w-full h-full object-cover rounded-[1.5rem] bg-pink-50 transition-all duration-300 group-hover:scale-105"
                                 />
                             </div>
+                            <button id="change-avatar-trigger" class="absolute -bottom-2 -right-2 bg-white text-[#FF6B6B] p-2.5 rounded-2xl shadow-lg border border-pink-100 hover:scale-110 active:scale-95 transition-all">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            </button>
                         </div>
-                    </div>
+                        
+                        <div class="flex-1 text-center sm:text-left pt-4">
+                            <h1 class="text-3xl sm:text-4xl font-black text-[#2E2E2E] mb-1" id="profile-name-display">...</h1>
+                        </div>
 
-                    <!-- Botón de logout arriba a la derecha en desktop -->
-                    <div class="hidden sm:block absolute top-6 right-8">
-                        <button
-                            id="logout-btn-profile"
-                            class="flex items-center gap-2 text-[#FF6B6B] bg-pink-100 border-2 border-pink-100 hover:border-[#FF6B6B] hover:bg-pink-50 font-bold py-2.5 px-6 rounded-2xl transition-all duration-300"
-                        >
-                            <svg
-                                class="w-5 h-5"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                ><path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-                                ></path></svg
-                            >
-                            Cerrar Sesión
-                        </button>
+                        <div class="flex gap-3 pt-4">
+                            <button id="edit-profile-btn" class="bg-gray-100 text-gray-700 font-bold py-2.5 px-6 rounded-2xl hover:bg-gray-200 transition-all">
+                                Editar Perfil
+                            </button>
+                            <button id="logout-btn-profile" class="hidden sm:flex items-center gap-2 text-[#FF6B6B] bg-pink-50 font-bold py-2.5 px-6 rounded-2xl hover:bg-pink-100 transition-all">
+                                Salir
+                            </button>
+                        </div>
                     </div>
 
                     <div id="loading-spinner" class="py-12 flex justify-center">
-                        <div
-                            class="w-10 h-10 border-4 border-pink-100 border-t-[#FF6B6B] rounded-full animate-spin"
-                        >
-                        </div>
+                        <div class="w-10 h-10 border-4 border-pink-100 border-t-[#FF6B6B] rounded-full animate-spin"></div>
                     </div>
 
                     <div id="profile-content" class="hidden animate-fade-in-up">
-                        <h1
-                            class="text-2xl max-sm:text-center sm:text-4xl font-black text-[#2E2E2E] mb-2"
-                            id="profile-name"
-                        >
-                            Cargando perfil...
-                        </h1>
-                        <p
-                            class="text-gray-500 font-medium mb-8 flex items-center gap-2"
-                        >
-                            <svg
-                                class="w-5 h-5"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                ><path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                                ></path></svg
-                            >
-                            <span id="profile-email">...</span>
-                        </p>
-
-                        <div
-                            class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-2xl"
-                        >
-                            <!-- Card Info -->
-                            <div
-                                class="bg-gray-50 rounded-3xl p-6 border border-gray-100 flex items-start gap-4"
-                            >
-                                <div
-                                    class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-[#FF6B6B] shrink-0"
-                                >
-                                    <svg
-                                        class="w-6 h-6"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                        ><path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                                        ></path></svg
-                                    >
-                                </div>
-                                <div>
-                                    <h3
-                                        class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-1"
-                                    >
-                                        Miembro desde
-                                    </h3>
-                                    <p
-                                        class="text-lg font-bold text-[#2E2E2E]"
-                                        id="profile-date"
-                                    >
-                                        ...
-                                    </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <!-- Info Personal -->
+                            <div class="space-y-6">
+                                <h3 class="text-xl font-black text-[#2E2E2E] flex items-center gap-2">
+                                    <span class="w-8 h-8 bg-pink-100 rounded-lg flex items-center justify-center text-[#FF6B6B]">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                                    </span>
+                                    Información del Usuario
+                                </h3>
+                                
+                                <div class="bg-gray-50 rounded-[2rem] p-8 border border-gray-100 space-y-6">
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Email</label>
+                                        <p class="text-lg font-bold text-[#2E2E2E]" id="profile-email">...</p>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Teléfono</label>
+                                        <p class="text-lg font-bold text-[#2E2E2E]" id="profile-phone">No asignado</p>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Se unió en</label>
+                                        <p class="text-lg font-bold text-[#2E2E2E]" id="profile-date">...</p>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div
-                                class="bg-gray-50 rounded-3xl p-6 border border-gray-100 flex items-start gap-4"
-                            >
-                                <div
-                                    class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-500 shrink-0"
-                                >
-                                    <svg
-                                        class="w-6 h-6"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                        ><path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                                        ></path></svg
-                                    >
-                                </div>
-                                <div>
-                                    <h3
-                                        class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-1"
-                                    >
-                                        Cachorros reservados
-                                    </h3>
-                                    <p class="text-lg font-bold text-[#2E2E2E]">
-                                        0 (Próximamente)
-                                    </p>
+                            <!-- Secciones Extras -->
+                            <div class="space-y-6">
+                                <h3 class="text-xl font-black text-[#2E2E2E] flex items-center gap-2">
+                                    <span class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-500">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                    </span>
+                                    Estadísticas
+                                </h3>
+                                <div class="grid grid-cols-1 gap-4">
+                                    <div class="bg-pink-50 rounded-[2rem] p-6 text-center border border-pink-100">
+                                        <p class="text-3xl font-black text-[#FF6B6B] mb-1">0</p>
+                                        <p class="text-xs font-bold text-pink-400 uppercase">Reservas Totales</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Botón de logout en mobile (abajo de los detalles) -->
+                        <!-- Botón de logout en mobile -->
                         <div class="mt-10 sm:hidden">
-                            <button
-                                id="logout-btn-mobile-profile"
-                                class="w-full flex justify-center items-center gap-2 text-[#FF6B6B] border-2 border-pink-100 hover:border-[#FF6B6B] hover:bg-pink-50 font-bold py-3.5 px-6 rounded-2xl transition-all duration-300"
-                            >
-                                <svg
-                                    class="w-5 h-5"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    ><path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-                                    ></path></svg
-                                >
+                            <button id="logout-btn-mobile-profile" class="w-full flex justify-center items-center gap-2 text-[#FF6B6B] border-2 border-pink-100 hover:border-[#FF6B6B] hover:bg-pink-50 font-bold py-3.5 px-6 rounded-2xl transition-all">
                                 Cerrar Sesión
                             </button>
                         </div>
                     </div>
+
+                    <!-- Vista de Edición (Oculta por defecto) -->
+                    <div id="edit-form-container" class="hidden animate-fade-in-up mt-8 border-t border-gray-100 pt-8">
+                        <h2 class="text-2xl font-black text-[#2E2E2E] mb-6">Editar Perfil</h2>
+                        <form id="edit-profile-form" class="space-y-6 max-w-lg">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="edit-name" class="block text-sm font-bold text-gray-700 mb-2">Nombre Completo</label>
+                                    <input type="text" id="edit-name" class="w-full px-5 py-3 rounded-2xl border border-gray-200 focus:border-[#FF6B6B] focus:ring-2 focus:ring-pink-100 outline-none transition-all text-black" placeholder="Tu nombre">
+                                </div>
+                                <div>
+                                    <label for="edit-phone" class="block text-sm font-bold text-gray-700 mb-2">Teléfono</label>
+                                    <input type="tel" id="edit-phone" class="w-full px-5 py-3 rounded-2xl border border-gray-200 focus:border-[#FF6B6B] focus:ring-2 focus:ring-pink-100 outline-none transition-all text-black" placeholder="+34 600 000 000">
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <button type="submit" class="bg-[#FF6B6B] text-white font-bold py-3 px-8 rounded-2xl hover:bg-[#e65c5c] transition-all shadow-lg active:scale-95">
+                                    Guardar Cambios
+                                </button>
+                                <button type="button" id="cancel-edit-btn" class="bg-gray-100 text-gray-700 font-bold py-3 px-8 rounded-2xl hover:bg-gray-200 transition-all">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -207,69 +161,219 @@ import Layout from "../layouts/Layout.astro";
 <script>
     import { supabase } from "../lib/supabase";
 
-    const redirectIfNotAuthenticated = async () => {
-        const {
-            data: { session },
-        } = await supabase.auth.getSession();
+    // 10 Avatares de Gatitos (URLs más estables de Unsplash)
+    const AVATARS = [
+        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=300&h=300&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1574158622672-7a0b5021c9a3?q=80&w=300&h=300&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?q=80&w=300&h=300&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1573865662567-57ef5b676d22?q=80&w=300&h=300&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1533733501017-cf7925b2157d?q=80&w=300&h=300&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1543852786-1cf6624b9987?q=80&w=300&h=300&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1511044568932-338cba0ad803?q=80&w=300&h=300&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?q=80&w=300&h=300&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1495360010541-f48722b34f7d?q=80&w=300&h=300&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1513245533132-AA7f705827fc?q=80&w=300&h=300&auto=format&fit=crop"
+    ];
 
+    const DEFAULT_AVATAR = AVATARS[0];
+
+    let currentSelectedAvatar = "";
+    let userSession: any = null;
+
+    const initProfile = async () => {
+        const { data: { session } } = await supabase.auth.getSession();
         if (!session) {
             window.location.href = "/login";
             return;
         }
+        userSession = session;
+        
+        await loadProfileData();
+        setupEventListeners();
+    };
 
-        const user = session.user;
+    const loadProfileData = async () => {
+        const { user } = userSession;
+        
+        // Cargar desde tabla profiles
+        let { data: profile, error } = await supabase
+            .from('profiles')
+            .select('*')
+            .eq('id', user.id)
+            .maybeSingle(); // Usamos maybeSingle para evitar error si no existe
 
-        // Elementos del DOM
-        const loadingSpinner = document.getElementById("loading-spinner");
-        const profileContent = document.getElementById("profile-content");
-        const emailEl = document.getElementById("profile-email");
-        const nameEl = document.getElementById("profile-name");
-        const dateEl = document.getElementById("profile-date");
-        const avatarEl = document.getElementById(
-            "profile-avatar",
-        ) as HTMLImageElement;
+        // Si no existe el perfil (porque el usuario es antiguo), lo creamos ahora
+        if (!profile) {
+            console.log("Perfil no encontrado, creando uno nuevo para:", user.email);
+            const { data: newProfile, error: createError } = await supabase
+                .from('profiles')
+                .insert([{ 
+                    id: user.id, 
+                    full_name: user.user_metadata?.full_name || user.email.split('@')[0],
+                    avatar_url: DEFAULT_AVATAR
+                }])
+                .select()
+                .single();
+            
+            if (createError) {
+                console.error("Error crítico creando perfil:", createError);
+                // Si falla el insert por RLS, aquí lo veremos en consola
+            }
+            profile = newProfile;
+        }
 
-        // Formatear fecha
-        const date = new Date(user.created_at);
-        const formattedDate = new Intl.DateTimeFormat("es-ES", {
-            month: "long",
-            year: "numeric",
-        }).format(date);
+        if (profile) {
+            const displayName = profile.full_name || user.email.split('@')[0];
+            const avatarUrl = profile.avatar_url || DEFAULT_AVATAR;
+            const phone = profile.phone || "No asignado";
 
-        // Si es cuenta de google, pillamos el nombre y la foto real
-        const metadata = user.user_metadata;
-        const displayName =
-            metadata?.full_name ||
-            metadata?.name ||
-            user.email?.split("@")[0] ||
-            "Amante de los gatos";
-        const avatarUrl = metadata?.avatar_url || metadata?.picture;
+            // UI Updates
+            document.getElementById("profile-name-display")!.textContent = displayName;
+            document.getElementById("profile-email")!.textContent = user.email;
+            document.getElementById("profile-phone")!.textContent = phone;
+            (document.getElementById("profile-avatar") as HTMLImageElement).src = avatarUrl;
+            
+            const date = new Date(user.created_at);
+            document.getElementById("profile-date")!.textContent = new Intl.DateTimeFormat("es-ES", { month: "long", year: "numeric" }).format(date);
 
-        // Actualizar UI
-        if (emailEl) emailEl.textContent = user.email || "Sin correo asociado";
-        if (nameEl) nameEl.textContent = displayName;
-        if (dateEl)
-            dateEl.textContent =
-                formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1);
-        if (avatarEl && avatarUrl) avatarEl.src = avatarUrl;
+            // Pre-fill form
+            (document.getElementById("edit-name") as HTMLInputElement).value = displayName;
+            (document.getElementById("edit-phone") as HTMLInputElement).value = phone === "No asignado" ? "" : phone;
+            currentSelectedAvatar = avatarUrl;
+            
+            renderAvatarGrid();
+        }
 
-        // Mostrar todo
-        if (loadingSpinner) loadingSpinner.classList.add("hidden");
-        if (profileContent) profileContent.classList.remove("hidden");
+        document.getElementById("loading-spinner")?.classList.add("hidden");
+        document.getElementById("profile-content")?.classList.remove("hidden");
+    };
 
-        // Lógica de deslogueo
+    const renderAvatarGrid = () => {
+        const container = document.getElementById("avatar-grid-container");
+        if (!container) return;
+        
+        container.innerHTML = AVATARS.map(url => `
+            <div class="avatar-option cursor-pointer group ${url === currentSelectedAvatar ? 'selected' : ''}" data-url="${url}">
+                <div class="relative aspect-square rounded-2xl overflow-hidden border-4 border-transparent transition-all hover:border-pink-200">
+                    <img src="${url}" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-[#FF6B6B]/40 opacity-0 group-[.selected]:opacity-100 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                </div>
+            </div>
+        `).join("");
+
+        // Add selection logic
+        document.querySelectorAll(".avatar-option").forEach(opt => {
+            opt.addEventListener("click", () => {
+                document.querySelectorAll(".avatar-option").forEach(o => o.classList.remove("selected"));
+                opt.classList.add("selected");
+                currentSelectedAvatar = (opt as HTMLElement).dataset.url || "";
+            });
+        });
+    };
+
+    const setupEventListeners = () => {
+        // Toggle Edit Form
+        document.getElementById("edit-profile-btn")?.addEventListener("click", () => {
+            document.getElementById("profile-content")?.classList.add("hidden");
+            document.getElementById("edit-form-container")?.classList.remove("hidden");
+        });
+
+        document.getElementById("cancel-edit-btn")?.addEventListener("click", () => {
+            document.getElementById("edit-form-container")?.classList.add("hidden");
+            document.getElementById("profile-content")?.classList.remove("hidden");
+        });
+
+        // Modal Avatar
+        const modal = document.getElementById("avatar-modal");
+        const saveAvatarBtn = document.getElementById("save-avatar-selection") as HTMLButtonElement;
+
+        document.getElementById("change-avatar-trigger")?.addEventListener("click", () => {
+            renderAvatarGrid(); // Refrescar selección visual
+            modal?.classList.remove("hidden");
+        });
+
+        document.getElementById("close-modal")?.addEventListener("click", () => modal?.classList.add("hidden"));
+        document.getElementById("close-modal-bg")?.addEventListener("click", () => modal?.classList.add("hidden"));
+        
+        saveAvatarBtn?.addEventListener("click", async () => {
+            saveAvatarBtn.disabled = true;
+            saveAvatarBtn.textContent = "Guardando...";
+            
+            try {
+                const { error } = await supabase
+                    .from('profiles')
+                    .update({ avatar_url: currentSelectedAvatar })
+                    .eq('id', userSession.user.id);
+                    
+                if (error) throw error;
+
+                (document.getElementById("profile-avatar") as HTMLImageElement).src = currentSelectedAvatar;
+                modal?.classList.add("hidden");
+            } catch (err: any) {
+                alert("Error salvando avatar: " + err.message);
+            } finally {
+                saveAvatarBtn.disabled = false;
+                saveAvatarBtn.textContent = "Confirmar";
+            }
+        });
+
+        // Form Submit
+        document.getElementById("edit-profile-form")?.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const submitBtn = (e.target as HTMLFormElement).querySelector('button[type="submit"]') as HTMLButtonElement;
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = "Guardando...";
+            }
+
+            const full_name = (document.getElementById("edit-name") as HTMLInputElement).value;
+            const phone = (document.getElementById("edit-phone") as HTMLInputElement).value;
+
+            try {
+                const { error } = await supabase
+                    .from('profiles')
+                    .update({ full_name, phone, updated_at: new Date().toISOString() })
+                    .eq('id', userSession.user.id);
+
+                if (error) throw error;
+
+                await loadProfileData();
+                document.getElementById("edit-form-container")?.classList.add("hidden");
+                document.getElementById("profile-content")?.classList.remove("hidden");
+            } catch (err: any) {
+                alert("Error al actualizar: " + err.message);
+            } finally {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "Guardar Cambios";
+                }
+            }
+        });
+
+        // Logout
         const handleLogout = async () => {
             await supabase.auth.signOut();
             window.location.href = "/login";
         };
-
-        document
-            .getElementById("logout-btn-profile")
-            ?.addEventListener("click", handleLogout);
-        document
-            .getElementById("logout-btn-mobile-profile")
-            ?.addEventListener("click", handleLogout);
+        document.getElementById("logout-btn-profile")?.addEventListener("click", handleLogout);
+        document.getElementById("logout-btn-mobile-profile")?.addEventListener("click", handleLogout);
     };
 
-    redirectIfNotAuthenticated();
+    initProfile();
 </script>
+
+<style>
+    @keyframes fade-in-up {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in-up {
+        animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .selected .relative {
+        border-color: #FF6B6B !important;
+        transform: scale(1.05);
+    }
+</style>
