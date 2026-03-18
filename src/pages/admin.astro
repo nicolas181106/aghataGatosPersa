@@ -263,35 +263,29 @@ const allCatsData = [...gatosEuropeo, ...gatosChinchilla, ...gatosHimalayo];
     </div>
 
     <script is:inline define:vars={{ allCatsData }}>
-        // Passing cat data to resolve images
+        window.allCatsData = allCatsData;
     </script>
 
     <script>
         import { supabase } from "../lib/supabase";
-
-        declare const allCatsData: any[];
-
+        
+        const allCatsData = (window as any).allCatsData || [];
         let allUsers: any[] = [];
-        let userToDelete: string | null = null;
+        let allFavorites: any[] = [];
+        let userToBan: string | null = null;
+        let newStatus: string = "active";
 
         const initAdmin = async () => {
-            const {
-                data: { session },
-            } = await supabase.auth.getSession();
+            const { data: { session } } = await supabase.auth.getSession();
+            if (!session) { window.location.href = "/login"; return; }
 
-            if (!session) {
-                window.location.href = "/login";
-                return;
-            }
-
-            // Verificar si es admin
             const { data: profile } = await supabase
-                .from("profiles")
-                .select("role")
-                .eq("id", session.user.id)
+                .from('profiles')
+                .select('role')
+                .eq('id', session.user.id)
                 .single();
 
-            if (!profile || profile.role !== "admin") {
+            if (!profile || profile.role !== 'admin') {
                 window.location.href = "/";
                 return;
             }
@@ -302,28 +296,17 @@ const allCatsData = [...gatosEuropeo, ...gatosChinchilla, ...gatosHimalayo];
 
         const loadUsers = async () => {
             const { data: profiles, error } = await supabase
-                .from("profiles")
-                .select("*")
-                .order("updated_at", { ascending: false });
+                .from('profiles')
+                .select('*')
+                .order('updated_at', { ascending: false });
 
             if (error) {
                 console.error("Error cargando usuarios:", error);
-                // Si incluso updated_at falla, intentamos sin orden
-                if (error.code === "42703") {
-                    const { data: retry } = await supabase
-                        .from("profiles")
-                        .select("*");
-                    allUsers = retry || [];
-                }
                 return;
             }
 
             allUsers = profiles || [];
-
-            // Traer favoritos de todos para estadísticas
-            const { data: favorites } = await supabase
-                .from("favorites")
-                .select("*");
+            const { data: favorites } = await supabase.from('favorites').select('*');
             allFavorites = favorites || [];
 
             renderUsers(allUsers);
@@ -332,25 +315,21 @@ const allCatsData = [...gatosEuropeo, ...gatosChinchilla, ...gatosHimalayo];
 
         const updateStats = (users: any[]) => {
             const total = users.length;
-            const admins = users.filter((u) => u.role === "admin").length;
+            const admins = users.filter(u => u.role === 'admin').length;
             const now = new Date();
             const firstOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
-            // Usamos updated_at como aproximación si created_at no existe
-            const news = users.filter((u) => {
+            const news = users.filter(u => {
                 const date = u.created_at || u.updated_at;
                 return date && new Date(date) >= firstOfMonth;
             }).length;
 
-            document.getElementById("stat-total-users")!.textContent =
-                total.toString();
-            document.getElementById("stat-admins")!.textContent =
-                admins.toString();
-            document.getElementById("stat-new-users")!.textContent =
-                news.toString();
+            document.getElementById('stat-total-users')!.textContent = total.toString();
+            document.getElementById('stat-admins')!.textContent = admins.toString();
+            document.getElementById('stat-new-users')!.textContent = news.toString();
         };
 
         const renderUsers = (users: any[]) => {
-            const tbody = document.getElementById("users-tbody");
+            const tbody = document.getElementById('users-tbody');
             if (!tbody) return;
 
             if (users.length === 0) {
@@ -358,243 +337,142 @@ const allCatsData = [...gatosEuropeo, ...gatosChinchilla, ...gatosHimalayo];
                 return;
             }
 
-            tbody.innerHTML = users
-                .map((user) => {
-                    const userFavs = allFavorites.filter(
-                        (f) => f.user_id === user.id,
-                    );
-
-                    return `
-            <tr class="hover:bg-gray-50/50 transition-colors">
-                <td class="px-8 py-4">
-                    <div class="flex items-center gap-3">
-                        <img src="${user.avatar_url || "https://api.dicebear.com/7.x/notionists/svg?seed=" + user.full_name}" class="w-10 h-10 rounded-xl bg-pink-50 object-cover" />
-                        <div>
-                            <p class="font-bold text-[#2E2E2E] line-clamp-1">${user.full_name}</p>
-                            <p class="text-xs text-gray-400 font-medium">${user.id.slice(0, 8)}...</p>
+            tbody.innerHTML = users.map(user => {
+                const userFavs = allFavorites.filter(f => f.user_id === user.id);
+                return `
+                <tr class="hover:bg-gray-50/50 transition-colors">
+                    <td class="px-8 py-4">
+                        <div class="flex items-center gap-3">
+                            <img src="${user.avatar_url || 'https://api.dicebear.com/7.x/notionists/svg?seed=' + user.full_name}" class="w-10 h-10 rounded-xl bg-pink-50 object-cover" />
+                            <div>
+                                <p class="font-bold text-[#2E2E2E] line-clamp-1">${user.full_name}</p>
+                                <p class="text-xs text-gray-400 font-medium">${user.id.slice(0, 8)}...</p>
+                            </div>
                         </div>
-                    </div>
-                </td>
-                <td class="px-8 py-4">
-                    <p class="text-sm font-bold text-[#2E2E2E]">${user.email || "—"}</p>
-                    <p class="text-xs text-gray-400 font-medium">${user.phone || "Sin tel."}</p>
-                </td>
-                <td class="px-8 py-4">
-                    <select class="role-selector bg-white border border-gray-200 rounded-lg px-2 py-1.5 text-xs font-black transition-all focus:ring-2 focus:ring-purple-100 outline-none text-gray-900 cursor-pointer hover:border-purple-200" data-id="${user.id}">
-                        <option value="user" ${user.role === "user" ? "selected" : ""}>Usuario</option>
-                        <option value="admin" ${user.role === "admin" ? "selected" : ""}>Admin 🛡️</option>
-                    </select>
-                </td>
-                <td class="px-8 py-4">
-                    <button class="view-favs-btn flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-50 text-[#FF6B6B] hover:bg-red-100 transition-all border border-red-100" 
-                            data-id="${user.id}" data-name="${user.full_name}">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                        <span class="font-bold text-xs">${userFavs.length}</span>
-                    </button>
-                </td>
-                <td class="px-8 py-4 text-right">
-                    <button class="ban-user-btn p-2 rounded-lg transition-all ${user.status === "banned" ? "text-red-500 bg-red-50 border border-red-100 hover:bg-red-100" : "text-gray-400 hover:text-red-500 hover:bg-red-50"}" 
-                            data-id="${user.id}" 
-                            data-status="${user.status || "active"}"
-                            title="${user.status === "banned" ? "Desbloquear" : "Bloquear"}">
-                        ${
-                            user.status === "banned"
+                    </td>
+                    <td class="px-8 py-4">
+                        <p class="text-sm font-bold text-[#2E2E2E]">${user.email || '—'}</p>
+                        <p class="text-xs text-gray-400 font-medium">${user.phone || 'Sin tel.'}</p>
+                    </td>
+                    <td class="px-8 py-4">
+                        <select class="role-selector bg-white border border-gray-200 rounded-lg px-2 py-1.5 text-xs font-black transition-all focus:ring-2 focus:ring-purple-100 outline-none text-gray-900 cursor-pointer hover:border-purple-200" data-id="${user.id}">
+                            <option value="user" ${user.role === 'user' ? 'selected' : ''}>Usuario</option>
+                            <option value="admin" ${user.role === 'admin' ? 'selected' : ''}>Admin 🛡️</option>
+                        </select>
+                    </td>
+                    <td class="px-8 py-4">
+                        <button class="view-favs-btn flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-50 text-[#FF6B6B] hover:bg-red-100 transition-all border border-red-100" 
+                                data-id="${user.id}" data-name="${user.full_name}">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                            <span class="font-bold text-xs">${userFavs.length}</span>
+                        </button>
+                    </td>
+                    <td class="px-8 py-4 text-right">
+                        <button class="ban-user-btn p-2 rounded-lg transition-all ${user.status === 'banned' ? 'text-red-500 bg-red-50 border border-red-100 hover:bg-red-100' : 'text-gray-400 hover:text-red-500 hover:bg-red-50'}" 
+                                data-id="${user.id}" 
+                                data-status="${user.status || 'active'}"
+                                title="${user.status === 'banned' ? 'Desbloquear' : 'Bloquear'}">
+                            ${user.status === 'banned' 
                                 ? `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>`
                                 : `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>`
-                        }
-                    </button>
-                </td>
-            </tr>
-        `;
-                })
-                .join("");
+                            }
+                        </button>
+                    </td>
+                </tr>
+            `}).join('');
 
-            // Toggles de rol
-            document.querySelectorAll(".role-selector").forEach((select) => {
-                select.addEventListener("change", async (e) => {
+            // Listeners
+            tbody.querySelectorAll('.role-selector').forEach(select => {
+                select.addEventListener('change', async (e) => {
                     const target = e.target as HTMLSelectElement;
-                    const userId = target.dataset.id;
-                    const newRole = target.value;
-
-                    const { error } = await supabase
-                        .from("profiles")
-                        .update({ role: newRole })
-                        .eq("id", userId);
-
-                    if (error) {
-                        alert("Error al cambiar rol: " + error.message);
-                        loadUsers(); // Revertir visualmente
-                    } else {
-                        // Actualizar stats sin recargar todo si es posible, o recargar
-                        loadUsers();
-                    }
+                    const { error } = await supabase.from('profiles').update({ role: target.value }).eq('id', target.dataset.id);
+                    if (error) alert("Error: " + error.message);
+                    loadUsers();
                 });
             });
 
-            // Botón ver favoritos
-            document.querySelectorAll(".view-favs-btn").forEach((btn) => {
-                btn.addEventListener("click", () => {
+            tbody.querySelectorAll('.view-favs-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
                     const target = btn as HTMLElement;
-                    const userId = target.dataset.id;
-                    const userName = target.dataset.name;
-                    const userFavs = allFavorites.filter(
-                        (f) => f.user_id === userId,
-                    );
-
-                    openFavsModal(userName || "Usuario", userFavs);
+                    const favs = allFavorites.filter(f => f.user_id === target.dataset.id);
+                    openFavsModal(target.dataset.name || 'Usuario', favs);
                 });
             });
 
-            // Botones de banear
-            document.querySelectorAll(".ban-user-btn").forEach((btn) => {
-                btn.addEventListener("click", () => {
+            tbody.querySelectorAll('.ban-user-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
                     const target = btn as HTMLElement;
                     userToBan = target.dataset.id || null;
-                    const currentStatus = target.dataset.status || "active";
+                    const currentStatus = target.dataset.status || 'active';
+                    
+                    const modalTitle = document.getElementById('ban-modal-title');
+                    const modalText = document.getElementById('ban-modal-text');
+                    const confirmBtn = document.getElementById('confirm-ban');
+                    const iconContainer = document.getElementById('ban-modal-icon');
 
-                    const modalTitle =
-                        document.getElementById("ban-modal-title");
-                    const modalText = document.getElementById("ban-modal-text");
-                    const confirmBtn = document.getElementById("confirm-ban");
-                    const iconContainer =
-                        document.getElementById("ban-modal-icon");
-
-                    if (currentStatus === "banned") {
+                    if (currentStatus === 'banned') {
                         modalTitle!.textContent = "¿Desbloquear usuario?";
-                        modalText!.textContent =
-                            "El usuario recuperará el acceso total a su perfil y funciones de la web.";
+                        modalText!.textContent = "El usuario recuperará el acceso total a su perfil.";
                         confirmBtn!.textContent = "Desbloquear";
-                        confirmBtn!.className =
-                            "flex-1 bg-green-500 text-white font-bold py-3 rounded-2xl hover:bg-green-600 transition-all shadow-lg shadow-green-100";
-                        iconContainer!.className =
-                            "w-16 h-16 bg-green-50 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4";
+                        confirmBtn!.className = "flex-1 bg-green-500 text-white font-bold py-3 rounded-2xl hover:bg-green-600 transition-all";
+                        iconContainer!.className = "w-16 h-16 bg-green-50 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4";
                         iconContainer!.innerHTML = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>`;
-                        newStatus = "active";
+                        newStatus = 'active';
                     } else {
                         modalTitle!.textContent = "¿Bloquear usuario?";
-                        modalText!.textContent =
-                            "El usuario no podrá acceder a su perfil ni realizar acciones en la plataforma.";
+                        modalText!.textContent = "El usuario no podrá acceder a su perfil.";
                         confirmBtn!.textContent = "Bloquear";
-                        confirmBtn!.className =
-                            "flex-1 bg-red-500 text-white font-bold py-3 rounded-2xl hover:bg-red-600 transition-all shadow-lg shadow-red-100";
-                        iconContainer!.className =
-                            "w-16 h-16 bg-red-50 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4";
+                        confirmBtn!.className = "flex-1 bg-red-500 text-white font-bold py-3 rounded-2xl hover:bg-red-600 transition-all";
+                        iconContainer!.className = "w-16 h-16 bg-red-50 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4";
                         iconContainer!.innerHTML = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>`;
-                        newStatus = "banned";
+                        newStatus = 'banned';
                     }
 
-                    document
-                        .getElementById("ban-modal")
-                        ?.classList.remove("hidden");
+                    document.getElementById('ban-modal')?.classList.remove('hidden');
                 });
             });
         };
 
-        let userToBan: string | null = null;
-        let newStatus: string = "active";
-        let allFavorites: any[] = [];
-
         const openFavsModal = (name: string, favs: any[]) => {
-            document.getElementById("fav-modal-user-name")!.textContent = name;
-            const grid = document.getElementById("fav-modal-grid");
+            document.getElementById('fav-modal-user-name')!.textContent = name;
+            const grid = document.getElementById('fav-modal-grid');
             if (!grid) return;
 
             if (favs.length === 0) {
                 grid.innerHTML = `<div class="col-span-full py-10 text-center text-gray-400 italic">Este usuario no tiene favoritos aún.</div>`;
             } else {
-                grid.innerHTML = favs
-                    .map((f) => {
-                        const cat = allCatsData.find(
-                            (c) => `${c.name}#${c.birth}` === f.cat_id,
-                        );
-                        const imgSrc = cat ? cat.img : f.cat_img;
-
-                        return `
-                <div class="bg-gray-50 p-2 rounded-2xl border border-gray-100 flex flex-col items-center">
-                    <img src="${imgSrc}" class="w-full aspect-square object-cover rounded-xl mb-2" />
-                    <p class="text-[10px] font-black text-gray-700 uppercase tracking-tight text-center">${f.cat_name}</p>
-                </div>
-            `;
-                    })
-                    .join("");
+                grid.innerHTML = favs.map(f => {
+                    const cat = allCatsData.find(c => `${c.name}#${c.birth}` === f.cat_id);
+                    const imgSrc = cat ? cat.img : f.cat_img;
+                    return `
+                    <div class="bg-gray-50 p-2 rounded-2xl border border-gray-100 flex flex-col items-center">
+                        <img src="${imgSrc}" class="w-full aspect-square object-cover rounded-xl mb-2" />
+                        <p class="text-[10px] font-black text-gray-700 uppercase tracking-tight text-center">${f.cat_name}</p>
+                    </div>
+                `}).join('');
             }
-
-            document.getElementById("fav-modal")?.classList.remove("hidden");
+            document.getElementById('fav-modal')?.classList.remove('hidden');
         };
 
         const setupEventListeners = () => {
-            // Buscador
-            document
-                .getElementById("user-search")
-                ?.addEventListener("input", (e) => {
-                    const query = (
-                        e.target as HTMLInputElement
-                    ).value.toLowerCase();
-                    const filtered = allUsers.filter(
-                        (u) =>
-                            u.full_name?.toLowerCase().includes(query) ||
-                            u.email?.toLowerCase().includes(query),
-                    );
-                    renderUsers(filtered);
-                });
+            document.getElementById('user-search')?.addEventListener('input', (e) => {
+                const query = (e.target as HTMLInputElement).value.toLowerCase();
+                const filtered = allUsers.filter(u => u.full_name?.toLowerCase().includes(query) || u.email?.toLowerCase().includes(query));
+                renderUsers(filtered);
+            });
 
-            // Modal de baneo
-            document
-                .getElementById("cancel-ban")
-                ?.addEventListener("click", () => {
-                    document
-                        .getElementById("ban-modal")
-                        ?.classList.add("hidden");
-                    userToBan = null;
-                });
+            document.getElementById('cancel-ban')?.addEventListener('click', () => document.getElementById('ban-modal')?.classList.add('hidden'));
+            document.getElementById('close-ban-modal-bg')?.addEventListener('click', () => document.getElementById('ban-modal')?.classList.add('hidden'));
+            document.getElementById('confirm-ban')?.addEventListener('click', async () => {
+                if (!userToBan) return;
+                const { error } = await supabase.from('profiles').update({ status: newStatus }).eq('id', userToBan);
+                if (error) alert("Error: " + error.message);
+                else await loadUsers();
+                document.getElementById('ban-modal')?.classList.add('hidden');
+            });
 
-            document
-                .getElementById("close-ban-modal-bg")
-                ?.addEventListener("click", () => {
-                    document
-                        .getElementById("ban-modal")
-                        ?.classList.add("hidden");
-                    userToBan = null;
-                });
-
-            document
-                .getElementById("confirm-ban")
-                ?.addEventListener("click", async () => {
-                    if (!userToBan) return;
-
-                    const { error } = await supabase
-                        .from("profiles")
-                        .update({ status: newStatus })
-                        .eq("id", userToBan);
-
-                    if (error) {
-                        alert("Error al actualizar estado: " + error.message);
-                    } else {
-                        await loadUsers();
-                    }
-
-                    document
-                        .getElementById("ban-modal")
-                        ?.classList.add("hidden");
-                    userToBan = null;
-                });
-
-            // Modal de favoritos
-            document
-                .getElementById("close-fav-modal")
-                ?.addEventListener("click", () => {
-                    document
-                        .getElementById("fav-modal")
-                        ?.classList.add("hidden");
-                });
-
-            document
-                .getElementById("close-fav-modal-bg")
-                ?.addEventListener("click", () => {
-                    document
-                        .getElementById("fav-modal")
-                        ?.classList.add("hidden");
-                });
+            document.getElementById('close-fav-modal')?.addEventListener('click', () => document.getElementById('fav-modal')?.classList.add('hidden'));
+            document.getElementById('close-fav-modal-bg')?.addEventListener('click', () => document.getElementById('fav-modal')?.classList.add('hidden'));
         };
 
         initAdmin();
@@ -602,14 +480,8 @@ const allCatsData = [...gatosEuropeo, ...gatosChinchilla, ...gatosHimalayo];
 
     <style>
         @keyframes fade-in-up {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .animate-fade-in-up {
             animation: fade-in-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;

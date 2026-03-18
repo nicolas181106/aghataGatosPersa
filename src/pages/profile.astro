@@ -402,14 +402,14 @@ const allCatsData = [...gatosEuropeo, ...gatosChinchilla, ...gatosHimalayo];
         </div>
     </main>
 <script is:inline define:vars={{ allCatsData }}>
-    // We'll use allCatsData to resolve image paths that might be stale in the DB
+    window.allCatsData = allCatsData;
 </script>
 
 <script>
     import { supabase } from "../lib/supabase";
     
-    // Acceder a la variable definida arriba
-    declare const allCatsData: any[];
+    // Recuperar de window
+    const allCatsData = (window as any).allCatsData;
 
     // 10 Avatares de Gatitos (URLs más estables de Unsplash)
     const AVATARS = [
