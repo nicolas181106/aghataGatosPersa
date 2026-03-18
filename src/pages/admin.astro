@@ -55,8 +55,8 @@ import Layout from "../layouts/Layout.astro";
                                 <th class="px-8 py-4">Usuario</th>
                                 <th class="px-8 py-4">Email / Teléfono</th>
                                 <th class="px-8 py-4">Rol</th>
-                                <th class="px-8 py-4">Registro</th>
-                                <th class="px-8 py-4 text-right">Acciones</th>
+                                <th class="px-8 py-4">Favoritos</th>
+                                <th class="px-8 py-4 text-right">Acceso</th>
                             </tr>
                         </thead>
                         <tbody id="users-tbody" class="divide-y divide-gray-50">
@@ -73,18 +73,34 @@ import Layout from "../layouts/Layout.astro";
         </div>
     </main>
 
-    <!-- Modal de Confirmación de Borrado -->
-    <div id="delete-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
-        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="close-delete-modal-bg"></div>
+    <!-- Modal de Confirmación de Baneo -->
+    <div id="ban-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="close-ban-modal-bg"></div>
         <div class="bg-white rounded-[2.5rem] p-8 max-w-sm w-full relative z-10 animate-fade-in-up text-center">
-            <div class="w-16 h-16 bg-red-50 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+            <div id="ban-modal-icon" class="w-16 h-16 bg-red-50 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
             </div>
-            <h3 class="text-xl font-black text-[#2E2E2E] mb-2">¿Eliminar usuario?</h3>
-            <p class="text-gray-500 text-sm mb-6">Esta acción no se puede deshacer. Se eliminará el perfil del usuario de la base de datos.</p>
+            <h3 id="ban-modal-title" class="text-xl font-black text-[#2E2E2E] mb-2">¿Bloquear usuario?</h3>
+            <p id="ban-modal-text" class="text-gray-500 text-sm mb-6">El usuario no podrá acceder a su perfil ni realizar acciones en la plataforma.</p>
             <div class="flex gap-3">
-                <button id="cancel-delete" class="flex-1 bg-gray-100 text-gray-700 font-bold py-3 rounded-2xl hover:bg-gray-200 transition-all">Cancelar</button>
-                <button id="confirm-delete" class="flex-1 bg-red-500 text-white font-bold py-3 rounded-2xl hover:bg-red-600 transition-all shadow-lg shadow-red-100">Eliminar</button>
+                <button id="cancel-ban" class="flex-1 bg-gray-100 text-gray-700 font-bold py-3 rounded-2xl hover:bg-gray-200 transition-all">Cancelar</button>
+                <button id="confirm-ban" class="flex-1 bg-red-500 text-white font-bold py-3 rounded-2xl hover:bg-red-600 transition-all shadow-lg shadow-red-100">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Detalles de Favoritos -->
+    <div id="fav-modal" class="fixed inset-0 z-[110] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="close-fav-modal-bg"></div>
+        <div class="bg-white rounded-[2.5rem] p-8 max-w-lg w-full relative z-10 animate-fade-in-up">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-black text-[#2E2E2E]">Favoritos de <span id="fav-modal-user-name" class="text-[#FF6B6B]">...</span></h3>
+                <button id="close-fav-modal" class="text-gray-400 hover:text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div id="fav-modal-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-4 max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar contents-center">
+                <!-- Se llenará dinámicamente -->
             </div>
         </div>
     </div>
@@ -137,6 +153,11 @@ import Layout from "../layouts/Layout.astro";
         }
 
         allUsers = profiles || [];
+
+        // Traer favoritos de todos para estadísticas
+        const { data: favorites } = await supabase.from('favorites').select('*');
+        allFavorites = favorites || [];
+
         renderUsers(allUsers);
         updateStats(allUsers);
     };
@@ -166,7 +187,10 @@ import Layout from "../layouts/Layout.astro";
             return;
         }
 
-        tbody.innerHTML = users.map(user => `
+        tbody.innerHTML = users.map(user => {
+            const userFavs = allFavorites.filter(f => f.user_id === user.id);
+            
+            return `
             <tr class="hover:bg-gray-50/50 transition-colors">
                 <td class="px-8 py-4">
                     <div class="flex items-center gap-3">
@@ -188,19 +212,24 @@ import Layout from "../layouts/Layout.astro";
                     </select>
                 </td>
                 <td class="px-8 py-4">
-                    <p class="text-xs font-medium text-gray-500">
-                        ${(user.created_at || user.updated_at) 
-                            ? new Intl.DateTimeFormat('es-ES', { day: '2-digit', month: 'short', year: 'numeric' }).format(new Date(user.created_at || user.updated_at))
-                            : '—'}
-                    </p>
+                    <button class="view-favs-btn flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-50 text-[#FF6B6B] hover:bg-red-100 transition-all border border-red-100" 
+                            data-id="${user.id}" data-name="${user.full_name}">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                        <span class="font-bold text-xs">${userFavs.length}</span>
+                    </button>
                 </td>
                 <td class="px-8 py-4 text-right">
-                    <button class="delete-user-btn p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-all" data-id="${user.id}">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                    <button class="ban-user-btn p-2 rounded-lg transition-all ${user.status === 'banned' ? 'text-red-500 bg-red-50 border border-red-100 hover:bg-red-100' : 'text-gray-400 hover:text-red-500 hover:bg-red-50'}" 
+                            data-id="${user.id}" 
+                            data-status="${user.status || 'active'}"
+                            title="${user.status === 'banned' ? 'Desbloquear' : 'Bloquear'}">
+                        ${user.status === 'banned' 
+                            ? `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>`
+                            : `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>`}
                     </button>
                 </td>
             </tr>
-        `).join('');
+        `; }).join('');
 
         // Toggles de rol
         document.querySelectorAll('.role-selector').forEach(select => {
@@ -224,13 +253,74 @@ import Layout from "../layouts/Layout.astro";
             });
         });
 
-        // Botones de borrar
-        document.querySelectorAll('.delete-user-btn').forEach(btn => {
+        // Botón ver favoritos
+        document.querySelectorAll('.view-favs-btn').forEach(btn => {
             btn.addEventListener('click', () => {
-                userToDelete = (btn as HTMLElement).dataset.id || null;
-                document.getElementById('delete-modal')?.classList.remove('hidden');
+                const target = btn as HTMLElement;
+                const userId = target.dataset.id;
+                const userName = target.dataset.name;
+                const userFavs = allFavorites.filter(f => f.user_id === userId);
+                
+                openFavsModal(userName || "Usuario", userFavs);
             });
         });
+
+        // Botones de banear
+        document.querySelectorAll('.ban-user-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const target = btn as HTMLElement;
+                userToBan = target.dataset.id || null;
+                const currentStatus = target.dataset.status || 'active';
+                
+                const modalTitle = document.getElementById('ban-modal-title');
+                const modalText = document.getElementById('ban-modal-text');
+                const confirmBtn = document.getElementById('confirm-ban');
+                const iconContainer = document.getElementById('ban-modal-icon');
+
+                if (currentStatus === 'banned') {
+                    modalTitle!.textContent = "¿Desbloquear usuario?";
+                    modalText!.textContent = "El usuario recuperará el acceso total a su perfil y funciones de la web.";
+                    confirmBtn!.textContent = "Desbloquear";
+                    confirmBtn!.className = "flex-1 bg-green-500 text-white font-bold py-3 rounded-2xl hover:bg-green-600 transition-all shadow-lg shadow-green-100";
+                    iconContainer!.className = "w-16 h-16 bg-green-50 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4";
+                    iconContainer!.innerHTML = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>`;
+                    newStatus = 'active';
+                } else {
+                    modalTitle!.textContent = "¿Bloquear usuario?";
+                    modalText!.textContent = "El usuario no podrá acceder a su perfil ni realizar acciones en la plataforma.";
+                    confirmBtn!.textContent = "Bloquear";
+                    confirmBtn!.className = "flex-1 bg-red-500 text-white font-bold py-3 rounded-2xl hover:bg-red-600 transition-all shadow-lg shadow-red-100";
+                    iconContainer!.className = "w-16 h-16 bg-red-50 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4";
+                    iconContainer!.innerHTML = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>`;
+                    newStatus = 'banned';
+                }
+
+                document.getElementById('ban-modal')?.classList.remove('hidden');
+            });
+        });
+    };
+
+    let userToBan: string | null = null;
+    let newStatus: string = 'active';
+    let allFavorites: any[] = [];
+
+    const openFavsModal = (name: string, favs: any[]) => {
+        document.getElementById('fav-modal-user-name')!.textContent = name;
+        const grid = document.getElementById('fav-modal-grid');
+        if (!grid) return;
+
+        if (favs.length === 0) {
+            grid.innerHTML = `<div class="col-span-full py-10 text-center text-gray-400 italic">Este usuario no tiene favoritos aún.</div>`;
+        } else {
+            grid.innerHTML = favs.map(f => `
+                <div class="bg-gray-50 p-2 rounded-2xl border border-gray-100 flex flex-col items-center">
+                    <img src="${f.cat_img}" class="w-full aspect-square object-cover rounded-xl mb-2" />
+                    <p class="text-[10px] font-black text-gray-700 uppercase tracking-tight text-center">${f.cat_name}</p>
+                </div>
+            `).join('');
+        }
+
+        document.getElementById('fav-modal')?.classList.remove('hidden');
     };
 
     const setupEventListeners = () => {
@@ -244,33 +334,42 @@ import Layout from "../layouts/Layout.astro";
             renderUsers(filtered);
         });
 
-        // Modal de borrado
-        document.getElementById('cancel-delete')?.addEventListener('click', () => {
-            document.getElementById('delete-modal')?.classList.add('hidden');
-            userToDelete = null;
+        // Modal de baneo
+        document.getElementById('cancel-ban')?.addEventListener('click', () => {
+            document.getElementById('ban-modal')?.classList.add('hidden');
+            userToBan = null;
         });
 
-        document.getElementById('close-delete-modal-bg')?.addEventListener('click', () => {
-            document.getElementById('delete-modal')?.classList.add('hidden');
-            userToDelete = null;
+        document.getElementById('close-ban-modal-bg')?.addEventListener('click', () => {
+            document.getElementById('ban-modal')?.classList.add('hidden');
+            userToBan = null;
         });
 
-        document.getElementById('confirm-delete')?.addEventListener('click', async () => {
-            if (!userToDelete) return;
+        document.getElementById('confirm-ban')?.addEventListener('click', async () => {
+            if (!userToBan) return;
 
             const { error } = await supabase
                 .from('profiles')
-                .delete()
-                .eq('id', userToDelete);
+                .update({ status: newStatus })
+                .eq('id', userToBan);
 
             if (error) {
-                alert("Error al eliminar perfil: " + error.message);
+                alert("Error al actualizar estado: " + error.message);
             } else {
                 await loadUsers();
             }
 
-            document.getElementById('delete-modal')?.classList.add('hidden');
-            userToDelete = null;
+            document.getElementById('ban-modal')?.classList.add('hidden');
+            userToBan = null;
+        });
+
+        // Modal de favoritos
+        document.getElementById('close-fav-modal')?.addEventListener('click', () => {
+            document.getElementById('fav-modal')?.classList.add('hidden');
+        });
+
+        document.getElementById('close-fav-modal-bg')?.addEventListener('click', () => {
+            document.getElementById('fav-modal')?.classList.add('hidden');
         });
     };
 

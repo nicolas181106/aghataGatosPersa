@@ -3,10 +3,6 @@ import Layout from "../../layouts/Layout.astro";
 import img from "../../assets/img/blue/blube.jpg";
 import img2 from "../../assets/img/ceres/ceres2.jpg";
 import img3 from "../../assets/img/cleo/cleo.jpeg";
-import { supabase } from "../../lib/supabase";
-const { data: likesData } = await supabase.from('cats').select('*');
-const getLikes = (id: number) => likesData?.find(r => r.id === id)?.likes || 0;
-
 const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
 const supabaseKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
 
@@ -127,15 +123,6 @@ const razas = [
 									</article>
 								</a>
 
-								<button 
-									data-id={raza.id}
-									data-url={supabaseUrl} 
-									data-key={supabaseKey}
-									class="like-btn absolute top-4 right-4 z-20 flex items-center gap-2 rounded-full bg-white/90 px-3 py-1.5 text-xs font-bold text-[#FF6B6B] shadow-sm hover:scale-110 transition-all hover:bg-white active:scale-95 border border-[#ffd3d3]"
-								>
-									<span>❤️</span>
-									<span id={`count-${raza.id}`}>{getLikes(raza.id)}</span>
-								</button>
 							</div>
 						))
 					}
@@ -170,72 +157,6 @@ const razas = [
 			</div>
 		</section>
 
-		<script type="module">
-			import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
-			document.querySelectorAll(".like-btn").forEach((btn) => {
-
-				const supabaseUrl = btn.dataset.url;
-        		const supabaseKey = btn.dataset.key;
-				const id = Number(btn.dataset.id);
-				const supabase = createClient(supabaseUrl, supabaseKey);
-				const countSpan = document.getElementById(`count-${id}`);
-
-				if (!countSpan) return;
-
-				// Si ya dio like antes
-				if (localStorage.getItem(`liked-${id}`)) {
-					btn.disabled = true;
-					btn.style.opacity = "0.5";
-					btn.style.cursor = "not-allowed";
-				}
-
-				btn.addEventListener("click", async () => {
-
-					btn.disabled = true;
-
-					try {
-
-					// Obtener likes actuales desde Supabase
-					const { data: currentData, error: selectError } = await supabase
-						.from("cats")
-						.select("likes")
-						.eq("id", id)
-						.single();
-
-					if (selectError) throw selectError;
-
-					const newLikes = (currentData.likes || 0) + 1;
-
-					// Actualizar likes
-					const { data, error } = await supabase
-						.from("cats")
-						.update({ likes: newLikes })
-						.eq("id", id)
-						.select()
-						.single();
-
-					if (error) throw error;
-
-					// Actualizar contador en la web
-					countSpan.innerText = data.likes;
-
-					// Guardar en localStorage
-					localStorage.setItem(`liked-${id}`, "true");
-
-					btn.style.opacity = "0.5";
-					btn.style.cursor = "not-allowed";
-
-					} catch (err) {
-
-					console.error("Error Supabase:", err);
-					btn.disabled = false;
-					alert("Error al guardar el like");
-
-					}
-
-				});
-			});
-		</script>
 	</main>
 </Layout>

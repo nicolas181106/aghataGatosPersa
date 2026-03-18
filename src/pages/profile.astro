@@ -166,6 +166,20 @@ import Layout from "../layouts/Layout.astro";
                         </div>
                     </div>
 
+                    <!-- Mensaje de Cuenta Bloqueada -->
+                    <div id="banned-message" class="hidden py-20 text-center animate-fade-in-up">
+                        <div class="w-20 h-20 bg-red-100 text-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        </div>
+                        <h2 class="text-3xl font-black text-[#2E2E2E] mb-4">Cuenta Bloqueada</h2>
+                        <p class="text-gray-500 max-w-md mx-auto mb-8 font-medium">
+                            Tu cuenta ha sido restringida por un administrador. Si crees que esto es un error, por favor contacta con soporte.
+                        </p>
+                        <button id="logout-banned" class="bg-gray-800 text-white font-bold py-3 px-8 rounded-2xl hover:bg-gray-900 transition-all shadow-lg">
+                            Cerrar Sesión
+                        </button>
+                    </div>
+
                     <div id="profile-content" class="hidden animate-fade-in-up">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <!-- Info Personal -->
@@ -263,6 +277,7 @@ import Layout from "../layouts/Layout.astro";
                                     >
                                         <p
                                             class="text-3xl font-black text-[#FF6B6B] mb-1"
+                                            id="stat-bookings"
                                         >
                                             0
                                         </p>
@@ -272,6 +287,38 @@ import Layout from "../layouts/Layout.astro";
                                             Reservas Totales
                                         </p>
                                     </div>
+                                    <div
+                                        class="bg-blue-50 rounded-[2rem] p-6 text-center border border-blue-100"
+                                    >
+                                        <p
+                                            class="text-3xl font-black text-blue-500 mb-1"
+                                            id="stat-favorites"
+                                        >
+                                            0
+                                        </p>
+                                        <p
+                                            class="text-xs font-bold text-blue-300 uppercase"
+                                        >
+                                            Gatos Favoritos
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sección de Favoritos -->
+                        <div class="mt-12 space-y-6">
+                             <h3 class="text-xl font-black text-[#2E2E2E] flex items-center gap-2">
+                                <span class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center text-red-500">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                </span>
+                                Mis Favoritos
+                            </h3>
+                            
+                            <div id="favorites-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                                <!-- Se llenará dinámicamente -->
+                                <div class="col-span-full py-10 text-center bg-gray-50 rounded-[2rem] border-2 border-dashed border-gray-100">
+                                    <p class="text-gray-400 text-sm italic">Aún no has guardado ningún favorito.</p>
                                 </div>
                             </div>
                         </div>
@@ -429,7 +476,25 @@ import Layout from "../layouts/Layout.astro";
             const avatarUrl = profile.avatar_url || DEFAULT_AVATAR;
             let phone = profile.phone || "No asignado";
             const role = profile.role || "user";
+            const status = profile.status || "active";
             const dbEmail = profile.email;
+
+            // Cargar Favoritos
+            const { data: favorites } = await supabase
+                .from('favorites')
+                .select('*')
+                .eq('user_id', user.id);
+
+            renderFavorites(favorites || []);
+
+            // Bloqueo si está baneado
+            if (status === 'banned') {
+                document.getElementById("loading-spinner")?.classList.add("hidden");
+                document.getElementById("banned-message")?.classList.remove("hidden");
+                document.getElementById("edit-profile-btn")?.classList.add("hidden");
+                document.getElementById("profile-name-display")!.textContent = "Usuario Bloqueado";
+                return;
+            }
 
             // Auto-format phone for display if it's a raw 9-digit number
             const rawDigits = phone.replace(/\D/g, "");
@@ -511,6 +576,50 @@ import Layout from "../layouts/Layout.astro";
             });
         });
     };
+
+    function renderFavorites(favorites: any[]) {
+        const grid = document.getElementById("favorites-grid");
+        const countStat = document.getElementById("stat-favorites");
+        if (!grid || !countStat) return;
+
+        countStat.textContent = favorites.length.toString();
+
+        if (favorites.length === 0) {
+            grid.innerHTML = `
+                <div class="col-span-full py-10 text-center bg-gray-50 rounded-[2rem] border-2 border-dashed border-gray-100">
+                    <p class="text-gray-400 text-sm italic">Aún no has guardado ningún favorito.</p>
+                </div>
+            `;
+            return;
+        }
+
+        grid.innerHTML = favorites.map(fav => `
+            <div class="group relative bg-white p-2 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
+                <div class="aspect-square rounded-xl overflow-hidden mb-2">
+                    <img src="${fav.cat_img}" alt="${fav.cat_name}" class="w-full h-full object-cover">
+                </div>
+                <p class="text-xs font-bold text-center text-gray-700 truncate px-1">${fav.cat_name}</p>
+                <button 
+                    class="remove-fav-btn absolute -top-2 -right-2 bg-white text-gray-400 hover:text-red-500 w-6 h-6 rounded-full shadow-md flex items-center justify-center border border-gray-50 transition-colors"
+                    data-id="${fav.id}"
+                >
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+        `).join('');
+
+        // Listeners para borrar
+        grid.querySelectorAll(".remove-fav-btn").forEach(btn => {
+            btn.addEventListener("click", async () => {
+                const favId = (btn as HTMLButtonElement).dataset.id;
+                const { error } = await supabase.from('favorites').delete().eq('id', favId);
+                if (!error) {
+                    const newFavs = favorites.filter(f => f.id !== favId);
+                    renderFavorites(newFavs);
+                }
+            });
+        });
+    }
 
     const setupEventListeners = () => {
         // Toggle Edit Form
@@ -655,6 +764,10 @@ import Layout from "../layouts/Layout.astro";
             ?.addEventListener("click", handleLogout);
         document
             .getElementById("logout-btn-mobile-profile")
+            ?.addEventListener("click", handleLogout);
+        
+        document
+            .getElementById("logout-banned")
             ?.addEventListener("click", handleLogout);
     };
 

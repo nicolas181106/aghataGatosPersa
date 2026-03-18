@@ -100,7 +100,19 @@ const camadasChinchilla = [
 
               <div class="lg:w-2/3 w-full grid grid-cols-1 md:grid-cols-3 gap-6">
                 {gatosEuropeo.filter(gato => gato.birth === camada.filter).map((europeo) => (
-                  <article class="group bg-white p-3 rounded-3xl shadow-md hover:shadow-xl transition-all border border-transparent hover:border-[#FFEDED]">
+                  <article class="group relative bg-white p-3 rounded-3xl shadow-md hover:shadow-xl transition-all border border-transparent hover:border-[#FFEDED]">
+                    <!-- Botón de Favorito -->
+                    <button 
+                      class="favorite-btn absolute top-5 right-5 z-20 w-10 h-10 rounded-full bg-white/90 shadow-sm border border-[#FFE4E4] flex items-center justify-center transition-all hover:scale-110 active:scale-95 group/heart"
+                      data-cat-id={`${europeo.name}#${europeo.birth}`}
+                      data-cat-name={europeo.name}
+                      data-cat-img={europeo.img}
+                    >
+                      <svg class="w-6 h-6 text-gray-300 transition-colors group-hover/heart:text-[#FF8A8A]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                      </svg>
+                    </button>
+
                     <div class="overflow-hidden rounded-2xl aspect-square mb-4">
                       <img src={europeo.img} alt={europeo.alt} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                     </div>
@@ -168,7 +180,19 @@ const camadasChinchilla = [
 
               <div class="lg:w-2/3 w-full grid grid-cols-1 md:grid-cols-3 gap-6">
                 {gatosChinchilla.filter(gato => gato.birth === camada.filter).map((chinchilla) => (
-                  <article class="group bg-white p-3 rounded-3xl shadow-md hover:shadow-xl transition-all border border-transparent hover:border-[#FFEDED]">
+                  <article class="group relative bg-white p-3 rounded-3xl shadow-md hover:shadow-xl transition-all border border-transparent hover:border-[#FFEDED]">
+                    <!-- Botón de Favorito -->
+                    <button 
+                      class="favorite-btn absolute top-5 right-5 z-20 w-10 h-10 rounded-full bg-white/90 shadow-sm border border-[#FFE4E4] flex items-center justify-center transition-all hover:scale-110 active:scale-95 group/heart"
+                      data-cat-id={`${chinchilla.name}#${chinchilla.birth}`}
+                      data-cat-name={chinchilla.name}
+                      data-cat-img={chinchilla.img}
+                    >
+                      <svg class="w-6 h-6 text-gray-300 transition-colors group-hover/heart:text-[#FF8A8A]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                      </svg>
+                    </button>
+
                     <div class="overflow-hidden rounded-2xl aspect-square mb-4">
                       <img src={chinchilla.img} alt={chinchilla.alt} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
                     </div>
@@ -205,12 +229,81 @@ const camadasChinchilla = [
 </Layout>
 
 <style>
-  /* Ocultar barra de scroll pero permitir scroll funcional */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  .favorite-btn.active svg {
+    color: #FF6B6B;
   }
 </style>
+
+<script>
+  import { supabase } from "../../lib/supabase";
+
+  async function initFavorites() {
+    const { data: { session } } = await supabase.auth.getSession();
+    const user = session?.user;
+
+    const favoriteBtns = document.querySelectorAll('.favorite-btn');
+    
+    // Si hay usuario, cargar sus favoritos actuales
+    let userFavorites = new Set();
+    if (user) {
+      const { data } = await supabase
+        .from('favorites')
+        .select('cat_id')
+        .eq('user_id', user.id);
+      
+      if (data) {
+        data.forEach(fav => userFavorites.add(fav.cat_id));
+      }
+    }
+
+    favoriteBtns.forEach(btn => {
+      const target = btn as HTMLButtonElement;
+      const catId = target.dataset.catId;
+
+      // Marcar botones activos
+      if (catId && userFavorites.has(catId)) {
+        target.classList.add('active');
+      }
+
+      target.addEventListener('click', async (e) => {
+        e.preventDefault();
+        
+        if (!user) {
+          alert("¡Inicia sesión para guardar a tus gatos favoritos! ❤️");
+          window.location.href = "/login";
+          return;
+        }
+
+        const isFavorite = target.classList.contains('active');
+        const catName = target.dataset.catName;
+        const catImg = target.dataset.catImg;
+
+        if (isFavorite) {
+          // Quitar de favoritos
+          const { error } = await supabase
+            .from('favorites')
+            .delete()
+            .eq('user_id', user.id)
+            .eq('cat_id', catId);
+          
+          if (!error) target.classList.remove('active');
+        } else {
+          // Añadir a favoritos
+          const { error } = await supabase
+            .from('favorites')
+            .insert({
+              user_id: user.id,
+              cat_id: catId,
+              cat_name: catName,
+              cat_img: catImg
+            });
+          
+          if (!error) target.classList.add('active');
+        }
+      });
+    });
+  }
+
+  // Ejecutar al cargar la página
+  initFavorites();
+</script>
