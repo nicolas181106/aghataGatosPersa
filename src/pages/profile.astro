@@ -1,5 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { gatosEuropeo } from "../scripts/gatos-europeo anterior";
+import { gatosChinchilla } from "../scripts/gatos-chinchilla anterior";
+import { gatosHimalayo } from "../scripts/gatos-himalayo anterior";
+
+const allCatsData = [...gatosEuropeo, ...gatosChinchilla, ...gatosHimalayo];
 ---
 
 <Layout
@@ -396,10 +401,15 @@ import Layout from "../layouts/Layout.astro";
             </div>
         </div>
     </main>
-</Layout>
+<script is:inline define:vars={{ allCatsData }}>
+    // We'll use allCatsData to resolve image paths that might be stale in the DB
+</script>
 
 <script>
     import { supabase } from "../lib/supabase";
+    
+    // Acceder a la variable definida arriba
+    declare const allCatsData: any[];
 
     // 10 Avatares de Gatitos (URLs más estables de Unsplash)
     const AVATARS = [
@@ -593,10 +603,15 @@ import Layout from "../layouts/Layout.astro";
             return;
         }
 
-        grid.innerHTML = favorites.map(fav => `
+        grid.innerHTML = favorites.map(fav => {
+            // Intentar encontrar el gato en los datos estáticos para tener la imagen actualizada (evitar hashes viejos o localhost)
+            const cat = allCatsData.find(c => `${c.name}#${c.birth}` === fav.cat_id);
+            const imgSrc = cat ? cat.img : fav.cat_img;
+
+            return `
             <div class="group relative bg-white p-2 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
                 <div class="aspect-square rounded-xl overflow-hidden mb-2">
-                    <img src="${fav.cat_img}" alt="${fav.cat_name}" class="w-full h-full object-cover">
+                    <img src="${imgSrc}" alt="${fav.cat_name}" class="w-full h-full object-cover">
                 </div>
                 <p class="text-xs font-bold text-center text-gray-700 truncate px-1">${fav.cat_name}</p>
                 <button 
@@ -606,7 +621,7 @@ import Layout from "../layouts/Layout.astro";
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
             </div>
-        `).join('');
+        `; }).join('');
 
         // Listeners para borrar
         grid.querySelectorAll(".remove-fav-btn").forEach(btn => {
