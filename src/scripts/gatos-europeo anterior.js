@@ -3,9 +3,9 @@ import orion from "../assets/img/blue/camada1/orion.jpg";
 import sirius from "../assets/img/blue/camada1/sirius2.jpeg";
 import remo from "../assets/img/blue/camada1/remo.jpg";
 import romulo from "../assets/img/blue/camada1/romulo.jpg";
-import apolo from "../assets/img/blue/camada2/apoloBebe.jpeg";
+import apolo from "../assets/img/blue/camada2/apoloBebe3.jpeg";
 import triton from "../assets/img/blue/camada2/tritonBebe.jpg";
-import esmeralda from "../assets/img/blue/camada2/esmeraldaBebe.jpg";
+import esmeralda from "../assets/img/blue/camada2/esmeraldaBebe4.jpeg";
 import heracles from "../assets/img/blue/camada2/heraclesBebe.jpeg";
 
 export const gatosEuropeo = [

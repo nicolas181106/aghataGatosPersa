@@ -1,4 +1,95 @@
 import unknown from "../assets/img/unknown.jpg";
 
 export const gatosEuropeo = [
+    {
+        name: "",
+        gender: "",
+        birth: "2026-03-24",
+        img: unknown.src,
+        img2: unknown.src,
+        alt: "",
+        slugEuropeo: "",
+        text: "",
+        raza: "Gato Persa Europeo",
+        disponibleEstilo: "absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
+        disponibleTexto: "✓ Disponible"
+    },
+    {
+        name: "",
+        gender: "",
+        birth: "2026-03-24",
+        img: unknown.src,
+        img2: unknown.src,
+        alt: "",
+        slugEuropeo: "",
+        text: "",
+        raza: "Gato Persa Europeo",
+        disponibleEstilo: "absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
+        disponibleTexto: "✓ Disponible"
+    },
+    {
+        name: "",
+        gender: "",
+        birth: "2026-03-24",
+        img: unknown.src,
+        img2: unknown.src,
+        alt: "",
+        slugEuropeo: "",
+        text: "",
+        raza: "Gato Persa Europeo",
+        disponibleEstilo: "absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
+        disponibleTexto: "✓ Disponible"
+    },
+    {
+        name: "",
+        gender: "",
+        birth: "2026-03-24",
+        img: unknown.src,
+        img2: unknown.src,
+        alt: "",
+        slugEuropeo: "",
+        text: "",
+        raza: "Gato Persa Europeo",
+        disponibleEstilo: "absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
+        disponibleTexto: "✓ Disponible"
+    },
+    {
+        name: "",
+        gender: "",
+        birth: "2026-03-24",
+        img: unknown.src,
+        img2: unknown.src,
+        alt: "",
+        slugEuropeo: "",
+        text: "",
+        raza: "Gato Persa Europeo",
+        disponibleEstilo: "absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
+        disponibleTexto: "✓ Disponible"
+    },
+    {
+        name: "",
+        gender: "",
+        birth: "2026-03-24",
+        img: unknown.src,
+        img2: unknown.src,
+        alt: "",
+        slugEuropeo: "",
+        text: "",
+        raza: "Gato Persa Europeo",
+        disponibleEstilo: "absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
+        disponibleTexto: "✓ Disponible"
+    },
+    {
+        name: "",
+        gender: "",
+        birth: "2026-03-24",
+        img: unknown.src,
+        img2: unknown.src,
+        alt: "",
+        slugEuropeo: "",
+        text: "",
+        raza: "Gato Persa Europeo",
+        disponibleEstilo: "absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
+        disponibleTexto: "✓ Disponible"
+    },
 ];
