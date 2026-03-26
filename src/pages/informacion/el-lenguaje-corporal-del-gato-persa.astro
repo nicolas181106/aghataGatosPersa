@@ -1,0 +1,106 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import imgLenguaje from "../../assets/img/lenguaje_corporal_gato_persa.png";
+
+const meta = {
+  date: "2026-03-26",
+  readTime: "6 min",
+};
+---
+
+<Layout
+  title="Entendiendo el lenguaje corporal del gato persa: guía de gestos"
+  description="Aprende a interpretar lo que tu gato persa te dice con sus ojos, orejas, cola y posturas. Guía práctica para fortalecer vuestro vínculo."
+>
+  <main class="min-h-screen bg-[#fcfcfc] pt-32 pb-20 px-4">
+    
+    <header class="max-w-[1000px] mx-auto mb-16 relative">
+      <div class="flex flex-col md:flex-row gap-10 items-center">
+        <div class="w-full md:w-1/2 z-10">
+          <nav class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#FF6B6B] mb-6">
+            <a href="/" class="hover:opacity-70">Inicio</a>
+            <span>/</span>
+            <a href="/informacion" class="hover:opacity-70">Información</a>
+          </nav>
+          <h1 class="text-4xl md:text-6xl font-black text-[#1F2933] leading-[1.1] mb-6 tracking-tighter">
+            Lenguaje corporal del <span class="text-[#FF6B6B]">gato persa.</span>
+          </h1>
+          <div class="flex items-center gap-6 text-sm text-gray-400 font-medium">
+             <span class="flex items-center gap-2">📅 {new Date(meta.date).toLocaleDateString("es-ES", { day: "2-digit", month: "long" })}</span>
+             <span class="flex items-center gap-2">⏱️ {meta.readTime} lectura</span>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 relative">
+          <div class="absolute -inset-4 bg-[#FFE2E2] rounded-[40px] rotate-3 -z-10"></div>
+          <img
+            src={imgLenguaje.src}
+            alt="Lenguaje corporal del gato persa"
+            class="w-full h-[400px] object-cover rounded-[30px] shadow-2xl rotate-[-1deg]"
+          />
+        </div>
+      </div>
+    </header>
+
+    <article class="max-w-[800px] mx-auto">
+      
+      <section class="mb-16">
+        <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-serif italic border-l-4 border-[#FF6B6B] pl-8">
+          Los gatos persas son maestros de la comunicación no verbal. Al ser una raza tan silenciosa, sus ojos, sus orejas y su postura corporal son las herramientas principales para decirte cómo se sienten.
+        </p>
+      </section>
+
+      <section class="space-y-12 text-[17px] md:text-[19px] leading-[1.8] text-gray-800">
+        <p>
+          ¿Alguna vez te has preguntado por qué tu <strong>gato persa</strong> te mira fijamente y parpadea despacio? ¿O qué significa que tenga la cola en forma de gancho? Aprender a leer estos pequeños gestos no solo te ayudará a evitar malentendidos, sino que hará que vuestra relación sea mucho más profunda y gratificante.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">1. La mirada: el espejo del alma felina</h2>
+        <p>
+          Los persas tienen ojos grandes y redondos que son muy expresivos. Un <strong>parpadeo lento</strong> es el equivalente felino de un beso; es una señal de máxima confianza y afecto. Si tu gato te mira así, devuélvele el parpadeo lentamente. Por otro lado, unas pupilas muy dilatadas pueden indicar excitación (juego) o miedo, mientras que unas pupilas contraídas suelen significar enfado o alerta.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">2. Las orejas: el radar de emociones</h2>
+        <ul class="list-disc list-inside space-y-4">
+            <li><strong>Hacia delante:</strong> El gato está relajado, curioso o centrado en algo.</li>
+            <li><strong>Hacia los lados ("orejas de avión"):</strong> Indica inquietud, molestia o que algo no le cuadra.</li>
+            <li><strong>Hacia atrás y pegadas:</strong> ¡Cuidado! Es una señal clara de miedo o agresividad defensiva. Es mejor darle espacio.</li>
+        </ul>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">3. La cola: una antena de intenciones</h2>
+        <p>
+          A pesar de su pelaje largo que a veces disimula el movimiento, la cola es vital. Una cola <strong>levantada con la punta curvada</strong> es el saludo más amigable del mundo felino. Si la cola está baja y escondida entre las piernas, el gato tiene miedo. Si la mueve de lado a lado con fuerza (latigazos), está muy irritado y es probable que te esté pidiendo que dejes de hacer lo que estás haciendo.
+        </p>
+
+        <div class="relative py-8">
+           <div class="absolute inset-0 bg-pink-50 -mx-4 md:-mx-20 rounded-[50px] -z-10"></div>
+           <h2 class="text-3xl font-bold text-[#111827] mb-6 tracking-tight">4. La famosa postura "pan de molde" (Loaf)</h2>
+           <p>
+            Cuando un persa se tumba con las patas escondidas bajo el cuerpo, formando una especie de bloque, significa que se siente <strong>seguro y relajado</strong>. No está en modo alerta, sino disfrutando de su entorno. Es el momento perfecto para estar cerca de él, aunque respeta si prefiere no ser molestado en su siesta.
+          </p>
+        </div>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">5. Amasar (el "panadero")</h2>
+        <p>
+          Si tu gato presiona rítmicamente sus patas delanteras contra una manta o contra ti, está "amasando". Este es un comportamiento que traen desde cachorros cuando estimulaban la leche de su madre. En un gato adulto, es una señal de <strong>felicidad extrema</strong> y comodidad. Es su forma de decirte que te quiere y se siente protegido a tu lado.
+        </p>
+
+        <p class="text-center font-bold text-2xl text-[#FF6B6B] pt-10">
+            "Escuchar con los ojos es la clave para entender al persa."
+          </p>
+      </section>
+
+      <footer class="mt-20 pt-10 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-8">
+        <a href="/principal/informacion" class="font-bold text-gray-400 hover:text-[#FF6B6B] transition-colors flex items-center gap-2">
+            ← Ver otros artículos
+        </a>
+        <div class="flex gap-4">
+            <a href="/principal/contacto" class="bg-[#FF6B6B] text-white font-bold py-4 px-8 rounded-full shadow-xl hover:-translate-y-1 transition-all">
+                ¿Tienes dudas? Escríbenos
+            </a>
+        </div>
+      </footer>
+
+    </article>
+  </main>
+</Layout>
+

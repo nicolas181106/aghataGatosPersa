@@ -1,0 +1,114 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import imgCuriosidades from "../../assets/img/gato_persa_curioso.png";
+
+const meta = {
+  date: "2026-03-26",
+  readTime: "6 min",
+};
+---
+
+<Layout
+  title="7 Curiosidades sobre el gato persa que te sorprenderán"
+  description="Descubre los secretos mejor guardados de la raza persa: desde su origen histórico hasta sus rasgos más peculiares y fascinantes."
+>
+  <main class="min-h-screen bg-[#fcfcfc] pt-32 pb-20 px-4">
+    
+    <header class="max-w-[1000px] mx-auto mb-16 relative">
+      <div class="flex flex-col md:flex-row gap-10 items-center">
+        <div class="w-full md:w-1/2 z-10">
+          <nav class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#FF6B6B] mb-6">
+            <a href="/" class="hover:opacity-70">Inicio</a>
+            <span>/</span>
+            <a href="/informacion" class="hover:opacity-70">Información</a>
+          </nav>
+          <h1 class="text-4xl md:text-6xl font-black text-[#1F2933] leading-[1.1] mb-6 tracking-tighter">
+            Curiosidades sobre el <span class="text-[#FF6B6B]">gato persa.</span>
+          </h1>
+          <div class="flex items-center gap-6 text-sm text-gray-400 font-medium">
+             <span class="flex items-center gap-2">📅 {new Date(meta.date).toLocaleDateString("es-ES", { day: "2-digit", month: "long" })}</span>
+             <span class="flex items-center gap-2">⏱️ {meta.readTime} lectura</span>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 relative">
+          <div class="absolute -inset-4 bg-[#FFE2E2] rounded-[40px] rotate-3 -z-10"></div>
+          <img
+            src={imgCuriosidades.src}
+            alt="Gato persa curioso"
+            class="w-full h-[400px] object-cover rounded-[30px] shadow-2xl rotate-[-1deg]"
+          />
+        </div>
+      </div>
+    </header>
+
+    <article class="max-w-[800px] mx-auto">
+      
+      <section class="mb-16">
+        <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-serif italic border-l-4 border-[#FF6B6B] pl-8">
+          El gato persa es mucho más que una cara bonita y un pelaje majestuoso. Su historia está llena de mitos, elegancia y detalles que lo convierten en una de las razas más especiales del mundo felino.
+        </p>
+      </section>
+
+      <section class="space-y-12 text-[17px] md:text-[19px] leading-[1.8] text-gray-800">
+        <p>
+          Si tienes un <strong>gato persa</strong> o estás pensando en adoptar uno, probablemente ya sepas que son seres tranquilos y extremadamente cariñosos. Sin embargo, hay detalles sobre su pasado y su genética que a menudo pasan desapercibidos. Desde su llegada a Europa en el siglo XVII hasta su papel en la cultura popular, el persa siempre ha sido sinónimo de distinción.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">1. Un viajero de la antigua Persia</h2>
+        <p>
+          Aunque su nombre lo indica, los primeros registros de estos gatos se sitúan en la antigua <strong>Persia (actual Irán)</strong>. Fue el explorador italiano Pietro della Valle quien, en 1620, llevó los primeros ejemplares a Europa. En aquella época, eran gatos muy diferentes a los que conocemos hoy, con un pelaje gris sedoso y una cara menos achatada.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">2. El gato de la realeza</h2>
+        <p>
+          Su elegancia no pasó desapercibida para la nobleza. La <strong>Reina Victoria de Inglaterra</strong> era una gran admiradora de la raza y llegó a tener varios ejemplares. Esto disparó su popularidad entre la alta sociedad europea, convirtiéndolos en el accesorio de lujo definitivo de la época victoriana.
+        </p>
+
+        <div class="relative py-8">
+           <div class="absolute inset-0 bg-pink-50 -mx-4 md:-mx-20 rounded-[50px] -z-10"></div>
+           <h2 class="text-3xl font-bold text-[#111827] mb-6 tracking-tight">3. Los "Tigres del Sofá"</h2>
+           <p>
+            A diferencia de otras razas más activas, el persa es conocido por su sedentarismo controlado. Se les llama cariñosamente "muebles con pelo" o "tigres del sofá" debido a su capacidad para pasar horas descansando en el lugar más cómodo de la casa. Su nivel de energía es bajo, lo que los hace ideales para vivir en pisos.
+          </p>
+        </div>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">4. No todos tienen la cara plana</h2>
+        <p>
+          Existen dos tipos principales de fisionomía facial: el <strong>"Peke-face"</strong> (extremadamente chato) y el <strong>"Doll-face"</strong> (cara de muñeca, más tradicional y menos chata). El tipo Doll-face es el más parecido a los gatos persas originales y suele tener menos problemas respiratorios que el tipo moderno de exposición.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">5. Una variedad de colores infinita</h2>
+        <p>
+          Aunque el blanco con ojos azules es el más icónico, el estándar de la raza acepta casi cualquier combinación cromática. Existen persas negros, azules, rojos, crema, chocolate, lila y sus versiones atigradas o bicolores. ¡Hay un persa para cada gusto!
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">6. La estrella de Hollywood</h2>
+        <p>
+          ¿Recuerdas al gato del villano de James Bond, Blofeld? Era un persa blanco. ¿Y el icónico Snowbell de Stuart Little? También. Su aspecto distinguido los ha convertido en los favoritos de los directores de cine para representar personajes sofisticados o misteriosos.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">7. Un lenguaje silencioso</h2>
+        <p>
+          Los persas no suelen ser gatos maulladores. Prefieren comunicarse a través de sus enormes ojos y suaves movimientos de cabeza. Si un persa te mira fijamente, es muy probable que esté intentando decirte algo mucho más importante que si estuviera maullando sin parar.
+        </p>
+
+        <p class="text-center font-bold text-2xl text-[#FF6B6B] pt-10">
+            "Conocer su historia es empezar a entender su alma."
+          </p>
+      </section>
+
+      <footer class="mt-20 pt-10 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-8">
+        <a href="/principal/informacion" class="font-bold text-gray-400 hover:text-[#FF6B6B] transition-colors flex items-center gap-2">
+            ← Ver otros artículos
+        </a>
+        <div class="flex gap-4">
+            <a href="/principal/contacto" class="bg-[#FF6B6B] text-white font-bold py-4 px-8 rounded-full shadow-xl hover:-translate-y-1 transition-all">
+                ¿Tienes dudas? Escríbenos
+            </a>
+        </div>
+      </footer>
+
+    </article>
+  </main>
+</Layout>
+

@@ -1,0 +1,104 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import imgBlanco from "../../assets/img/gato_persa_blanco_puro.png";
+
+const meta = {
+  date: "2026-03-26",
+  readTime: "7 min",
+};
+---
+
+<Layout
+  title="Gato Persa Blanco: Cuidados específicos para un manto de nieve"
+  description="Aprende a mantener el pelaje blanco impecable de tu gato persa: eliminar manchas de óxido en los ojos, productos recomendados y nutrición."
+>
+  <main class="min-h-screen bg-[#fcfcfc] pt-32 pb-20 px-4">
+    
+    <header class="max-w-[1000px] mx-auto mb-16 relative">
+      <div class="flex flex-col md:flex-row gap-10 items-center">
+        <div class="w-full md:w-1/2 z-10">
+          <nav class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#FF6B6B] mb-6">
+            <a href="/" class="hover:opacity-70">Inicio</a>
+            <span>/</span>
+            <a href="/informacion" class="hover:opacity-70">Información</a>
+          </nav>
+          <h1 class="text-4xl md:text-6xl font-black text-[#1F2933] leading-[1.1] mb-6 tracking-tighter">
+            El persa blanco: <span class="text-[#FF6B6B]">Belleza pura.</span>
+          </h1>
+          <div class="flex items-center gap-6 text-sm text-gray-400 font-medium">
+             <span class="flex items-center gap-2">📅 {new Date(meta.date).toLocaleDateString("es-ES", { day: "2-digit", month: "long" })}</span>
+             <span class="flex items-center gap-2">⏱️ {meta.readTime} lectura</span>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 relative">
+          <div class="absolute -inset-4 bg-[#FFE2E2] rounded-[40px] rotate-3 -z-10"></div>
+          <img
+            src={imgBlanco.src}
+            alt="Gato persa blanco inmaculado"
+            class="w-full h-[400px] object-cover rounded-[30px] shadow-2xl rotate-[-1deg]"
+          />
+        </div>
+      </div>
+    </header>
+
+    <article class="max-w-[800px] mx-auto">
+      
+      <section class="mb-16">
+        <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-serif italic border-l-4 border-[#FF6B6B] pl-8">
+          El gato persa blanco es la personificación de la elegancia felina. Sin embargo, su manto inmaculado no se mantiene solo: requiere una disciplina de cuidado específica que marca la diferencia.
+        </p>
+      </section>
+
+      <section class="space-y-12 text-[17px] md:text-[19px] leading-[1.8] text-gray-800">
+        <p>
+          Si tienes la suerte de convivir con un <strong>gato persa blanco</strong>, sabrás que cualquier suciedad se nota de inmediato. Desde las manchas amarillentas bajo los ojos hasta el tono grisáceo que puede adquirir el manto en las patas. Mantenerlo como un copo de nieve requiere técnica, paciencia y los productos adecuados.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">1. El gran reto: las manchas de óxido en los ojos</h2>
+        <p>
+          Al tener el pelo blanco, el lagrimeo habitual del persa reacciona con el aire (oxidación) y crea unas manchas rojizas o marrones muy visibles. La clave es la <strong>limpieza constante</strong>: usa soluciones específicas de limpieza de lagrimales y, un truco de experto, aplica polvos de limpieza ocular (como el ácido bórico específico para mascotas) para secar la zona y evitar que la mancha se fije.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">2. Champús intensificadores de blanco</h2>
+        <p>
+          No vale cualquier champú. El pelo blanco puede amarillear con el tiempo debido al sol, la saliva o la suciedad ambiental. Existen <strong>champús con pigmentos azulados</strong> o violáceos que neutralizan el tono amarillento y realzan el blanco óptico. Nota importante: estos champús no "tiñen", simplemente equilibran los reflejos de la luz.
+        </p>
+
+        <div class="relative py-8">
+           <div class="absolute inset-0 bg-pink-50 -mx-4 md:-mx-20 rounded-[50px] -z-10"></div>
+           <h2 class="text-3xl font-bold text-[#111827] mb-6 tracking-tight">3. Alimentación y color del manto</h2>
+           <p>
+            Sorprendentemente, lo que tu gato come influye en su blancura. Evita piensos con altas concentraciones de betacarotenos o colorantes artificiales, que pueden dar un tono anaranjado al pelo por dentro. Busca dietas de alta gama diseñadas específicamente para gatos blancos, que priorizan proteínas limpias y aceites que aportan brillo sin alterar el pigmento.
+          </p>
+        </div>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">4. Cuidado con el sol</h2>
+        <p>
+          Los persas blancos, al igual que los humanos de piel muy clara, son más sensibles a la radiación solar. El sol excesivo no solo puede amarillear el pelo, sino que aumenta el riesgo de <strong>dermatitis actínica</strong> en zonas con poco pelo (orejas y nariz). Si a tu gato le gusta tomar el sol en la ventana, intenta que lo haga en horas de menor intensidad.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">5. La zone de higiene</h2>
+        <p>
+          Para un persa blanco, mantener la zona de la cola y las patas impecable es vital. Si notas que tras ir al arenero se mancha el pelo largo de las patas traseras, te recomendamos realizar un <strong>recorte higiénico</strong> sutil en esa zona. Esto le ayudará a mantenerse limpio por sí mismo durante mucho más tiempo.
+        </p>
+
+        <p class="text-center font-bold text-2xl text-[#FF6B6B] pt-10">
+            "No es vanidad, es el respeto que merece una belleza tan única."
+          </p>
+      </section>
+
+      <footer class="mt-20 pt-10 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-8">
+        <a href="/principal/informacion" class="font-bold text-gray-400 hover:text-[#FF6B6B] transition-colors flex items-center gap-2">
+            ← Ver otros artículos
+        </a>
+        <div class="flex gap-4">
+            <a href="/principal/contacto" class="bg-[#FF6B6B] text-white font-bold py-4 px-8 rounded-full shadow-xl hover:-translate-y-1 transition-all">
+                ¿Tienes dudas? Escríbenos
+            </a>
+        </div>
+      </footer>
+
+    </article>
+  </main>
+</Layout>
+

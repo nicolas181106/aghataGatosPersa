@@ -4,48 +4,336 @@ import imgGatoPelaje from "../../assets/img/gatoConPelajePregunta.jpg";
 import imgDurmiendo from "../../assets/img/gatoDurmiendo.jpg";
 import imgGatoComiendo from "../../assets/img/gatoComiendo.jpg";
 import imgGatoJugando from "../../assets/img/gatoPersaJugando.jpg";
+import imgCuriosidades from "../../assets/img/gato_persa_curioso.png";
+import imgCasaPreparada from "../../assets/img/casa_preparada_gato_persa.png";
+import imgExotico from "../../assets/img/gato_exotico_shorthair.png";
+import imgLenguaje from "../../assets/img/lenguaje_corporal_gato_persa.png";
+import imgSaludBatch2 from "../../assets/img/gato_persa_salud_atento.png";
+import imgBlancoBatch2 from "../../assets/img/gato_persa_blanco_puro.png";
+import imgAfectoBatch2 from "../../assets/img/gato_persa_carinoso.png";
+import imgNinos from "../../assets/img/gato_persa_ninos.png";
+import imgNombres from "../../assets/img/nombres_gatos_persas.png";
+import imgChinchilla from "../../assets/img/gato_persa_chinchilla.png";
+import imgDental from "../../assets/img/gato_persa_salud_dental.png";
+import imgLongevidad from "../../assets/img/gato_persa_longevidad.png";
+import imgHimalayo from "../../assets/img/gato_persa_himalayo.png";
+import imgGris from "../../assets/img/gato_persa_gris.png";
+import imgRojo from "../../assets/img/gato_persa_rojo.png";
+import imgCalico from "../../assets/img/gato_persa_calico.png";
+import imgGato1 from "../../assets/img/gato1.jpg";
+import imgGato2 from "../../assets/img/gato2.jpg";
+import imgGato3 from "../../assets/img/gato3.jpg";
+import imgGatoVet from "../../assets/img/gato-veterinario.jpg";
 
 const articles = [
   {
-    slug: "como-cuidar-el-pelaje-de-un-gato-persa",
-    img: imgGatoPelaje,
-    alt: "Gato persa con pelaje largo y bien cuidado",
-    title: "Cómo cuidar el pelaje de un gato persa",
-    excerpt: "Trucos de cepillado, baños y alimentación para mantener el pelaje de tu gato persa suave, brillante y libre de enredos.",
-    category: "Cuidados del pelaje",
-    readTime: "6 min",
-    date: "2025-01-05",
-    featured: true, // Marcamos este como destacado
+    slug: "errores-salud-gato-persa",
+    img: imgSaludBatch2,
+    alt: "Primer plano de un gato persa sano",
+    title: "5 Errores que arruinan la salud de tu gato",
+    excerpt:
+      "No cometas estos fallos comunes. Aprende a prevenir problemas renales, oculares y digestivos en tu persa.",
+    category: "Salud",
+    readTime: "8 min",
+    date: "2026-03-26",
+    featured: true,
   },
   {
-    slug: "con-que-frecuencia-debo-llevar-a-mi-gato-persa-al-veterinario",
-    img: imgDurmiendo,
-    alt: "Gato persa descansando después de una visita al veterinario",
-    title: "Revisión Veterinaria: ¿Cada cuánto tiempo?",
-    excerpt: "Cada cuánto tiempo conviene hacer revisiones, qué chequeos son importantes y qué señales de alerta debes vigilar.",
-    category: "Salud y veterinario",
-    readTime: "5 min",
-    date: "2025-01-10",
-  },
-  {
-    slug: "que-tipo-de-alimentacion-es-mejor-para-un-gato-persa",
-    img: imgGatoComiendo,
-    alt: "Gato persa comiendo pienso de alta calidad",
-    title: "La mejor alimentación para tu Persa",
-    excerpt: "Pienso, comida húmeda, suplementos y marcas recomendadas para mantener sano y fuerte a tu gato persa.",
-    category: "Alimentación",
+    slug: "gato-persa-himalayo",
+    img: imgHimalayo,
+    alt: "Gato persa himalayo seal point",
+    title: "El Gato Persa Himalayo: Guía completa",
+    excerpt:
+      "Descubre la belleza del patrón colorpoint y por qué esta variante es una de las más deseadas del mundo.",
+    category: "Razas",
     readTime: "7 min",
-    date: "2025-01-18",
+    date: "2026-03-26",
+  },
+  {
+    slug: "gato-persa-gris",
+    img: imgGris,
+    alt: "Gato persa gris azul elegante",
+    title: "Gato Persa Gris (Blue): Elegante y Sofisticado",
+    excerpt:
+      "Todo sobre el icónico color gris azulado, su historia aristocrática y el contraste de sus ojos cobre.",
+    category: "Razas",
+    readTime: "6 min",
+    date: "2026-03-26",
+  },
+  {
+    slug: "gato-persa-rojo",
+    img: imgRojo,
+    alt: "Gato persa rojo brillante estilo Garfield",
+    title: "Gato Persa Rojo: El Carácter del Tigre de Salón",
+    excerpt:
+      "Vibrante y cariñoso. Descubre por qué los persas rojos o crema son los reyes de la simpatía en el hogar.",
+    category: "Razas",
+    readTime: "5 min",
+    date: "2026-03-26",
+  },
+  {
+    slug: "gato-persa-calico",
+    img: imgCalico,
+    alt: "Gato persa calicó de tres colores vibrantes",
+    title: "Gato Persa Calicó: La Magia de los Tres Colores",
+    excerpt:
+      "La genética única de las gatas tricolor, su simbolismo de buena suerte y sus cuidados específicos.",
+    category: "Razas",
+    readTime: "7 min",
+    date: "2026-03-26",
+  },
+  {
+    slug: "gatos-persas-solidos",
+    img: imgGato2,
+    alt: "Gato persa rojo sólido",
+    title: "Gatos Persas Sólidos: Pureza y Color",
+    excerpt:
+      "Blanco, negro, azul, rojo y crema. Descubre la elegancia de los persas con un manto de un solo color impecable.",
+    category: "Razas",
+    readTime: "6 min",
+    date: "2026-03-26",
+  },
+  {
+    slug: "historia-gato-persa-europa",
+    img: imgGato1,
+    alt: "Gato persa clásico",
+    title: "Historia del Persa: De Oriente a Europa",
+    excerpt:
+      "Un viaje fascinante desde las caravanas de Persia hasta los palacios de la Reina Victoria en Inglaterra.",
+    category: "Curiosidades",
+    readTime: "8 min",
+    date: "2026-03-26",
+  },
+  {
+    slug: "persas-y-otros-animales",
+    img: imgGatoVet,
+    alt: "Gato persa sociable",
+    title: "Persas y otros animales: Guía de Convivencia",
+    excerpt:
+      "¿Se lleva bien con perros? Trucos y consejos para una presentación exitosa y una vida en armonía.",
+    category: "Comportamiento",
+    readTime: "7 min",
+    date: "2026-03-26",
+  },
+  {
+    slug: "el-gato-persa-en-el-cine",
+    img: imgGato3,
+    alt: "Gato persa estrella de cine",
+    title: "El Persa en el Cine: De Bond a Stuart Little",
+    excerpt:
+      "Repaso por los gatos persas más famosos de la gran pantalla y por qué Hollywood adora a esta raza.",
+    category: "Curiosidades",
+    readTime: "5 min",
+    date: "2026-03-26",
+  },
+  {
+    slug: "como-banar-gato-persa",
+    img: imgSaludBatch2,
+    alt: "Higiene del gato persa",
+    title: "Cómo bañar a un gato persa paso a paso",
+    excerpt:
+      "Guía definitiva para bañar a tu persa en casa sin estrés, desde el cepillado previo hasta el secado perfecto.",
+    category: "Cuidados",
+    readTime: "8 min",
+    date: "2026-03-26",
+  },
+  {
+    slug: "corte-unas-gato-persa",
+    img: imgSaludBatch2,
+    alt: "Cuidado de uñas felinas",
+    title: "Corte de uñas: Guía de seguridad",
+    excerpt:
+      "Aprende a realizar la pedicura de tu gato de forma segura, evitando accidentes y manteniendo sus patas sanas.",
+    category: "Cuidados",
+    readTime: "5 min",
+    date: "2026-03-26",
+  },
+  {
+    slug: "persa-americano-vs-tradicional",
+    img: imgCuriosidades,
+    alt: "Comparativa de tipos de persa",
+    title: "Persa Americano vs Tradicional: ¿Cuál elegir?",
+    excerpt:
+      "Dolly Face vs Peke Face. Diferencias de estética, salud y carácter para ayudarte a elegir tu compañero ideal.",
+    category: "Razas",
+    readTime: "7 min",
+    date: "2026-03-26",
+  },
+  {
+    slug: "gatos-persas-y-el-calor",
+    img: imgCasaPreparada,
+    alt: "Gato persa protegido del calor",
+    title: "Gatos Persas y el Calor: Guía de Verano",
+    excerpt:
+      "Consejos críticos para evitar golpes de calor en tu persa y trucos para mantenerlo fresco en los meses más calurosos.",
+    category: "Salud",
+    readTime: "6 min",
+    date: "2026-03-26",
+  },
+  {
+    slug: "cuanto-vive-un-gato-persa",
+    img: imgLongevidad,
+    alt: "Gato persa senior descansando plácidamente",
+    title: "¿Cuánto vive un gato persa? Claves de longevidad",
+    excerpt:
+      "Descubre la esperanza de vida media y qué factores de salud y estilo de vida influyen en que tu gato viva más años.",
+    category: "Salud",
+    readTime: "6 min",
+    date: "2026-03-26",
+  },
+  {
+    slug: "problemas-dentales-gato-persa",
+    img: imgDental,
+    alt: "Gato persa bostezando (salud dental)",
+    title: "Problemas dentales: Cómo prevenirlos",
+    excerpt:
+      "Gingivitis, sarro y apiñamiento dental. Aprende a cuidar la boca de tu persa para evitar infecciones graves.",
+    category: "Salud",
+    readTime: "7 min",
+    date: "2026-03-26",
+  },
+  {
+    slug: "gato-persa-chinchilla",
+    img: imgChinchilla,
+    alt: "Gato persa chinchilla plateado",
+    title: "El Gato Persa Chinchilla: La joya plateada",
+    excerpt:
+      "Todo sobre esta espectacular variedad: su pelaje plateado único, sus ojos esmeralda y su carácter místico.",
+    category: "Razas",
+    readTime: "7 min",
+    date: "2026-03-26",
+  },
+  {
+    slug: "nombres-para-gatos-persas",
+    img: imgNombres,
+    alt: "Composición artística para nombres de gatos",
+    title: "50 Nombres para Gatos Persas: Guía completa",
+    excerpt:
+      "Ideas elegantes, originales y mitológicas para llamar a tu nuevo compañero como se merece.",
+    category: "Curiosidades",
+    readTime: "6 min",
+    date: "2026-03-26",
+  },
+  {
+    slug: "gatos-persas-y-ninos",
+    img: imgNinos,
+    alt: "Niño jugando con gato persa",
+    title: "Gatos Persas y Niños: ¿Es la raza adecuada?",
+    excerpt:
+      "Consejos de convivencia, seguridad y socialización para que niños y persas sean los mejores amigos.",
+    category: "Comportamiento",
+    readTime: "7 min",
+    date: "2026-03-26",
+  },
+  {
+    slug: "signos-afecto-gato-persa",
+    img: imgAfectoBatch2,
+    alt: "Persona acariciando a un gato persa",
+    title: "¿Cómo saber si tu gato persa te quiere?",
+    excerpt:
+      "Descubre las señales de amor felino y fortalece el vínculo afectivo con tu compañero más fiel.",
+    category: "Comportamiento",
+    readTime: "6 min",
+    date: "2026-03-26",
+  },
+  {
+    slug: "cuidados-gato-persa-blanco",
+    img: imgBlancoBatch2,
+    alt: "Gato persa blanco inmaculado",
+    title: "Gato Persa Blanco: Cuidados del manto",
+    excerpt:
+      "Secretos para mantener un blanco inmaculado, eliminar manchas de lágrimas y realzar el brillo de su pelaje.",
+    category: "Cuidados",
+    readTime: "7 min",
+    date: "2026-03-26",
+  },
+  {
+    slug: "el-lenguaje-corporal-del-gato-persa",
+    img: imgLenguaje,
+    alt: "Gato persa en postura relajada",
+    title: "El lenguaje corporal del gato persa",
+    excerpt:
+      "Aprende a interpretar lo que tu gato te dice con sus ojos, orejas y cola para fortalecer vuestro vínculo.",
+    category: "Comportamiento",
+    readTime: "6 min",
+    date: "2026-03-27",
+  },
+  {
+    slug: "diferencias-entre-gato-persa-y-gato-exotico",
+    img: imgExotico,
+    alt: "Gato exótico de pelo corto ginger y blanco",
+    title: "Persa vs. Exótico: ¿Cuál es la diferencia?",
+    excerpt:
+      "Comparativa entre el gato persa y el exótico de pelo corto: pelaje, carácter y mantenimiento para ayudarte a elegir.",
+    category: "Razas",
+    readTime: "7 min",
+    date: "2026-03-27",
+  },
+  {
+    slug: "como-preparar-tu-casa-para-un-gato-persa",
+    img: imgCasaPreparada,
+    alt: "Salón moderno con accesorios para gatos",
+    title: "Prepara tu casa para un gato persa",
+    excerpt:
+      "Guía completa para adaptar tu hogar: zonas de descanso, seguridad y todo lo necesario para tu nuevo compañero.",
+    category: "Cuidados en el hogar",
+    readTime: "8 min",
+    date: "2026-03-27",
+  },
+  {
+    slug: "curiosidades-sobre-el-gato-persa",
+    img: imgCuriosidades,
+    alt: "Gato persa con mirada curiosa",
+    title: "7 Curiosidades sobre el gato persa",
+    excerpt:
+      "Descubre los secretos mejor guardados de la raza persa: desde su origen histórico hasta sus rasgos más fascinantes.",
+    category: "Curiosidades",
+    readTime: "6 min",
+    date: "2026-03-27",
   },
   {
     slug: "como-puedo-mantener-a-mi-gato-persa-activo-y-entretenido",
     img: imgGatoJugando,
     alt: "Gato persa jugando con una pelota",
     title: "Mantén a tu gato activo y entretenido",
-    excerpt: "Ideas de juegos, juguetes, rutinas y enriquecimiento ambiental para un gato persa feliz y estimulado.",
+    excerpt:
+      "Ideas de juegos, juguetes, rutinas y enriquecimiento ambiental para un gato persa feliz y estimulado.",
     category: "Comportamiento y juego",
     readTime: "6 min",
-    date: "2025-01-22",
+    date: "2026-03-26",
+  },
+  {
+    slug: "que-tipo-de-alimentacion-es-mejor-para-un-gato-persa",
+    img: imgGatoComiendo,
+    alt: "Gato persa comiendo pienso de alta calidad",
+    title: "La mejor alimentación para tu Persa",
+    excerpt:
+      "Pienso, comida húmeda, suplementos y marcas recomendadas para mantener sano y fuerte a tu gato persa.",
+    category: "Alimentación",
+    readTime: "7 min",
+    date: "2026-03-26",
+  },
+  {
+    slug: "con-que-frecuencia-debo-llevar-a-mi-gato-persa-al-veterinario",
+    img: imgDurmiendo,
+    alt: "Gato persa descansando después de una visita al veterinario",
+    title: "Revisión Veterinaria: ¿Cada cuánto tiempo?",
+    excerpt:
+      "Cada cuánto tiempo conviene hacer revisiones, qué chequeos son importantes y qué señales de alerta debes vigilar.",
+    category: "Salud y veterinario",
+    readTime: "5 min",
+    date: "2026-03-26",
+  },
+  {
+    slug: "como-cuidar-el-pelaje-de-un-gato-persa",
+    img: imgGatoPelaje,
+    alt: "Gato persa con pelaje largo y bien cuidado",
+    title: "Cómo cuidar el pelaje de un gato persa",
+    excerpt:
+      "Trucos de cepillado, baños y alimentación para mantener el pelaje de tu gato persa suave, brillante y libre de enredos.",
+    category: "Cuidados del pelaje",
+    readTime: "6 min",
+    date: "2026-03-26",
   },
 ];
 ---
@@ -57,86 +345,133 @@ const articles = [
   <main class="bg-[#FDFCFB] min-h-screen pb-20">
     <section class="pt-32 pb-10">
       <div class="max-w-6xl mx-auto px-4">
-        <div class="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#FF6B6B] via-[#FF8E8E] to-amber-200 p-8 sm:p-16 shadow-2xl">
+        <div
+          class="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#FF6B6B] via-[#FF8E8E] to-amber-200 p-8 sm:p-16 shadow-2xl"
+        >
           <div class="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
             <div class="space-y-6">
-              <span class="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold text-white uppercase tracking-widest">
+              <span
+                class="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold text-white uppercase tracking-widest"
+              >
                 Información para Cuidadores
               </span>
-              <h1 class="text-4xl md:text-6xl font-black text-white leading-tight tracking-tight">
-                El Manual del <br/> <span class="text-white/90">Gato Persa</span>
+              <h1
+                class="text-4xl md:text-6xl font-black text-white leading-tight tracking-tight"
+              >
+                El Manual del <br />
+                <span class="text-white/90">Gato Persa</span>
               </h1>
-              <p class="text-lg text-white/90 font-medium leading-relaxed max-w-lg">
-                Explora nuestra selección de guías expertas diseñadas para brindarle a tu compañero felino la vida saludable y feliz que se merece.
+              <p
+                class="text-lg text-white/90 font-medium leading-relaxed max-w-lg"
+              >
+                Explora nuestra selección de guías expertas diseñadas para
+                brindarle a tu compañero felino la vida saludable y feliz que se
+                merece.
               </p>
             </div>
 
             <div class="hidden lg:flex justify-end">
-              <div class="w-72 h-72 rounded-[3rem] bg-white/10 backdrop-blur-xl border border-white/30 rotate-12 flex items-center justify-center shadow-2xl relative group transition-all duration-700 hover:rotate-6">
-                 <div class="w-48 h-48 bg-white rounded-[2rem] shadow-inner flex flex-col items-center justify-center p-6 text-center transform -rotate-6 transition-transform group-hover:rotate-0">
-                    <span class="text-5xl mb-4">📖</span>
-                    <p class="text-sm font-bold text-gray-800 tracking-tighter">CONTENIDO <br/> <span class="text-[#FF6B6B]">EXCLUSIVO</span></p>
-                 </div>
-                 <div class="absolute -top-4 -left-4 w-12 h-12 bg-amber-300 rounded-full flex items-center justify-center animate-bounce shadow-lg">✨</div>
+              <div
+                class="w-72 h-72 rounded-[3rem] bg-white/10 backdrop-blur-xl border border-white/30 rotate-12 flex items-center justify-center shadow-2xl relative group transition-all duration-700 hover:rotate-6"
+              >
+                <div
+                  class="w-48 h-48 bg-white rounded-[2rem] shadow-inner flex flex-col items-center justify-center p-6 text-center transform -rotate-6 transition-transform group-hover:rotate-0"
+                >
+                  <span class="text-5xl mb-4">📖</span>
+                  <p class="text-sm font-bold text-gray-800 tracking-tighter">
+                    CONTENIDO <br />
+                    <span class="text-[#FF6B6B]">EXCLUSIVO</span>
+                  </p>
+                </div>
+                <div
+                  class="absolute -top-4 -left-4 w-12 h-12 bg-amber-300 rounded-full flex items-center justify-center animate-bounce shadow-lg"
+                >
+                  ✨
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+          <div
+            class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl"
+          >
+          </div>
         </div>
       </div>
     </section>
 
     <section class="max-w-6xl mx-auto px-4 py-12">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+      <div
+        class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4"
+      >
         <div>
-            <h2 class="text-3xl md:text-4xl font-black text-gray-900 tracking-tight">Últimas Publicaciones</h2>
-            <div class="h-1.5 w-20 bg-[#FF6B6B] mt-4 rounded-full"></div>
+          <h2
+            class="text-3xl md:text-4xl font-black text-gray-900 tracking-tight"
+          >
+            Últimas Publicaciones
+          </h2>
+          <div class="h-1.5 w-20 bg-[#FF6B6B] mt-4 rounded-full"></div>
         </div>
       </div>
 
       <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-        {articles.map((article) => (
-          <article class={`group relative flex flex-col bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden ${article.featured ? 'md:col-span-2 lg:col-span-2 flex-row' : ''}`}>
-            
-            <div class={`relative overflow-hidden ${article.featured ? 'w-1/2 hidden md:block' : 'h-64'}`}>
-              <img
-                src={article.img.src}
-                alt={article.alt}
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
-              <span class="absolute top-6 left-6 bg-[#FF6B6B] text-white text-[10px] font-black px-3 py-1.5 rounded-lg uppercase tracking-widest shadow-lg">
-                {article.category}
-              </span>
-            </div>
+        {
+          articles.map((article) => (
+            <article
+              class={`group relative flex flex-col bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden ${article.featured ? "md:col-span-2 lg:col-span-2 flex-row" : ""}`}
+            >
+              <div
+                class={`relative overflow-hidden ${article.featured ? "w-1/2 hidden md:block" : "h-64"}`}
+              >
+                <img
+                  src={article.img.src}
+                  alt={article.alt}
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
+                <span class="absolute top-6 left-6 bg-[#FF6B6B] text-white text-[10px] font-black px-3 py-1.5 rounded-lg uppercase tracking-widest shadow-lg">
+                  {article.category}
+                </span>
+              </div>
 
-            <div class="p-8 flex flex-col flex-1 justify-between">
-              <div>
-                <div class="flex items-center gap-3 text-xs font-bold text-gray-400 mb-4 uppercase tracking-tighter">
-                  <span>{new Date(article.date).toLocaleDateString("es-ES", { day: "2-digit", month: "short", year: "numeric" })}</span>
-                  <span class="w-1.5 h-1.5 rounded-full bg-pink-200"></span>
-                  <span>{article.readTime} lectura</span>
+              <div class="p-8 flex flex-col flex-1 justify-between">
+                <div>
+                  <div class="flex items-center gap-3 text-xs font-bold text-gray-400 mb-4 uppercase tracking-tighter">
+                    <span>
+                      {new Date(article.date).toLocaleDateString("es-ES", {
+                        day: "2-digit",
+                        month: "short",
+                        year: "numeric",
+                      })}
+                    </span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-pink-200" />
+                    <span>{article.readTime} lectura</span>
+                  </div>
+
+                  <h3
+                    class={`font-black text-gray-900 group-hover:text-[#FF6B6B] transition-colors leading-tight mb-4 ${article.featured ? "text-3xl md:text-4xl" : "text-2xl"}`}
+                  >
+                    {article.title}
+                  </h3>
+
+                  <p class="text-gray-600 leading-relaxed text-sm md:text-base line-clamp-3">
+                    {article.excerpt}
+                  </p>
                 </div>
 
-                <h3 class={`font-black text-gray-900 group-hover:text-[#FF6B6B] transition-colors leading-tight mb-4 ${article.featured ? 'text-3xl md:text-4xl' : 'text-2xl'}`}>
-                  {article.title}
-                </h3>
-                
-                <p class="text-gray-600 leading-relaxed text-sm md:text-base line-clamp-3">
-                  {article.excerpt}
-                </p>
+                <div class="mt-8 flex items-center">
+                  <a
+                    href={`/informacion/${article.slug}`}
+                    class="inline-flex items-center gap-2 text-sm font-black uppercase tracking-widest text-[#FF6B6B] group-hover:gap-4 transition-all"
+                  >
+                    Leer Guía Completa
+                    <span class="text-xl">→</span>
+                  </a>
+                </div>
               </div>
-
-              <div class="mt-8 flex items-center">
-                <a href={`/informacion/${article.slug}`} class="inline-flex items-center gap-2 text-sm font-black uppercase tracking-widest text-[#FF6B6B] group-hover:gap-4 transition-all">
-                  Leer Guía Completa
-                  <span class="text-xl">→</span>
-                </a>
-              </div>
-            </div>
-          </article>
-        ))}
+            </article>
+          ))
+        }
       </div>
     </section>
   </main>
@@ -144,8 +479,14 @@ const articles = [
 
 <style>
   @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   article {

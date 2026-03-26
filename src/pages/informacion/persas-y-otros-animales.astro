@@ -1,0 +1,93 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import imgVeterinario from "../../assets/img/gato-veterinario.jpg";
+
+const meta = {
+  date: "2026-03-26",
+  readTime: "7 min",
+};
+---
+
+<Layout
+  title="Persas y otros animales: Guía de convivencia"
+  description="¿Se lleva bien el gato persa con perros y otros gatos? Trucos para una presentación exitosa y una convivencia armoniosa en el hogar."
+>
+  <main class="min-h-screen bg-[#fcfcfc] pt-32 pb-20 px-4">
+    
+    <header class="max-w-[1000px] mx-auto mb-16 relative">
+      <div class="flex flex-col md:flex-row gap-10 items-center">
+        <div class="w-full md:w-1/2 z-10">
+          <nav class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#FF6B6B] mb-6">
+            <a href="/" class="hover:opacity-70">Inicio</a>
+            <span>/</span>
+            <a href="/informacion" class="hover:opacity-70">Información</a>
+          </nav>
+          <h1 class="text-4xl md:text-6xl font-black text-[#1F2933] leading-[1.1] mb-6 tracking-tighter">
+            Amigos <span class="text-[#FF6B6B]">Peludos.</span>
+          </h1>
+          <div class="flex items-center gap-6 text-sm text-gray-400 font-medium">
+             <span class="flex items-center gap-2">📅 {new Date(meta.date).toLocaleDateString("es-ES", { day: "2-digit", month: "long" })}</span>
+             <span class="flex items-center gap-2">⏱️ {meta.readTime} lectura</span>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 relative">
+          <div class="absolute -inset-4 bg-[#DCFCE7] rounded-[40px] rotate-3 -z-10"></div>
+          <img
+            src={imgVeterinario.src}
+            alt="Gato persa en calma"
+            class="w-full h-[400px] object-cover rounded-[30px] shadow-2xl rotate-[-1deg]"
+          />
+        </div>
+      </div>
+    </header>
+
+    <article class="max-w-[800px] mx-auto">
+      
+      <section class="mb-16">
+        <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-serif italic border-l-4 border-[#FF6B6B] pl-8">
+          El persa es el diplomático del mundo felino. Su carácter pacífico lo hace un excelente compañero para casi cualquier otra mascota.
+        </p>
+      </section>
+
+      <section class="space-y-12 text-[17px] md:text-[19px] leading-[1.8] text-gray-800">
+        <p>
+          ¿Tienes un perro y quieres adoptar un persa? ¿O quizás ya tienes un persa y quieres traer un nuevo gatito? La buena noticia es que el <strong>gato persa</strong> suele ser muy tolerante. Sin embargo, su tranquilidad puede verse alterada por animales excesivamente activos o ruidosos.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">Convivencia con perros</h2>
+        <p>
+          Los persas se llevan sorprendentemente bien con los perros, siempre que estos últimos sean respetuosos. Razas de perros tranquilas o perros ya acostumbrados a los gatos son ideales. El persa no suele huir (lo que activa el instinto de caza del perro), sino que se queda quieto observando con indiferencia aristocrática.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">Con otros gatos</h2>
+        <p>
+          Agradecen la compañía de su propia especie, especialmente si también son gatos tranquilos. Un gato muy activo o agresivo puede estresar al persa, que prefiere ambientes libres de conflictos y persecuciones intensas por el pasillo a las 3 de la mañana.
+        </p>
+
+        <div class="relative py-8">
+           <div class="absolute inset-0 bg-green-50 -mx-4 md:-mx-20 rounded-[50px] -z-10"></div>
+           <h2 class="text-3xl font-bold text-[#111827] mb-6 tracking-tight">Truco de la presentación</h2>
+           <p>
+            Nunca los juntes de golpe. Usa el intercambio de olores (frotar una toalla en uno y dársela al otro para que la huela) y permite que se vean a través de una puerta entreabierta antes del contacto directo. El Feliway puede ayudar mucho a calmar los ánimos durante los primeros días.
+          </p>
+        </div>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">Animales pequeños</h2>
+        <p>
+          Aunque su instinto de caza está muy mitigado por siglos de cría de salón, sigue siendo un gato. Pájaros, hámsters o peces deben estar en recintos seguros. Un persa puede parecer dormido, pero un movimiento rápido de una presa pequeña puede despertar un chispazo de interés cazador.
+        </p>
+
+        <p class="text-center font-bold text-2xl text-[#FF6B6B] pt-10">
+            "La paz del hogar comienza con el respeto entre sus habitantes."
+          </p>
+      </section>
+
+      <footer class="mt-20 pt-10 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-8">
+        <a href="/principal/informacion" class="font-bold text-gray-400 hover:text-[#FF6B6B] transition-colors flex items-center gap-2">
+            ← Ver otros artículos
+        </a>
+      </footer>
+
+    </article>
+  </main>
+</Layout>
