@@ -1,0 +1,95 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import imgMitos from "../../assets/img/mitos_gato_persa.png";
+
+const meta = {
+  date: "2026-03-27",
+  readTime: "7 min",
+};
+---
+
+<Layout
+  title="5 Mitos falsos sobre la raza de gato persa"
+  description="¿Son perezosos? ¿No se pueden bañar? Desmentimos los mitos más comunes sobre los gatos persas para que conozcas la realidad de esta noble raza."
+>
+  <main class="min-h-screen bg-[#fcfcfc] pt-32 pb-20 px-4">
+    
+    <header class="max-w-[1000px] mx-auto mb-16 relative">
+      <div class="flex flex-col md:flex-row gap-10 items-center">
+        <div class="z-10 w-full md:w-1/2">
+          <nav class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#FF6B6B] mb-6">
+            <a href="/" class="hover:opacity-70">Inicio</a>
+            <span>/</span>
+            <a href="/informacion" class="hover:opacity-70">Información</a>
+          </nav>
+          <h1 class="text-4xl md:text-6xl font-black text-[#1F2933] leading-[1.1] mb-6 tracking-tighter">
+            Mitos y <span class="text-[#FF6B6B]">Leyendas.</span>
+          </h1>
+          <div class="flex items-center gap-6 text-sm text-gray-400 font-medium">
+             <span class="flex items-center gap-2">📅 {new Date(meta.date).toLocaleDateString("es-ES", { day: "2-digit", month: "long" })}</span>
+             <span class="flex items-center gap-2">⏱️ {meta.readTime} lectura</span>
+          </div>
+        </div>
+        <div class="relative w-full md:w-1/2">
+          <div class="absolute -inset-4 bg-[#F5F3FF] rounded-[40px] rotate-3 -z-10"></div>
+          <img
+            src={imgMitos.src}
+            alt="Gato persa majestuoso y místico"
+            class="w-full h-[400px] object-cover rounded-[30px] shadow-2xl rotate-[-1deg]"
+          />
+        </div>
+      </div>
+    </header>
+
+    <article class="max-w-[800px] mx-auto">
+      
+      <section class="mb-16">
+        <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-serif italic border-l-4 border-[#FF6B6B] pl-8">
+          La popularidad del persa ha generado leyendas urbanas que a menudo confunden a los futuros propietarios. Es hora de separar la ficción de la realidad.
+        </p>
+      </section>
+
+      <section class="space-y-12 text-[17px] md:text-[19px] leading-[1.8] text-gray-800">
+        <p>
+          Desde su origen en las caravanas de Oriente hasta nuestros salones modernos, el <strong>gato persa</strong> siempre ha estado rodeado de un aura de misterio. Sin embargo, algunos prejuicios sobre su carácter y cuidados pueden asustar a quienes sueñan con convivir con uno.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">Mito 1: "Son gatos de adorno y no juegan"</h2>
+        <p>
+          Si crees que un persa es un cojín que respira, estás muy equivocado. Aunque son menos hiperactivos que un Bengalí, los persas son cazadores natos y disfrutan de sesiones diarias de juego con plumas y pelotas. Su forma de jugar es más pausada y estratégica, pero su instinto está muy vivo.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">Mito 2: "Su mantenimiento es imposible"</h2>
+        <p>
+          No es imposible, es rutinario. Mucha gente piensa que hay que pasar horas cepillándolos, pero 15 minutos de calidad al día con un peine adecuado bastan para mantener su manto perfecto. El error es dejar que los nudos se acumulen; ahí es cuando el mantenimiento se vuelve una pesadilla.
+        </p>
+
+        <div class="relative py-8">
+           <div class="absolute inset-0 bg-purple-50 -mx-4 md:-mx-20 rounded-[50px] -z-10"></div>
+           <h2 class="text-3xl font-bold text-[#111827] mb-6 tracking-tight">Otros mitos comunes</h2>
+           <ul class="space-y-4 list-disc pl-6">
+             <li><strong>"Son poco inteligentes":</strong> Al contrario, los persas observan mucho y aprenden rutinas con facilidad.</li>
+             <li><strong>"Tienen mala salud de serie":</strong> Un gato de criador responsable (PKD Negativo) es tan sano como cualquier otra raza.</li>
+             <li><strong>"No se les puede bañar":</strong> Como hemos visto en otras guías, el baño es ESENCIAL para su tipo de pelo.</li>
+           </ul>
+        </div>
+
+        <p class="text-center font-bold text-2xl text-[#FF6B6B] pt-10">
+            "Conoce la realidad y amarás aún más a tu persa."
+          </p>
+      </section>
+
+      <footer class="mt-20 pt-10 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-8">
+        <a href="/principal/informacion" class="font-bold text-gray-400 hover:text-[#FF6B6B] transition-colors flex items-center gap-2">
+            ← Volver al blog
+        </a>
+        <div class="flex gap-4">
+            <a href="/principal/contacto" class="bg-[#FF6B6B] text-white font-bold py-4 px-8 rounded-full shadow-xl hover:-translate-y-1 transition-all">
+                ¿Has oído algo raro sobre los persas?
+            </a>
+        </div>
+      </footer>
+
+    </article>
+  </main>
+</Layout>

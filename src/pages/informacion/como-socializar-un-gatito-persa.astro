@@ -1,0 +1,95 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import imgSocializar from "../../assets/img/socializar_gatito_persa.png";
+
+const meta = {
+  date: "2026-03-27",
+  readTime: "9 min",
+};
+---
+
+<Layout
+  title="Cómo socializar a un gatito persa correctamente"
+  description="Guía paso a paso para socializar a un cachorro de gato persa. Presentación con personas, ruidos y otros animales para un gato adulto equilibrado."
+>
+  <main class="min-h-screen bg-[#fcfcfc] pt-32 pb-20 px-4">
+    
+    <header class="max-w-[1000px] mx-auto mb-16 relative">
+      <div class="flex flex-col md:flex-row gap-10 items-center">
+        <div class="z-10 w-full md:w-1/2">
+          <nav class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#FF6B6B] mb-6">
+            <a href="/" class="hover:opacity-70">Inicio</a>
+            <span>/</span>
+            <a href="/informacion" class="hover:opacity-70">Información</a>
+          </nav>
+          <h1 class="text-4xl md:text-6xl font-black text-[#1F2933] leading-[1.1] mb-6 tracking-tighter">
+            Crecer con <span class="text-[#FF6B6B]">Confianza.</span>
+          </h1>
+          <div class="flex items-center gap-6 text-sm text-gray-400 font-medium">
+             <span class="flex items-center gap-2">📅 {new Date(meta.date).toLocaleDateString("es-ES", { day: "2-digit", month: "long" })}</span>
+             <span class="flex items-center gap-2">⏱️ {meta.readTime} lectura</span>
+          </div>
+        </div>
+        <div class="relative w-full md:w-1/2">
+          <div class="absolute -inset-4 bg-[#ECFDF5] rounded-[40px] rotate-3 -z-10"></div>
+          <img
+            src={imgSocializar.src}
+            alt="Gatito persa aprendiendo a confiar"
+            class="w-full h-[400px] object-cover rounded-[30px] shadow-2xl rotate-[-1deg]"
+          />
+        </div>
+      </div>
+    </header>
+
+    <article class="max-w-[800px] mx-auto">
+      
+      <section class="mb-16">
+        <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-serif italic border-l-4 border-[#FF6B6B] pl-8">
+          Los primeros tres meses de vida marcan la personalidad de tu gato para siempre. Un persa bien socializado será un adulto sin miedos.
+        </p>
+      </section>
+
+      <section class="space-y-12 text-[17px] md:text-[19px] leading-[1.8] text-gray-800">
+        <p>
+          Socializar no es solo que el gato "se deje tocar". Es el proceso de exponer al <strong>gatito persa</strong> a todo tipo de estímulos (ruidos, olores, personas, otros animales) de forma positiva para que los normalice.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">El periodo sensible</h2>
+        <p>
+          Entre la semana 2 y la 12, el cerebro del gatito es como una esponja. Todo lo que experimente en este tiempo de forma agradable será aceptado como normal. Si un criador te entrega el gato con 8 semanas, se está saltando una fase crítica de aprendizaje junto a su madre y hermanos. <strong>Exige siempre las 12 semanas.</strong>
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">La manipulación diaria</h2>
+        <p>
+          Dado que el persa necesitará cuidados estéticos de por vida, la socialización debe incluir el tacto. Acostúmbralo desde pequeño a que le toques las patas (para cortar uñas), las orejas y, sobre todo, que el cepillo sea sinónimo de mimos y premios. Un gato que huye del peine es un problema de socialización temprana.
+        </p>
+
+        <div class="relative py-8">
+           <div class="absolute inset-0 bg-emerald-50 -mx-4 md:-mx-20 rounded-[50px] -z-10"></div>
+           <h2 class="text-3xl font-bold text-[#111827] mb-6 tracking-tight">Ejercicios de socialización</h2>
+           <ul class="space-y-4 list-disc pl-6">
+             <li><strong>Ruidos domésticos:</strong> Aspira o usa el secador cerca (sin apuntarle) y dale premios mientras el ruido suena.</li>
+             <li><strong>Visitas en casa:</strong> Deja que los amigos le ofrezcan comida húmeda, pero nunca dejes que le persigan para cogerlo.</li>
+             <li><strong>Transportín:</strong> Haz que sea una zona de juegos, no solo un objeto de transporte.</li>
+           </ul>
+        </div>
+
+        <p class="text-center font-bold text-2xl text-[#FF6B6B] pt-10">
+            "La paciencia hoy es un gato equilibrado mañana."
+          </p>
+      </section>
+
+      <footer class="mt-20 pt-10 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-8">
+        <a href="/principal/informacion" class="font-bold text-gray-400 hover:text-[#FF6B6B] transition-colors flex items-center gap-2">
+            ← Volver al blog
+        </a>
+        <div class="flex gap-4">
+            <a href="/principal/contacto" class="bg-[#FF6B6B] text-white font-bold py-4 px-8 rounded-full shadow-xl hover:-translate-y-1 transition-all">
+                ¿Gatito con miedos? Contacta
+            </a>
+        </div>
+      </footer>
+
+    </article>
+  </main>
+</Layout>

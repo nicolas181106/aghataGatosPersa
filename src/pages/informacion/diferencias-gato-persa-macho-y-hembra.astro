@@ -1,0 +1,95 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import imgSexos from "../../assets/img/diferencia_macho_hembra.png";
+
+const meta = {
+  date: "2026-03-27",
+  readTime: "8 min",
+};
+---
+
+<Layout
+  title="Diferencias entre gato persa macho y hembra"
+  description="¿Es mejor un persa macho o hembra? Analizamos las diferencias de tamaño, carácter, salud y comportamiento para ayudarte a decidir."
+>
+  <main class="min-h-screen bg-[#fcfcfc] pt-32 pb-20 px-4">
+    
+    <header class="max-w-[1000px] mx-auto mb-16 relative">
+      <div class="flex flex-col md:flex-row gap-10 items-center">
+        <div class="z-10 w-full md:w-1/2">
+          <nav class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#FF6B6B] mb-6">
+            <a href="/" class="hover:opacity-70">Inicio</a>
+            <span>/</span>
+            <a href="/informacion" class="hover:opacity-70">Información</a>
+          </nav>
+          <h1 class="text-4xl md:text-6xl font-black text-[#1F2933] leading-[1.1] mb-6 tracking-tighter">
+            Macho vs <span class="text-[#FF6B6B]">Hembra.</span>
+          </h1>
+          <div class="flex items-center gap-6 text-sm text-gray-400 font-medium">
+             <span class="flex items-center gap-2">📅 {new Date(meta.date).toLocaleDateString("es-ES", { day: "2-digit", month: "long" })}</span>
+             <span class="flex items-center gap-2">⏱️ {meta.readTime} lectura</span>
+          </div>
+        </div>
+        <div class="relative w-full md:w-1/2">
+          <div class="absolute -inset-4 bg-[#F5F3FF] rounded-[40px] rotate-3 -z-10"></div>
+          <img
+            src={imgSexos.src}
+            alt="Pareja de gatos persas"
+            class="w-full h-[400px] object-cover rounded-[30px] shadow-2xl rotate-[-1deg]"
+          />
+        </div>
+      </div>
+    </header>
+
+    <article class="max-w-[800px] mx-auto">
+      
+      <section class="mb-16">
+        <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-serif italic border-l-4 border-[#FF6B6B] pl-8">
+          Más allá de lo obvio, el sexo de un gato persa influye en su fisonomía y, en ocasiones, en la intensidad de su carácter.
+        </p>
+      </section>
+
+      <section class="space-y-12 text-[17px] md:text-[19px] leading-[1.8] text-gray-800">
+        <p>
+          Una de las preguntas más frecuentes al adoptar es: "¿Qué es mejor, macho o hembra?". En el caso del <strong>gato persa</strong>, ambos son compañeros excepcionales, pero existen matices que pueden inclinar la balanza según tu estilo de vida.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">El Macho: El gigante bonachón</h2>
+        <p>
+          Físicamente, los machos suelen ser más grandes, con cabezas más anchas y un collar de pelo más denso. Tradicionalmente, se dice que los machos castrados son más "falderos" y dependientes, manteniendo un carácter juguetón incluso en la madurez. Si buscas un gato que acepte mimos constantes, el macho es una apuesta segura.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">La Hembra: La reina de la casa</h2>
+        <p>
+          Las hembras tienden a ser más estilizadas y precisas. Aunque son igual de cariñosas, suelen ser más independientes y deciden ellas cuándo empieza y termina la sesión de caricias. Tienen un instinto más guardián y observador. Son ideales para personas que aprecian un compañero presente pero que respeta más los espacios.
+        </p>
+
+        <div class="relative py-8">
+           <div class="absolute inset-0 bg-purple-50 -mx-4 md:-mx-20 rounded-[50px] -z-10"></div>
+           <h2 class="text-3xl font-bold text-[#111827] mb-6 tracking-tight">Consideraciones de salud</h2>
+           <ul class="space-y-4 list-disc pl-6">
+             <li><strong>Machos:</strong> Mayor predisposición a cristales en la orina (obstrucciones uretrales). La dieta urinaria es clave.</li>
+             <li><strong>Hembras:</strong> La cirugía de esterilización es algo más compleja que en el macho, pero previene tumores de mama e infecciones de útero.</li>
+             <li><strong>Marcaje:</strong> Ambos pueden marcar territorio si no se castran a tiempo, aunque es más común en machos.</li>
+           </ul>
+        </div>
+
+        <p class="text-center font-bold text-2xl text-[#FF6B6B] pt-10">
+            "Cada gato es un mundo, independientemente de su sexo."
+          </p>
+      </section>
+
+      <footer class="mt-20 pt-10 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-8">
+        <a href="/principal/informacion" class="font-bold text-gray-400 hover:text-[#FF6B6B] transition-colors flex items-center gap-2">
+            ← Volver al blog
+        </a>
+        <div class="flex gap-4">
+            <a href="/principal/contacto" class="bg-[#FF6B6B] text-white font-bold py-4 px-8 rounded-full shadow-xl hover:-translate-y-1 transition-all">
+                ¿Macho o hembra? Te ayudamos
+            </a>
+        </div>
+      </footer>
+
+    </article>
+  </main>
+</Layout>

@@ -1,0 +1,95 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import imgFoto from "../../assets/img/gato_persa_curioso.png";
+
+const meta = {
+  date: "2026-03-27",
+  readTime: "6 min",
+};
+---
+
+<Layout
+  title="Cómo hacer las mejores fotos a tu gato persa"
+  description="Trucos de iluminación, composición y paciencia para capturar la belleza de tu gato persa con tu móvil o cámara profesional."
+>
+  <main class="min-h-screen bg-[#fcfcfc] pt-32 pb-20 px-4">
+    
+    <header class="max-w-[1000px] mx-auto mb-16 relative">
+      <div class="flex flex-col md:flex-row gap-10 items-center">
+        <div class="z-10 w-full md:w-1/2">
+          <nav class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#FF6B6B] mb-6">
+            <a href="/" class="hover:opacity-70">Inicio</a>
+            <span>/</span>
+            <a href="/informacion" class="hover:opacity-70">Información</a>
+          </nav>
+          <h1 class="text-4xl md:text-6xl font-black text-[#1F2933] leading-[1.1] mb-6 tracking-tighter">
+            Fotos de <span class="text-[#FF6B6B]">Revista.</span>
+          </h1>
+          <div class="flex items-center gap-6 text-sm text-gray-400 font-medium">
+             <span class="flex items-center gap-2">📅 {new Date(meta.date).toLocaleDateString("es-ES", { day: "2-digit", month: "long" })}</span>
+             <span class="flex items-center gap-2">⏱️ {meta.readTime} lectura</span>
+          </div>
+        </div>
+        <div class="relative w-full md:w-1/2">
+          <div class="absolute -inset-4 bg-[#FEF3C7] rounded-[40px] rotate-3 -z-10"></div>
+          <img
+            src={imgFoto.src}
+            alt="Gato persa posando"
+            class="w-full h-[400px] object-cover rounded-[30px] shadow-2xl rotate-[-1deg]"
+          />
+        </div>
+      </div>
+    </header>
+
+    <article class="max-w-[800px] mx-auto">
+      
+      <section class="mb-16">
+        <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-serif italic border-l-4 border-[#FF6B6B] pl-8">
+          Capturar el pelaje sedoso y la mirada profunda de un persa requiere algo más que un botón: requiere entender su luz.
+        </p>
+      </section>
+
+      <section class="space-y-12 text-[17px] md:text-[19px] leading-[1.8] text-gray-800">
+        <p>
+          Si tienes un <strong>gato persa</strong>, seguro que tu galería de fotos está llena de él. Pero, ¿cómo pasar de una foto normal a una imagen espectacular? Aquí tienes los secretos de los fotógrafos de mascotas.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">1. La luz natural es tu mejor aliada</h2>
+        <p>
+          Evita el flash a toda costa; no solo asusta al gato, sino que aplana su pelaje y crea ojos de colores extraños. Busca la luz suave de una ventana. La luz lateral resalta la textura de su pelo largo, dándole volumen y un aspecto mucho más premium.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">2. Ponte a su nivel</h2>
+        <p>
+          Las mejores fotos son las que se toman a la altura de sus ojos. No dispares desde arriba; túmbate en el suelo con él. Esto crea una sensación de intimidad y hace que el gato sea el verdadero protagonista de la escena.
+        </p>
+
+        <div class="relative py-8">
+           <div class="absolute inset-0 bg-yellow-50 -mx-4 md:-mx-20 rounded-[50px] -z-10"></div>
+           <h2 class="text-3xl font-bold text-[#111827] mb-6 tracking-tight">Trucos rápidos</h2>
+           <ul class="space-y-4 list-disc pl-6">
+             <li><strong>El sonido oculto:</strong> Usa un juguete silencioso para captar su atención y que mire a cámara.</li>
+             <li><strong>Fondos limpios:</strong> Un salón desordenado distrae. Busca una pared lisa o un fondo desenfocado.</li>
+             <li><strong>Detalles macro:</strong> Fotografía de cerca sus patas, su nariz o sus ojos; tienen mucha fuerza.</li>
+           </ul>
+        </div>
+
+        <p class="text-center font-bold text-2xl text-[#FF6B6B] pt-10">
+            "Una gran foto es un recuerdo para toda la vida."
+          </p>
+      </section>
+
+      <footer class="mt-20 pt-10 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-8">
+        <a href="/principal/informacion" class="font-bold text-gray-400 hover:text-[#FF6B6B] transition-colors flex items-center gap-2">
+            ← Volver al blog
+        </a>
+        <div class="flex gap-4">
+            <a href="/principal/contacto" class="bg-[#FF6B6B] text-white font-bold py-4 px-8 rounded-full shadow-xl hover:-translate-y-1 transition-all">
+                ¿Quieres mejores fotos?
+            </a>
+        </div>
+      </footer>
+
+    </article>
+  </main>
+</Layout>

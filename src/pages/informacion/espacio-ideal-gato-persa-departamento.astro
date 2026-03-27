@@ -1,0 +1,96 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import imgDepto from "../../assets/img/gato_persa_departamento.png";
+
+const meta = {
+  date: "2026-03-27",
+  readTime: "7 min",
+};
+---
+
+<Layout
+  title="Gatos Persas en departamentos: Consejos de espacio"
+  description="¿Vives en un piso pequeño? El gato persa es el compañero ideal. Aprende a adaptar tu departamento para un persa feliz y activo."
+>
+  <main class="min-h-screen bg-[#fcfcfc] pt-32 pb-20 px-4">
+    
+    <header class="max-w-[1000px] mx-auto mb-16 relative">
+      <div class="flex flex-col md:flex-row gap-10 items-center">
+        <div class="z-10 w-full md:w-1/2">
+          <nav class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#FF6B6B] mb-6">
+            <a href="/" class="hover:opacity-70">Inicio</a>
+            <span>/</span>
+            <a href="/informacion" class="hover:opacity-70">Información</a>
+          </nav>
+          <h1 class="text-4xl md:text-6xl font-black text-[#1F2933] leading-[1.1] mb-6 tracking-tighter">
+            Persas en <span class="text-[#FF6B6B]">Pisos.</span>
+          </h1>
+          <div class="flex items-center gap-6 text-sm text-gray-400 font-medium">
+             <span class="flex items-center gap-2">📅 {new Date(meta.date).toLocaleDateString("es-ES", { day: "2-digit", month: "long" })}</span>
+             <span class="flex items-center gap-2">⏱️ {meta.readTime} lectura</span>
+          </div>
+        </div>
+        <div class="relative w-full md:w-1/2">
+          <div class="absolute -inset-4 bg-[#F0F9FF] rounded-[40px] rotate-3 -z-10"></div>
+          <img
+            src={imgDepto.src}
+            alt="Gato persa en apartamento de lujo"
+            class="w-full h-[400px] object-cover rounded-[30px] shadow-2xl rotate-[-1deg]"
+          />
+        </div>
+      </div>
+    </header>
+
+    <article class="max-w-[800px] mx-auto">
+      
+      <section class="mb-16">
+        <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-serif italic border-l-4 border-[#FF6B6B] pl-8">
+          El persa es el rey de la vida urbana. Su temperamento tranquilo lo convierte en el residente perfecto para espacios reducidos.
+        </p>
+      </section>
+
+      <section class="space-y-12 text-[17px] md:text-[19px] leading-[1.8] text-gray-800">
+        <p>
+          A diferencia de otras razas más activas que necesitan correr y cazar, el <strong>gato persa</strong> disfruta de la paz del hogar. Sin embargo, vivir en un departamento no significa que el gato deba estar en un entorno estéril. El enriquecimiento ambiental es clave.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">Verticalidad: Aprovecha las paredes</h2>
+        <p>
+          En un piso pequeño, el suelo es limitado, pero las paredes son infinitas. Instalar estanterías para gatos o torres altas permite que tu persa observe su reino desde las alturas, algo que les da seguridad y fomenta el ejercicio moderado sin ocupar mucho espacio.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">La importancia de las ventanas</h2>
+        <p>
+          Para un gato de interior, la ventana es su televisión. Colocar una hamaca de ventana o un rascador cerca de un ventanal le dará horas de entretenimiento observando pájaros y el movimiento de la calle. Eso sí, <strong>la seguridad es primordial:</strong> instala redes de protección resistentes.
+        </p>
+
+        <div class="relative py-8">
+           <div class="absolute inset-0 bg-blue-50 -mx-4 md:-mx-20 rounded-[50px] -z-10"></div>
+           <h2 class="text-3xl font-bold text-[#111827] mb-6 tracking-tight">Checklist para tu departamento</h2>
+           <ul class="space-y-4 list-disc pl-6">
+             <li>Rascadores estables para evitar el estrés del mobiliario.</li>
+             <li>Arenero en una zona discreta y bien ventilada (los persas son muy pulcros).</li>
+             <li>Fuentes de agua para incentivar la hidratación en ambientes con calefacción.</li>
+             <li>Escondites tranquilos donde pueda refugiarse si hay visitas.</li>
+           </ul>
+        </div>
+
+        <p class="text-center font-bold text-2xl text-[#FF6B6B] pt-10">
+            "No importa el tamaño del piso, sino el amor que haya en él."
+          </p>
+      </section>
+
+      <footer class="mt-20 pt-10 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-8">
+        <a href="/principal/informacion" class="font-bold text-gray-400 hover:text-[#FF6B6B] transition-colors flex items-center gap-2">
+            ← Volver al blog
+        </a>
+        <div class="flex gap-4">
+            <a href="/principal/contacto" class="bg-[#FF6B6B] text-white font-bold py-4 px-8 rounded-full shadow-xl hover:-translate-y-1 transition-all">
+                ¿Necesitas consejos de decoración?
+            </a>
+        </div>
+      </footer>
+
+    </article>
+  </main>
+</Layout>

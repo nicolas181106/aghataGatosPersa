@@ -1,0 +1,96 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import imgVacunas from "../../assets/img/vacunacion_gato_persa.png";
+
+const meta = {
+  date: "2026-03-27",
+  readTime: "7 min",
+};
+---
+
+<Layout
+  title="Calendario de Vacunación para Gatos Persas"
+  description="Mantén a tu persa protegido. Guía completa sobre las vacunas obligatorias y recomendadas, plazos y refuerzos para una vida larga y sana."
+>
+  <main class="min-h-screen bg-[#fcfcfc] pt-32 pb-20 px-4">
+    
+    <header class="max-w-[1000px] mx-auto mb-16 relative">
+      <div class="flex flex-col md:flex-row gap-10 items-center">
+        <div class="z-10 w-full md:w-1/2">
+          <nav class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#FF6B6B] mb-6">
+            <a href="/" class="hover:opacity-70">Inicio</a>
+            <span>/</span>
+            <a href="/informacion" class="hover:opacity-70">Información</a>
+          </nav>
+          <h1 class="text-4xl md:text-6xl font-black text-[#1F2933] leading-[1.1] mb-6 tracking-tighter">
+            Salud y <span class="text-[#FF6B6B]">Prevención.</span>
+          </h1>
+          <div class="flex items-center gap-6 text-sm text-gray-400 font-medium">
+             <span class="flex items-center gap-2">📅 {new Date(meta.date).toLocaleDateString("es-ES", { day: "2-digit", month: "long" })}</span>
+             <span class="flex items-center gap-2">⏱️ {meta.readTime} lectura</span>
+          </div>
+        </div>
+        <div class="relative w-full md:w-1/2">
+          <div class="absolute -inset-4 bg-[#F0FDF4] rounded-[40px] rotate-3 -z-10"></div>
+          <img
+            src={imgVacunas.src}
+            alt="Vacunación de gato persa cachorro"
+            class="w-full h-[400px] object-cover rounded-[30px] shadow-2xl rotate-[-1deg]"
+          />
+        </div>
+      </div>
+    </header>
+
+    <article class="max-w-[800px] mx-auto">
+      
+      <section class="mb-16">
+        <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-serif italic border-l-4 border-[#FF6B6B] pl-8">
+          Incluso si tu persa nunca sale de casa, las vacunas son su escudo invisible contra enfermedades que puedes traer tú mismo en los zapatos.
+        </p>
+      </section>
+
+      <section class="space-y-12 text-[17px] md:text-[19px] leading-[1.8] text-gray-800">
+        <p>
+          El sistema inmunológico del <strong>gato persa</strong> necesita ayuda desde las primeras semanas de vida. Seguir un calendario estricto de vacunación no es una opción, es una responsabilidad que evita sufrimientos innecesarios y facturas veterinarias astronómicas a futuro.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">Las primeras dosis: El inicio del camino</h2>
+        <p>
+          Todo empieza a las 8 semanas con la vacuna **Trivalente felina**, que protege contra la Rinotraqueitis, el Calicivirus y la Panleucopenia. A las 12 semanas se suele poner el refuerzo de la trivalente y, según el riesgo, la vacuna contra la Leucemia Felina. 
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">La Rabia: Obligatoriedad legal</h2>
+        <p>
+          Aunque un gato de interior tiene riesgo cero de contraer la rabia, en muchas comunidades autónomas y países es obligatoria por ley. Además, es indispensable si tienes pensado viajar con tu gato fuera de tu región o país.
+        </p>
+
+        <div class="relative py-8">
+           <div class="absolute inset-0 bg-green-50 -mx-4 md:-mx-20 rounded-[50px] -z-10"></div>
+           <h2 class="text-3xl font-bold text-[#111827] mb-6 tracking-tight">Calendario Resumido</h2>
+           <ul class="space-y-4 list-disc pl-6">
+             <li><strong>8 semanas:</strong> Trivalente Felina (1ª dosis).</li>
+             <li><strong>12 semanas:</strong> Trivalente Felina (Refuerzo) + Leucemia (si aplica).</li>
+             <li><strong>16 semanas:</strong> Rabia (si es obligatoria) y Microchip.</li>
+             <li><strong>Anual:</strong> Refuerzo de Trivalente y Leucemia.</li>
+           </ul>
+        </div>
+
+        <p class="text-center font-bold text-2xl text-[#FF6B6B] pt-10">
+            "Más vale una vacuna a tiempo que mil tratamientos mañana."
+          </p>
+      </section>
+
+      <footer class="mt-20 pt-10 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-8">
+        <a href="/principal/informacion" class="font-bold text-gray-400 hover:text-[#FF6B6B] transition-colors flex items-center gap-2">
+            ← Volver al blog
+        </a>
+        <div class="flex gap-4">
+            <a href="/principal/contacto" class="bg-[#FF6B6B] text-white font-bold py-4 px-8 rounded-full shadow-xl hover:-translate-y-1 transition-all">
+                ¿Dudas sobre el calendario?
+            </a>
+        </div>
+      </footer>
+
+    </article>
+  </main>
+</Layout>

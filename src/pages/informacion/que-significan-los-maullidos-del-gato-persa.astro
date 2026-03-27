@@ -1,0 +1,100 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import imgMaullidos from "../../assets/img/maullidos_gato_persa.png";
+
+const meta = {
+  date: "2026-03-27",
+  readTime: "7 min",
+};
+---
+
+<Layout
+  title="¿Qué significan los maullidos de tu gato persa?"
+  description="Aprende a interpretar el lenguaje vocal de tu gato persa. Desde el maullido de hambre hasta el de demanda de afecto o malestar."
+>
+  <main class="min-h-screen bg-[#fcfcfc] pt-32 pb-20 px-4">
+    
+    <header class="max-w-[1000px] mx-auto mb-16 relative">
+      <div class="flex flex-col md:flex-row gap-10 items-center">
+        <div class="z-10 w-full md:w-1/2">
+          <nav class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#FF6B6B] mb-6">
+            <a href="/" class="hover:opacity-70">Inicio</a>
+            <span>/</span>
+            <a href="/informacion" class="hover:opacity-70">Información</a>
+          </nav>
+          <h1 class="text-4xl md:text-6xl font-black text-[#1F2933] leading-[1.1] mb-6 tracking-tighter">
+            Voz y <span class="text-[#FF6B6B]">Lenguaje.</span>
+          </h1>
+          <div class="flex items-center gap-6 text-sm text-gray-400 font-medium">
+             <span class="flex items-center gap-2">📅 {new Date(meta.date).toLocaleDateString("es-ES", { day: "2-digit", month: "long" })}</span>
+             <span class="flex items-center gap-2">⏱️ {meta.readTime} lectura</span>
+          </div>
+        </div>
+        <div class="relative w-full md:w-1/2">
+          <div class="absolute -inset-4 bg-[#FFF1F2] rounded-[40px] rotate-3 -z-10"></div>
+          <img
+            src={imgMaullidos.src}
+            alt="Gato persa maullando comunicativo"
+            class="w-full h-[400px] object-cover rounded-[30px] shadow-2xl rotate-[-1deg]"
+          />
+        </div>
+      </div>
+    </header>
+
+    <article class="max-w-[800px] mx-auto">
+      
+      <section class="mb-16">
+        <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-serif italic border-l-4 border-[#FF6B6B] pl-8">
+          Los persas son conocidos por ser gatos silenciosos, por eso, cuando maúllan, es porque realmente tienen algo importante que decirte.
+        </p>
+      </section>
+
+      <section class="space-y-12 text-[17px] md:text-[19px] leading-[1.8] text-gray-800">
+        <p>
+          Aunque el <strong>gato persa</strong> prefiere comunicarse con la mirada y el lenguaje corporal, posee un repertorio de sonidos delicados. Entender sus matices te ayudará a fortalecer vuestro vínculo y a detectar si algo no va bien.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">El maullido de bienvenida</h2>
+        <p>
+          Es un sonido corto y suave, casi como un trino. Lo usan cuando entras en casa después de unas horas fuera. Es su forma de decir "Hola, te he echado de menos". Suele ir acompañado de una cola erguida con la punta ligeramente doblada.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">Demanda de atención o comida</h2>
+        <p>
+          Si tu persa se planta delante de ti y emite un maullido más prolongado y persistente, suele ser una solicitud clara. Puede que su bol de agua esté vacío, que quiera sus premios favoritos o, simplemente, que haya llegado la hora de su sesión de cepillado diaria.
+        </p>
+
+        <div class="relative py-8">
+           <div class="absolute inset-0 bg-pink-50 -mx-4 md:-mx-20 rounded-[50px] -z-10"></div>
+           <h2 class="text-3xl font-bold text-[#111827] mb-6 tracking-tight">Sonidos de alerta social</h2>
+           <ul class="space-y-4 list-disc pl-6">
+             <li><strong>El gorjeo:</strong> Un sonido entre el maullido y el ronroneo que indica excitación (por ejemplo, al ver un pájaro).</li>
+             <li><strong>El bufido:</strong> Señal de miedo o defensa. El persa lo usa raramente, pero indica que se siente amenazado.</li>
+             <li><strong>El maullido agudo:</strong> Puede indicar dolor físico repentino (un pisotón accidental o un tirón de nudo).</li>
+           </ul>
+        </div>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">¿Por qué mi persa no maúlla?</h2>
+        <p>
+          No te preocupes si tu gato es casi mudo. Los persas son la raza más calmada y menos vocal. Muchos propietarios pasan semanas sin oír un solo maullido. Mientras su lenguaje corporal sea positivo y coma bien, es simplemente su personalidad aristocrática.
+        </p>
+
+        <p class="text-center font-bold text-2xl text-[#FF6B6B] pt-10">
+            "Escucha con el corazón y entenderás hasta su silencio."
+          </p>
+      </section>
+
+      <footer class="mt-20 pt-10 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-8">
+        <a href="/principal/informacion" class="font-bold text-gray-400 hover:text-[#FF6B6B] transition-colors flex items-center gap-2">
+            ← Volver al blog
+        </a>
+        <div class="flex gap-4">
+            <a href="/principal/contacto" class="bg-[#FF6B6B] text-white font-bold py-4 px-8 rounded-full shadow-xl hover:-translate-y-1 transition-all">
+                ¿Tu gato hace sonidos raros?
+            </a>
+        </div>
+      </footer>
+
+    </article>
+  </main>
+</Layout>

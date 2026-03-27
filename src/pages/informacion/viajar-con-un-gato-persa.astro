@@ -1,0 +1,101 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import imgViaje from "../../assets/img/viajar_con_gato_persa.png";
+
+const meta = {
+  date: "2026-03-27",
+  readTime: "9 min",
+};
+---
+
+<Layout
+  title="Guía para viajar seguro con tu gato persa"
+  description="Consejos para viajar con un gato persa en coche, tren o avión. Preparación del transportín, medicación y reducción de estrés durante el trayecto."
+>
+  <main class="min-h-screen bg-[#fcfcfc] pt-32 pb-20 px-4">
+    
+    <header class="max-w-[1000px] mx-auto mb-16 relative">
+      <div class="flex flex-col md:flex-row gap-10 items-center">
+        <div class="z-10 w-full md:w-1/2">
+          <nav class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#FF6B6B] mb-6">
+            <a href="/" class="hover:opacity-70">Inicio</a>
+            <span>/</span>
+            <a href="/informacion" class="hover:opacity-70">Información</a>
+          </nav>
+          <h1 class="text-4xl md:text-6xl font-black text-[#1F2933] leading-[1.1] mb-6 tracking-tighter">
+            Viajes Sin <span class="text-[#FF6B6B]">Estrés.</span>
+          </h1>
+          <div class="flex items-center gap-6 text-sm text-gray-400 font-medium">
+             <span class="flex items-center gap-2">📅 {new Date(meta.date).toLocaleDateString("es-ES", { day: "2-digit", month: "long" })}</span>
+             <span class="flex items-center gap-2">⏱️ {meta.readTime} lectura</span>
+          </div>
+        </div>
+        <div class="relative w-full md:w-1/2">
+          <div class="absolute -inset-4 bg-[#FFF7ED] rounded-[40px] rotate-3 -z-10"></div>
+          <img
+            src={imgViaje.src}
+            alt="Gato persa viajando en transportín de lujo"
+            class="w-full h-[400px] object-cover rounded-[30px] shadow-2xl rotate-[-1deg]"
+          />
+        </div>
+      </div>
+    </header>
+
+    <article class="max-w-[800px] mx-auto">
+      
+      <section class="mb-16">
+        <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-serif italic border-l-4 border-[#FF6B6B] pl-8">
+          Los persas son animales de rutinas. Moverlos de su entorno puede ser un desafío, pero con la preparación adecuada, el viaje puede ser una experiencia tranquila.
+        </p>
+      </section>
+
+      <section class="space-y-12 text-[17px] md:text-[19px] leading-[1.8] text-gray-800">
+        <p>
+          Ya sea una mudanza o unas vacaciones, viajar con un <strong>gato persa</strong> requiere planificación quirúrgica. Su complexión braquicéfala (cara chata) los hace más sensibles al calor y al estrés respiratorio, por lo que nunca debemos tomarnos un viaje a la ligera.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">1. Familiarización con el transportín</h2>
+        <p>
+          El transportín no debe aparecer solo cuando vamos al veterinario. Déjalo abierto en el salón con una manta cómoda y premios dentro semanas antes del viaje. El objetivo es que tu persa lo vea como un refugio seguro, no como una jaula de castigo.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">2. El control de la temperatura</h2>
+        <p>
+          Debido a su nariz corta, los persas regulan peor su temperatura corporal. Si viajas en coche, asegúrate de que el aire acondicionado llegue bien a la zona del transportín. <strong>Nunca dejes a un gato persa en un coche estacionado</strong>, ni siquiera por 5 minutos; el riesgo de golpe de calor es altísimo.
+        </p>
+
+        <div class="relative py-8">
+           <div class="absolute inset-0 bg-orange-50 -mx-4 md:-mx-20 rounded-[50px] -z-10"></div>
+           <h2 class="text-3xl font-bold text-[#111827] mb-6 tracking-tight">Kit esencial de viaje</h2>
+           <ul class="space-y-4 list-disc pl-6">
+             <li>Agua fresca y un cuenco portátil.</li>
+             <li>Feromonas sintéticas (Feliway) en spray para el transportín.</li>
+             <li>Toallitas húmedas para limpiar posibles accidentes.</li>
+             <li>Su cartilla de vacunación y microchip al día.</li>
+           </ul>
+        </div>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">¿Avión o Tren?</h2>
+        <p>
+          En avión, los persas deben viajar siempre en cabina contigo bajo el asiento. Muchas aerolíneas prohíben llevar gatos braquicéfalos en la bodega debido al riesgo de muerte por asfixia. Infórmate bien sobre las normativas de la compañía antes de comprar el billete.
+        </p>
+
+        <p class="text-center font-bold text-2xl text-[#FF6B6B] pt-10">
+            "Un viaje seguro es el mejor comienzo para un nuevo destino."
+          </p>
+      </section>
+
+      <footer class="mt-20 pt-10 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-8">
+        <a href="/principal/informacion" class="font-bold text-gray-400 hover:text-[#FF6B6B] transition-colors flex items-center gap-2">
+            ← Volver al blog
+        </a>
+        <div class="flex gap-4">
+            <a href="/principal/contacto" class="bg-[#FF6B6B] text-white font-bold py-4 px-8 rounded-full shadow-xl hover:-translate-y-1 transition-all">
+                Dudas sobre transporte?
+            </a>
+        </div>
+      </footer>
+
+    </article>
+  </main>
+</Layout>

@@ -1,0 +1,95 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import imgFamosos from "../../assets/img/gato_persa_chinchilla.png";
+
+const meta = {
+  date: "2026-03-27",
+  readTime: "8 min",
+};
+---
+
+<Layout
+  title="Gatos Persas famosos que hicieron historia"
+  description="De los palacios de la Reina Victoria a la gran pantalla. Descubre a los gatos persas más influyentes y famosos de la historia y la cultura pop."
+>
+  <main class="min-h-screen bg-[#fcfcfc] pt-32 pb-20 px-4">
+    
+    <header class="max-w-[1000px] mx-auto mb-16 relative">
+      <div class="flex flex-col md:flex-row gap-10 items-center">
+        <div class="z-10 w-full md:w-1/2">
+          <nav class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#FF6B6B] mb-6">
+            <a href="/" class="hover:opacity-70">Inicio</a>
+            <span>/</span>
+            <a href="/informacion" class="hover:opacity-70">Información</a>
+          </nav>
+          <h1 class="text-4xl md:text-6xl font-black text-[#1F2933] leading-[1.1] mb-6 tracking-tighter">
+            Iconos y <span class="text-[#FF6B6B]">Leyendas.</span>
+          </h1>
+          <div class="flex items-center gap-6 text-sm text-gray-400 font-medium">
+             <span class="flex items-center gap-2">📅 {new Date(meta.date).toLocaleDateString("es-ES", { day: "2-digit", month: "long" })}</span>
+             <span class="flex items-center gap-2">⏱️ {meta.readTime} lectura</span>
+          </div>
+        </div>
+        <div class="relative w-full md:w-1/2">
+          <div class="absolute -inset-4 bg-[#F1F5F9] rounded-[40px] rotate-3 -z-10"></div>
+          <img
+            src={imgFamosos.src}
+            alt="Gato persa majestuoso"
+            class="w-full h-[400px] object-cover rounded-[30px] shadow-2xl rotate-[-1deg]"
+          />
+        </div>
+      </div>
+    </header>
+
+    <article class="max-w-[800px] mx-auto">
+      
+      <section class="mb-16">
+        <p class="text-xl md:text-2xl text-gray-700 leading-relaxed font-serif italic border-l-4 border-[#FF6B6B] pl-8">
+          El gato persa no solo ha conquistado nuestros hogares, sino también los palacios reales y los corazones de millones de espectadores.
+        </p>
+      </section>
+
+      <section class="space-y-12 text-[17px] md:text-[19px] leading-[1.8] text-gray-800">
+        <p>
+          Desde su llegada a Europa en el siglo XVII, el <strong>gato persa</strong> ha sido sinónimo de lujo y sofisticación. Esta raza ha acompañado a personalidades históricas y se ha convertido en una estrella mediática por derecho propio.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">Los Persas de la Reina Victoria</h2>
+        <p>
+          Si el gato persa es tan popular hoy, se lo debemos en gran parte a la Reina Victoria de Inglaterra. Sus ejemplares blancos y azules eran el orgullo de la corte y pusieron de moda a la raza entre la aristocracia británica, extendiéndose después por todo el mundo.
+        </p>
+
+        <h2 class="text-3xl font-bold text-[#111827] mt-16 tracking-tight">Mr. Tinkles y Snowbell</h2>
+        <p>
+          En el cine moderno, hemos visto al persa interpretar papeles inolvidables. Desde el villano maquiavélico Mr. Tinkles en "Como perros y gatos" hasta el elegante Snowbell en "Stuart Little", la industria ha sabido aprovechar su porte aristocrático y su expresiva mirada para crear personajes icónicos.
+        </p>
+
+        <div class="relative py-8">
+           <div class="absolute inset-0 bg-slate-50 -mx-4 md:-mx-20 rounded-[50px] -z-10"></div>
+           <h2 class="text-3xl font-bold text-[#111827] mb-6 tracking-tight">Persas Influyentes</h2>
+           <ul class="space-y-4 list-disc pl-6">
+             <li><strong>Choupette:</strong> El gato de Karl Lagerfeld, icono de la moda con su propia fortuna.</li>
+             <li><strong>Los gatos de Bond:</strong> El persa blanco de Blofeld es el símbolo definitivo del villano de cine.</li>
+             <li><strong>Gatos en Instagram:</strong> Hoy en día, persas como Suki o Grumpy Cat (aunque Grumpy fuera mestizo, su cara recordaba a un persa) dominan las redes sociales.</li>
+           </ul>
+        </div>
+
+        <p class="text-center font-bold text-2xl text-[#FF6B6B] pt-10">
+            "De la historia al salón de casa, el persa siempre brilla."
+          </p>
+      </section>
+
+      <footer class="mt-20 pt-10 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-8">
+        <a href="/principal/informacion" class="font-bold text-gray-400 hover:text-[#FF6B6B] transition-colors flex items-center gap-2">
+            ← Volver al blog
+        </a>
+        <div class="flex gap-4">
+            <a href="/principal/contacto" class="bg-[#FF6B6B] text-white font-bold py-4 px-8 rounded-full shadow-xl hover:-translate-y-1 transition-all">
+                ¿Conocías a estos gatos?
+            </a>
+        </div>
+      </footer>
+
+    </article>
+  </main>
+</Layout>
