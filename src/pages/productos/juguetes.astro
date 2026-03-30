@@ -11,205 +11,249 @@ import art8 from "./../../assets/img/juguetes/art8.jpg";
 
 const juguetes = [
   {
-    a: "https://amzn.to/4goxa8d",
+    a: "https://amzn.to/4sFKsT4",
     img: art1.src,
     alt: "Juguete interactivo para gatos persas con varitas y plumas",
     h2: "Juguete para Gatos – Varitas con Plumas y Cintas",
     p: "Set de juguetes interactivos con varitas de plumas y cintas de arcoíris. Perfecto para sesiones cortas de juego diario y para fortalecer el vínculo con tu gato.",
-    badge: "Top interactivo",
-    info: "Interactivo · Varitas · Para gatos adultos y jóvenes",
   },
   {
-    a: "https://amzn.to/467aO7T",
+    a: "https://amzn.to/413xFxU",
     img: art2.src,
     alt: "Set de juguetes variados para gatos persas: ratones, plumas y pelotas",
     h2: "Set de Juguetes para Gatos – Ratones, Bolas y Plumas",
     p: "Pack de 16 juguetes variados: ratones, pelotas y plumas de colores. Ideal para hogares con uno o varios gatos que necesitan variedad y estímulo.",
-    badge: "Más vendido",
-    info: "Pack variado · Ratones, pelotas y plumas",
   },
   {
-    a: "https://amzn.to/3VR4riZ",
+    a: "https://amzn.to/4lZAcCT",
     img: art3.src,
     alt: "Túnel Lionto para gatos persas: plegable, resistente y con pelota integrada",
     h2: "Túnel para Gatos Lionto – Resistente y Plegable",
     p: "Túnel interactivo plegable con varias entradas y pelota integrada. Ideal para gatos curiosos que disfrutan escondiéndose y corriendo de un lado a otro.",
-    badge: "Perfecto para casas pequeñas",
-    info: "Túnel plegable · Interior · Con pelota",
   },
   {
-    a: "https://amzn.to/3VyLMIN",
+    a: "https://amzn.to/4m0Flu9",
     img: art4.src,
     alt: "Juguete masticable con cuerda de algodón e hierba gatera",
     h2: "Juguete de Dentición con Hierba Gatera",
     p: "Juguete masticable hecho de cuerda de algodón enrollada a mano con hierba gatera. Ayuda a la higiene dental y aporta estimulación suave para gatos de interior.",
-    badge: "Con catnip",
-    info: "Masticable · Hierba gatera · Higiene dental",
   },
   {
-    a: "https://amzn.to/3Ko4iRB",
+    a: "https://amzn.to/3NCKgoF",
     img: art5.src,
     alt: "Juguete automático para gatos con ventosas y movimiento",
     h2: "JOPHEK Juguetes Automáticos para Gatos",
     p: "Juguete automático con modos manual y automático. Gracias a las ventosas, se fija en superficies lisas para que el gato pueda jugar incluso cuando no estás.",
-    badge: "Automático",
-    info: "Automático · Con ventosa · Para interior",
   },
   {
-    a: "https://amzn.to/4mAOw3m",
+    a: "https://amzn.to/47yccRd",
     img: art6.src,
     alt: "Juguetes resistentes para gatos",
     h2: "Trixie Accesorio para Mascotas",
     p: "Juguete resistente pensado para soportar las garras y mordiscos de gatos activos. Ideal como complemento a otros juguetes más suaves.",
-    badge: "Resistente",
-    info: "Resistente · Uso diario",
   },
   {
-    a: "https://amzn.to/4pJ8iwc",
+    a: "https://amzn.to/3NVxGRs",
     img: art7.src,
     alt: "Muelle en espiral para gatos en varios colores",
     h2: "TaimeiMao – 20 Muelles en Espiral para Gatos",
     p: "Set de 20 muelles de colores que rebotan con el mínimo movimiento del gato. Muy ligeros y llamativos para estimular el juego independiente.",
-    badge: "Juego independiente",
-    info: "Pack 20 uds · Juego autónomo",
   },
   {
-    a: "https://amzn.to/4mv3gAB",
+    a: "https://amzn.to/4c0FOrV",
     img: art8.src,
     alt: "Cuerdas con hierba gatera para gatos",
     h2: "Juguete de Cuerda con Hierba Gatera (3 uds)",
     p: "Pack de 3 cuerdas con hierba gatera que invitan a morder, jugar y rodar. Ideal para gatos que disfrutan con el aroma del catnip.",
-    badge: "Capricho con catnip",
-    info: "Catnip · 3 unidades · Para gatos adultos",
   },
 ];
 ---
 
 <Layout
-  title="Juguetes para Gatos | Mejores artículos y accesorios 2025"
+  title={`Juguetes para Gatos | Mejores artículos y accesorios ${new Date().getFullYear()}`}
   description="Descubre los mejores juguetes para gatos domésticos: interactivos, túneles, plumas, ratones y bolas para mantener a tu gato activo y feliz."
   keywords="juguete para gato, juguetes para gatos, juguete para gato persa, juguetes para gatos persa, juguetes gatos, juguetes interactivos para gatos, juguetes para gatitos, juguetes y accesorios para gatos persas, mejores juguetes para gatos"
 >
   <main class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen pb-16 mt-20">
-    <section class="bg-gradient-to-r from-[#FF6B6B] via-[#FF8A8A] to-[#FFC0C0] text-white">
+    <section
+      class="bg-gradient-to-r from-[#FF6B6B] via-[#FF8A8A] to-[#FFC0C0] text-white"
+    >
       <div class="max-w-[1200px] mx-auto px-6 sm:px-10 py-8 sm:py-10">
         <nav class="text-[11px] sm:text-xs text-white/80 mb-2">
           <a href="/" class="hover:underline">Inicio</a>
           <span class="mx-1">/</span>
           <a href="/principal/productos" class="hover:underline">Productos</a>
           <span class="mx-1">/</span>
-          <span class="font-semibold">Juguetes para gatos</span>
+          <span class="font-semibold text-white">Juguetes para gatos</span>
         </nav>
 
-        <h1 class="text-2xl sm:text-3xl md:text-[32px] font-extrabold leading-snug">
-          Juguetes para gatos – Guía y recomendaciones 2025
+        <h1
+          class="text-2xl sm:text-3xl md:text-[32px] font-extrabold leading-snug"
+        >
+          Juguetes para gatos – Guía y recomendaciones {
+            new Date().getFullYear()
+          }
         </h1>
         <p class="mt-2 text-[13px] sm:text-sm text-white/90 max-w-2xl">
-          Selección de <strong>juguetes para gatos domésticos y gatos persas</strong>: varitas, pelotas, muelles,
-          túneles y juguetes con hierba gatera para que se mantenga activo sin agobios.
+          Selección de <strong
+            >juguetes para gatos domésticos y gatos persas</strong
+          >: varitas, pelotas, muelles, túneles y juguetes con hierba gatera
+          para que se mantenga activo sin agobios.
         </p>
         <p class="mt-2 text-[12px] sm:text-xs text-white/80 max-w-2xl">
-          Recuerda combinar ratos de juego contigo con juguetes que pueda usar solo, sobre todo si pasa muchas horas en casa.
+          Recuerda combinar ratos de juego contigo con juguetes que pueda usar
+          solo, sobre todo si pasa muchas horas en casa.
         </p>
 
         <div class="mt-4 flex flex-wrap gap-2 text-[11px] sm:text-[12px]">
-          <span class="px-3 py-1 rounded-full bg-white/15 border border-white/30">
+          <span
+            class="px-3 py-1 rounded-full bg-white/15 border border-white/30"
+          >
             Interactivos
           </span>
-          <span class="px-3 py-1 rounded-full bg-white/10 border border-white/20">
+          <span
+            class="px-3 py-1 rounded-full bg-white/10 border border-white/20"
+          >
             Con hierba gatera
           </span>
-          <span class="px-3 py-1 rounded-full bg-white/10 border border-white/20">
+          <span
+            class="px-3 py-1 rounded-full bg-white/10 border border-white/20"
+          >
             Para juego independiente
           </span>
-          <span class="px-3 py-1 rounded-full bg-white/10 border border-white/20">
+          <span
+            class="px-3 py-1 rounded-full bg-white/10 border border-white/20"
+          >
             Para gatitos
           </span>
         </div>
       </div>
     </section>
 
-    <section class="max-w-[325px] lg:max-w-[900px] mx-auto mt-10 p-6 bg-white rounded-2xl shadow-md text-gray-700 pop">
-      <h2 class="text-xl font-extrabold text-[#FF6B6B] mb-3 text-center">
-        Cómo elegir juguetes para tu gato (y para un persa)
+    <section
+      class="max-w-full sm:max-w-[600px] lg:max-w-4xl sm:mx-auto sm:mt-12 p-8 bg-white sm:rounded-3xl shadow-xl border border-gray-100 text-gray-800 pop"
+    >
+      <h2
+        class="text-2xl lg:text-3xl font-black text-[#FF6B6B] mb-6 text-center tracking-tight"
+      >
+        El lenguaje de los gatos: ¿Qué te quiere decir?
       </h2>
-      <p class="mb-3 text-sm sm:text-[15px]">
-        Los <strong>juguetes para gatos</strong> no solo sirven para entretener: también ayudan a mantener su mente activa,
-        reducir el estrés y evitar el aburrimiento. Los gatos persas suelen disfrutar de juegos más tranquilos,
-        con movimientos suaves y sesiones cortas.
-      </p>
-      <p class="text-sm sm:text-[15px]">
-        Combina juguetes <strong>interactivos</strong> (varitas, plumas) con opciones de <strong>juego independiente</strong>
-        (muelles, pelotas, túneles). Lo importante no es la intensidad, sino la constancia y que el gato se sienta seguro
-        mientras explora y persigue.
-      </p>
+
+      <div class="space-y-5 text-lg leading-relaxed text-gray-600">
+        <p>
+          Entender a tu gato va mucho más allá de los maullidos. Su <strong
+            >lenguaje corporal</strong
+          > es la herramienta clave para saber cómo se siente en cada momento. Observar
+          el movimiento de su cola y la posición de sus orejas te permitirá fortalecer
+          vuestro vínculo y evitar situaciones de estrés.
+        </p>
+
+        <ul class="list-disc pl-6 space-y-2">
+          <li>
+            <strong>Cola hacia arriba:</strong> Indica felicidad, confianza y un saludo
+            amistoso.
+          </li>
+          <li>
+            <strong>Cola erizada o arqueada:</strong> Es una señal de miedo o de que
+            se siente amenazado.
+          </li>
+          <li>
+            <strong>Movimiento rápido de lado a lado:</strong> ¡Cuidado! Indica irritación
+            o que está a punto de atacar.
+          </li>
+          <li>
+            <strong>Orejas hacia adelante:</strong> Curiosidad y atención plena en
+            lo que sucede.
+          </li>
+        </ul>
+
+        <div class="p-5 bg-pink-50 rounded-xl border-l-4 border-[#FF6B6B]">
+          <p class="text-gray-700 m-0">
+            Si notas que tu gato tiene las <strong
+              >orejas aplanadas hacia atrás</strong
+            >, está sintiendo mucho miedo o agresividad. <strong
+              >Consejo experto:</strong
+            > En esos momentos, dale espacio y no intentes tocarlo; deja que se calme
+            para evitar un posible arañazo o mordisco por estrés.
+          </p>
+        </div>
+      </div>
     </section>
 
     <section
       class="max-w-[1300px] mx-auto p-6 sm:p-10 mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
-      aria-label="Juguetes recomendados para gatos"
+      aria-label="Catálogo de pienso y alimento para gatos"
     >
-      {juguetes.map((producto) => (
-        <article class="group bg-white rounded-2xl pop shadow-sm hover:shadow-md transition-all duration-200 flex flex-col border border-[#FFE2E2]/80 hover:border-[#FF6B6B]/80 hover:-translate-y-1.5 overflow-hidden">
-          <div class="relative h-64 overflow-hidden">
-            <img
-              src={producto.img}
-              alt={producto.alt}
-              class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-200"
-              loading="lazy"
-            />
-            {producto.badge && (
-              <span class="absolute top-3 left-3 inline-flex items-center rounded-full bg-black/55 text-white text-[11px] font-medium px-2.5 py-[3px]">
-                {producto.badge}
-              </span>
-            )}
-          </div>
+      {
+        juguetes.map((producto) => (
+          <article class="group bg-white rounded-2xl pop shadow-sm hover:shadow-md transition-all duration-200 flex flex-col border border-[#FFE2E2]/80 hover:border-[#FF6B6B]/80 hover:-translate-y-1.5 overflow-hidden">
+            <div class="relative h-64 overflow-hidden">
+              <img
+                src={producto.img}
+                alt={producto.alt}
+                class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-200"
+                loading="lazy"
+              />
+            </div>
 
-          <div class="p-4 sm:p-5 flex flex-col flex-1">
-            <h3 class="text-[15px] sm:text-[16px] font-bold mb-1 text-[#111827]">
-              {producto.h2}
-            </h3>
+            <div class="p-4 sm:p-5 flex flex-col flex-1">
+              <h3 class="text-[15px] sm:text-[16px] font-bold mb-1 text-[#111827]">
+                {producto.h2}
+              </h3>
 
-            <p class="text-[13px] text-gray-700 leading-relaxed flex-1">
-              {producto.p}
-            </p>
-
-            {producto.info && (
-              <p class="mt-2 text-[11px] text-emerald-700 font-medium">
-                {producto.info}
+              <p class="text-[13px] text-gray-700 leading-relaxed flex-1">
+                {producto.p}
               </p>
-            )}
 
-            <a
-              href={producto.a}
-              target="_blank"
-              rel="nofollow noopener noreferrer"
-              class="mt-4 inline-flex items-center justify-center gap-2 bg-[#FF6B6B] text-white font-semibold py-2.5 px-4 rounded-full hover:bg-[#e55a5a] text-[13px] text-center transition-colors"
-            >
-              Ver en Amazon
-              <span class="text-[11px] bg-white/20 rounded-full px-2 py-[2px]">
-                Enlace afiliado
-              </span>
-            </a>
-          </div>
-        </article>
-      ))}
+              <a
+                href={producto.a}
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                class="mt-4 inline-flex items-center justify-center gap-2 bg-[#FF6B6B] text-white font-semibold py-2.5 px-4 rounded-full hover:bg-[#e55a5a] text-[13px] text-center transition-colors"
+              >
+                Comprar en Amazon
+              </a>
+            </div>
+          </article>
+        ))
+      }
     </section>
 
-    <div class="max-w-3xl mx-auto mt-16 px-6 py-6 bg-amber-50/50 border border-amber-100 rounded-2xl text-center shadow-sm">
-      <h3 class="text-amber-800 font-bold text-sm mb-2 uppercase tracking-widest">Aviso de transparencia</h3>
-      <p class="text-[12px] text-amber-900/70 leading-relaxed">
-        Como afiliados de Amazon, percibimos ingresos por las compras adscritas que cumplen los requisitos aplicables. Esto no incrementa el precio para ti y nos ayuda a mantener este espacio informativo.
+    <div
+      class="max-w-80 sm:max-w-2xl mx-auto mt-16 p-6 bg-amber-50/50 border border-amber-200 rounded-2xl shadow-sm text-center"
+    >
+      <div class="flex items-center justify-center gap-2 text-amber-700 mb-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <h3 class="font-bold text-xs uppercase tracking-widest">
+          Transparencia y Nutrición
+        </h3>
+      </div>
+
+      <p class="text-sm md:text-[15px] text-amber-900/80 leading-relaxed">
+        Nuestras recomendaciones de <strong>alimentación felina</strong> se basan
+        estrictamente en la calidad de los ingredientes. Al realizar tus compras a
+        través de nuestros enlaces, nos ayudas a mantener este sitio informativo activo
+        sin que a ti te cueste ni un céntimo extra.
       </p>
     </div>
 
-    <div class="w-full flex justify-center items-center mt-6">
+    <div class="flex justify-center mt-8">
       <a
         href="/principal/productos"
-        rel="nofollow noopener noreferrer"
-        class="mt-4 inline-block bg-[#FF6B6B] text-white font-semibold py-3 px-6 rounded-full hover:bg-[#e55a5a] text-center transition-colors text-lg pop"
+        class="group flex items-center gap-2 bg-[#FF6B6B] hover:bg-[#ff5252] text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl shadow-red-200 transition-all duration-300 transform hover:scale-105 active:scale-95 text-lg pop"
       >
-        Volver a todas las categorías →
+        Ver todos los productos
+        <span class="transition-transform group-hover:translate-x-1">→</span>
       </a>
     </div>
   </main>

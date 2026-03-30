@@ -602,7 +602,7 @@ const articles = [
   description="Artículos y guías sobre cuidados, salud, alimentación y comportamiento del gato persa."
 >
   <main class="bg-[#FDFCFB] min-h-screen pb-20">
-    <section class="pt-32 pb-10">
+    <header class="pt-32 pb-10">
       <div class="max-w-6xl mx-auto px-4">
         <div
           class="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#FF6B6B] via-[#FF8E8E] to-amber-200 p-8 sm:p-16 shadow-2xl"
@@ -657,10 +657,13 @@ const articles = [
           </div>
         </div>
       </div>
-    </section>
+    </header>
+
     <section class="max-w-6xl mx-auto px-4 py-12">
       <div class="mb-12">
-        <h2 class="text-3xl md:text-4xl font-black text-gray-900 tracking-tight">
+        <h2
+          class="text-3xl md:text-4xl font-black text-gray-900 tracking-tight"
+        >
           Últimas Publicaciones
         </h2>
         <div class="h-1.5 w-20 bg-[#FF6B6B] mt-4 rounded-full"></div>
@@ -668,13 +671,16 @@ const articles = [
 
       <div class="mb-16 max-w-2xl mx-auto">
         <div class="relative group">
-          <input 
-            type="text" 
+          <input
+            type="text"
             id="search-input"
             placeholder="¿Qué estás buscando? (ej: alimentación, salud, juegos...)"
             class="w-full bg-white border-2 border-gray-100 rounded-[2rem] py-5 pl-16 pr-6 text-lg text-gray-800 focus:ring-4 focus:ring-[#FF6B6B]/10 focus:border-[#FF6B6B] outline-none transition-all shadow-md hover:border-gray-200"
           />
-          <span class="absolute left-6 top-1/2 -translate-y-1/2 text-3xl group-focus-within:scale-110 transition-transform">🔍</span>
+          <span
+            class="absolute left-6 top-1/2 -translate-y-1/2 text-3xl group-focus-within:scale-110 transition-transform"
+            >🔍</span
+          >
         </div>
       </div>
 
@@ -682,11 +688,11 @@ const articles = [
         {
           articles.map((article) => (
             <article
-            class={`article-card group relative flex flex-col bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden ${article.featured ? "md:col-span-2 lg:col-span-2 flex-row" : ""}`}
-            data-title={article.title.toLowerCase()}
-            data-category={article.category.toLowerCase()}
-            data-excerpt={article.excerpt.toLowerCase()}
-          >
+              class={`article-card group relative flex flex-col bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden ${article.featured ? "md:col-span-2 lg:col-span-2 flex-row" : ""}`}
+              data-title={article.title.toLowerCase()}
+              data-category={article.category.toLowerCase()}
+              data-excerpt={article.excerpt.toLowerCase()}
+            >
               <div
                 class={`relative overflow-hidden ${article.featured ? "w-1/2 hidden md:block" : "h-64"}`}
               >
@@ -762,40 +768,45 @@ const articles = [
 </style>
 
 <script is:inline>
-  const searchInput = document.getElementById('search-input');
-  const articleCards = document.querySelectorAll('.article-card');
+  const searchInput = document.getElementById("search-input");
+  const articleCards = document.querySelectorAll(".article-card");
 
   function filterArticles() {
     const query = searchInput.value.toLowerCase();
 
-    articleCards.forEach(card => {
-      const title = card.dataset.title || '';
-      const excerpt = card.dataset.excerpt || '';
-      const category = card.dataset.category || '';
+    articleCards.forEach((card) => {
+      const title = card.dataset.title || "";
+      const excerpt = card.dataset.excerpt || "";
+      const category = card.dataset.category || "";
 
-      const matchesSearch = title.includes(query) || excerpt.includes(query) || category.includes(query);
+      const matchesSearch =
+        title.includes(query) ||
+        excerpt.includes(query) ||
+        category.includes(query);
 
       if (matchesSearch) {
-        card.style.display = 'flex';
+        card.style.display = "flex";
         // Reiniciar animación
-        card.style.animation = 'none';
+        card.style.animation = "none";
         card.offsetHeight; // trigger reflow
-        card.style.animation = 'fadeInUp 0.6s ease-out forwards';
+        card.style.animation = "fadeInUp 0.6s ease-out forwards";
       } else {
-        card.style.display = 'none';
+        card.style.display = "none";
       }
     });
 
     // Mostrar mensaje si no hay resultados
-    const grid = document.getElementById('articles-grid');
-    let noResults = document.getElementById('no-results');
-    const visibleCards = Array.from(articleCards).filter(c => c.style.display !== 'none');
+    const grid = document.getElementById("articles-grid");
+    let noResults = document.getElementById("no-results");
+    const visibleCards = Array.from(articleCards).filter(
+      (c) => c.style.display !== "none",
+    );
 
     if (visibleCards.length === 0) {
       if (!noResults) {
-        noResults = document.createElement('div');
-        noResults.id = 'no-results';
-        noResults.className = 'col-span-full py-20 text-center';
+        noResults = document.createElement("div");
+        noResults.id = "no-results";
+        noResults.className = "col-span-full py-20 text-center";
         noResults.innerHTML = `
           <p class="text-6xl mb-4">😿</p>
           <h3 class="text-2xl font-black text-gray-900 mb-2">No encontramos nada</h3>
@@ -808,5 +819,5 @@ const articles = [
     }
   }
 
-  searchInput.addEventListener('input', filterArticles);
+  searchInput.addEventListener("input", filterArticles);
 </script>
