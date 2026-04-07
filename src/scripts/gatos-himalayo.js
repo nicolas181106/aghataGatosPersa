@@ -1,4 +1,4 @@
-import unknown from "../assets/img/unknown.jpg";
+import unknown from "../assets/img/gatos/unknown.jpg";
 
 export const gatosHimalayo = [
 ];

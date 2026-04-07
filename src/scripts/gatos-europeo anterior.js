@@ -1,12 +1,12 @@
-import odin from "../assets/img/blue/camada1/odin.jpg";
-import orion from "../assets/img/blue/camada1/orion.jpg";
-import sirius from "../assets/img/blue/camada1/sirius2.jpeg";
-import remo from "../assets/img/blue/camada1/remo.jpg";
-import romulo from "../assets/img/blue/camada1/romulo.jpg";
-import apolo from "../assets/img/blue/camada2/apoloBebe3.jpeg";
-import triton from "../assets/img/blue/camada2/tritonBebe.jpg";
-import esmeralda from "../assets/img/blue/camada2/esmeraldaBebe4.jpeg";
-import heracles from "../assets/img/blue/camada2/heraclesBebe.jpeg";
+import odin from "../assets/img/nuestros_gatos/Bluey/Camada1/Odin/odin.jpg";
+import orion from "../assets/img/nuestros_gatos/Bluey/Camada1/Orion/orion.jpg";
+import sirius from "../assets/img/nuestros_gatos/Bluey/Camada1/Sirius/sirius2.jpeg";
+import remo from "../assets/img/nuestros_gatos/Bluey/Camada1/Remo/remo.jpg";
+import romulo from "../assets/img/nuestros_gatos/Bluey/Camada1/Romulo/romulo.jpg";
+import apolo from "../assets/img/nuestros_gatos/Bluey/Camada2/Apolo/apoloBebe3.jpeg";
+import triton from "../assets/img/nuestros_gatos/Bluey/Camada2/Triton/tritonBebe.jpg";
+import esmeralda from "../assets/img/nuestros_gatos/Bluey/Camada2/Esmeralda/esmeraldaBebe4.jpeg";
+import heracles from "../assets/img/nuestros_gatos/Bluey/Camada2/Heracles/heraclesBebe.jpeg";
 
 export const gatosEuropeo = [
     {

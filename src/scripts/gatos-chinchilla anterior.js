@@ -1,12 +1,12 @@
-import anubis from "../assets/img/ceres/camada1/anubis.jpg";
-import osiris from "../assets/img/ceres/camada1/osiris.jpeg";
-import caronte from "../assets/img/ceres/camada1/caronte.jpeg";
-import atlas from "../assets/img/ceres/camada1/atlas.jpg";
-import ares from "../assets/img/ceres/camada1/ares.jpg";
-import artermisaBebe from "../assets/img/ceres/camada2/artemisaBebe.jpg";
-import figaroBebe from "../assets/img/ceres/camada2/figaroBebe.jpeg";
-import ateneaBebe from "../assets/img/ceres/camada2/ateneaBebe.jpeg";
-import titanBebe from "../assets/img/ceres/camada2/titanBebe.jpeg";
+import anubis from "../assets/img/nuestros_gatos/Ceres/Camada1/Anubis/anubis.jpg";
+import osiris from "../assets/img/nuestros_gatos/Ceres/Camada1/Osiris/osiris.jpeg";
+import caronte from "../assets/img/nuestros_gatos/Ceres/Camada1/Caronte/caronte.jpeg";
+import atlas from "../assets/img/nuestros_gatos/Ceres/Camada1/Atlas/atlas.jpg";
+import ares from "../assets/img/nuestros_gatos/Ceres/Camada1/Ares/ares.jpg";
+import artermisaBebe from "../assets/img/nuestros_gatos/Ceres/Camada2/Artemisa/artemisaBebe.jpg";
+import figaroBebe from "../assets/img/nuestros_gatos/Ceres/Camada2/Figaro/figaroBebe.jpeg";
+import ateneaBebe from "../assets/img/nuestros_gatos/Ceres/Camada2/Atenea/ateneaBebe.jpeg";
+import titanBebe from "../assets/img/nuestros_gatos/Ceres/Camada2/Titan/titanBebe.jpeg";
 
 export const gatosChinchilla = [
     {

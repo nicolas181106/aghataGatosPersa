@@ -2,7 +2,7 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Cookies from "../components/cookies.astro"
-import logo from "../assets/img/logoAnimated.png";
+import logo from "../assets/img/ui/logoAnimated.png";
 import "../styles/global.css";
 
 const { title , description } = Astro.props;
@@ -26,14 +26,14 @@ const { title , description } = Astro.props;
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://agathagatospersa.netlify.app/" />
-		<meta property="og:image" content="https://agathagatospersa.netlify.app/assets/img/banner.png" />
+		<meta property="og:image" content="https://agathagatospersa.netlify.app/assets/img/ui/banner.png" />
 		<meta property="og:image:alt" content="Banner de Ágatha Gatos Persa" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:site" content="@AgathaGatosPersa" />
 		<meta name="twitter:creator" content="@AgathaGatosPersa" />	
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content="/assets/img/banner.png" />
+		<meta name="twitter:image" content="/assets/img/ui/banner.png" />
 		<meta name="twitter:image:alt" content="Banner de Ágatha Gatos Persa" />
 		<meta name="google-adsense-account" content="ca-pub-1412633306454408">
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1412633306454408" crossorigin="anonymous"></script>	
@@ -56,10 +56,10 @@ const { title , description } = Astro.props;
 		width: 100%;
 		height: 100%;
 		font-family: "Balsamiq Sans", cursive;
-		background: url(../assets/img/banner.png) fixed no-repeat center center;
+		background: url(../assets/img/ui/banner.png) fixed no-repeat center center;
 		background-size: cover;
 		scrollbar-color: #FF6B6B #2E2E2E;
-		cursor: url('/src/assets/img/svg/cursor.svg') 12 12, auto;
+		cursor: url('/src/assets/img/ui/svg/cursor.svg') 12 12, auto;
 		scroll-behavior: smooth;
 	}
 </style>

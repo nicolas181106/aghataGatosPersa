@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import oddie from "../../assets/img/oddie.jpg";
-import blube from "../../assets/img/blue/blube.jpg";
+import oddie from "../../assets/img/nuestros_gatos/Oddie/oddie.jpg";
+import blube from "../../assets/img/nuestros_gatos/Bluey/blube.jpg";
 import { gatosEuropeo } from "../../scripts/gatos-europeo.js";
 import { gatosEuropeo as gatosEuropeoAnteriores } from "../../scripts/gatos-europeo anterior.js";
 ---
@@ -11,39 +11,75 @@ import { gatosEuropeo as gatosEuropeoAnteriores } from "../../scripts/gatos-euro
     description="Conoce al encantador Gato Persa Europeo, una raza conocida por su belleza y carácter dulce. Descubre más sobre esta maravillosa raza en nuestro criadero."
     keywords="gato persa europeo, criadero de gatos persa, gatos persa en adopción"
 >
-
     <main class="bg-[#FFF9F9] text-[#2E2E2E] min-h-screen pb-10">
-        <section class="relative bg-gradient-to-r from-[#FF6B6B] via-[#ff9f9f] to-[#FFC3C3] text-white py-24 mt-16 overflow-hidden">
+        <section
+            class="relative bg-gradient-to-r from-[#FF6B6B] via-[#ff9f9f] to-[#FFC3C3] text-white py-24 mt-16 overflow-hidden"
+        >
             <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">Gato Persa Europeo</h1>
-                <div class="w-24 h-1.5 bg-white mx-auto mb-8 rounded-full"></div>
-                <p class="text-white/90 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-medium">
-                    Descubre nuestros hermosos gatos persas europeos, conocidos por su carácter equilibrado y su belleza elegante.
+                <h1
+                    class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight"
+                >
+                    Gato Persa Europeo
+                </h1>
+                <div class="w-24 h-1.5 bg-white mx-auto mb-8 rounded-full">
+                </div>
+                <p
+                    class="text-white/90 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-medium"
+                >
+                    Descubre nuestros hermosos gatos persas europeos, conocidos
+                    por su carácter equilibrado y su belleza elegante.
                 </p>
             </div>
         </section>
 
         <section class="max-w-7xl mx-auto px-4 py-20">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#FF6B6B] mb-4">Nuestros Reproductores</h2>
-				<div class="w-32 h-1 bg-gradient-to-r from-[#FF6B6B] to-pink-400 mx-auto"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-[#FF6B6B] mb-4">
+                    Nuestros Reproductores
+                </h2>
+                <div
+                    class="w-32 h-1 bg-gradient-to-r from-[#FF6B6B] to-pink-400 mx-auto"
+                >
+                </div>
             </div>
-            
-            <div class="flex flex-col md:flex-row gap-10 justify-center items-center max-w-5xl mx-auto">
-                <figure class="group relative bg-white p-4 rounded-[2.5rem] shadow-xl transition-all duration-500 hover:-translate-y-2 border border-pink-50">
-                    <div class="absolute -top-4 -right-4 bg-[#FF6B6B] text-white px-6 py-2 rounded-full font-bold text-sm shadow-lg z-10">Padre</div>
+
+            <div
+                class="flex flex-col md:flex-row gap-10 justify-center items-center max-w-5xl mx-auto"
+            >
+                <figure
+                    class="group relative bg-white p-4 rounded-[2.5rem] shadow-xl transition-all duration-500 hover:-translate-y-2 border border-pink-50"
+                >
+                    <div
+                        class="absolute -top-4 -right-4 bg-[#FF6B6B] text-white px-6 py-2 rounded-full font-bold text-sm shadow-lg z-10"
+                    >
+                        Padre
+                    </div>
                     <div class="overflow-hidden rounded-[2rem]">
-                        <img src={oddie.src} alt="Oddie - Padre gato persa europeo" class="w-80 h-80 object-cover transition-transform duration-700 group-hover:scale-110"/>
+                        <img
+                            src={oddie.src}
+                            alt="Oddie - Padre gato persa europeo"
+                            class="w-80 h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
                     </div>
                     <figcaption class="text-center py-6">
                         <h3 class="text-2xl font-bold text-gray-800">Oddie</h3>
                     </figcaption>
                 </figure>
 
-                <figure class="group relative bg-white p-4 rounded-[2.5rem] shadow-xl transition-all duration-500 hover:-translate-y-2 border border-pink-50">
-                    <div class="absolute -top-4 -right-4 bg-[#FF8A8A] text-white px-6 py-2 rounded-full font-bold text-sm shadow-lg z-10">Madre</div>
+                <figure
+                    class="group relative bg-white p-4 rounded-[2.5rem] shadow-xl transition-all duration-500 hover:-translate-y-2 border border-pink-50"
+                >
+                    <div
+                        class="absolute -top-4 -right-4 bg-[#FF8A8A] text-white px-6 py-2 rounded-full font-bold text-sm shadow-lg z-10"
+                    >
+                        Madre
+                    </div>
                     <div class="overflow-hidden rounded-[2rem]">
-                        <img src={blube.src} alt="Bluey - Madre gato persa europeo" class="w-80 h-80 object-cover transition-transform duration-700 group-hover:scale-110"/>
+                        <img
+                            src={blube.src}
+                            alt="Bluey - Madre gato persa europeo"
+                            class="w-80 h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
                     </div>
                     <figcaption class="text-center py-6">
                         <h3 class="text-2xl font-bold text-gray-800">Bluey</h3>
@@ -52,110 +88,172 @@ import { gatosEuropeo as gatosEuropeoAnteriores } from "../../scripts/gatos-euro
             </div>
         </section>
 
-        {gatosEuropeo.length === 0 && (
-            <section class="max-w-5xl mx-auto px-4 mb-20">
-                <div class="bg-white rounded-[3rem] p-12 text-center shadow-2xl border-2 border-dashed border-[#FFC3C3] relative overflow-hidden">
-                    <div class="relative z-10">
-                        <span class="text-6xl mb-6 block">✨</span>
-                        <h2 class="text-3xl md:text-4xl font-bold text-[#FF6B6B] mb-4">Próximas Camadas</h2>
-                        <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-                            Actualmente todos nuestros bebés europeos han encontrado una familia. Estamos esperando nuevas camadas pronto. ¡Sé el primero en saberlo!
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="/principal/contacto" class="bg-[#FF6B6B] text-white font-bold py-4 px-10 rounded-full shadow-lg hover:bg-[#ff5252] transition-all hover:scale-105 active:scale-95">
-                                Lista de Espera
-                            </a>
-                            <a href="/principal/camadas-anteriores" class="bg-white border-2 border-[#FF6B6B] text-[#FF6B6B] font-bold py-4 px-10 rounded-full hover:bg-[#FFF9F9] transition-all">
-                                Ver Camadas Anteriores
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        )}
-
-        {gatosEuropeo.length > 0 && (
-            <section class="max-w-7xl mx-auto px-4 py-16">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#FF6B6B] mb-4">Gatitos Disponibles</h2>
-				    <div class="w-32 h-1 bg-gradient-to-r from-[#FF6B6B] to-pink-400 mx-auto"></div>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
-                    {gatosEuropeo.map((gato) => (
-                        <article class="group bg-white rounded-[2.5rem] shadow-lg hover:shadow-[0_20px_50px_rgba(255,107,107,0.2)] transition-all duration-500 overflow-hidden border border-pink-50">
-                            <div class="relative aspect-[4/5] overflow-hidden">
-                                <img src={gato.img} alt={gato.alt} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                                
-                                <div class={`absolute top-5 left-5 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-lg ${gato.disponibleEstilo}`}>
-                                    {gato.disponibleTexto}
-                                </div>
-
-                                <a href="/contacto" class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <span class="bg-white text-[#FF6B6B] px-6 py-2 rounded-full font-bold shadow-xl translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                        Conocer a {gato.name}
-                                    </span>
+        {
+            gatosEuropeo.length === 0 && (
+                <section class="max-w-5xl mx-auto px-4 mb-20">
+                    <div class="bg-white rounded-[3rem] p-12 text-center shadow-2xl border-2 border-dashed border-[#FFC3C3] relative overflow-hidden">
+                        <div class="relative z-10">
+                            <span class="text-6xl mb-6 block">✨</span>
+                            <h2 class="text-3xl md:text-4xl font-bold text-[#FF6B6B] mb-4">
+                                Próximas Camadas
+                            </h2>
+                            <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                                Actualmente todos nuestros bebés europeos han
+                                encontrado una familia. Estamos esperando nuevas
+                                camadas pronto. ¡Sé el primero en saberlo!
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <a
+                                    href="/principal/contacto"
+                                    class="bg-[#FF6B6B] text-white font-bold py-4 px-10 rounded-full shadow-lg hover:bg-[#ff5252] transition-all hover:scale-105 active:scale-95"
+                                >
+                                    Lista de Espera
+                                </a>
+                                <a
+                                    href="/principal/camadas-anteriores"
+                                    class="bg-white border-2 border-[#FF6B6B] text-[#FF6B6B] font-bold py-4 px-10 rounded-full hover:bg-[#FFF9F9] transition-all"
+                                >
+                                    Ver Camadas Anteriores
                                 </a>
                             </div>
-                            
-                            <div class="p-8">
-                                <h3 class="text-3xl font-bold text-gray-800 mb-4">{gato.name}</h3>
-                                
-                                <div class="grid grid-cols-2 gap-4 mb-8">
-                                    <div class="flex items-center gap-3 bg-[#FFF9F9] p-3 rounded-2xl">
-                                        <span class="text-xl">{gato.gender === 'Macho' ? '💈' : '🎀'}</span>
-                                        <span class="text-xs font-bold text-gray-500 uppercase tracking-tighter">{gato.gender}</span>
+                        </div>
+                    </div>
+                </section>
+            )
+        }
+
+        {
+            gatosEuropeo.length > 0 && (
+                <section class="max-w-7xl mx-auto px-4 py-16">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl md:text-4xl font-bold text-[#FF6B6B] mb-4">
+                            Gatitos Disponibles
+                        </h2>
+                        <div class="w-32 h-1 bg-gradient-to-r from-[#FF6B6B] to-pink-400 mx-auto" />
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+                        {gatosEuropeo.map((gato) => (
+                            <article class="group bg-white rounded-[2.5rem] shadow-lg hover:shadow-[0_20px_50px_rgba(255,107,107,0.2)] transition-all duration-500 overflow-hidden border border-pink-50">
+                                <div class="relative aspect-[4/5] overflow-hidden">
+                                    <img
+                                        src={gato.img}
+                                        alt={gato.alt}
+                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+
+                                    <div
+                                        class={`absolute top-5 left-5 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-lg ${gato.disponibleEstilo}`}
+                                    >
+                                        {gato.disponibleTexto}
                                     </div>
-                                    <div class="flex items-center gap-3 bg-[#FFF9F9] p-3 rounded-2xl">
-                                        <span class="text-xl">📅</span>
-                                        <span class="text-xs font-bold text-gray-500 uppercase tracking-tighter edad-gatito" data-nacimiento={gato.birth.toString()}>...</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex flex-col gap-3">
-                                    <a href="/contacto" class="w-full text-center bg-[#FF6B6B] text-white font-bold py-4 rounded-2xl transition-all hover:bg-[#ff5252] shadow-md active:scale-95">
-                                        ❤️ Adoptar a {gato.name}
+
+                                    <a
+                                        href="/contacto"
+                                        class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                                    >
+                                        <span class="bg-white text-[#FF6B6B] px-6 py-2 rounded-full font-bold shadow-xl translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                            Conocer a {gato.name}
+                                        </span>
                                     </a>
-                                    {/* <a href={`../gatos/${gato.slugEuropeo}`} class="w-full text-center text-gray-400 font-bold py-2 text-sm hover:text-[#FF6B6B] transition-colors">
+                                </div>
+
+                                <div class="p-8">
+                                    <h3 class="text-3xl font-bold text-gray-800 mb-4">
+                                        {gato.name}
+                                    </h3>
+
+                                    <div class="grid grid-cols-2 gap-4 mb-8">
+                                        <div class="flex items-center gap-3 bg-[#FFF9F9] p-3 rounded-2xl">
+                                            <span class="text-xl">
+                                                {gato.gender === "Macho"
+                                                    ? "💈"
+                                                    : "🎀"}
+                                            </span>
+                                            <span class="text-xs font-bold text-gray-500 uppercase tracking-tighter">
+                                                {gato.gender}
+                                            </span>
+                                        </div>
+                                        <div class="flex items-center gap-3 bg-[#FFF9F9] p-3 rounded-2xl">
+                                            <span class="text-xl">📅</span>
+                                            <span
+                                                class="text-xs font-bold text-gray-500 uppercase tracking-tighter edad-gatito"
+                                                data-nacimiento={gato.birth.toString()}
+                                            >
+                                                ...
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col gap-3">
+                                        <a
+                                            href="/contacto"
+                                            class="w-full text-center bg-[#FF6B6B] text-white font-bold py-4 rounded-2xl transition-all hover:bg-[#ff5252] shadow-md active:scale-95"
+                                        >
+                                            ❤️ Adoptar a {gato.name}
+                                        </a>
+                                        {/* <a href={`../gatos/${gato.slugEuropeo}`} class="w-full text-center text-gray-400 font-bold py-2 text-sm hover:text-[#FF6B6B] transition-colors">
                                         Ver ficha técnica
                                     </a> */}
+                                    </div>
                                 </div>
-                            </div>
-                        </article>
-                    ))}
-                </div>
-            </section>
-        )}
+                            </article>
+                        ))}
+                    </div>
+                </section>
+            )
+        }
 
         <section class="bg-white py-24 border-y border-pink-100">
             <div class="max-w-7xl mx-auto px-4">
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#FF6B6B] mb-2">Camadas anteriores</h2>
-                    <a href="/principal/camadas-anteriores" class="text-[#FF6B6B] font-bold border-b-2 border-[#FF6B6B] pb-1 hover:text-[#ff5252] transition-colors">
+                <div
+                    class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6"
+                >
+                    <h2
+                        class="text-3xl md:text-4xl font-bold text-[#FF6B6B] mb-2"
+                    >
+                        Camadas anteriores
+                    </h2>
+                    <a
+                        href="/principal/camadas-anteriores"
+                        class="text-[#FF6B6B] font-bold border-b-2 border-[#FF6B6B] pb-1 hover:text-[#ff5252] transition-colors"
+                    >
                         Explorar Galería Completa →
                     </a>
                 </div>
-        
-                {gatosEuropeoAnteriores.length > 0 ? (
-                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
-                                {gatosEuropeoAnteriores.slice(0, 5).map((gatoAnterior) => (
+
+                {
+                    gatosEuropeoAnteriores.length > 0 ? (
+                        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
+                            {gatosEuropeoAnteriores
+                                .slice(0, 5)
+                                .map((gatoAnterior) => (
                                     <figure class="group cursor-pointer">
                                         <div class="relative overflow-hidden rounded-[2rem] shadow-md mb-4 aspect-square">
-                                            <img src={gatoAnterior.img} alt={gatoAnterior.alt} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[20%] group-hover:grayscale-0" />
-                                            <div class="absolute inset-0 bg-gradient-to-t from-pink-500/20 to-transparent"></div>
+                                            <img
+                                                src={gatoAnterior.img}
+                                                alt={gatoAnterior.alt}
+                                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[20%] group-hover:grayscale-0"
+                                            />
+                                            <div class="absolute inset-0 bg-gradient-to-t from-pink-500/20 to-transparent" />
                                         </div>
                                         <figcaption class="text-center">
-                                            <p class="font-bold text-gray-800 tracking-tight">{gatoAnterior.name}</p>
-                                            <p class="text-[10px] text-[#FF8A8A] font-black uppercase tracking-widest">{gatoAnterior.gender}</p>
+                                            <p class="font-bold text-gray-800 tracking-tight">
+                                                {gatoAnterior.name}
+                                            </p>
+                                            <p class="text-[10px] text-[#FF8A8A] font-black uppercase tracking-widest">
+                                                {gatoAnterior.gender}
+                                            </p>
                                         </figcaption>
                                     </figure>
                                 ))}
-                            </div>
-                        ) : (
-                            <div class="bg-[#FFF9F9] rounded-3xl p-10 text-center text-gray-400 font-medium">
-                                Estamos preparando el archivo fotográfico...
-                            </div>
-                )}
+                        </div>
+                    ) : (
+                        <div class="bg-[#FFF9F9] rounded-3xl p-10 text-center text-gray-400 font-medium">
+                            Estamos preparando el archivo fotográfico...
+                        </div>
+                    )
+                }
             </div>
         </section>
 
