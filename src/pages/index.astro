@@ -13,6 +13,7 @@ import imgIndex9 from "../assets/img/nuestros_gatos/Bluey/Camada1/Romulo/romulo.
 import imgIndex10 from "../assets/img/nuestros_gatos/Bluey/Camada1/Remo/remo.jpg";
 import imgIndex11 from "../assets/img/nuestros_gatos/Bluey/blube2.jpg";
 import unknown from "../assets/img/gatos/unknown.jpg";
+import canela from "../assets/img/nuestros_gatos/Bluey/Camada3/Canela/Canela2929293.jpeg";
 
 import art10 from "../assets/img/productos/comida/art10.jpg";
 import art3 from "../assets/img/productos/comida/art3.jpg";
@@ -27,7 +28,16 @@ interface Gato {
     variedad?: string;
 }
 
-const gatos: Gato[] = [];
+const gatos: Gato[] = [
+    {
+        nombre: "Canela",
+        genero: "Femenino",
+        edad: new Date("2026-03-24"),
+        imgSrc: canela,
+        alt: "Canela - Gatita persa disponible",
+        variedad: "Persa Europeo",
+    },
+];
 
 const destacadosIndex = [
     {
@@ -156,7 +166,6 @@ const destacadosIndex = [
                     <div
                         class="w-16 h-16 bg-[#FFF0F0] rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform duration-500"
                     >
-                        🏠
                     </div>
 
                     <h3
@@ -483,7 +492,7 @@ const destacadosIndex = [
                             class="absolute -bottom-8 -right-8 bg-white p-6 rounded-3xl shadow-xl max-w-xs border border-pink-50 block animate-fadeInUp max-lg:hidden"
                         >
                             <div class="flex items-center gap-4 mb-2">
-                                <span class="text-3xl">🏠</span>
+                                <span class="text-3xl"> </span>
                                 <h4 class="font-bold text-[#2E2E2E]">
                                     Ambiente Familiar
                                 </h4>
@@ -566,250 +575,149 @@ const destacadosIndex = [
 
                 <!-- Alerta de últimos gatitos -->
                 <!-- <div class="max-w-4xl mx-auto mb-12 bg-orange-50 border-l-8 border-orange-500 p-6 rounded-r-3xl shadow-md animate-pulse">
-                    <div class="flex items-center">
-                        <div class="text-4xl mr-4">⚠️</div>
-                        <div>
-                            <h3 class="text-xl font-bold text-orange-800 uppercase tracking-wide">
-                                ¡Últimos gatitos disponibles!
-                            </h3>
-                            <p class="text-orange-700">
-                                Solo queda <strong>1 cachorro</strong> de nuestra camada actual buscando hogar. 
-                                Si estás interesado en Fígaro, contáctanos pronto para evitar esperas hasta la próxima temporada.
-                            </p>
-                        </div>
-                    </div>
-                </div> -->
-
+                              <div class="flex items-center">
+                                    <div class="text-4xl mr-4">  ️</div>
+                                    <div>
+                                          <h3 class="text-xl font-bold text-orange-800 uppercase tracking-wide">
+                                                ¡Últimos gatitos disponibles!
+                                          </h3>
+                                          <p class="text-orange-700">
+                                                Solo queda <strong>1 cachorro</strong> de nuestra camada actual buscando hogar. 
+                                                Si estás interesado en Fígaro, contáctanos pronto para evitar esperas hasta la próxima temporada.
                 <!-- Lista de gatos disponibles -->
                 {
                     gatos.length > 0 ? (
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                                                   {" "}
                             {gatos.map((gato: any) => (
-                                <article class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border-2 border-pink-100 hover:border-[#FF6B6B]">
-                                                                   {" "}
+                                <article class="group bg-white rounded-[2.5rem] shadow-lg hover:shadow-[0_20px_50px_rgba(255,107,107,0.2)] transition-all duration-500 overflow-hidden border border-pink-50">
                                     <div class="relative overflow-hidden aspect-square">
-                                                                           {" "}
                                         <img
                                             src={gato.imgSrc.src}
                                             alt={gato.alt}
                                             loading="lazy"
-                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                         />
-                                                                           {" "}
                                         <div class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
-                                                                               
-                                                ✓ Disponible                    
-                                                           {" "}
+                                            ✓ Disponible
                                         </div>
-                                                                           {" "}
                                         <div class="absolute top-4 left-4 bg-[#FF6B6B] text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-pulse">
-                                                                               
-                                                ✨ NUEVO                        
-                                                       {" "}
+                                            ✨ NUEVO
                                         </div>
-                                                                       {" "}
                                     </div>
-                                                                               
-                                                       {" "}
-                                    <div class="p-6">
-                                                                           {" "}
-                                        <h3 class="text-2xl font-bold text-[#FF6B6B] mb-4">
+                                    <div class="p-8">
+                                        <h3 class="text-3xl font-bold text-gray-800 mb-6 text-center">
                                             {gato.nombre}
                                         </h3>
-                                                                               
-                                                                       {" "}
-                                        <div class="space-y-3 mb-6">
-                                                                               
-                                               {" "}
-                                            <div class="flex items-center gap-2 text-gray-700">
-                                                                               
-                                                           {" "}
+
+                                        <div class="grid grid-cols-2 gap-3 mb-8">
+                                            <div class="flex items-center gap-3 bg-[#fdf2f2] p-3 rounded-2xl border border-pink-100/50">
                                                 <span class="text-xl">
-                                                                               
-                                                                       {" "}
                                                     {gato.genero === "Macho" ||
                                                     gato.genero === "Masculino"
                                                         ? "💈"
                                                         : "🎀"}
-                                                                               
-                                                                   {" "}
                                                 </span>
-                                                                               
-                                                           {" "}
-                                                <span class="font-semibold text-sm">
-                                                    Género:
-                                                </span>
-                                                                               
-                                                           {" "}
-                                                <span class="text-sm">
+                                                <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">
                                                     {gato.genero}
                                                 </span>
-                                                                               
-                                                       {" "}
                                             </div>
-                                                                               
-                                               {" "}
-                                            <div class="flex items-center gap-2 text-gray-700">
-                                                                               
-                                                           {" "}
-                                                <span class="text-xl">📅</span> 
-                                                                               
-                                                         {" "}
-                                                <span class="font-semibold text-sm">
-                                                    Edad:
-                                                </span>
-                                                                               
-                                                           {" "}
+                                            <div class="flex items-center gap-3 bg-[#fdf2f2] p-3 rounded-2xl border border-pink-100/50">
+                                                <span class="text-xl">📅</span>
                                                 <span
-                                                    class="text-sm edad-gatito"
+                                                    class="text-[11px] font-bold text-gray-800 uppercase tracking-tight edad-gatito"
                                                     data-nacimiento={gato.edad.toISOString()}
                                                 >
-                                                    Calculando...
+                                                    ...
                                                 </span>
-                                                                               
-                                                       {" "}
                                             </div>
-                                                                               
-                                               {" "}
-                                            <div class="flex items-center gap-2 text-gray-700">
-                                                                               
-                                                           {" "}
-                                                <span class="text-xl">🏠</span> 
-                                                                               
-                                                         {" "}
-                                                <span class="font-semibold text-sm">
-                                                    Criado en:
+                                            <div class="flex items-center gap-3 bg-[#fdf2f2] p-3 rounded-2xl border border-pink-100/50 col-span-2">
+                                                <span class="text-xl"> </span>
+                                                <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">
+                                                    Cuidado Familiar Ético
                                                 </span>
-                                                                               
-                                                           {" "}
-                                                <span class="text-sm">
-                                                    Entorno familiar
-                                                </span>
-                                                                               
-                                                       {" "}
                                             </div>
-                                                                             
-                                             {" "}
                                         </div>
-                                                                               
-                                                                       {" "}
+
                                         <div class="flex flex-col gap-3">
-                                                                               
-                                               {" "}
                                             <a
                                                 href="/principal/contacto"
-                                                class="w-full text-center bg-[#FF6B6B] hover:bg-[#e65c5c] text-white font-bold py-3 px-6 rounded-full transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1"
+                                                class="w-full text-center bg-[#FF6B6B] hover:bg-[#e65c5c] text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 active:scale-95"
                                             >
-                                                                               
-                                                            ❤️ Adoptar a{" "}
-                                                {gato.nombre}                   
-                                                                   {" "}
+                                                ❤️ Adoptar a {gato.nombre}
                                             </a>
-                                                                               
-                                               {" "}
                                             <a
                                                 href="/principal/gatos-disponibles"
-                                                class="w-full text-center border-2 border-[#FF6B6B] text-[#FF6B6B] hover:bg-[#FF6B6B] hover:text-white font-semibold py-3 px-6 rounded-full transition-all duration-300"
+                                                class="w-full text-center border-2 border-[#FF6B6B] text-[#FF6B6B] hover:bg-[#FF6B6B] hover:text-white font-bold py-3 px-6 rounded-2xl transition-all duration-300"
                                             >
-                                                                               
-                                                            Ver más gatitos    
-                                                                               
-                                                   {" "}
+                                                Ver más gatitos
                                             </a>
-                                                                             
-                                             {" "}
                                         </div>
-                                                                       {" "}
-                                    </div>
-                                                               {" "}
+                                    </div>{" "}
                                 </article>
-                            ))}
-                                                                           {" "}
+                            ))}{" "}
                             <a
                                 href="/principal/gatos-disponibles"
                                 class="group bg-gradient-to-br from-[#FF6B6B] to-pink-400 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border-2 border-[#FF6B6B] flex flex-col items-center justify-center p-8 min-h-[400px]"
                             >
-                                                           {" "}
+                                {" "}
                                 <div class="text-white text-center space-y-4">
-                                                                   {" "}
-                                    <div class="text-6xl mb-4">🐱</div>         
-                                                         {" "}
+                                    {" "}
+                                    <div class="text-6xl mb-4">🐱</div>{" "}
                                     <h3 class="text-2xl font-bold">
                                         Ver Todos los Gatitos
-                                    </h3>
-                                                                   {" "}
+                                    </h3>{" "}
                                     <p class="text-white/90">
                                         Explora nuestra colección completa de
                                         gatos persas disponibles
-                                    </p>
-                                                                   {" "}
+                                    </p>{" "}
                                     <div class="mt-6 inline-flex items-center gap-2 bg-white text-[#FF6B6B] font-bold py-3 px-6 rounded-full group-hover:scale-110 transition-transform duration-300">
-                                                                            Ver
-                                        más                                    {" "}
+                                        Ver más{" "}
                                         <svg
                                             class="w-5 h-5"
                                             fill="none"
                                             stroke="currentColor"
                                             viewBox="0 0 24 24"
                                         >
-                                                                               
-                                               {" "}
+                                            {" "}
                                             <path
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 stroke-width="2"
                                                 d="M9 5l7 7-7 7"
-                                            />
-                                                                             
-                                             {" "}
-                                        </svg>
-                                                                       {" "}
-                                    </div>
-                                                               {" "}
-                                </div>
-                                                       {" "}
-                            </a>
-                                               {" "}
+                                            />{" "}
+                                        </svg>{" "}
+                                    </div>{" "}
+                                </div>{" "}
+                            </a>{" "}
                         </div>
                     ) : (
                         <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl p-12 text-center border-2 border-pink-100">
-                                                   {" "}
-                            <div class="text-6xl mb-6">😿</div>                 
-                                 {" "}
+                            {" "}
+                            <div class="text-6xl mb-6">😿</div>{" "}
                             <h3 class="text-3xl font-bold text-[#FF6B6B] mb-4">
                                 ¡Ups! No hay gatitos disponibles
-                            </h3>
-                                                   {" "}
+                            </h3>{" "}
                             <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-                                                            Actualmente todos
-                                nuestros gatitos están adoptados, pero puedes
-                                explorar nuestras camadas anteriores o dejarnos
-                                tu correo para avisarte cuando tengamos nuevos
-                                gatitos.                        {" "}
-                            </p>
-                                                   {" "}
+                                Actualmente todos nuestros gatitos están
+                                adoptados, pero puedes explorar nuestras camadas
+                                anteriores o dejarnos tu correo para avisarte
+                                cuando tengamos nuevos gatitos.{" "}
+                            </p>{" "}
                             <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                                                           {" "}
+                                {" "}
                                 <a
                                     href="/principal/camadas-anteriores"
                                     class="inline-block bg-[#FF6B6B] hover:bg-[#e65c5c] hover:-translate-y-1 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-all duration-300"
                                 >
-                                                                    Ver camadas
-                                    anteriores                            {" "}
-                                </a>
-                                                           {" "}
+                                    Ver camadas anteriores{" "}
+                                </a>{" "}
                                 <a
                                     href="/principal/contacto"
                                     class="inline-block border-2 border-[#FF6B6B] text-[#FF6B6B] hover:bg-[#FF6B6B] hover:text-white hover:-translate-y-1 font-semibold py-3 px-8 rounded-full shadow-lg transition-all duration-300"
                                 >
-                                                                    Avisarme
-                                    cuando haya gatitos                        
-                                       {" "}
-                                </a>
-                                                       {" "}
-                            </div>
-                                               {" "}
+                                    Avisarme cuando haya gatitos{" "}
+                                </a>{" "}
+                            </div>{" "}
                         </div>
                     )
                 }
