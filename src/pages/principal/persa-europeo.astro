@@ -133,56 +133,83 @@ import { gatosEuropeo as gatosEuropeoAnteriores } from "../../scripts/gatos-euro
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
-                        {gatosEuropeo.map((gato) => (
-                            <article class="group bg-white rounded-[2.5rem] shadow-lg hover:shadow-[0_20px_50px_rgba(255,107,107,0.2)] transition-all duration-500 overflow-hidden border border-pink-50">
+                        {gatosEuropeo.map((gato, index) => (
+                            <article class="group bg-white rounded-[2.5rem] shadow-lg hover:shadow-[0_20px_50px_rgba(255,107,107,0.2)] transition-all duration-500 overflow-hidden border border-pink-50 cat-card">
                                 <div class="relative aspect-[4/5] overflow-hidden">
                                     <img
-                                        src={gato.img}
+                                        src={gato.images[0]}
                                         alt={gato.alt}
-                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        class="cat-image w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                                        data-images={JSON.stringify(gato.images)}
+                                        data-current-index="0"
                                     />
+
+                                    {gato.images.length > 1 && (
+                                        <div class="absolute inset-y-0 inset-x-0 flex items-center justify-between px-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
+                                            <button 
+                                                class="prev-image bg-white/40 backdrop-blur-md hover:bg-white/60 text-white p-2 rounded-xl border border-white/30 transition-all transform hover:scale-110 active:scale-95 pointer-events-auto"
+                                                aria-label="Imagen anterior"
+                                            >
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                                                </svg>
+                                            </button>
+                                            <button 
+                                                class="next-image bg-white/40 backdrop-blur-md hover:bg-white/60 text-white p-2 rounded-xl border border-white/30 transition-all transform hover:scale-110 active:scale-95 pointer-events-auto"
+                                                aria-label="Siguiente imagen"
+                                            >
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-1.5 z-30 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+                                            {gato.images.map((_, i) => (
+                                                <div class={`h-1.5 rounded-full transition-all duration-300 ${i === 0 ? 'bg-white w-6' : 'bg-white/40 w-1.5'} dot-indicator`} data-dot-index={i}></div>
+                                            ))}
+                                        </div>
+                                    )}
 
                                     <div
                                         class={`absolute top-5 left-5 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-lg ${gato.disponibleEstilo}`}
                                     >
                                         {gato.disponibleTexto}
                                     </div>
-
-                                    <a
-                                        href="/contacto"
-                                        class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
-                                    >
-                                        <span class="bg-white text-[#FF6B6B] px-6 py-2 rounded-full font-bold shadow-xl translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                            Conocer a {gato.name}
-                                        </span>
-                                    </a>
                                 </div>
 
                                 <div class="p-8">
-                                    <h3 class="text-3xl font-bold text-gray-800 mb-4">
+                                    <h3 class="text-3xl font-bold text-gray-800 mb-6">
                                         {gato.name}
                                     </h3>
 
-                                    <div class="grid grid-cols-2 gap-4 mb-8">
-                                        <div class="flex items-center gap-3 bg-[#FFF9F9] p-3 rounded-2xl">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                                        <div class="flex items-center gap-3 bg-[#fdf2f2] p-3 rounded-2xl border border-pink-100/50">
                                             <span class="text-xl">
                                                 {gato.gender === "Macho"
                                                     ? "💈"
                                                     : "🎀"}
                                             </span>
-                                            <span class="text-xs font-bold text-gray-500 uppercase tracking-tighter">
+                                            <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">
                                                 {gato.gender}
                                             </span>
                                         </div>
-                                        <div class="flex items-center gap-3 bg-[#FFF9F9] p-3 rounded-2xl">
+                                        <div class="flex items-center gap-3 bg-[#fdf2f2] p-3 rounded-2xl border border-pink-100/50">
                                             <span class="text-xl">📅</span>
                                             <span
-                                                class="text-xs font-bold text-gray-500 uppercase tracking-tighter edad-gatito"
+                                                class="text-[11px] font-bold text-gray-800 uppercase tracking-tight edad-gatito"
                                                 data-nacimiento={gato.birth.toString()}
                                             >
                                                 ...
                                             </span>
                                         </div>
+                                        {gato.color && (
+                                            <div class="flex items-center gap-3 bg-[#fdf2f2] p-3 rounded-2xl border border-pink-100/50 sm:col-span-2">
+                                                <span class="text-xl">🎨</span>
+                                                <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">
+                                                    {gato.color}
+                                                </span>
+                                            </div>
+                                        )}
                                     </div>
 
                                     <div class="flex flex-col gap-3">
@@ -192,9 +219,6 @@ import { gatosEuropeo as gatosEuropeoAnteriores } from "../../scripts/gatos-euro
                                         >
                                             ❤️ Adoptar a {gato.name}
                                         </a>
-                                        {/* <a href={`../gatos/${gato.slugEuropeo}`} class="w-full text-center text-gray-400 font-bold py-2 text-sm hover:text-[#FF6B6B] transition-colors">
-                                        Ver ficha técnica
-                                    </a> */}
                                     </div>
                                 </div>
                             </article>
@@ -231,7 +255,7 @@ import { gatosEuropeo as gatosEuropeoAnteriores } from "../../scripts/gatos-euro
                                     <figure class="group cursor-pointer">
                                         <div class="relative overflow-hidden rounded-[2rem] shadow-md mb-4 aspect-square">
                                             <img
-                                                src={gatoAnterior.img}
+                                                src={gatoAnterior.images ? gatoAnterior.images[0] : gatoAnterior.img}
                                                 alt={gatoAnterior.alt}
                                                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[20%] group-hover:grayscale-0"
                                             />
@@ -258,5 +282,74 @@ import { gatosEuropeo as gatosEuropeoAnteriores } from "../../scripts/gatos-euro
         </section>
 
         <script src="../../scripts/edad.js"></script>
+        <script>
+            function initImageSwitcher() {
+                const cards = document.querySelectorAll('.cat-card');
+                
+                cards.forEach(card => {
+                    const img = card.querySelector('.cat-image');
+                    const nextBtn = card.querySelector('.next-image');
+                    const prevBtn = card.querySelector('.prev-image');
+                    const dots = card.querySelectorAll('.dot-indicator');
+                    
+                    if (!img || !nextBtn || !prevBtn) return;
+                    
+                    const images = JSON.parse(img.dataset.images);
+                    let currentIndex = 0;
+                    
+                    const updateImage = (index) => {
+                        currentIndex = (index + images.length) % images.length;
+                        img.src = images[currentIndex];
+                        img.dataset.currentIndex = currentIndex;
+                        
+                        // Update dots
+                        dots.forEach((dot, i) => {
+                            if (i === currentIndex) {
+                                dot.classList.replace('bg-white/40', 'bg-white');
+                                dot.classList.replace('w-1.5', 'w-6');
+                            } else {
+                                dot.classList.replace('bg-white', 'bg-white/40');
+                                dot.classList.replace('w-6', 'w-1.5');
+                            }
+                        });
+                    };
+                    
+                    nextBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        updateImage(currentIndex + 1);
+                    });
+                    
+                    prevBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        updateImage(currentIndex - 1);
+                    });
+
+                    // Swipe support
+                    let touchStartX = 0;
+                    let touchEndX = 0;
+                    
+                    card.addEventListener('touchstart', (e) => {
+                        touchStartX = e.changedTouches[0].screenX;
+                    }, { passive: true });
+                    
+                    card.addEventListener('touchend', (e) => {
+                        touchEndX = e.changedTouches[0].screenX;
+                        if (touchStartX - touchEndX > 50) {
+                            updateImage(currentIndex + 1);
+                        } else if (touchEndX - touchStartX > 50) {
+                            updateImage(currentIndex - 1);
+                        }
+                    }, { passive: true });
+                });
+            }
+
+            // Run on initial load
+            initImageSwitcher();
+
+            // Run on view transitions if active
+            document.addEventListener('astro:page-load', initImageSwitcher);
+        </script>
     </main>
 </Layout>
