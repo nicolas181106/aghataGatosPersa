@@ -1,5 +1,5 @@
 import anubis from "../assets/img/nuestros_gatos/Ceres/Camada1/Anubis/anubis.jpg";
-import osiris from "../assets/img/nuestros_gatos/Ceres/Camada1/Osiris/osiris.jpeg";
+import osiris from "../assets/img/nuestros_gatos/Ceres/Camada1/Osiris/osiris268.jpeg";
 import caronte from "../assets/img/nuestros_gatos/Ceres/Camada1/Caronte/caronte.jpeg";
 import atlas from "../assets/img/nuestros_gatos/Ceres/Camada1/Atlas/atlas.jpg";
 import ares from "../assets/img/nuestros_gatos/Ceres/Camada1/Ares/ares.jpg";
@@ -71,5 +71,5 @@ export const gatosChinchilla = [
         birth: "06/12/2025",
         img: titanBebe.src,
         alt: "Titan - Gato persa chinchilla macho",
-    }, 
+    },
 ];
