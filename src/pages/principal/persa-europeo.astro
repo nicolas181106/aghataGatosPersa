@@ -4,6 +4,9 @@ import oddie from "../../assets/img/nuestros_gatos/Oddie/oddie.jpg";
 import blube from "../../assets/img/nuestros_gatos/Bluey/blube.jpg";
 import { gatosEuropeo } from "../../scripts/gatos-europeo.js";
 import { gatosEuropeo as gatosEuropeoAnteriores } from "../../scripts/gatos-europeo anterior.js";
+const gatosAleatorios = [...gatosEuropeoAnteriores]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 5); // Cogemos 5 al azar
 ---
 
 <Layout
@@ -230,47 +233,35 @@ import { gatosEuropeo as gatosEuropeoAnteriores } from "../../scripts/gatos-euro
 
         <section class="bg-white py-24 border-y border-pink-100">
             <div class="max-w-7xl mx-auto px-4">
-                <div
-                    class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6"
-                >
-                    <h2
-                        class="text-3xl md:text-4xl font-bold text-[#FF6B6B] mb-2"
-                    >
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#FF6B6B] mb-2">
                         Camadas anteriores
                     </h2>
-                    <a
-                        href="/principal/camadas-anteriores"
-                        class="text-[#FF6B6B] font-bold border-b-2 border-[#FF6B6B] pb-1 hover:text-[#ff5252] transition-colors"
-                    >
-                        Explorar Galería Completa →
-                    </a>
-                </div>
+                    </div>
 
                 {
-                    gatosEuropeoAnteriores.length > 0 ? (
+                    gatosAleatorios.length > 0 ? (
                         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
-                            {gatosEuropeoAnteriores
-                                .slice(0, 5)
-                                .map((gatoAnterior) => (
-                                    <figure class="group cursor-pointer">
-                                        <div class="relative overflow-hidden rounded-[2rem] shadow-md mb-4 aspect-square">
-                                            <img
-                                                src={gatoAnterior.images ? gatoAnterior.images[0] : gatoAnterior.img}
-                                                alt={gatoAnterior.alt}
-                                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[20%] group-hover:grayscale-0"
-                                            />
-                                            <div class="absolute inset-0 bg-gradient-to-t from-pink-500/20 to-transparent" />
-                                        </div>
-                                        <figcaption class="text-center">
-                                            <p class="font-bold text-gray-800 tracking-tight">
-                                                {gatoAnterior.name}
-                                            </p>
-                                            <p class="text-[10px] text-[#FF8A8A] font-black uppercase tracking-widest">
-                                                {gatoAnterior.gender}
-                                            </p>
-                                        </figcaption>
-                                    </figure>
-                                ))}
+                            {gatosAleatorios.map((gatoAnterior) => (
+                                <figure class="group cursor-pointer">
+                                    <div class="relative overflow-hidden rounded-[2rem] shadow-md mb-4 aspect-square">
+                                        <img
+                                            src={gatoAnterior.images ? gatoAnterior.images[0] : gatoAnterior.img}
+                                            alt={gatoAnterior.alt}
+                                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[20%] group-hover:grayscale-0"
+                                        />
+                                        <div class="absolute inset-0 bg-gradient-to-t from-pink-500/20 to-transparent" />
+                                    </div>
+                                    <figcaption class="text-center">
+                                        <p class="font-bold text-gray-800 tracking-tight">
+                                            {gatoAnterior.name}
+                                        </p>
+                                        <p class="text-[10px] text-[#FF8A8A] font-black uppercase tracking-widest">
+                                            {gatoAnterior.gender}
+                                        </p>
+                                    </figcaption>
+                                </figure>
+                            ))}
                         </div>
                     ) : (
                         <div class="bg-[#FFF9F9] rounded-3xl p-10 text-center text-gray-400 font-medium">

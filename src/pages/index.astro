@@ -14,6 +14,7 @@ import imgIndex10 from "../assets/img/nuestros_gatos/Ceres/Camada1/Osiris/osiris
 import imgIndex11 from "../assets/img/nuestros_gatos/Bluey/blube2.jpg";
 import unknown from "../assets/img/gatos/unknown.jpg";
 import canela from "../assets/img/nuestros_gatos/Bluey/Camada3/Canela/Canela2929293.jpeg";
+import leo from "../assets/img/nuestros_gatos/Bluey/Camada3/Leo/leo87887.jpeg";
 
 import art10 from "../assets/img/productos/comida/art10.jpg";
 import art3 from "../assets/img/productos/comida/art3.jpg";
@@ -21,7 +22,7 @@ import art9 from "../assets/img/productos/comida/art9.jpg";
 
 interface Gato {
     nombre: string;
-    genero: "Masculino" | "Femenino";
+    genero: "Macho" | "Hembra";
     edad: Date;
     imgSrc: { src: string };
     alt: string;
@@ -31,10 +32,18 @@ interface Gato {
 const gatos: Gato[] = [
     {
         nombre: "Canela",
-        genero: "Femenino",
+        genero: "Hembra",
         edad: new Date("2026-03-24"),
         imgSrc: canela,
         alt: "Canela - Gatita persa disponible",
+        variedad: "Persa Europeo",
+    },
+    {
+        nombre: "Leo",
+        genero: "Macho",
+        edad: new Date("2026-03-24"),
+        imgSrc: leo,
+        alt: "Leo - Gatita persa disponible",
         variedad: "Persa Europeo",
     },
 ];
@@ -166,6 +175,7 @@ const destacadosIndex = [
                     <div
                         class="w-16 h-16 bg-[#FFF0F0] rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:scale-110 transition-transform duration-500"
                     >
+                        🏠
                     </div>
 
                     <h3

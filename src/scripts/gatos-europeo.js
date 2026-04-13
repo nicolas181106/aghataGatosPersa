@@ -1,6 +1,8 @@
 import unknown from "../assets/img/gatos/unknown.jpg";
 import canela from "../assets/img/nuestros_gatos/Bluey/Camada3/Canela/Canela2929293.jpeg";
 import canela2 from "../assets/img/nuestros_gatos/Bluey/Camada3/Canela/Canela2987293.jpeg";
+import leo from "../assets/img/nuestros_gatos/Bluey/Camada3/Leo/leo87887.jpeg";
+import leo2 from "../assets/img/nuestros_gatos/Bluey/Camada3/Leo/leo485485.jpeg";
 
 export const gatosEuropeo = [
     {
@@ -15,12 +17,12 @@ export const gatosEuropeo = [
         disponibleTexto: "✓ Disponible"
     },
     {
-        name: "",
-        gender: "",
+        name: "Leo",
+        gender: "Macho",
         birth: "2026-03-24",
-        images: [unknown.src],
-        alt: "",
-        color: "",
+        images: [leo.src, leo2.src],
+        alt: "Leo imagen",
+        color: "Negro",
         raza: "Gato Persa Europeo",
         disponibleEstilo: "absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
         disponibleTexto: "✓ Disponible"
