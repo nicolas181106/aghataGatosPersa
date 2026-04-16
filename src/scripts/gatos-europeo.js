@@ -3,6 +3,8 @@ import canela from "../assets/img/nuestros_gatos/Bluey/Camada3/Canela/Canela2929
 import canela2 from "../assets/img/nuestros_gatos/Bluey/Camada3/Canela/Canela2987293.jpeg";
 import leo from "../assets/img/nuestros_gatos/Bluey/Camada3/Leo/leo87887.jpeg";
 import leo2 from "../assets/img/nuestros_gatos/Bluey/Camada3/Leo/leo485485.jpeg";
+import william from "../assets/img/nuestros_gatos/Bluey/Camada3/William/William6756765.jpeg";
+import william2 from "../assets/img/nuestros_gatos/Bluey/Camada3/William/William6989865.jpeg";
 
 export const gatosEuropeo = [
     {
@@ -28,12 +30,12 @@ export const gatosEuropeo = [
         disponibleTexto: "✓ Disponible"
     },
     {
-        name: "",
-        gender: "",
+        name: "William",
+        gender: "Macho",
         birth: "2026-03-24",
-        images: [unknown.src],
-        alt: "",
-        color: "",
+        images: [william.src, william2.src],
+        alt: "William imagen",
+        color: "Gris",
         raza: "Gato Persa Europeo",
         disponibleEstilo: "absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
         disponibleTexto: "✓ Disponible"
