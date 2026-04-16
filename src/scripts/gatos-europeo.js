@@ -5,6 +5,8 @@ import leo from "../assets/img/nuestros_gatos/Bluey/Camada3/Leo/leo87887.jpeg";
 import leo2 from "../assets/img/nuestros_gatos/Bluey/Camada3/Leo/leo485485.jpeg";
 import william from "../assets/img/nuestros_gatos/Bluey/Camada3/William/William6756765.jpeg";
 import william2 from "../assets/img/nuestros_gatos/Bluey/Camada3/William/William6989865.jpeg";
+import platon from "../assets/img/nuestros_gatos/Bluey/Camada3/Platon/Platon476784.jpeg";
+import platon2 from "../assets/img/nuestros_gatos/Bluey/Camada3/Platon/Platon4848484.jpeg";
 
 export const gatosEuropeo = [
     {
@@ -41,12 +43,12 @@ export const gatosEuropeo = [
         disponibleTexto: "✓ Disponible"
     },
     {
-        name: "",
-        gender: "",
+        name: "Platon",
+        gender: "Macho",
         birth: "2026-03-24",
-        images: [unknown.src],
-        alt: "",
-        color: "",
+        images: [platon.src, platon2.src],
+        alt: "Platon imagen",
+        color: "Gris",
         raza: "Gato Persa Europeo",
         disponibleEstilo: "absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
         disponibleTexto: "✓ Disponible"
