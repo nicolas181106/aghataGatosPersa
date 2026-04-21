@@ -18,7 +18,7 @@ export const gatosEuropeo = [
         images: [canela.src, canela2.src],
         alt: "Canela imagen",
         color: "Blanco",
-        raza: "Gato Persa Europeo",
+        raza: "Persa Europeo",
         disponibleEstilo: "absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
         disponibleTexto: "✓ Disponible"
     },
@@ -28,8 +28,8 @@ export const gatosEuropeo = [
         birth: "2026-03-24",
         images: [leo.src, leo2.src],
         alt: "Leo imagen",
-        color: "Negro",
-        raza: "Gato Persa Europeo",
+        color: "Atigrado",
+        raza: "Persa Europeo",
         disponibleEstilo: "absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
         disponibleTexto: "✓ Disponible"
     },
@@ -40,7 +40,7 @@ export const gatosEuropeo = [
         images: [william.src, william2.src],
         alt: "William imagen",
         color: "Gris",
-        raza: "Gato Persa Europeo",
+        raza: "Persa Europeo",
         disponibleEstilo: "absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
         disponibleTexto: "✓ Disponible"
     },
@@ -51,7 +51,7 @@ export const gatosEuropeo = [
         images: [platon.src, platon2.src],
         alt: "Platon imagen",
         color: "Gris",
-        raza: "Gato Persa Europeo",
+        raza: "Persa Europeo",
         disponibleEstilo: "absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
         disponibleTexto: "✓ Disponible"
     },
@@ -62,7 +62,7 @@ export const gatosEuropeo = [
         images: [nieve.src, nieve2.src],
         alt: "Nieve imagen",
         color: "Blanco",
-        raza: "Gato Persa Europeo",
+        raza: "Persa Europeo",
         disponibleEstilo: "absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
         disponibleTexto: "✓ Disponible"
     },
@@ -73,7 +73,7 @@ export const gatosEuropeo = [
         images: [unknown.src],
         alt: "",
         color: "",
-        raza: "Gato Persa Europeo",
+        raza: "Persa Europeo",
         disponibleEstilo: "absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
         disponibleTexto: "✓ Disponible"
     },
@@ -84,7 +84,7 @@ export const gatosEuropeo = [
         images: [unknown.src],
         alt: "",
         color: "",
-        raza: "Gato Persa Europeo",
+        raza: "Persa Europeo",
         disponibleEstilo: "absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
         disponibleTexto: "✓ Disponible"
     },

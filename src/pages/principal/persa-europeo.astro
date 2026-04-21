@@ -185,10 +185,11 @@ const gatosAleatorios = [...gatosEuropeoAnteriores]
                                         {gato.name}
                                     </h3>
 
-                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                                    <div class="grid grid-cols-2 gap-3 mb-8">
                                         <div class="flex items-center gap-3 bg-[#fdf2f2] p-3 rounded-2xl border border-pink-100/50">
                                             <span class="text-xl">
-                                                {gato.gender === "Macho"
+                                                {gato.gender === "Macho" ||
+                                                gato.gender === "Masculino"
                                                     ? "💈"
                                                     : "🎀"}
                                             </span>
@@ -206,10 +207,18 @@ const gatosAleatorios = [...gatosEuropeoAnteriores]
                                             </span>
                                         </div>
                                         {gato.color && (
-                                            <div class="flex items-center gap-3 bg-[#fdf2f2] p-3 rounded-2xl border border-pink-100/50 sm:col-span-2">
+                                            <div class="flex items-center gap-3 bg-[#fdf2f2] p-3 rounded-2xl border border-pink-100/50">
                                                 <span class="text-xl">🎨</span>
                                                 <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">
                                                     {gato.color}
+                                                </span>
+                                            </div>
+                                        )}
+                                        {gato.raza && (
+                                            <div class="flex items-center gap-3 bg-[#fdf2f2] p-3 rounded-2xl border border-pink-100/50">
+                                                <span class="text-xl">🐾</span>
+                                                <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">
+                                                    {gato.raza}
                                                 </span>
                                             </div>
                                         )}
