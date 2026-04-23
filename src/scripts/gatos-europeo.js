@@ -9,6 +9,8 @@ import platon from "../assets/img/nuestros_gatos/Bluey/Camada3/Platon/Platon4848
 import platon2 from "../assets/img/nuestros_gatos/Bluey/Camada3/Platon/Platon67675.jpeg";
 import nieve from "../assets/img/nuestros_gatos/Bluey/Camada3/Nieve/nieve28383.jpeg";
 import nieve2 from "../assets/img/nuestros_gatos/Bluey/Camada3/Nieve/nieve28783.jpeg";
+import loki from "../assets/img/nuestros_gatos/Bluey/Camada3/Loki/loki4838448.jpeg";
+import loki2 from "../assets/img/nuestros_gatos/Bluey/Camada3/Loki/loki34343.jpeg";
 
 export const gatosEuropeo = [
     {
@@ -63,29 +65,29 @@ export const gatosEuropeo = [
         alt: "Nieve imagen",
         color: "Blanco",
         raza: "Persa Europeo",
-        disponibleEstilo: "absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
-        disponibleTexto: "✓ Disponible"
+        disponibleEstilo: "absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
+        disponibleTexto: "✗ Adoptado"
     },
     {
-        name: "",
-        gender: "",
+        name: "Loki",
+        gender: "Macho",
         birth: "2026-03-24",
-        images: [unknown.src],
-        alt: "",
-        color: "",
+        images: [loki.src, loki2.src],
+        alt: "Loki imagen",
+        color: "Atigrado",
         raza: "Persa Europeo",
-        disponibleEstilo: "absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
-        disponibleTexto: "✓ Disponible"
+        disponibleEstilo: "absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
+        disponibleTexto: "✗ Adoptado"
     },
     {
-        name: "",
-        gender: "",
+        name: "Thor",
+        gender: "Macho",
         birth: "2026-03-24",
         images: [unknown.src],
-        alt: "",
-        color: "",
+        alt: "Thor imagen",
+        color: "Blanco",
         raza: "Persa Europeo",
-        disponibleEstilo: "absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
-        disponibleTexto: "✓ Disponible"
+        disponibleEstilo: "absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
+        disponibleTexto: "✗ Adoptado"
     },
 ];
