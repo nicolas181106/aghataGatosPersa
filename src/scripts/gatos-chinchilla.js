@@ -7,6 +7,8 @@ import pardo from "../assets/img/nuestros_gatos/Ceres/Camada3/Pardo/pardo3767.jp
 import pardo2 from "../assets/img/nuestros_gatos/Ceres/Camada3/Pardo/pardo39393.jpeg";
 import socrates from "../assets/img/nuestros_gatos/Ceres/Camada3/Socrates/socrates3432.jpeg";
 import socrates2 from "../assets/img/nuestros_gatos/Ceres/Camada3/Socrates/socrates28282.jpeg";
+import copo from "../assets/img/nuestros_gatos/Ceres/Camada3/Copo/copo8484.jpeg";
+import copo2 from "../assets/img/nuestros_gatos/Ceres/Camada3/Copo/copo8485.jpeg";
 
 export const gatosChinchilla = [
     {
@@ -57,7 +59,7 @@ export const gatosChinchilla = [
         name: "Copo",
         gender: "Hembra",
         birth: "2026-04-06",
-        images: [unknown.src],
+        images: [copo.src, copo2.src],
         alt: "Copo imagen",
         color: "Blanco",
         raza: "Persa Chinchilla",

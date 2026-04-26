@@ -15,7 +15,7 @@ import imgIndex11 from "../assets/img/nuestros_gatos/Bluey/blube2.jpg";
 
 import unknown from "../assets/img/gatos/unknown.jpg";
 
-import canela from "../assets/img/nuestros_gatos/Bluey/Camada3/Canela/canela96595.jpeg";
+import pardo from "../assets/img/nuestros_gatos/Ceres/Camada3/Pardo/pardo39393.jpeg";
 import william from "../assets/img/nuestros_gatos/Bluey/Camada3/William/William6567565.jpeg";
 
 import art10 from "../assets/img/productos/comida/art10.jpg";
@@ -34,13 +34,13 @@ interface Gato {
 
 const gatos: Gato[] = [
     {
-        nombre: "Canela",
+        nombre: "Pardo",
         genero: "Hembra",
-        edad: new Date("2026-03-24"),
-        imgSrc: canela,
-        alt: "Canela - Gatita persa disponible",
-        variedad: "Persa Europeo",
-        color: "Blanco",
+        edad: new Date("2026-04-06"),
+        imgSrc: pardo,
+        alt: "Pardo - Gatita persa disponible",
+        variedad: "Persa Chinchilla",
+        color: "Atigrado",
     },
     {
         nombre: "William",
@@ -647,7 +647,9 @@ const destacadosIndex = [
                                             </div>
                                             {gato.color && (
                                                 <div class="flex items-center gap-3 bg-[#fdf2f2] p-3 rounded-2xl border border-pink-100/50">
-                                                    <span class="text-xl">🎨</span>
+                                                    <span class="text-xl">
+                                                        🎨
+                                                    </span>
                                                     <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">
                                                         {gato.color}
                                                     </span>
@@ -655,7 +657,9 @@ const destacadosIndex = [
                                             )}
                                             {gato.variedad && (
                                                 <div class="flex items-center gap-3 bg-[#fdf2f2] p-3 rounded-2xl border border-pink-100/50">
-                                                    <span class="text-xl">🐾</span>
+                                                    <span class="text-xl">
+                                                        🐾
+                                                    </span>
                                                     <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">
                                                         {gato.variedad}
                                                     </span>
