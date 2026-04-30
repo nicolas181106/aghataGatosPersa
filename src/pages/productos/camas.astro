@@ -1,14 +1,54 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import imgCamaPrincipal from "./../../assets/img/productos/cama.jpg";
+import art1 from "./../../assets/img/productos/camas/art1.jpg";
+import art2 from "./../../assets/img/productos/camas/art2.jpg";
+import art3 from "./../../assets/img/productos/camas/art3.jpg";
+import art4 from "./../../assets/img/productos/camas/art4.jpg";
+import art5 from "./../../assets/img/productos/camas/art5.jpg";
 
-const camas = [];
+const camas = [
+  {
+    a: "https://amzn.to/4uevTX1",
+    img: art1.src,
+    alt: "Amazon Basics Cama Redonda para Gato con Parte Superior de Franela",
+    h2: "Amazon Basics Cama Redonda para Gato con Parte Superior de Franela",
+    p: "Ofrece un sitio seguro y mullido para que tu gatito o perrito se eche la siesta. La superficie superior de felpa de franela ofrece una gran suavidad y los lados y la parte posterior de poliéster, mayor resistencia.",
+  },
+  {
+    a: "https://amzn.to/4cRLrsH",
+    img: art2.src,
+    alt: "Bedsure Cama para Gato",
+    h2: "Bedsure Cama para Gato",
+    p: "Consiente a tu mascota con la superficie de sherpa mullido, proporcionando una suavidad esponjosa y ultra-acogedora. Crea un ambiente de descanso acogedor para que tu amado compañero se relaje y experimente la máxima tranquilidad.",
+  },
+  {
+    a: "https://amzn.to/4vWURfr",
+    img: art3.src,
+    alt: "Bedsure Cama Grande Lavable Gatos",
+    h2: "Bedsure Cama Grande Lavable Gatos",
+    p: "Las almohadas removibles en esta cama para gatos brindan comodidad durante todo el año en cualquier tipo de clima. El suave tejido de franela de felpa extra proporciona calidez y confort a tu mascota.",
+  },
+  {
+    a: "https://amzn.to/3OwRL0U",
+    img: art4.src,
+    alt: "Bedsure Cama para Gatos Grande",
+    h2: "Bedsure Cama para Gatos Grande",
+    p: "Esta tienda para gatos incluye un cojín ultra suave con relleno de fibra de poliéster y cubierta de Sherpa peludo, proporcionando un refugio cálido para el sueño tranquilo de tu mascota.",
+  },
+  {
+    a: "https://amzn.to/4dgTjW0",
+    img: art5.src,
+    alt: "Cama para Gatos 2 en 1 Esterilla para Gato",
+    h2: "Cama para Gatos 2 en 1 Esterilla para Gato",
+    p: "Cama de gato 2-en-1 está hecha de felpa suave y mullida, combinada con una mezcla de algodón y lino resistente al desgaste : suave al tacto, sin olores desagradables y segura, ofrece a tu mascota un entorno de descanso cálido, confortable y protegido.",
+  },
+];
 ---
 
 <Layout
-  title="Camas para Gatos Persas | El mejor descanso para tu mascota"
-  description="Encuentra la mejor cama para tu gato persa: camas antiestrés, cuevas, iglús y opciones ortopédicas para un descanso de lujo."
-  keywords="camas para gatos, camas gato persa, cueva gato, iglú gato, cama antiestrés gato, mejor cama gato persa"
+  title={`Las Mejores Camas para Gatos ${new Date().getFullYear()} | Descanso y Confort`}
+  description="Guía completa para elegir la mejor cama para tu gato: antiestrés, cuevas, hamacas de ventana y opciones ortopédicas. El descanso que tu gato merece."
+  keywords="camas para gatos, cama antiestrés gato, cueva gato, hamaca ventana gato, descanso felino, mejores camas gatos, accesorios descanso gatos"
 >
   <main class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen pb-16 mt-20">
     <section
@@ -26,12 +66,65 @@ const camas = [];
         <h1
           class="text-2xl sm:text-3xl md:text-[32px] font-extrabold leading-snug"
         >
-          Camas y accesorios de descanso para gatos persas
+          Camas para gatos: El descanso que tu mascota necesita
         </h1>
         <p class="mt-2 text-[13px] sm:text-sm text-white/90 max-w-2xl">
-          El descanso es sagrado para un gato persa. Por eso, hemos seleccionado
-          las camas más suaves y acogedoras.
+          Un gato pasa más de 15 horas al día durmiendo. Proporcionarle una <strong
+            >cama de calidad</strong
+          > no es un lujo, es una necesidad para su salud física y emocional.
         </p>
+        <p class="mt-2 text-[12px] sm:text-xs text-white/80 max-w-2xl">
+          Explora nuestra selección de camas diseñadas para ofrecer el máximo
+          confort, desde modelos antiestrés hasta hamacas soleadas.
+        </p>
+
+        <div class="mt-4 flex flex-wrap gap-2 text-[11px] sm:text-[12px]">
+          <span
+            class="px-3 py-1 rounded-full bg-white/15 border border-white/30"
+            >Camas antiestrés</span
+          >
+          <span
+            class="px-3 py-1 rounded-full bg-white/10 border border-white/20"
+            >Cuevas e iglús</span
+          >
+          <span
+            class="px-3 py-1 rounded-full bg-white/10 border border-white/20"
+            >Hamacas de ventana</span
+          >
+          <span
+            class="px-3 py-1 rounded-full bg-white/10 border border-white/20"
+            >Soporte ortopédico</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="max-w-full sm:max-w-[600px] lg:max-w-4xl sm:mx-auto sm:mt-12 p-8 bg-white sm:rounded-3xl shadow-xl border border-gray-100 text-gray-800 pop"
+    >
+      <h2
+        class="text-2xl lg:text-3xl font-black text-[#FF6B6B] mb-6 text-center tracking-tight"
+      >
+        Guía de descanso: ¿Cómo elegir la cama perfecta?
+      </h2>
+
+      <div class="space-y-5 text-lg leading-relaxed text-gray-600">
+        <p>
+          Los <strong>gatos persas</strong>, con su abundante pelaje, a veces
+          pueden sentir calor en camas demasiado cerradas, pero aman la
+          suavidad. La clave es elegir materiales transpirables y suaves al
+          tacto.
+        </p>
+
+        <div class="p-5 bg-pink-50 rounded-xl border-l-4 border-[#FF6B6B]">
+          <p class="text-gray-700 m-0">
+            <strong>Consejo experto:</strong> Observa cómo duerme tu gato. Si le gusta
+            hacerse una bolita, una cama tipo <strong>donut</strong> será su paraíso.
+            Si prefiere estirarse o vigilar, una <strong
+              >hamaca de ventana</strong
+            > o una cama abierta son mejores opciones.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -41,7 +134,7 @@ const camas = [];
     >
       {
         camas.map((producto) => (
-          <article class="group bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 flex flex-col border border-[#FFE2E2]/80 hover:border-[#FF6B6B]/80 hover:-translate-y-1.5 overflow-hidden">
+          <article class="group bg-white rounded-2xl pop shadow-sm hover:shadow-md transition-all duration-200 flex flex-col border border-[#FFE2E2]/80 hover:border-[#FF6B6B]/80 hover:-translate-y-1.5 overflow-hidden">
             <div class="relative h-64 overflow-hidden">
               <img
                 src={producto.img}
@@ -49,11 +142,6 @@ const camas = [];
                 class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-200"
                 loading="lazy"
               />
-              {producto.badge && (
-                <span class="absolute top-3 left-3 inline-flex items-center rounded-full bg-black/55 text-white text-[11px] font-medium px-2.5 py-[3px]">
-                  {producto.badge}
-                </span>
-              )}
             </div>
 
             <div class="p-4 sm:p-5 flex flex-col flex-1">
@@ -65,17 +153,13 @@ const camas = [];
                 {producto.p}
               </p>
 
-              <p class="mt-2 text-[11px] text-emerald-700 font-medium">
-                {producto.info}
-              </p>
-
               <a
                 href={producto.a}
                 target="_blank"
                 rel="nofollow noopener noreferrer"
                 class="mt-4 inline-flex items-center justify-center gap-2 bg-[#FF6B6B] text-white font-semibold py-2.5 px-4 rounded-full hover:bg-[#e55a5a] text-[13px] text-center transition-colors"
               >
-                Ver disponibilidad en Amazon
+                Comprar en Amazon
               </a>
             </div>
           </article>
@@ -84,21 +168,40 @@ const camas = [];
     </section>
 
     <div
-      class="max-w-2xl mx-auto mt-12 p-6 bg-amber-50/50 border border-amber-100 rounded-2xl text-center shadow-sm"
+      class="max-w-80 sm:max-w-2xl mx-auto mt-16 p-6 bg-amber-50/50 border border-amber-200 rounded-2xl shadow-sm text-center"
     >
-      <p class="text-[12px] text-amber-900/70 leading-relaxed">
-        Como afiliados de Amazon, ayudamos a mantener el criadero con las
-        compras realizadas a través de estos enlaces, sin coste adicional para
-        ti.
+      <div class="flex items-center justify-center gap-2 text-amber-700 mb-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <h3 class="font-bold text-xs uppercase tracking-widest">
+          Transparencia y Confort
+        </h3>
+      </div>
+
+      <p class="text-sm md:text-[15px] text-amber-900/80 leading-relaxed">
+        Nuestras recomendaciones de <strong>artículos de descanso</strong> se basan
+        en la calidad de los materiales y la satisfacción de los usuarios. Al comprar
+        a través de nuestros enlaces, nos ayudas a seguir cuidando de nuestros gatos
+        persas.
       </p>
     </div>
 
     <div class="flex justify-center mt-12">
       <a
         href="/principal/productos"
-        class="bg-[#FF6B6B] text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform hover:scale-105 active:scale-95"
+        class="group flex items-center gap-2 bg-[#FF6B6B] hover:bg-[#ff5252] text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl shadow-red-200 transition-all duration-300 transform hover:scale-105 active:scale-95 text-lg pop"
       >
-        Volver a Productos
+        Ver todos los productos
+        <span class="transition-transform group-hover:translate-x-1">→</span>
       </a>
     </div>
   </main>

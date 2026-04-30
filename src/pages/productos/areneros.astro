@@ -1,14 +1,46 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import imgAreneroPrincipal from "./../../assets/img/productos/arenero.jpg";
+import art1 from "../../assets/img/productos/areneros/art1.jpg";
+import art2 from "../../assets/img/productos/areneros/art2.jpg";
+import art3 from "../../assets/img/productos/areneros/art3.jpg";
+import art4 from "../../assets/img/productos/areneros/art4.jpg";
 
-const areneros = [];
+const areneros = [
+  {
+    a: "https://amzn.to/3R94jMy",
+    img: art1.src,
+    alt: "Arenero para gatos Trixie Vico con capota y filtro",
+    h2: "Trixie Vico – Arenero Cerrado con Capota",
+    p: "Un clásico indispensable. Este inodoro para gatos cuenta con una capota que proporciona privacidad y un doble borde que evita fugas de arena. Incluye cierres rápidos para una limpieza ágil.",
+  },
+  {
+    a: "https://amzn.to/3Y8k5hF",
+    img: art2.src,
+    alt: "Mobiclinic® Pets",
+    h2: "Mobiclinic® Pets",
+    p: "Este arenero para gatos con doble apertura le ofrecerá un diseño moderno adaptable a cualquier entorno.  La cubierta y sus entradas con tapa ayudan a reducir olores, evita derrames no deseados y sirve como una barrera estilizada contra la intrusión de niños y mascotas curiosas.",
+  },
+  {
+    a: "https://amzn.to/3B7mN9X",
+    img: art3.src,
+    alt: "Feandrea Arenero para Gatos",
+    h2: "Feandrea Arenero para Gatos",
+    p: "Con una bandeja deslizante, esta caja de arena para gatitos hace que sea muy fácil recoger o cambiar la arena. Incluye una pala y un cepillo para recoger los residuos y limpiar la arena de la parte superior.",
+  },
+  {
+    a: "https://amzn.to/3X9pL2v",
+    img: art4.src,
+    alt: "Curver Inodoro para Gatos",
+    h2: "Curver Inodoro para Gatos",
+    p: "Bandeja de arena para gatos con un filtro de carbón activado. La rejilla de las patas ayuda a evitar que la arena se esparza por su casa. Se puede desmontar completamente, para una fácil limpieza de la bandeja. Diseño elegante con aspecto de ratán y fabricado con plástico resistente y duradero.",
+  },
+];
 ---
 
 <Layout
-  title="Areneros para Gatos Persas | Higiene y comodidad"
-  description="Encuentra el arenero ideal para tu gato persa: bandejas XXL, areneros cerrados y opciones de fácil acceso para mantener la higiene de tu hogar."
-  keywords="arenero gato, bandeja sanitaria gato, arenero XXL, arenero cerrado gato, arenero gato persa, higiene felina"
+  title={`Los Mejores Areneros para Gatos ${new Date().getFullYear()} | Higiene y Confort`}
+  description="Guía completa para elegir el mejor arenero para tu gato: cerrados, de entrada superior y bandejas XXL. Mantén tu hogar limpio y tu gato feliz."
+  keywords="arenero gato, bandeja sanitaria gato, arenero cerrado, arenero entrada superior, limpieza arenero, higiene felina, accesorios gatos"
 >
   <main class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen pb-16 mt-20">
     <section
@@ -26,12 +58,66 @@ const areneros = [];
         <h1
           class="text-2xl sm:text-3xl md:text-[32px] font-extrabold leading-snug"
         >
-          Areneros y accesorios de higiene para gatos persas
+          Areneros para gatos: Higiene y bienestar en tu hogar
         </h1>
         <p class="mt-2 text-[13px] sm:text-sm text-white/90 max-w-2xl">
-          Mantener la higiene es clave para un hogar feliz. Elige areneros
-          espaciosos y fáciles de limpiar para tu gato.
+          Elegir el <strong>arenero adecuado</strong> es fundamental para la salud
+          de tu gato y la limpieza de tu casa. Explora nuestra selección de los modelos
+          más valorados.
         </p>
+        <p class="mt-2 text-[12px] sm:text-xs text-white/80 max-w-2xl">
+          Desde opciones cerradas con filtro de carbón hasta sistemas de entrada
+          superior antirrastro, tenemos la solución perfecta para cada
+          necesidad.
+        </p>
+
+        <div class="mt-4 flex flex-wrap gap-2 text-[11px] sm:text-[12px]">
+          <span
+            class="px-3 py-1 rounded-full bg-white/15 border border-white/30"
+            >Areneros cerrados</span
+          >
+          <span
+            class="px-3 py-1 rounded-full bg-white/10 border border-white/20"
+            >Entrada superior</span
+          >
+          <span
+            class="px-3 py-1 rounded-full bg-white/10 border border-white/20"
+            >Bandejas antirrastro</span
+          >
+          <span
+            class="px-3 py-1 rounded-full bg-white/10 border border-white/20"
+            >Fácil limpieza</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="max-w-full sm:max-w-[600px] lg:max-w-4xl sm:mx-auto sm:mt-12 p-8 bg-white sm:rounded-3xl shadow-xl border border-gray-100 text-gray-800 pop"
+    >
+      <h2
+        class="text-2xl lg:text-3xl font-black text-[#FF6B6B] mb-6 text-center tracking-tight"
+      >
+        Guía de higiene: ¿Cómo elegir el mejor arenero?
+      </h2>
+
+      <div class="space-y-5 text-lg leading-relaxed text-gray-600">
+        <p>
+          Un gato limpio es un gato feliz. El arenero no es solo un accesorio,
+          es su lugar más privado. Los <strong>gatos persas</strong>, con su
+          largo pelaje, requieren areneros que minimicen el rastro de arena y
+          mantengan sus patas secas y limpias.
+        </p>
+
+        <div class="p-5 bg-pink-50 rounded-xl border-l-4 border-[#FF6B6B]">
+          <p class="text-gray-700 m-0">
+            <strong>Consejo experto:</strong> Coloca el arenero en un lugar tranquilo
+            y bien ventilado. Si tienes varios gatos, la regla de oro es tener <strong
+              >un arenero por gato más uno adicional</strong
+            >. Esto previene problemas de comportamiento y asegura una higiene
+            óptima.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -41,7 +127,7 @@ const areneros = [];
     >
       {
         areneros.map((producto) => (
-          <article class="group bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 flex flex-col border border-[#FFE2E2]/80 hover:border-[#FF6B6B]/80 hover:-translate-y-1.5 overflow-hidden">
+          <article class="group bg-white rounded-2xl pop shadow-sm hover:shadow-md transition-all duration-200 flex flex-col border border-[#FFE2E2]/80 hover:border-[#FF6B6B]/80 hover:-translate-y-1.5 overflow-hidden">
             <div class="relative h-64 overflow-hidden">
               <img
                 src={producto.img}
@@ -49,11 +135,6 @@ const areneros = [];
                 class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-200"
                 loading="lazy"
               />
-              {producto.badge && (
-                <span class="absolute top-3 left-3 inline-flex items-center rounded-full bg-black/55 text-white text-[11px] font-medium px-2.5 py-[3px]">
-                  {producto.badge}
-                </span>
-              )}
             </div>
 
             <div class="p-4 sm:p-5 flex flex-col flex-1">
@@ -65,17 +146,13 @@ const areneros = [];
                 {producto.p}
               </p>
 
-              <p class="mt-2 text-[11px] text-emerald-700 font-medium">
-                {producto.info}
-              </p>
-
               <a
                 href={producto.a}
                 target="_blank"
                 rel="nofollow noopener noreferrer"
                 class="mt-4 inline-flex items-center justify-center gap-2 bg-[#FF6B6B] text-white font-semibold py-2.5 px-4 rounded-full hover:bg-[#e55a5a] text-[13px] text-center transition-colors"
               >
-                Ver en Amazon
+                Comprar en Amazon
               </a>
             </div>
           </article>
@@ -84,20 +161,39 @@ const areneros = [];
     </section>
 
     <div
-      class="max-w-2xl mx-auto mt-12 p-6 bg-amber-50/50 border border-amber-100 rounded-2xl text-center shadow-sm"
+      class="max-w-80 sm:max-w-2xl mx-auto mt-16 p-6 bg-amber-50/50 border border-amber-200 rounded-2xl shadow-sm text-center"
     >
-      <p class="text-[12px] text-amber-900/70 leading-relaxed">
-        Comprar a través de estos enlaces nos ayuda a cubrir los gastos del
-        criadero. Gracias por tu apoyo.
+      <div class="flex items-center justify-center gap-2 text-amber-700 mb-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <h3 class="font-bold text-xs uppercase tracking-widest">
+          Higiene y Transparencia
+        </h3>
+      </div>
+
+      <p class="text-sm md:text-[15px] text-amber-900/80 leading-relaxed">
+        Nuestras recomendaciones de <strong>productos de higiene</strong> se basan
+        en la durabilidad y efectividad de los mismos. Al comprar a través de nuestros
+        enlaces, apoyas el mantenimiento de nuestro criadero de gatos persas.
       </p>
     </div>
 
     <div class="flex justify-center mt-12">
       <a
         href="/principal/productos"
-        class="bg-[#FF6B6B] text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform hover:scale-105 active:scale-95"
+        class="group flex items-center gap-2 bg-[#FF6B6B] hover:bg-[#ff5252] text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl shadow-red-200 transition-all duration-300 transform hover:scale-105 active:scale-95 text-lg pop"
       >
-        Volver a Productos
+        Ver todos los productos
+        <span class="transition-transform group-hover:translate-x-1">→</span>
       </a>
     </div>
   </main>
