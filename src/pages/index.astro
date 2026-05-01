@@ -19,6 +19,10 @@ import { gatosHimalayo } from "../scripts/gatos-himalayo.js";
 import comidaKitten from "../assets/img/productos/comida/art10.jpg";
 import areneroIndex from "../assets/img/productos/areneros/art1.jpg";
 import juguetesIndex from "../assets/img/productos/juguetes/art2.jpg";
+import camaIndex from "../assets/img/productos/camas/art1.jpg";
+import rascadorIndex from "../assets/img/productos/rascadores/art5.jpg";
+import cuevaIndex from "../assets/img/productos/camas/art4.jpg";
+import lecheIndex from "../assets/img/productos/comida/art14.jpg";
 
 interface Gato {
     nombre: string;
@@ -32,26 +36,27 @@ interface Gato {
 }
 
 // Combinamos todos los gatos de las diferentes razas
-const todosLosGatosRaw = [...gatosChinchilla, ...gatosEuropeo, ...gatosHimalayo];
+const todosLosGatosRaw = [
+    ...gatosChinchilla,
+    ...gatosEuropeo,
+    ...gatosHimalayo,
+];
 
 // Mapeamos al formato que espera la interfaz Gato del index y filtramos los disponibles
 const gatosDisponibles = todosLosGatosRaw
-    .filter(g => g.disponibleTexto === "✓ Disponible" && g.name !== "") // Solo disponibles y con nombre
-    .map(g => ({
+    .filter((g) => g.disponibleTexto === "✓ Disponible" && g.name !== "") // Solo disponibles y con nombre
+    .map((g) => ({
         nombre: g.name,
         genero: g.gender,
         edad: new Date(g.birth),
         imgSrc: { src: g.images[0] },
         alt: g.alt || `${g.name} - Gatito persa disponible`,
         variedad: g.raza,
-        color: g.color
+        color: g.color,
     }));
 
 // Barajamos y seleccionamos 2 gatos al azar para mostrar en el index
-const gatos = gatosDisponibles
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 2);
-
+const gatos = gatosDisponibles.sort(() => Math.random() - 0.5).slice(0, 2);
 
 const destacadosIndex = [
     {
@@ -60,7 +65,16 @@ const destacadosIndex = [
         h3: "Pienso Nature's Variety – Especial para Gatitos",
         tipo: "Alimentación",
         descripcion:
-            "Alimento natural premium con pollo deshuesado. La nutrición ideal para que tu cachorro crezca sano y fuerte desde el primer día.",
+            "Alimento natural premium con pollo deshuesado. La nutrición ideal para que tu cachorro crezca sano y fuerte.",
+        precio: "Ver en Amazon",
+    },
+    {
+        a: "https://amzn.to/4tSwuhC",
+        img: lecheIndex.src,
+        h3: "Leche Babycat – Refuerzo y Lactancia",
+        tipo: "Alimentación",
+        descripcion:
+            "Leche maternizada de alta digestibilidad. El refuerzo ideal para sus primeras semanas en su nuevo hogar.",
         precio: "Ver en Amazon",
     },
     {
@@ -69,16 +83,34 @@ const destacadosIndex = [
         h3: "Arenero Trixie Vico – Higiene y Privacidad",
         tipo: "Higiene",
         descripcion:
-            "Un arenero cerrado perfecto para gatitos. Evita olores y rastro de arena por la casa mientras le da su espacio privado.",
+            "Arenero cerrado perfecto para gatitos. Evita olores y rastro de arena mientras le da su espacio privado.",
         precio: "Ver en Amazon",
     },
     {
-        a: "https://amzn.to/413xFxU",
-        img: juguetesIndex.src,
-        h3: "Pack de 16 Juguetes Variados – Diversión Asegurada",
-        tipo: "Juego",
+        a: "https://amzn.to/47wQJYI",
+        img: rascadorIndex.src,
+        h3: "Árbol Rascador Nobleza – Diversión y Uñas",
+        tipo: "Actividad",
         descripcion:
-            "Ratones, pelotas y plumas. Todo lo necesario para estimular su instinto y que se divierta explorando su nuevo hogar.",
+            "Rascador compacto con poste de sisal y juguete colgante. Protege tus muebles desde el primer día.",
+        precio: "Ver en Amazon",
+    },
+    {
+        a: "https://amzn.to/4uevTX1",
+        img: camaIndex.src,
+        h3: "Cama Amazon Basics – Suavidad y Confort",
+        tipo: "Descanso",
+        descripcion:
+            "Cama redonda ultra suave para las mejores siestas. El lugar perfecto para que se sienta seguro en su nuevo hogar.",
+        precio: "Ver en Amazon",
+    },
+    {
+        a: "https://amzn.to/3OwRL0U",
+        img: cuevaIndex.src,
+        h3: "Cueva/Tienda Bedsure – Refugio Seguro",
+        tipo: "Descanso",
+        descripcion:
+            "Un refugio acogedor donde esconderse cuando necesite tranquilidad. Muy importante para su adaptación.",
         precio: "Ver en Amazon",
     },
 ];
