@@ -4,6 +4,9 @@ import oddie from "../../assets/img/nuestros_gatos/Oddie/oddie.jpg";
 import cleo from "../../assets/img/nuestros_gatos/Cleo/cleo.jpeg";
 import { gatosHimalayo } from "../../scripts/gatos-himalayo.js";
 import { gatosHimalayo as gatosHimalayoAnteriores } from "../../scripts/gatos-himalayo anterior.js";
+const gatosAleatorios = [...gatosHimalayoAnteriores]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 5); // Cogemos 5 al azar
 ---
 
 <Layout
@@ -93,28 +96,24 @@ import { gatosHimalayo as gatosHimalayoAnteriores } from "../../scripts/gatos-hi
             gatosHimalayo.length === 0 && (
                 <section class="max-w-5xl mx-auto px-4 mb-20">
                     <div class="bg-white rounded-[3rem] p-12 text-center shadow-2xl border-2 border-dashed border-[#FFC3C3] relative overflow-hidden">
-                        <span class="text-6xl mb-6 block">✨</span>
-                        <h2 class="text-3xl md:text-4xl font-bold text-[#FF6B6B] mb-4">
-                            Próximas Camadas Himalayo
-                        </h2>
-                        <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-                            Nuestros pequeños tesoros himalayos han volado a sus
-                            nuevos hogares. Estamos esperando nuevos bebés
-                            pronto.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a
-                                href="/principal/contacto"
-                                class="bg-[#FF6B6B] text-white font-bold py-4 px-10 rounded-full shadow-lg hover:bg-[#ff5252] transition-all hover:scale-105"
-                            >
-                                Lista de Espera
-                            </a>
-                            <a
-                                href="/principal/camadas-anteriores"
-                                class="bg-white border-2 border-[#FF6B6B] text-[#FF6B6B] font-bold py-4 px-10 rounded-full hover:bg-[#FFF9F9] transition-all"
-                            >
-                                Ver Galería Himalayo
-                            </a>
+                        <div class="relative z-10">
+                            <span class="text-6xl mb-6 block">✨</span>
+                            <h2 class="text-3xl md:text-4xl font-bold text-[#FF6B6B] mb-4">
+                                Próximas Camadas Himalayo
+                            </h2>
+                            <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                                Nuestros pequeños tesoros himalayos han volado a sus
+                                nuevos hogares. Estamos esperando nuevos bebés
+                                pronto.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <a
+                                    href="/principal/contacto"
+                                    class="bg-[#FF6B6B] text-white font-bold py-4 px-10 rounded-full shadow-lg hover:bg-[#ff5252] transition-all hover:scale-105 active:scale-95"
+                                >
+                                    Lista de Espera
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -210,6 +209,14 @@ import { gatosHimalayo as gatosHimalayoAnteriores } from "../../scripts/gatos-hi
                                                 </span>
                                             </div>
                                         )}
+                                        {gato.raza && (
+                                            <div class="flex items-center gap-3 bg-[#fdf2f2] p-3 rounded-2xl border border-pink-100/50">
+                                                <span class="text-xl">🐾</span>
+                                                <span class="text-[11px] font-bold text-gray-800 uppercase tracking-tight">
+                                                    {gato.raza}
+                                                </span>
+                                            </div>
+                                        )}
                                     </div>
 
                                     <div class="flex flex-col gap-3">
@@ -238,40 +245,31 @@ import { gatosHimalayo as gatosHimalayoAnteriores } from "../../scripts/gatos-hi
                     >
                         Camadas anteriores
                     </h2>
-                    <a
-                        href="/principal/camadas-anteriores"
-                        class="text-[#FF6B6B] font-bold border-b-2 border-[#FF6B6B] pb-1 hover:text-[#ff5252] transition-colors"
-                    >
-                        Explorar Galería Completa →
-                    </a>
                 </div>
 
                 {
-                    gatosHimalayoAnteriores &&
-                    gatosHimalayoAnteriores.length > 0 ? (
+                    gatosAleatorios.length > 0 ? (
                         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
-                            {gatosHimalayoAnteriores
-                                .slice(0, 5)
-                                .map((gatoAnterior) => (
-                                    <figure class="group">
-                                        <div class="relative overflow-hidden rounded-[2rem] shadow-md mb-4 aspect-square border border-pink-50">
-                                            <img
-                                                src={gatoAnterior.images ? gatoAnterior.images[0] : gatoAnterior.img}
-                                                alt={gatoAnterior.alt}
-                                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                            />
-                                            <div class="absolute inset-0 bg-gradient-to-t from-pink-500/20 to-transparent" />
-                                        </div>
-                                        <figcaption class="text-center">
-                                            <p class="font-bold text-gray-800 tracking-tight">
-                                                {gatoAnterior.name}
-                                            </p>
-                                            <p class="text-[10px] text-[#FF8A8A] font-black uppercase tracking-[0.2em] mt-1">
-                                                {gatoAnterior.gender}
-                                            </p>
-                                        </figcaption>
-                                    </figure>
-                                ))}
+                            {gatosAleatorios.map((gatoAnterior) => (
+                                <figure class="group cursor-pointer">
+                                    <div class="relative overflow-hidden rounded-[2rem] shadow-md mb-4 aspect-square border border-pink-50">
+                                        <img
+                                            src={gatoAnterior.images ? gatoAnterior.images[0] : gatoAnterior.img}
+                                            alt={gatoAnterior.alt}
+                                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[20%] group-hover:grayscale-0"
+                                        />
+                                        <div class="absolute inset-0 bg-gradient-to-t from-pink-500/20 to-transparent" />
+                                    </div>
+                                    <figcaption class="text-center">
+                                        <p class="font-bold text-gray-800 tracking-tight">
+                                            {gatoAnterior.name}
+                                        </p>
+                                        <p class="text-[10px] text-[#FF8A8A] font-black uppercase tracking-widest mt-1">
+                                            {gatoAnterior.gender}
+                                        </p>
+                                    </figcaption>
+                                </figure>
+                            ))}
                         </div>
                     ) : (
                         <div class="bg-[#FFF9F9] rounded-3xl p-10 text-center text-gray-400 font-medium">
