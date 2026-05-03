@@ -5,52 +5,114 @@ import art2 from "./../../assets/img/productos/camas/art2.jpg";
 import art3 from "./../../assets/img/productos/camas/art3.jpg";
 import art4 from "./../../assets/img/productos/camas/art4.jpg";
 import art5 from "./../../assets/img/productos/camas/art5.jpg";
+import art6 from "./../../assets/img/productos/camas/art6.jpg";
+import art7 from "./../../assets/img/productos/camas/art7.jpg";
+import art8 from "./../../assets/img/productos/camas/art8.jpg";
+import art9 from "./../../assets/img/productos/camas/art9.jpg";
+import art10 from "./../../assets/img/productos/camas/art10.jpg";
+import art11 from "./../../assets/img/productos/camas/art11.jpg";
+import art12 from "./../../assets/img/productos/camas/art12.jpg";
 
-const camas = [
+const productos = [
+  // CAMAS
   {
     a: "https://amzn.to/4uevTX1",
     img: art1.src,
-    alt: "Amazon Basics Cama Redonda para Gato con Parte Superior de Franela",
-    h2: "Amazon Basics Cama Redonda para Gato con Parte Superior de Franela",
-    p: "Ofrece un sitio seguro y mullido para que tu gatito o perrito se eche la siesta. La superficie superior de felpa de franela ofrece una gran suavidad y los lados y la parte posterior de poliéster, mayor resistencia.",
+    h2: "Cama Redonda Amazon Basics – Franela",
+    p: "Cama acolchada ultra suave con borde elevado. Perfecta para que tu gato se sienta protegido y cómodo durante sus siestas.",
+    tipo: "camas",
   },
   {
     a: "https://amzn.to/4cRLrsH",
     img: art2.src,
-    alt: "Bedsure Cama para Gato",
-    h2: "Bedsure Cama para Gato",
-    p: "Consiente a tu mascota con la superficie de sherpa mullido, proporcionando una suavidad esponjosa y ultra-acogedora. Crea un ambiente de descanso acogedor para que tu amado compañero se relaje y experimente la máxima tranquilidad.",
+    h2: "Bedsure – Cama de Felpa Sherpa",
+    p: "Superficie de sherpa mullido para una suavidad máxima. Ofrece un entorno cálido y acogedor para el descanso diario.",
+    tipo: "camas",
   },
   {
     a: "https://amzn.to/4vWURfr",
     img: art3.src,
-    alt: "Bedsure Cama Grande Lavable Gatos",
-    h2: "Bedsure Cama Grande Lavable Gatos",
-    p: "Las almohadas removibles en esta cama para gatos brindan comodidad durante todo el año en cualquier tipo de clima. El suave tejido de franela de felpa extra proporciona calidez y confort a tu mascota.",
+    h2: "Bedsure – Cama Lavable Reversible",
+    p: "Cama versátil con cojín extraíble para usar en cualquier época del año. Fácil de lavar y muy duradera.",
+    tipo: "camas",
   },
   {
     a: "https://amzn.to/3OwRL0U",
     img: art4.src,
-    alt: "Bedsure Cama para Gatos Grande",
-    h2: "Bedsure Cama para Gatos Grande",
-    p: "Esta tienda para gatos incluye un cojín ultra suave con relleno de fibra de poliéster y cubierta de Sherpa peludo, proporcionando un refugio cálido para el sueño tranquilo de tu mascota.",
+    h2: "Bedsure – Cueva Refugio para Gatos",
+    p: "Tienda acogedora con cojín de felpa. El escondite perfecto para gatos que buscan tranquilidad y seguridad.",
+    tipo: "camas",
   },
   {
     a: "https://amzn.to/4dgTjW0",
     img: art5.src,
-    alt: "Cama para Gatos 2 en 1 Esterilla para Gato",
-    h2: "Cama para Gatos 2 en 1 Esterilla para Gato",
-    p: "Cama de gato 2-en-1 está hecha de felpa suave y mullida, combinada con una mezcla de algodón y lino resistente al desgaste : suave al tacto, sin olores desagradables y segura, ofrece a tu mascota un entorno de descanso cálido, confortable y protegido.",
+    h2: "Cama 2 en 1 – Esterilla y Sofá",
+    p: "Diseño convertible que se adapta a las preferencias de tu mascota. Felpa suave combinada con lino resistente.",
+    tipo: "camas",
+  },
+
+  // TRANSPORTINES
+  {
+    a: "https://amzn.to/3R0FNgC",
+    img: art6.src,
+    h2: "Morpilot – Transportín Plegable Premium",
+    p: "Diseño transpirable con correa ajustable y plegado fácil. Ideal para viajes seguros y cómodos en cualquier transporte.",
+    tipo: "transportines",
+  },
+  {
+    a: "https://amzn.to/4tIUxiI",
+    img: art7.src,
+    h2: "Bolsa de Transporte Transpirable XL",
+    p: "Incluye colchón suave y tazón plegable. Medidas amplias para máxima comodidad durante traslados largos.",
+    tipo: "transportines",
+  },
+  {
+    a: "https://amzn.to/42cuCE1",
+    img: art8.src,
+    h2: "Nobleza – Transportín Rígido Clásico",
+    p: "Estructura de plástico resistente con ventilación lateral. Seguro, duradero y muy fácil de limpiar tras su uso.",
+    tipo: "transportines",
+  },
+  {
+    a: "https://amzn.to/4wca8sU",
+    img: art9.src,
+    h2: "Transportín Extensible 4 Entradas",
+    p: "Mochila impermeable con arnés interno y diseño extensible. Ofrece el máximo espacio y ventilación para viajes de hasta 8kg.",
+    tipo: "transportines",
+  },
+  {
+    a: "https://amzn.to/3OFmNUn",
+    img: art10.src,
+    h2: "Amazon Basics – Transportín Suave",
+    p: "Aprobado por aerolíneas, plegable y con ventilación de malla. Perfecto para traslados ligeros y viajes en cabina.",
+    tipo: "transportines",
+  },
+  {
+    a: "https://amzn.to/4d3fHRK",
+    img: art11.src,
+    h2: "Conlun – Bolsa de Viaje Plegable",
+    p: "Portador suave con correa interior de seguridad para gatos de hasta 7kg. Diseño plegable que ahorra espacio tras su uso.",
+    tipo: "transportines",
+  },
+  {
+    a: "https://amzn.to/4tczuEe",
+    img: art12.src,
+    h2: "Trixie – Transportín Sostenible Be Eco",
+    p: "Fabricado con plástico reciclado de alta calidad. Talla XS, ideal para visitas seguras al veterinario y viajes cortos.",
+    tipo: "transportines",
   },
 ];
+
+const camas = productos.filter((p) => p.tipo === "camas");
+const transportines = productos.filter((p) => p.tipo === "transportines");
 ---
 
 <Layout
-  title={`Las Mejores Camas para Gatos ${new Date().getFullYear()} | Descanso y Confort`}
-  description="Guía completa para elegir la mejor cama para tu gato: antiestrés, cuevas, hamacas de ventana y opciones ortopédicas. El descanso que tu gato merece."
-  keywords="camas para gatos, cama antiestrés gato, cueva gato, hamaca ventana gato, descanso felino, mejores camas gatos, accesorios descanso gatos"
+  title={`Las Mejores Camas y Transportines ${new Date().getFullYear()} | Descanso y Viaje`}
+  description="Guía completa para el descanso y traslado de tu gato: camas antiestrés, cuevas y transportines seguros para viajar."
+  keywords="camas para gatos, transportines gatos, mochila gato, cueva gato, descanso felino, viajar con gato"
 >
-  <main class="backdrop-blur-[5px] text-[#2E2E2E] min-h-screen pb-16 mt-20">
+  <main class="bg-white/70 text-[#2E2E2E] min-h-screen pb-16 mt-20">
     <section
       class="bg-gradient-to-r from-[#FF6B6B] via-[#FF8A8A] to-[#FFC0C0] text-white"
     >
@@ -60,22 +122,17 @@ const camas = [
           <span class="mx-1">/</span>
           <a href="/principal/productos" class="hover:underline">Productos</a>
           <span class="mx-1">/</span>
-          <span class="font-semibold text-white">Camas y Descanso</span>
+          <span class="font-semibold text-white">Camas y Transportines</span>
         </nav>
 
         <h1
           class="text-2xl sm:text-3xl md:text-[32px] font-extrabold leading-snug"
         >
-          Camas para gatos: El descanso que tu mascota necesita
+          Camas y Transportines: Confort en Casa y de Viaje
         </h1>
         <p class="mt-2 text-[13px] sm:text-sm text-white/90 max-w-2xl">
-          Un gato pasa más de 15 horas al día durmiendo. Proporcionarle una <strong
-            >cama de calidad</strong
-          > no es un lujo, es una necesidad para su salud física y emocional.
-        </p>
-        <p class="mt-2 text-[12px] sm:text-xs text-white/80 max-w-2xl">
-          Explora nuestra selección de camas diseñadas para ofrecer el máximo
-          confort, desde modelos antiestrés hasta hamacas soleadas.
+          Desde el descanso más profundo en casa hasta la máxima seguridad en
+          tus traslados. Hemos seleccionado lo mejor para tu gato.
         </p>
 
         <div class="mt-4 flex flex-wrap gap-2 text-[11px] sm:text-[12px]">
@@ -85,19 +142,43 @@ const camas = [
           >
           <span
             class="px-3 py-1 rounded-full bg-white/10 border border-white/20"
-            >Cuevas e iglús</span
+            >Transportines rígidos</span
           >
           <span
             class="px-3 py-1 rounded-full bg-white/10 border border-white/20"
-            >Hamacas de ventana</span
+            >Mochilas panorámicas</span
           >
           <span
             class="px-3 py-1 rounded-full bg-white/10 border border-white/20"
-            >Soporte ortopédico</span
+            >Cuevas acogedoras</span
           >
         </div>
       </div>
     </section>
+
+    <!-- SUBMENÚ DE NAVEGACIÓN -->
+    <nav
+      class="sticky top-[80px] z-40 bg-white/90 backdrop-blur-md border-b border-pink-100 shadow-md"
+    >
+      <div
+        class="max-w-[1200px] mx-auto px-6 py-3 flex items-center justify-start sm:justify-center gap-4 sm:gap-10 overflow-x-auto whitespace-nowrap scrollbar-hide"
+      >
+        <a
+          href="#camas"
+          class="text-xs sm:text-sm font-bold text-[#FF6B6B] hover:bg-pink-50 px-6 py-3 rounded-full transition-colors flex items-center gap-2"
+        >
+          <span class="w-2 h-2 rounded-full bg-[#FF6B6B]"></span>
+          Camas y Descanso
+        </a>
+        <a
+          href="#transportines"
+          class="text-xs sm:text-sm font-bold text-amber-600 hover:bg-amber-50 px-6 py-3 rounded-full transition-colors flex items-center gap-2"
+        >
+          <span class="w-2 h-2 rounded-full bg-amber-600"></span>
+          Transportines y Viaje
+        </a>
+      </div>
+    </nav>
 
     <section
       class="max-w-full sm:max-w-[600px] lg:max-w-4xl sm:mx-auto sm:mt-12 p-8 bg-white sm:rounded-3xl shadow-xl border border-gray-100 text-gray-800 pop"
@@ -105,66 +186,125 @@ const camas = [
       <h2
         class="text-2xl lg:text-3xl font-black text-[#FF6B6B] mb-6 text-center tracking-tight"
       >
-        Guía de descanso: ¿Cómo elegir la cama perfecta?
+        Guía de descanso y traslado experto
       </h2>
 
       <div class="space-y-5 text-lg leading-relaxed text-gray-600">
         <p>
-          Los <strong>gatos persas</strong>, con su abundante pelaje, a veces
-          pueden sentir calor en camas demasiado cerradas, pero aman la
-          suavidad. La clave es elegir materiales transpirables y suaves al
-          tacto.
+          Un gato necesita sentirse seguro tanto para dormir como para viajar.
+          Los <strong>gatos persas</strong>, al ser más tranquilos, valoran
+          especialmente las camas mullidas y los transportines con buena
+          visibilidad y ventilación.
         </p>
 
         <div class="p-5 bg-pink-50 rounded-xl border-l-4 border-[#FF6B6B]">
           <p class="text-gray-700 m-0">
-            <strong>Consejo experto:</strong> Observa cómo duerme tu gato. Si le gusta
-            hacerse una bolita, una cama tipo <strong>donut</strong> será su paraíso.
-            Si prefiere estirarse o vigilar, una <strong
-              >hamaca de ventana</strong
-            > o una cama abierta son mejores opciones.
+            <strong>Consejo experto:</strong> Deja el transportín abierto en casa
+            como si fuera una cama más. Así, cuando llegue el momento de viajar, tu
+            gato lo verá como un refugio seguro y no como algo negativo.
           </p>
         </div>
       </div>
     </section>
 
+    <!-- SECCIÓN CAMAS -->
     <section
-      class="max-w-[1300px] mx-auto p-6 sm:p-10 mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
-      aria-label="Catálogo de camas para gatos"
+      id="camas"
+      class="max-w-[1300px] mx-auto px-6 sm:px-10 mt-16 scroll-mt-32"
     >
-      {
-        camas.map((producto) => (
-          <article class="group bg-white rounded-2xl pop shadow-sm hover:shadow-md transition-all duration-200 flex flex-col border border-[#FFE2E2]/80 hover:border-[#FF6B6B]/80 hover:-translate-y-1.5 overflow-hidden">
-            <div class="relative h-64 overflow-hidden">
-              <img
-                src={producto.img}
-                alt={producto.alt}
-                class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-200"
-                loading="lazy"
-              />
-            </div>
+      <div class="flex items-center gap-4 mb-8">
+        <h2 class="text-2xl md:text-3xl font-black text-[#FF6B6B]">
+          Camas y Descanso
+        </h2>
+        <div class="h-[2px] bg-pink-100 flex-1"></div>
+        <span
+          class="px-4 py-1 bg-pink-50 text-[#FF6B6B] rounded-full text-xs font-bold uppercase tracking-widest"
+          >Descanso</span
+        >
+      </div>
 
-            <div class="p-4 sm:p-5 flex flex-col flex-1">
-              <h3 class="text-[15px] sm:text-[16px] font-bold mb-1 text-[#111827]">
-                {producto.h2}
-              </h3>
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          camas.map((producto) => (
+            <article class="group bg-white rounded-2xl pop shadow-sm hover:shadow-md transition-all duration-200 flex flex-col border border-[#FFE2E2]/80 hover:border-[#FF6B6B]/80 hover:-translate-y-1.5 overflow-hidden">
+              <div class="relative h-64 overflow-hidden">
+                <img
+                  src={producto.img}
+                  alt={producto.h2}
+                  class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-200"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-4 sm:p-5 flex flex-col flex-1">
+                <h3 class="text-[15px] sm:text-[16px] font-bold mb-1 text-[#111827]">
+                  {producto.h2}
+                </h3>
+                <p class="text-[13px] text-gray-700 leading-relaxed flex-1">
+                  {producto.p}
+                </p>
+                <a
+                  href={producto.a}
+                  target="_blank"
+                  rel="nofollow noopener noreferrer"
+                  class="mt-4 inline-flex items-center justify-center gap-2 bg-[#FF6B6B] text-white font-semibold py-2.5 px-4 rounded-full hover:bg-[#e55a5a] text-[13px] text-center transition-colors"
+                >
+                  Comprar en Amazon
+                </a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
 
-              <p class="text-[13px] text-gray-700 leading-relaxed flex-1">
-                {producto.p}
-              </p>
+    <!-- SECCIÓN TRANSPORTINES -->
+    <section
+      id="transportines"
+      class="max-w-[1300px] mx-auto px-6 sm:px-10 mt-20 scroll-mt-32"
+    >
+      <div class="flex items-center gap-4 mb-8">
+        <h2 class="text-2xl md:text-3xl font-black text-amber-700">
+          Transportines y Viaje
+        </h2>
+        <div class="h-[2px] bg-amber-100 flex-1"></div>
+        <span
+          class="px-4 py-1 bg-amber-50 text-amber-600 rounded-full text-xs font-bold uppercase tracking-widest"
+          >Seguridad</span
+        >
+      </div>
 
-              <a
-                href={producto.a}
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                class="mt-4 inline-flex items-center justify-center gap-2 bg-[#FF6B6B] text-white font-semibold py-2.5 px-4 rounded-full hover:bg-[#e55a5a] text-[13px] text-center transition-colors"
-              >
-                Comprar en Amazon
-              </a>
-            </div>
-          </article>
-        ))
-      }
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          transportines.map((producto) => (
+            <article class="group bg-white rounded-2xl pop shadow-sm hover:shadow-md transition-all duration-200 flex flex-col border border-amber-100 hover:border-amber-300 hover:-translate-y-1.5 overflow-hidden">
+              <div class="relative h-64 overflow-hidden">
+                <img
+                  src={producto.img}
+                  alt={producto.h2}
+                  class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-200"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-4 sm:p-5 flex flex-col flex-1">
+                <h3 class="text-[15px] sm:text-[16px] font-bold mb-1 text-[#111827]">
+                  {producto.h2}
+                </h3>
+                <p class="text-[13px] text-gray-700 leading-relaxed flex-1">
+                  {producto.p}
+                </p>
+                <a
+                  href={producto.a}
+                  target="_blank"
+                  rel="nofollow noopener noreferrer"
+                  class="mt-4 inline-flex items-center justify-center gap-2 bg-amber-600 text-white font-semibold py-2.5 px-4 rounded-full hover:bg-amber-700 text-[13px] text-center transition-colors"
+                >
+                  Comprar en Amazon
+                </a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
     </section>
 
     <div
@@ -188,10 +328,9 @@ const camas = [
       </div>
 
       <p class="text-sm md:text-[15px] text-amber-900/80 leading-relaxed">
-        Nuestras recomendaciones de <strong>artículos de descanso</strong> se basan
-        en la calidad de los materiales y la satisfacción de los usuarios. Al comprar
-        a través de nuestros enlaces, nos ayudas a seguir cuidando de nuestros gatos
-        persas.
+        Nuestras recomendaciones se basan en la calidad y seguridad para tus
+        gatos. Al comprar a través de estos enlaces, nos ayudas a seguir
+        cuidando de nuestros pequeños sin coste extra para ti.
       </p>
     </div>
 
@@ -200,7 +339,7 @@ const camas = [
         href="/principal/productos"
         class="group flex items-center gap-2 bg-[#FF6B6B] hover:bg-[#ff5252] text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl shadow-red-200 transition-all duration-300 transform hover:scale-105 active:scale-95 text-lg pop"
       >
-        Ver todos los productos
+        Ver todas las categorías
         <span class="transition-transform group-hover:translate-x-1">→</span>
       </a>
     </div>

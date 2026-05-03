@@ -17,6 +17,11 @@ import art14 from "./../../assets/img/productos/comida/art14.jpg";
 import art15 from "./../../assets/img/productos/comida/art15.jpg";
 import art16 from "./../../assets/img/productos/comida/art16.jpg";
 import art17 from "./../../assets/img/productos/comida/art17.jpg";
+import art18 from "./../../assets/img/productos/comida/art18.jpg";
+import art19 from "./../../assets/img/productos/comida/art19.jpg";
+import art20 from "./../../assets/img/productos/comida/art20.jpg";
+import art21 from "./../../assets/img/productos/comida/art21.jpg";
+import art22 from "./../../assets/img/productos/comida/art22.jpg";
 
 const comida = [
   // GATITOS
@@ -160,11 +165,49 @@ const comida = [
     badge: "Pienso Esterilizado",
     etapa: "senior",
   },
+
+  // ACCESORIOS
+  {
+    a: "https://amzn.to/3QLlsvL",
+    img: art18.src,
+    h2: "PETKIT – Comedero de Acero Inoxidable Elevado",
+    p: "Diseño inclinado y ergonómico que mejora la postura al comer. Acero inoxidable de alta calidad, duradero y apto para lavavajillas.",
+    etapa: "accesorios",
+  },
+  {
+    a: "https://amzn.to/48FiYFo",
+    img: art19.src,
+    h2: "Trixie – Comedero de Cerámica Premium",
+    p: "Cerámica de alta densidad con peso ideal para evitar desplazamientos o vuelcos. Superficie higiénica y fácil de limpiar.",
+    etapa: "accesorios",
+  },
+  {
+    a: "https://amzn.to/4w8yLXa",
+    img: art20.src,
+    h2: "Marchul – Estación de Alimentación 3 en 1",
+    p: "Set completo con cuencos de acero inoxidable e inclinación de 15°. Incluye dispensador de agua automático para una higiene total.",
+    etapa: "accesorios",
+  },
+  {
+    a: "https://amzn.to/3OUMSyO",
+    img: art21.src,
+    h2: "Marchul – Comedero Antivómitos 2 en 1",
+    p: "Inclinación de 15° para proteger el cuello y sistema de agua automático. Ideal para la comodidad de los cachorros.",
+    etapa: "accesorios",
+  },
+  {
+    a: "https://amzn.to/3R2RIKV",
+    img: art22.src,
+    h2: "Pack 6 Cuencos Acero Inoxidable",
+    p: "Diseño plano para evitar la fatiga de los bigotes. Acero inoxidable 304 higiénico y duradero.",
+    etapa: "accesorios",
+  },
 ];
 
 const gatitos = comida.filter((p) => p.etapa === "gatitos");
 const adultos = comida.filter((p) => p.etapa === "adultos");
 const senior = comida.filter((p) => p.etapa === "senior");
+const accesorios = comida.filter((p) => p.etapa === "accesorios");
 ---
 
 <Layout
@@ -222,6 +265,43 @@ const senior = comida.filter((p) => p.etapa === "senior");
       </div>
     </section>
 
+    <nav
+      class="sticky top-[80px] z-40 bg-white/90 backdrop-blur-md border-b border-pink-100 shadow-md"
+    >
+      <div
+        class="max-w-[1200px] mx-auto px-6 py-3 flex items-center justify-start sm:justify-center gap-4 sm:gap-10 overflow-x-auto whitespace-nowrap scrollbar-hide"
+      >
+        <a
+          href="#gatitos"
+          class="text-xs sm:text-sm font-bold text-[#FF6B6B] hover:bg-pink-50 px-6 py-3 rounded-full transition-colors flex items-center gap-2"
+        >
+          <span class="w-2 h-2 rounded-full bg-[#FF6B6B]"></span>
+          Gatitos (0-1 año)
+        </a>
+        <a
+          href="#adultos"
+          class="text-xs sm:text-sm font-bold text-pink-700 hover:bg-pink-50 px-6 py-3 rounded-full transition-colors flex items-center gap-2"
+        >
+          <span class="w-2 h-2 rounded-full bg-pink-700"></span>
+          Adultos (+1 año)
+        </a>
+        <a
+          href="#senior"
+          class="text-xs sm:text-sm font-bold text-amber-700 hover:bg-amber-50 px-6 py-3 rounded-full transition-colors flex items-center gap-2"
+        >
+          <span class="w-2 h-2 rounded-full bg-amber-700"></span>
+          Sénior (+7 años)
+        </a>
+        <a
+          href="#accesorios"
+          class="text-xs sm:text-sm font-bold text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-full transition-colors flex items-center gap-2"
+        >
+          <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+          Accesorios
+        </a>
+      </div>
+    </nav>
+
     <section
       class="max-w-full sm:max-w-[600px] lg:max-w-4xl sm:mx-auto sm:mt-12 p-8 bg-white sm:rounded-3xl shadow-xl border border-gray-100 text-gray-800 pop"
     >
@@ -252,7 +332,10 @@ const senior = comida.filter((p) => p.etapa === "senior");
         </div>
       </div>
     </section>
-    <section class="max-w-[1300px] mx-auto px-6 sm:px-10 mt-16">
+    <section
+      id="gatitos"
+      class="max-w-[1300px] mx-auto px-6 sm:px-10 mt-16 scroll-mt-32"
+    >
       <div class="flex items-center gap-4 mb-8">
         <h2 class="text-2xl md:text-3xl font-black text-[#FF6B6B]">
           0-1 Año: Sus Primeros Pasos
@@ -302,7 +385,10 @@ const senior = comida.filter((p) => p.etapa === "senior");
     </section>
 
     <!-- SECCIÓN ADULTOS -->
-    <section class="max-w-[1300px] mx-auto px-6 sm:px-10 mt-20">
+    <section
+      id="adultos"
+      class="max-w-[1300px] mx-auto px-6 sm:px-10 mt-20 scroll-mt-32"
+    >
       <div class="flex items-center gap-4 mb-8">
         <h2 class="text-2xl md:text-3xl font-black text-gray-800">
           +1 Año: Etapa Adulta
@@ -352,7 +438,10 @@ const senior = comida.filter((p) => p.etapa === "senior");
     </section>
 
     <!-- SECCIÓN SENIOR -->
-    <section class="max-w-[1300px] mx-auto px-6 sm:px-10 mt-20">
+    <section
+      id="senior"
+      class="max-w-[1300px] mx-auto px-6 sm:px-10 mt-20 scroll-mt-32"
+    >
       <div class="flex items-center gap-4 mb-8">
         <h2 class="text-2xl md:text-3xl font-black text-amber-700">
           Etapa Sénior (+7-10 Años)
@@ -391,6 +480,56 @@ const senior = comida.filter((p) => p.etapa === "senior");
                   target="_blank"
                   rel="nofollow noopener noreferrer"
                   class="mt-4 inline-flex items-center justify-center gap-2 bg-amber-600 text-white font-semibold py-2.5 px-4 rounded-full hover:bg-amber-700 text-[13px] text-center transition-colors"
+                >
+                  Ver en Amazon
+                </a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- SECCIÓN ACCESORIOS -->
+    <section
+      id="accesorios"
+      class="max-w-[1300px] mx-auto px-6 sm:px-10 mt-20 scroll-mt-32"
+    >
+      <div class="flex items-center gap-4 mb-8">
+        <h2 class="text-2xl md:text-3xl font-black text-blue-600">
+          Comederos y Accesorios
+        </h2>
+        <div class="h-[2px] bg-blue-100 flex-1"></div>
+        <span
+          class="px-4 py-1 bg-blue-50 text-blue-500 rounded-full text-xs font-bold uppercase tracking-widest"
+          >Esenciales</span
+        >
+      </div>
+
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          accesorios.map((producto) => (
+            <article class="group bg-white rounded-2xl pop shadow-sm hover:shadow-md transition-all duration-200 flex flex-col border border-blue-50 hover:border-blue-300 hover:-translate-y-1.5 overflow-hidden">
+              <div class="relative h-64 overflow-hidden">
+                <img
+                  src={producto.img}
+                  alt={producto.h2}
+                  class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-200"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-4 sm:p-5 flex flex-col flex-1">
+                <h3 class="text-[15px] sm:text-[16px] font-bold mb-1 text-[#111827]">
+                  {producto.h2}
+                </h3>
+                <p class="text-[13px] text-gray-700 leading-relaxed flex-1">
+                  {producto.p}
+                </p>
+                <a
+                  href={producto.a}
+                  target="_blank"
+                  rel="nofollow noopener noreferrer"
+                  class="mt-4 inline-flex items-center justify-center gap-2 bg-blue-600 text-white font-semibold py-2.5 px-4 rounded-full hover:bg-blue-700 text-[13px] text-center transition-colors"
                 >
                   Ver en Amazon
                 </a>
