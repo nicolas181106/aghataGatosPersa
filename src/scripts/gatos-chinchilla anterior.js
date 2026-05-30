@@ -15,6 +15,13 @@ import copo from "../assets/img/nuestros_gatos/Ceres/Camada3/Copo/copo8484.jpeg"
 
 export const gatosChinchilla = [
     {
+        name: "Copo",
+        gender: "Hembra",
+        birth: "06/04/2026",
+        img: copo.src,
+        alt: "Copo - Gato persa chinchilla hembra",
+    },
+    {
         name: "Aristoteles",
         gender: "Macho",
         birth: "06/04/2026",

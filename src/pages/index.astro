@@ -58,6 +58,8 @@ const gatosDisponibles = todosLosGatosRaw
 // Barajamos y seleccionamos 2 gatos al azar para mostrar en el index
 const gatos = gatosDisponibles.sort(() => Math.random() - 0.5).slice(0, 2);
 
+const numeroGatos = gatos.length;
+
 const destacadosIndex = [
     {
         a: "https://amzn.to/4cwXTja",
@@ -633,9 +635,10 @@ const destacadosIndex = [
                                 ¡Últimos gatitos disponibles!
                             </h3>
                             <p class="text-orange-700">
-                                Solo quedan <strong>2 cachorros</strong> buscando
-                                hogar. Si estás interesado, contáctanos pronto para
-                                evitar esperas hasta la próxima temporada.
+                                Solo quedan <strong
+                                    >{numeroGatos} cachorrito</strong
+                                > buscando hogar. Si estás interesado, contáctanos
+                                pronto para evitar esperas hasta la próxima temporada.
                             </p>
                         </div>
                     </div>
