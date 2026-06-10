@@ -50,13 +50,6 @@ export const gatosChinchilla = [
         alt: "Socrates - Gato persa chinchilla macho",
     },
     {
-        name: "Copo",
-        gender: "Hembra",
-        birth: "06/04/2026",
-        img: copo.src,
-        alt: "Copo - Gato persa chinchilla hembra",
-    },
-    {
         name: "Artemisa",
         gender: "Hembra",
         birth: "06/12/2025",
