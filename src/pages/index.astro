@@ -49,7 +49,7 @@ const gatosDisponibles = todosLosGatosRaw
         nombre: g.name,
         genero: g.gender,
         edad: new Date(g.birth),
-        imgSrc: { src: g.images[0] },
+        imgSrc: { src: g.images ? g.images[0] : g.img },
         alt: g.alt || `${g.name} - Gatito persa disponible`,
         variedad: g.raza,
         color: g.color,
