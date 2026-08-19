@@ -134,14 +134,14 @@ const gatosAleatorios = [...gatosEuropeoAnteriores]
                             <article class="group bg-white rounded-[2.5rem] shadow-lg hover:shadow-[0_20px_50px_rgba(255,107,107,0.2)] transition-all duration-500 overflow-hidden border border-pink-50 cat-card">
                                 <div class="relative aspect-[4/5] overflow-hidden">
                                     <img
-                                        src={gato.images[0]}
+                                        src={gato.images ? gato.images[0] : gato.img}
                                         alt={gato.alt}
                                         class="cat-image w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
-                                        data-images={JSON.stringify(gato.images)}
+                                        data-images={JSON.stringify(gato.images || [gato.img])}
                                         data-current-index="0"
                                     />
 
-                                    {gato.images.length > 1 && (
+                                    {gato.images && gato.images.length > 1 && (
                                         <div class="absolute inset-y-0 inset-x-0 flex items-center justify-between px-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 z-30 pointer-events-none">
                                             <button 
                                                 class="prev-image bg-white/40 backdrop-blur-md hover:bg-white/60 text-white p-2 rounded-xl border border-white/30 transition-all transform hover:scale-110 active:scale-95 pointer-events-auto"
