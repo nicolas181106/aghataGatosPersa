@@ -65,6 +65,18 @@ const { title, description } = Astro.props;
         f.parentNode.insertBefore(j, f);
       })(window, document, "script", "dataLayer", "GTM-KP6THG2X");
     </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4JPNJ8HGX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-K4JPNJ8HGX");
+    </script>
     <title>{title}</title>
   </head>
   <body>
