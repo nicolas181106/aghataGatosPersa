@@ -1,65 +1,104 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import Cookies from "../components/cookies.astro"
+import Cookies from "../components/cookies.astro";
 import logo from "../assets/img/ui/logoAnimated.png";
 import "../styles/global.css";
 
-const { title , description } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es-ES">
-	<head>
-		<link rel="icon" type="image/svg+xml" href={logo.src} />
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta
-			name="keywords"
-			content="gatos, persa, ágatha, criadero, gatos persa, gatos en adopción, gatos en venta, gatos en familia"
-		/>
-		<meta name="author" content="Nicolás Adrián Bernal Bermúdez" />
-		<meta name="google-site-verification" content="s0VQNm2tjEeD8Go7xJi3d3VYa0AAYv1QnVlOMysa2iY" />
-		<meta name="google-site-verification" content="8prRkmlvfOvTVh--DfNLpMCcy2zomt2IpH_E23EWfQk" />
-		<meta name="description" content={description} />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://agathagatospersa.netlify.app/" />
-		<meta property="og:image" content="https://agathagatospersa.netlify.app/assets/img/ui/banner.png" />
-		<meta property="og:image:alt" content="Banner de Ágatha Gatos Persa" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:site" content="@AgathaGatosPersa" />
-		<meta name="twitter:creator" content="@AgathaGatosPersa" />	
-		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content="/assets/img/ui/banner.png" />
-		<meta name="twitter:image:alt" content="Banner de Ágatha Gatos Persa" />
-		<meta name="google-adsense-account" content="ca-pub-1412633306454408">
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1412633306454408" crossorigin="anonymous"></script>	
-		<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
-		<title>{title}</title>
-	</head>
-	<body>
-		<amp-auto-ads type="adsense" data-ad-client="ca-pub-1412633306454408"></amp-auto-ads>
-		<Header />
-		<Cookies/>
-		<slot />
-		<Footer />
-	</body>
+  <head>
+    <link rel="icon" type="image/svg+xml" href={logo.src} />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="keywords"
+      content="gatos, persa, ágatha, criadero, gatos persa, gatos en adopción, gatos en venta, gatos en familia"
+    />
+    <meta name="author" content="Nicolás Adrián Bernal Bermúdez" />
+    <meta
+      name="google-site-verification"
+      content="s0VQNm2tjEeD8Go7xJi3d3VYa0AAYv1QnVlOMysa2iY"
+    />
+    <meta
+      name="google-site-verification"
+      content="8prRkmlvfOvTVh--DfNLpMCcy2zomt2IpH_E23EWfQk"
+    />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://agathagatospersa.netlify.app/" />
+    <meta
+      property="og:image"
+      content="https://agathagatospersa.netlify.app/assets/img/ui/banner.png"
+    />
+    <meta property="og:image:alt" content="Banner de Ágatha Gatos Persa" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@AgathaGatosPersa" />
+    <meta name="twitter:creator" content="@AgathaGatosPersa" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/assets/img/ui/banner.png" />
+    <meta name="twitter:image:alt" content="Banner de Ágatha Gatos Persa" />
+    <meta name="google-adsense-account" content="ca-pub-1412633306454408" />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1412633306454408"
+      crossorigin="anonymous"></script>
+    <script
+      async
+      custom-element="amp-auto-ads"
+      src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KP6THG2X");
+    </script>
+    <title>{title}</title>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KP6THG2X"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-1412633306454408"
+    ></amp-auto-ads>
+    <Header />
+    <Cookies />
+    <slot />
+    <Footer />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-		font-family: "Balsamiq Sans", cursive;
-		background: url(../assets/img/ui/banner.png) fixed no-repeat center center;
-		background-size: cover;
-		scrollbar-color: #FF6B6B #2E2E2E;
-		cursor: url('/src/assets/img/ui/svg/cursor.svg') 12 12, auto;
-		scroll-behavior: smooth;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Balsamiq Sans", cursive;
+    background: url(../assets/img/ui/banner.png) fixed no-repeat center center;
+    background-size: cover;
+    scrollbar-color: #ff6b6b #2e2e2e;
+    cursor:
+      url("/src/assets/img/ui/svg/cursor.svg") 12 12,
+      auto;
+    scroll-behavior: smooth;
+  }
 </style>

@@ -163,20 +163,11 @@
   transition: all 0.3s ease;
 }
 
-.item:active {
-  width: 30rem;
-  transition: all 0.3s ease;
-}
-
 .slider-track {
   display: flex;
   gap: 1rem;
   width: max-content;
   animation: scroll 40s linear infinite;
-}
-
-.slider-track:hover {
-  animation-play-state: paused;
 }
 
 @keyframes scroll {
