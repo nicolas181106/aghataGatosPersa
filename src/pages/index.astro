@@ -13,6 +13,9 @@ import imgIndex9 from "../assets/img/nuestros_gatos/Bluey/Camada1/Romulo/romulo.
 import imgIndex10 from "../assets/img/nuestros_gatos/Ceres/Camada1/Osiris/osiris268.jpeg";
 import imgIndex11 from "../assets/img/nuestros_gatos/Bluey/blube2.jpg";
 
+import anubisPublicidad from "../assets/img/nuestros_gatos/Ceres/Camada1/Anubis/anubis1.jpeg";
+import nutrigelPublicidad from "../assets/img/productos/otros/nutrigel.jpg";
+
 import { gatosChinchilla } from "../scripts/gatos-chinchilla.js";
 import { gatosEuropeo } from "../scripts/gatos-europeo.js";
 import { gatosHimalayo } from "../scripts/gatos-himalayo.js";
@@ -814,8 +817,113 @@ const destacadosIndex = [
       </svg>
     </div>
 
+    <!-- Nutri-Plus Gel -->
+    <section class="w-full mx-auto px-4 py-32 bg-[#FAF9F6]">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <span
+            class="inline-block bg-white/80 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-sm mb-6 text-[10px] font-black uppercase tracking-widest text-[#FF6B6B]"
+          >
+            El extra que usamos en casa
+          </span>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-[#FF6B6B]">
+            Pelaje de seda y energía de sobra
+          </h2>
+          <div
+            class="w-32 h-1 bg-gradient-to-r from-[#FF6B6B] to-pink-400 mx-auto mb-8"
+          >
+          </div>
+          <p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+            El gel nutricional que acompaña a nuestras gatas para un manto
+            brillante, vitaminas extra y ganas de jugar.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10 items-stretch">
+          <div
+            class="relative overflow-hidden rounded-[2.5rem] shadow-2xl min-h-[520px] group"
+          >
+            <img
+              src={anubisPublicidad.src}
+              alt="Anubis, gata persa chinchilla del criadero Ágatha Gatos Persas"
+              class="absolute inset-0 w-full h-full object-cover object-[center_22%] transition-transform duration-700 group-hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#2E2E2E]/80 via-[#2E2E2E]/20 to-transparent"
+            >
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 p-8 md:p-10">
+              <div
+                class="relative bg-white/95 backdrop-blur-md rounded-[1.75rem] p-6 md:p-8 shadow-xl border border-pink-100"
+              >
+                <div
+                  class="absolute -top-3 left-10 w-6 h-6 bg-white/95 rotate-45 border-l border-t border-pink-100"
+                >
+                </div>
+                <p
+                  class="text-[#2E2E2E] text-lg md:text-xl font-medium leading-relaxed italic"
+                >
+                  «¡Este gel me encanta! Me deja el pelaje suave y brillante, y
+                  me da energía para trepar y jugar todo el día.»
+                </p>
+                <p
+                  class="mt-4 text-[#FF6B6B] text-sm font-black uppercase tracking-widest"
+                >
+                  — Anubis, persa chinchilla
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <a
+            href="https://link.amazon/B015OtRUU"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative bg-white p-2 rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 flex flex-col"
+          >
+            <div
+              class="relative w-full h-72 md:h-80 overflow-hidden rounded-[2rem] bg-[#F9F9F9] flex items-center justify-center p-8"
+            >
+              <img
+                src={nutrigelPublicidad.src}
+                alt="Virbac Nutri-Plus Gel, suplemento energético para gatos y perros"
+                class="max-h-full object-contain w-full transition-transform duration-500 group-hover:scale-105"
+              />
+              <div
+                class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-sm"
+              >
+                <span
+                  class="text-[10px] font-black uppercase tracking-widest text-[#FF6B6B]"
+                >
+                  Alimentación
+                </span>
+              </div>
+            </div>
+
+            <div class="p-8 md:p-10 flex flex-col flex-1 text-center">
+              <h3
+                class="text-2xl font-bold mb-3 text-[#2E2E2E] group-hover:text-[#FF6B6B] transition-colors leading-tight"
+              >
+                Virbac Nutri-Plus Gel
+              </h3>
+              <p class="text-gray-500 text-sm mb-8 leading-relaxed">
+                Suplemento energético con vitaminas y minerales. Ideal para
+                apoyar el pelaje, el apetito y la vitalidad de tu gato persa,
+                sobre todo en etapas de crecimiento o cuando necesita un extra.
+              </p>
+              <div
+                class="mt-auto inline-flex items-center justify-center gap-2 bg-[#FF6B6B] group-hover:bg-[#e65c5c] text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 shadow-lg"
+              >
+                Ver en Amazon
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- Contacto -->
-    <section class="w-full mx-auto px-6 bg-[#FAF9F6] py-32">
+    <section class="w-full mx-auto px-6 bg-white py-32">
       <div class="max-w-6xl mx-auto">
         <div class="relative overflow-hidden rounded-[3rem] shadow-2xl group">
           <div
