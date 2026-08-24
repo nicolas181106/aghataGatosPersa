@@ -15,8 +15,8 @@ export const gatosHimalayo = [
         img2: gato2.src,
         alt: "Camada de gatos himalayos",
         color: "Atigrado",
-        disponibleEstilo: "absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
-        disponibleTexto: "✓ Disponible",
+        disponibleEstilo: "absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
+        disponibleTexto: "✗ Adoptado",
     },
     {
         name: "Mokka",
@@ -37,7 +37,7 @@ export const gatosHimalayo = [
         img2: gato6.src,
         alt: "Camada de gatos himalayos",
         color: "Naranja",
-        disponibleEstilo: "absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
-        disponibleTexto: "✓ Disponible",
+        disponibleEstilo: "absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg",
+        disponibleTexto: "✗ Adoptado",
     },
 ];
