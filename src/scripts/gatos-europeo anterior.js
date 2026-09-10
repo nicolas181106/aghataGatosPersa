@@ -8,11 +8,11 @@ import triton from "../assets/img/nuestros_gatos/Bluey/Camada2/Triton/tritonBebe
 import esmeralda from "../assets/img/nuestros_gatos/Bluey/Camada2/Esmeralda/esmeraldaBebe4.jpeg";
 import heracles from "../assets/img/nuestros_gatos/Bluey/Camada2/Heracles/heraclesBebe.jpeg";
 import canela from "../assets/img/nuestros_gatos/Bluey/Camada3/Canela/canela96595.jpeg";
-import leo from "../assets/img/nuestros_gatos/Bluey/Camada3/Leo/leo58984.jpeg";
+import leo from "../assets/img/nuestros_gatos/Bluey/Camada3/Leo/leo2.jpeg";
 import william from "../assets/img/nuestros_gatos/Bluey/Camada3/William/William6756765.jpeg";
-import platon from "../assets/img/nuestros_gatos/Bluey/Camada3/Platon/Platon4848484.jpeg";
+import platon from "../assets/img/nuestros_gatos/Bluey/Camada3/Platon/Platon322.jpeg";
 import nieve from "../assets/img/nuestros_gatos/Bluey/Camada3/Nieve/nieve28383.jpeg";
-import loki from "../assets/img/nuestros_gatos/Bluey/Camada3/Loki/loki4838448.jpeg";
+import loki from "../assets/img/nuestros_gatos/Bluey/Camada3/Loki/loki454.jpeg";
 import thor from "../assets/img/nuestros_gatos/Bluey/Camada3/Thor/thor8484.jpeg";
 
 export const gatosEuropeo = [

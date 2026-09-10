@@ -5,8 +5,8 @@ import artico1 from "../assets/img/nuestros_gatos/Ceres/Camada4/Artico/Artico1.j
 import artico2 from "../assets/img/nuestros_gatos/Ceres/Camada4/Artico/Artico2.jpeg"
 import zorro1 from "../assets/img/nuestros_gatos/Ceres/Camada4/Zorro/Zorro1.jpeg"
 import zorro2 from "../assets/img/nuestros_gatos/Ceres/Camada4/Zorro/Zorro2.jpeg"
-import mercurio1 from "../assets/img/nuestros_gatos/Ceres/Camada4/Mercurio/Mercurio1.jpeg"
-import mercurio2 from "../assets/img/nuestros_gatos/Ceres/Camada4/Mercurio/Mercurio2.jpeg"
+import mercurio1 from "../assets/img/nuestros_gatos/Ceres/Camada4/Mercurio/Mercurio3.jpeg"
+import mercurio2 from "../assets/img/nuestros_gatos/Ceres/Camada4/Mercurio/Mercurio4.jpeg"
 
 export const gatosChinchilla = [
     {
