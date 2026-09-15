@@ -14,7 +14,6 @@
   "dependencies": {
     "@astrojs/check": "^0.9.8",
     "@fontsource/balsamiq-sans": "^5.2.5",
-    "@supabase/supabase-js": "^2.99.0",
     "@tailwindcss/vite": "^4.1.6",
     "astro": "^5.14.6",
     "tailwind-animations": "^1.0.1",

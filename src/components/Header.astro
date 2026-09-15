@@ -265,9 +265,6 @@ import logo2 from "../assets/img/ui/logoAnimated.png";
           Contacto
         </a>
       </li>
-      <li id="auth-buttons-desktop" class="flex items-center gap-3">
-        <!-- Auth buttons will be injected here via client script -->
-      </li>
     </ul>
   </div>
 
@@ -300,77 +297,11 @@ import logo2 from "../assets/img/ui/logoAnimated.png";
           class="block px-4 py-3 rounded-xl bg-[#FF6B6B] text-white text-center mt-2"
           href="/contacto">Contacto</a>
       </li>
-      <div
-        id="auth-buttons-mobile"
-        class="mt-2 flex flex-col gap-1 border-t border-pink-100 pt-2"
-      >
-        <!-- Auth buttons will be injected here via client script -->
-      </div>
     </ul>
   </div>
 </nav>
 
-<script>
-  import { supabase } from "../lib/supabase";
 
-  const authDesktop = document.getElementById("auth-buttons-desktop");
-  const authMobile = document.getElementById("auth-buttons-mobile");
-
-  const updateAuthUI = async () => {
-    const {
-      data: { session },
-    } = await supabase.auth.getSession();
-
-    if (session) {
-      const { data: profile } = await supabase
-        .from("profiles")
-        .select("avatar_url")
-        .eq("id", session.user.id)
-        .maybeSingle();
-
-      const avatarUrl =
-        profile?.avatar_url ||
-        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=300&h=300&auto=format&fit=crop";
-
-      if (authDesktop) {
-        authDesktop.innerHTML = `
-          <a href="/profile" class="flex items-center group">
-            <div class="w-10 h-10 rounded-full border-2 border-white shadow-sm overflow-hidden transition-all duration-300 group-hover:border-[#FF6B6B] group-hover:shadow-md active:scale-95">
-              <img src="${avatarUrl}" class="w-full h-full object-cover" alt="Perfil">
-            </div>
-          </a>
-        `;
-      }
-      if (authMobile) {
-        authMobile.innerHTML = `
-          <li>
-            <a href="/profile" class="w-full text-left font-bold block px-4 py-3 rounded-xl text-[#FF6B6B] hover:bg-[#FFE2E2] flex items-center gap-3">
-              <img src="${avatarUrl}" class="w-8 h-8 rounded-lg object-cover shadow-sm" alt="Perfil">
-              Mi Perfil
-            </a>
-          </li>
-        `;
-      }
-    } else {
-      if (authDesktop) {
-        authDesktop.innerHTML =
-          '<a href="/login" class="text-[15px] md:text-[16px] hover:text-[#FF6B6B] transition-colors">Entrar</a><a href="/register" class="bg-[#FF6B6B]/10 text-[#FF6B6B] px-5 py-2 rounded-full hover:bg-[#FF6B6B]/20 transition-all font-bold">Registro</a>';
-      }
-      if (authMobile) {
-        authMobile.innerHTML =
-          '<li><a href="/login" class="block px-4 py-3 rounded-xl hover:bg-[#FFE2E2] font-bold">Entrar</a></li><li><a href="/register" class="block px-4 py-3 rounded-xl hover:bg-[#FFE2E2] text-[#FF6B6B] font-bold">Registro</a></li>';
-      }
-    }
-  };
-
-  updateAuthUI();
-
-  supabase.auth.onAuthStateChange((event, session) => {
-    if (event === "SIGNED_IN" || event === "SIGNED_OUT") {
-      updateAuthUI();
-    }
-  });
-</script>
 
 <script is:inline>
   const btn = document.getElementById("menu-btn");
