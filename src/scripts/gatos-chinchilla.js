@@ -1,10 +1,10 @@
 import unknown from "../assets/img/gatos/unknown.jpg";
-import polar1 from "../assets/img/nuestros_gatos/Ceres/Camada4/Polar/Polar1.jpeg"
-import polar2 from "../assets/img/nuestros_gatos/Ceres/Camada4/Polar/Polar2.jpeg"
-import artico1 from "../assets/img/nuestros_gatos/Ceres/Camada4/Artico/Artico1.jpeg"
-import artico2 from "../assets/img/nuestros_gatos/Ceres/Camada4/Artico/Artico2.jpeg"
-import zorro1 from "../assets/img/nuestros_gatos/Ceres/Camada4/Zorro/Zorro1.jpeg"
-import zorro2 from "../assets/img/nuestros_gatos/Ceres/Camada4/Zorro/Zorro2.jpeg"
+import polar1 from "../assets/img/nuestros_gatos/Ceres/Camada4/Polar/Polar3.jpeg"
+import polar2 from "../assets/img/nuestros_gatos/Ceres/Camada4/Polar/Polar4.jpeg"
+import artico1 from "../assets/img/nuestros_gatos/Ceres/Camada4/Artico/Artico3.jpeg"
+import artico2 from "../assets/img/nuestros_gatos/Ceres/Camada4/Artico/Artico4.jpeg"
+import zorro1 from "../assets/img/nuestros_gatos/Ceres/Camada4/Zorro/Zorro3.jpeg"
+import zorro2 from "../assets/img/nuestros_gatos/Ceres/Camada4/Zorro/Zorro4.jpeg"
 import mercurio1 from "../assets/img/nuestros_gatos/Ceres/Camada4/Mercurio/Mercurio3.jpeg"
 import mercurio2 from "../assets/img/nuestros_gatos/Ceres/Camada4/Mercurio/Mercurio4.jpeg"
 
