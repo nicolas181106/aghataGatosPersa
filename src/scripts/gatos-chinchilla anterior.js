@@ -12,6 +12,10 @@ import garfield from "../assets/img/nuestros_gatos/Ceres/Camada3/Garfield/garfie
 import pardo from "../assets/img/nuestros_gatos/Ceres/Camada3/Pardo/pardo3767.jpeg";
 import socrates from "../assets/img/nuestros_gatos/Ceres/Camada3/Socrates/socrates3432.jpeg";
 import copo from "../assets/img/nuestros_gatos/Ceres/Camada3/Copo/copo8484.jpeg";
+import polar from "../assets/img/nuestros_gatos/Ceres/Camada4/Polar/Polar3.jpeg"
+import artico from "../assets/img/nuestros_gatos/Ceres/Camada4/Artico/Artico5.jpeg"
+import zorro from "../assets/img/nuestros_gatos/Ceres/Camada4/Zorro/Zorro5.jpeg"
+import mercurio from "../assets/img/nuestros_gatos/Ceres/Camada4/Mercurio/Mercurio3.jpeg"
 
 export const gatosChinchilla = [
     {
@@ -111,5 +115,33 @@ export const gatosChinchilla = [
         birth: "22/06/2025",
         img: ares.src,
         alt: "Ares - Gato persa chinchilla macho",
-    }
+    },
+    {
+        name: "Polar",
+        gender: "Macho",
+        birth: "17/08/2026",
+        img: polar.src,
+        alt: "Polar - Gato persa chinchilla macho",
+    },
+    {
+        name: "Artico",
+        gender: "Macho",
+        birth: "17/08/2026",
+        img: artico.src,
+        alt: "Artico - Gato persa chinchilla macho",
+    },
+    {
+        name: "Zorro",
+        gender: "Macho",
+        birth: "17/08/2026",
+        img: zorro.src,
+        alt: "Zorro - Gato persa chinchilla macho",
+    },
+    {
+        name: "Mercurio",
+        gender: "Macho",
+        birth: "17/08/2026",
+        img: mercurio.src,
+        alt: "Mercurio - Gato persa chinchilla macho",
+    },
 ];
